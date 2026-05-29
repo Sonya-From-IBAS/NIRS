@@ -1,0 +1,10 @@
+pandas>=2.0
+scikit-learn>=1.4
+matplotlib>=3.8
+seaborn>=0.13
+requests>=2.31
+tqdm>=4.66
+groq>=0.9
+python-dotenv>=1.0
+kaggle>=1.6
+jupyter>=1.0

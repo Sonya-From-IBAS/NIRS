@@ -1,0 +1,7 @@
+Method,F1-macro,F1-weighted,Precision,Recall,Latency(ms)
+Regex,0.685,0.856,0.856,0.691,0.02
+TF-IDF + LogReg,0.943,0.991,0.921,0.970,0.10
+TF-IDF + LinearSVC,0.957,0.994,0.964,0.951,0.10
+TF-IDF + RandomForest,0.942,0.993,0.981,0.910,0.13
+LLM (zero_shot),0.702,0.714,0.772,0.692,68.47
+LLM (few_shot),0.624,0.592,0.704,0.644,51.05

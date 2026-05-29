@@ -1,0 +1,34 @@
+# Секреты
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Данные (большие файлы — не коммитим)
+data/raw/*.csv
+data/raw/*.txt
+data/raw/*.zip
+data/processed/*.csv
+
+# Сгенерированные графики
+figures/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
