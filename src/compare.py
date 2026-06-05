@@ -27,17 +27,21 @@ METHOD_ORDER = [
     "TF-IDF + LogReg",
     "TF-IDF + LinearSVC",
     "TF-IDF + RandomForest",
-    "LLM (zero_shot)",
-    "LLM (few_shot)",
+    "LLM Llama-3.3-70B (zero_shot)",
+    "LLM Llama-3.3-70B (few_shot)",
+    "LLM zai-org-GLM-5.1 (few_shot)",
+    "LLM openai-gpt-oss-120b (few_shot)",
 ]
 
 METHOD_COLORS = {
-    "Regex":                "#e07b54",
-    "TF-IDF + LogReg":      "#5b8db8",
-    "TF-IDF + LinearSVC":   "#3a6ea5",
-    "TF-IDF + RandomForest":"#2a4e7c",
-    "LLM (zero_shot)":      "#6dbf67",
-    "LLM (few_shot)":       "#3d9e36",
+    "Regex":                               "#e07b54",
+    "TF-IDF + LogReg":                     "#5b8db8",
+    "TF-IDF + LinearSVC":                  "#3a6ea5",
+    "TF-IDF + RandomForest":               "#2a4e7c",
+    "LLM Llama-3.3-70B (zero_shot)":       "#6dbf67",
+    "LLM Llama-3.3-70B (few_shot)":        "#3d9e36",
+    "LLM zai-org-GLM-5.1 (few_shot)":      "#f0a500",
+    "LLM openai-gpt-oss-120b (few_shot)":  "#c0392b",
 }
 
 GROUP_COLORS = {
@@ -48,9 +52,17 @@ GROUP_COLORS = {
 
 
 def load_results() -> pd.DataFrame:
-    baseline = pd.read_csv(RESULTS_DIR / "baseline_results.csv")
-    llm      = pd.read_csv(RESULTS_DIR / "llm_results.csv")
-    df = pd.concat([baseline, llm], ignore_index=True)
+    frames = [pd.read_csv(RESULTS_DIR / "baseline_results.csv")]
+
+    for f in RESULTS_DIR.glob("llm_results*.csv"):
+        frames.append(pd.read_csv(f))
+
+    df = pd.concat(frames, ignore_index=True)
+
+    # оставляем только методы из METHOD_ORDER
+    known = set(METHOD_ORDER)
+    df = df[df["method"].isin(known)]
+
     df["method"] = pd.Categorical(df["method"], categories=METHOD_ORDER, ordered=True)
     df = df.sort_values("method").reset_index(drop=True)
     return df

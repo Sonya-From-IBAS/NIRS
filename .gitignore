@@ -12,11 +12,8 @@ __pycache__/
 venv/
 env/
 
-# Данные (большие файлы — не коммитим)
-data/raw/*.csv
-data/raw/*.txt
+# Данные (архивы не коммитим)
 data/raw/*.zip
-data/processed/*.csv
 
 # Сгенерированные графики
 figures/

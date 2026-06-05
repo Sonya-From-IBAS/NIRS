@@ -11,7 +11,9 @@
 
 import re
 import pandas as pd
+import numpy as np
 from pathlib import Path
+from sklearn.model_selection import train_test_split
 
 DATA_RAW = Path(__file__).parent.parent / "data" / "raw"
 DATA_PROCESSED = Path(__file__).parent.parent / "data" / "processed"
@@ -138,15 +140,55 @@ def build_dataset(save: bool = True, filename: str = "dataset.csv") -> pd.DataFr
     return df
 
 
+def source_stratified_split(df: pd.DataFrame,
+                            test_size: float = 0.2,
+                            random_state: int = 42) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Стратифицированный сплит по (label × source).
+    Гарантирует, что синтетические примеры каждого источника
+    представлены и в train, и в test — исключает ситуацию,
+    когда весь generated_groq_mssql_advanced попадает только в train.
+    """
+    # Создаём составной ключ стратификации
+    df = df.copy()
+    # Нормализуем source: группируем редкие источники
+    source_norm = df["source"].fillna("unknown")
+    # Для источников с < 10 примерами используем только label как стратификацию
+    source_counts = source_norm.value_counts()
+    rare = source_counts[source_counts < 10].index
+    source_norm = source_norm.apply(lambda s: "other_" + str(df.loc[source_norm == s, "label"].iloc[0])
+                                    if s in rare else s)
+    df["_strat_key"] = df["label"].astype(str) + "__" + source_norm
+
+    train_idx, test_idx = train_test_split(
+        df.index,
+        test_size=test_size,
+        random_state=random_state,
+        stratify=df["_strat_key"],
+    )
+    train_df = df.loc[train_idx].drop(columns=["_strat_key"])
+    test_df  = df.loc[test_idx].drop(columns=["_strat_key"])
+
+    print(f"Split: train={len(train_df)}, test={len(test_df)}")
+    print("Source distribution in test:")
+    print(test_df.groupby(["label_name", "source"]).size()
+          .reset_index(name="count").to_string(index=False))
+    return train_df, test_df
+
+
 def print_stats(df: pd.DataFrame) -> None:
-    print("\n=== Статистика датасета ===")
-    print(f"Всего: {len(df)} примеров\n")
+    print("\n=== Dataset stats ===")
+    print(f"Total: {len(df)} examples\n")
     stats = df.groupby(["label", "label_name"]).size().reset_index(name="count")
     stats["pct"] = (stats["count"] / len(df) * 100).round(1)
     print(stats.to_string(index=False))
+    if "source" in df.columns:
+        print("\nBy source:")
+        print(df.groupby("source").size().sort_values(ascending=False).to_string())
     print()
 
 
 if __name__ == "__main__":
     df = build_dataset()
     print_stats(df)
+    train_df, test_df = source_stratified_split(df)

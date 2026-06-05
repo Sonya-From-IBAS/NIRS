@@ -1,16 +1,18 @@
 """
-LLM-детектор вредоносного SQL на базе Groq (llama-3.3-70b-versatile).
+LLM-детектор вредоносного SQL. Поддерживает несколько провайдеров.
+
+Провайдеры:
+    groq       — Groq API (llama-3.3-70b-versatile), бесплатно
+    synthetic  — synthetic.new (GLM-5.1, gpt-oss-120b), OpenAI-compatible
 
 Режимы:
     zero_shot  — классификация без примеров
-    few_shot   — 2 примера на класс в промпте
-    cot        — Chain-of-Thought: модель рассуждает перед ответом
+    few_shot   — примеры в промпте
 
 Запуск:
-    python src/detector_llm.py --mode zero_shot --n 300
-    python src/detector_llm.py --mode few_shot  --n 300
-    python src/detector_llm.py --mode cot       --n 300
-    python src/detector_llm.py --mode all       --n 300
+    python src/detector_llm.py --mode few_shot --provider groq
+    python src/detector_llm.py --mode few_shot --provider synthetic --model hf:zai-org/GLM-5.1
+    python src/detector_llm.py --mode few_shot --provider synthetic --model hf:openai/gpt-oss-120b
 """
 
 import argparse
@@ -23,6 +25,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 from dotenv import load_dotenv
+from openai import OpenAI
 from groq import Groq, RateLimitError
 from sklearn.model_selection import train_test_split
 
@@ -34,8 +37,31 @@ DATA_PROCESSED = Path(__file__).parent.parent / "data" / "processed"
 RESULTS_DIR = Path(__file__).parent.parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
-client = Groq(api_key=os.environ["GROQ_API_KEY"])
-MODEL = "llama-3.3-70b-versatile"
+# ── Провайдеры ─────────────────────────────────────────────────────────────
+
+PROVIDERS = {
+    "groq": {
+        "client_fn": lambda: Groq(api_key=os.environ["GROQ_API_KEY"]),
+        "default_model": "llama-3.3-70b-versatile",
+        "batch_size": 10,
+        "sleep_s": 15,  # 70B: ~1400 токенов/батч, лимит 6000/мин → макс 4 батча/мин
+    },
+    "synthetic": {
+        "client_fn": lambda: OpenAI(
+            api_key=os.environ["SYNTHETIC_API_KEY"],
+            base_url="https://api.synthetic.new/openai/v1",
+        ),
+        "default_model": "hf:zai-org/GLM-5.1",
+        "batch_size": 3,   # thinking-модели генерируют много токенов — меньше батч
+        "sleep_s": 8,
+    },
+}
+
+# Глобальные переменные — инициализируются в main()
+_client = None
+_model  = None
+_batch_size = 10
+_sleep_s    = 8
 
 LABEL_MAP = {
     "legit": 0, "legitimate": 0, "safe": 0, "normal": 0,
@@ -142,6 +168,42 @@ Format strictly:
 BATCH_SIZE = 10  # запросов за один вызов API
 
 
+# ── Извлечение текста из ответа модели ─────────────────────────────────────
+
+def _extract_content(choice) -> str:
+    """
+    GLM-5.1 и gpt-oss-120b — thinking-модели:
+      - reasoning_content = цепочка рассуждений
+      - content = финальный ответ (появляется только после завершения thinking)
+    Если content есть — берём его. Иначе ищем финальный ответ
+    в последних строках reasoning_content.
+    """
+    msg = choice.message
+
+    # Финальный ответ есть — берём
+    if msg.content:
+        return msg.content
+
+    # Достаём reasoning_content
+    reasoning = None
+    if hasattr(msg, "reasoning_content") and msg.reasoning_content:
+        reasoning = msg.reasoning_content
+    else:
+        try:
+            raw = msg.model_dump()
+            reasoning = raw.get("reasoning_content") or raw.get("thinking") or raw.get("text")
+        except Exception:
+            pass
+
+    if not reasoning:
+        return ""
+
+    # Модель дописала рассуждение — финальный ответ в конце
+    # Ищем последнее вхождение одного из лейблов
+    tail = reasoning[-500:]  # последние 500 символов
+    return tail
+
+
 # ── Парсинг ответа ─────────────────────────────────────────────────────────
 
 def _find_label(text: str) -> int:
@@ -182,39 +244,47 @@ def parse_batch_response(text: str, mode: str, n: int) -> list[int]:
 def classify_batch(queries: list[str], mode: str, retries: int = 3) -> tuple[list[int], float]:
     numbered = "\n".join(f"{i+1}. {q}" for i, q in enumerate(queries))
 
+    is_thinking = isinstance(_client, OpenAI)  # synthetic — thinking models
+    base_tokens = 2000 if is_thinking else 60
+
     if mode == "zero_shot":
         user_content = ZERO_SHOT_BATCH.format(queries=numbered)
-        max_tokens = 60
+        max_tokens = base_tokens
     elif mode == "few_shot":
         user_content = FEW_SHOT_BATCH.format(queries=numbered)
-        max_tokens = 60
+        max_tokens = base_tokens
     else:  # cot
         user_content = COT_BATCH.format(queries=numbered)
-        max_tokens = len(queries) * 20  # короткое рассуждение, ~20 токенов на пример
+        max_tokens = base_tokens if is_thinking else len(queries) * 20
 
     for attempt in range(retries):
         try:
             t0 = time.perf_counter()
-            response = client.chat.completions.create(
-                model=MODEL,
+            # thinking-модели (GLM-5.1, gpt-oss-120b) не принимают temperature=0
+            kwargs = dict(
+                model=_model,
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": user_content},
                 ],
                 max_tokens=max_tokens,
-                temperature=0.0,
             )
+            if "groq" in str(type(_client).__module__):
+                kwargs["temperature"] = 0.0
+            response = _client.chat.completions.create(**kwargs)
             elapsed = time.perf_counter() - t0
-            labels = parse_batch_response(response.choices[0].message.content, mode, len(queries))
-            # дополняем если парсер вернул меньше
+            raw_text = _extract_content(response.choices[0])
+            labels = parse_batch_response(raw_text, mode, len(queries))
             while len(labels) < len(queries):
                 labels.append(-1)
             return labels, elapsed
 
         except RateLimitError:
-            wait = 60
-            print(f"    [rate limit] sleeping {wait}s...", flush=True)
-            time.sleep(wait)
+            print(f"    [rate limit] sleeping 60s...", flush=True)
+            time.sleep(60)
+        except Exception as e:
+            print(f"    [error] {e}, sleeping 10s...", flush=True)
+            time.sleep(10)
 
     return [-1] * len(queries), 0.0
 
@@ -222,7 +292,7 @@ def classify_batch(queries: list[str], mode: str, retries: int = 3) -> tuple[lis
 # ── Основной цикл ──────────────────────────────────────────────────────────
 
 def run_llm_detector(df_test: pd.DataFrame, mode: str) -> dict:
-    print(f"\n[*] LLM detector | mode={mode} | n={len(df_test)} | batch={BATCH_SIZE}", flush=True)
+    print(f"\n[*] LLM detector | mode={mode} | model={_model} | n={len(df_test)} | batch={_batch_size}", flush=True)
 
     queries = df_test["query"].tolist()
     labels  = df_test["label"].tolist()
@@ -230,9 +300,9 @@ def run_llm_detector(df_test: pd.DataFrame, mode: str) -> dict:
     y_true, y_pred, times = [], [], []
     failed = 0
 
-    for i in range(0, len(queries), BATCH_SIZE):
-        batch_q = queries[i:i+BATCH_SIZE]
-        batch_l = labels[i:i+BATCH_SIZE]
+    for i in range(0, len(queries), _batch_size):
+        batch_q = queries[i:i+_batch_size]
+        batch_l = labels[i:i+_batch_size]
 
         preds, elapsed = classify_batch(batch_q, mode)
 
@@ -244,8 +314,8 @@ def run_llm_detector(df_test: pd.DataFrame, mode: str) -> dict:
         times.append(elapsed)
 
         done = min(i + BATCH_SIZE, len(queries))
-        print(f"    batch {i//BATCH_SIZE+1}: [{done}/{len(queries)}] failed={failed} ({elapsed*1000:.0f}ms)", flush=True)
-        time.sleep(8)  # ~10 запросов = батч, 8с пауза между батчами
+        print(f"    batch {i//_batch_size+1}: [{done}/{len(queries)}] failed={failed} ({elapsed*1000:.0f}ms)", flush=True)
+        time.sleep(_sleep_s)
 
     total_time = sum(times)
     print(f"    done. failed_parses={failed}/{len(df_test)}", flush=True)
@@ -261,8 +331,23 @@ def run_llm_detector(df_test: pd.DataFrame, mode: str) -> dict:
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
-def main(modes: list[str], n_test: int = 500,
-         dataset_file: str = "dataset.csv", results_suffix: str = "") -> None:
+def main(modes: list[str], n_test: int = 500, dataset_file: str = "dataset.csv",
+         provider: str = "groq", model: str | None = None) -> None:
+    global _client, _model, _batch_size, _sleep_s
+
+    cfg = PROVIDERS[provider]
+    _client     = cfg["client_fn"]()
+    _model      = model or cfg["default_model"]
+    _batch_size = cfg["batch_size"]
+    _sleep_s    = cfg["sleep_s"]
+
+    # Короткое имя модели для имён файлов
+    model_slug = _model.replace("hf:", "").replace("/", "-").replace(":", "-")
+
+    print(f"Provider : {provider}")
+    print(f"Model    : {_model}")
+    print(f"Batch    : {_batch_size}  Sleep: {_sleep_s}s")
+
     df = pd.read_csv(DATA_PROCESSED / dataset_file, encoding="utf-8")
     df = df.dropna(subset=["query", "label"])
     df["query"] = df["query"].astype(str)
@@ -280,21 +365,27 @@ def main(modes: list[str], n_test: int = 500,
     results = []
     for mode in modes:
         result = run_llm_detector(df_sample, mode)
+        # добавляем имя модели в метод для различия в таблице
+        result["method"] = f"LLM {model_slug} ({mode})"
         results.append(result)
 
-    out = RESULTS_DIR / f"llm_results{results_suffix}.csv"
+    out = RESULTS_DIR / f"llm_results_{model_slug}.csv"
     save_results(results, out)
+    print(f"[+] Results -> {out}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", default="all",
+    parser.add_argument("--mode", default="few_shot",
                         choices=["zero_shot", "few_shot", "cot", "all"])
-    parser.add_argument("--n", type=int, default=500,
-                        help="Размер тестовой выборки для LLM")
+    parser.add_argument("--n", type=int, default=500)
     parser.add_argument("--dataset", default="dataset.csv")
-    parser.add_argument("--suffix", default="", help="Суффикс для файлов результатов")
+    parser.add_argument("--provider", default="groq",
+                        choices=["groq", "synthetic"])
+    parser.add_argument("--model", default=None,
+                        help="Переопределить модель (иначе берётся дефолт провайдера)")
     args = parser.parse_args()
 
     modes = ["zero_shot", "few_shot", "cot"] if args.mode == "all" else [args.mode]
-    main(modes=modes, n_test=args.n, dataset_file=args.dataset, results_suffix=args.suffix)
+    main(modes=modes, n_test=args.n, dataset_file=args.dataset,
+         provider=args.provider, model=args.model)
