@@ -18,6 +18,15 @@ data/raw/*.zip
 # Сгенерированные графики
 figures/
 
+# Полные локальные запуски (снимки данных, прогнозы и обученные модели)
+results/runs/
+
+# Локальные рабочие планы и отчёты по этапам
+/STAGE*.md
+/stage.md
+/PROJECT_CORRECTION_PLAN.md
+/correction_plan.md
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb

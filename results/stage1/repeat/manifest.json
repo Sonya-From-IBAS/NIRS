@@ -1,0 +1,384 @@
+{
+  "created_utc": "2026-11-24T17:32:13.885343+00:00",
+  "git_head": "76bdca32cb78b778c95ee6e439cf716187f5099b",
+  "git_status_before": "M .gitignore\n M requirements.txt\n?? PROJECT_CORRECTION_PLAN.md\n?? STAGE1_REPRODUCTION.md\n?? requirements-lock.txt\n?? review/\n?? src/reproduce_baseline.py\n?? tests/",
+  "files": [
+    {
+      "path": "data/processed/dataset.csv",
+      "bytes": 3078041,
+      "sha256_bytes": "30ca83aa9c3de1ac079edd22e8dd8975c213406da18f0fa12f87d8d7e134e569",
+      "sha256_crlf_to_lf": "037cdc1e94eb67895b5dbf6378e12b615ae73b734c3d10803c71376bb5afadb3",
+      "columns": [
+        "query",
+        "label",
+        "source",
+        "label_name"
+      ],
+      "rows": 32530,
+      "label_counts": {
+        "1": 9480,
+        "2": 1910,
+        "0": 19836,
+        "3": 682,
+        "4": 622
+      },
+      "source_counts": {
+        "kaggle_sqli": 30905,
+        "generated_groq_mysql_simple": 193,
+        "generated_groq_mysql_advanced": 231,
+        "generated_groq_mssql_simple": 199,
+        "generated_groq_mssql_advanced": 200,
+        "generated_groq_postgresql_simple": 179,
+        "generated_groq_postgresql_advanced": 206,
+        "generated_groq_oracle_simple": 185,
+        "generated_groq_oracle_advanced": 186,
+        "real_github": 46
+      },
+      "label_name_counts": {
+        "sqli": 9480,
+        "obfuscated": 1910,
+        "legit": 19836,
+        "privilege": 682,
+        "exfiltration": 622
+      },
+      "duplicate_excess_exact": 0,
+      "duplicate_excess_strip": 59,
+      "blank_after_strip": 1
+    },
+    {
+      "path": "data/processed/generated.csv",
+      "bytes": 233438,
+      "sha256_bytes": "e0483c6d64115d3c5d747a2272c737714b546eb32596a20a115d7b3001b9693e",
+      "sha256_crlf_to_lf": "44306c35ce0ba5098d62ec2a9c509254b4a98b02d776b29cdaa3af204fd53cfe",
+      "columns": [
+        "query",
+        "label",
+        "label_name",
+        "source"
+      ],
+      "rows": 1594,
+      "label_counts": {
+        "3": 664,
+        "4": 616,
+        "0": 314
+      },
+      "source_counts": {
+        "generated_groq_mysql_simple": 193,
+        "generated_groq_mysql_advanced": 231,
+        "generated_groq_mssql_simple": 203,
+        "generated_groq_mssql_advanced": 201,
+        "generated_groq_postgresql_simple": 181,
+        "generated_groq_postgresql_advanced": 212,
+        "generated_groq_oracle_simple": 185,
+        "generated_groq_oracle_advanced": 188
+      },
+      "label_name_counts": {
+        "privilege": 664,
+        "exfiltration": 616,
+        "legit": 314
+      },
+      "duplicate_excess_exact": 13,
+      "duplicate_excess_strip": 13,
+      "blank_after_strip": 0
+    },
+    {
+      "path": "data/raw/real_payloads.csv",
+      "bytes": 5870,
+      "sha256_bytes": "e3012dd150a9c885f019a61428ed0b54ebcf98b86c1fe3eb543810ebda2d1ffa",
+      "sha256_crlf_to_lf": "e6ac8140cb3fdae4ac02adc2a3979aae8529bc9a552f6102c2e879a432d23e35",
+      "columns": [
+        "query",
+        "label",
+        "label_name",
+        "source"
+      ],
+      "rows": 50,
+      "label_counts": {
+        "3": 23,
+        "4": 13,
+        "2": 14
+      },
+      "source_counts": {
+        "real_github": 50
+      },
+      "label_name_counts": {
+        "privilege": 23,
+        "exfiltration": 13,
+        "obfuscated": 14
+      },
+      "duplicate_excess_exact": 4,
+      "duplicate_excess_strip": 4,
+      "blank_after_strip": 0
+    },
+    {
+      "path": "data/raw/sqli_dataset.csv",
+      "bytes": 2284050,
+      "sha256_bytes": "60af1d160dcc5c3f61440dc8f0c019e8898243951e283402857c10294c6f5cc5",
+      "sha256_crlf_to_lf": "71556dba9ad616750ad1b1c700dcc8b4e800285b583c20485b375f14d1dd0612",
+      "columns": [
+        "Query",
+        "Label"
+      ],
+      "rows": 30919,
+      "Label_counts": {
+        "1": 11382,
+        "0": 19537
+      }
+    },
+    {
+      "path": "PROJECT_CORRECTION_PLAN.md",
+      "bytes": 63369,
+      "sha256_bytes": "cc6b4bfe85a86e4752218106b6f89c9805778fd4f5ee9cc952ac4098f9250e78",
+      "sha256_crlf_to_lf": "cc6b4bfe85a86e4752218106b6f89c9805778fd4f5ee9cc952ac4098f9250e78"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 2628,
+      "sha256_bytes": "6ec1be6b13ab7eeddfbcb0bbf98a07c2b116a6b523ef9faa560939182d504038",
+      "sha256_crlf_to_lf": "6ec1be6b13ab7eeddfbcb0bbf98a07c2b116a6b523ef9faa560939182d504038"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 383,
+      "sha256_bytes": "9d3974239a66a25eb4e54b641a43fcd86216cf7dc9790594b3e8d632f4295b0a",
+      "sha256_crlf_to_lf": "9d3974239a66a25eb4e54b641a43fcd86216cf7dc9790594b3e8d632f4295b0a"
+    },
+    {
+      "path": "results/baseline_results.csv",
+      "bytes": 969,
+      "sha256_bytes": "99bef809052b3174819ee0239a77a628e106623acba6c0d741ad01e4a105af22",
+      "sha256_crlf_to_lf": "169393528108b2874000d5e8fcafb8ab3348cbbfca34db063b6f7d9ec0c5330b",
+      "columns": [
+        "method",
+        "f1_macro",
+        "f1_weighted",
+        "precision_macro",
+        "recall_macro",
+        "latency_ms_per_sample",
+        "f1_legit",
+        "f1_sqli",
+        "f1_obfuscated",
+        "f1_privilege",
+        "f1_exfiltration"
+      ],
+      "rows": 4
+    },
+    {
+      "path": "results/conclusions.md",
+      "bytes": 12026,
+      "sha256_bytes": "cc91ce586acb94777c40576c6af99fcf73790e4cccc0f439082c2986571db6d3",
+      "sha256_crlf_to_lf": "cc91ce586acb94777c40576c6af99fcf73790e4cccc0f439082c2986571db6d3"
+    },
+    {
+      "path": "results/cv_results.csv",
+      "bytes": 430,
+      "sha256_bytes": "0310d008d7077cd827138044e16b87d8bee20904d885d16e74db2bf4cb759f77",
+      "sha256_crlf_to_lf": "2faa94656788deaf1a1dd15d577b785a9be70e673f263f14b6a76f80c52ccf0e",
+      "columns": [
+        "method",
+        "cv_f1_macro_mean",
+        "cv_f1_macro_std",
+        "cv_f1_weighted_mean",
+        "cv_f1_weighted_std"
+      ],
+      "rows": 4
+    },
+    {
+      "path": "results/llm_results.csv",
+      "bytes": 709,
+      "sha256_bytes": "028fcdba1b566a5c30636fb43c5aab41ada2b881e2b387adac5675fdd4ccb72f",
+      "sha256_crlf_to_lf": "6b038be66aa876206545b7b972064d81e8168dab8917b68a5c58f849e701e8d1",
+      "columns": [
+        "method",
+        "f1_macro",
+        "f1_weighted",
+        "precision_macro",
+        "recall_macro",
+        "latency_ms_per_sample",
+        "f1_legit",
+        "f1_sqli",
+        "f1_obfuscated",
+        "f1_privilege",
+        "f1_exfiltration"
+      ],
+      "rows": 4
+    },
+    {
+      "path": "results/summary_table.csv",
+      "bytes": 494,
+      "sha256_bytes": "119d41b3d7eeaa0b9b73d35f445d01ce3a02d50dbac8e2be794fb039365cc14f",
+      "sha256_crlf_to_lf": "e72572e2c98608857f3472d352a8e91fa34990fb01d6b0fb35a5069007324efa",
+      "columns": [
+        "Method",
+        "F1-macro",
+        "F1-weighted",
+        "Precision",
+        "Recall",
+        "Latency(ms)"
+      ],
+      "rows": 8
+    },
+    {
+      "path": "review/01-reviewer-transfer-report.md",
+      "bytes": 14752,
+      "sha256_bytes": "d1d137940b5e7262bb84f08efd4cf6414ea00249cf4d03e581be278facff463e",
+      "sha256_crlf_to_lf": "d1d137940b5e7262bb84f08efd4cf6414ea00249cf4d03e581be278facff463e"
+    },
+    {
+      "path": "review/02-hypothesis-pilots.md",
+      "bytes": 11104,
+      "sha256_bytes": "cf20a89f47cdead1f048d9293f8b7c644e7572de65f9a4ff8d86e8250b6ba182",
+      "sha256_crlf_to_lf": "cf20a89f47cdead1f048d9293f8b7c644e7572de65f9a4ff8d86e8250b6ba182"
+    },
+    {
+      "path": "review/03-cascade-external.md",
+      "bytes": 6098,
+      "sha256_bytes": "82b587c68b0a62c09ac7bc3cf6575989720fbbc88443e0ee44e7a3a7fc9449b3",
+      "sha256_crlf_to_lf": "82b587c68b0a62c09ac7bc3cf6575989720fbbc88443e0ee44e7a3a7fc9449b3"
+    },
+    {
+      "path": "review/04-superviz25-blind-holdout-findings.md",
+      "bytes": 11450,
+      "sha256_bytes": "3e98ea83406f757c1dd0670bad9471f7a96740a75104efe721ec352e219ea6c3",
+      "sha256_crlf_to_lf": "3e98ea83406f757c1dd0670bad9471f7a96740a75104efe721ec352e219ea6c3"
+    },
+    {
+      "path": "review/readme.md",
+      "bytes": 18749,
+      "sha256_bytes": "888a84ce9ab35e6bdb853d4bbd61717ddbbb642937241e5787dbe66471200036",
+      "sha256_crlf_to_lf": "888a84ce9ab35e6bdb853d4bbd61717ddbbb642937241e5787dbe66471200036"
+    },
+    {
+      "path": "review/supporting/nirs-cascade-reproduce.md",
+      "bytes": 4370,
+      "sha256_bytes": "e27ea2c2095c51e001b28ecfb1b650686a458c4994b2baddd27994c5981c0dea",
+      "sha256_crlf_to_lf": "e27ea2c2095c51e001b28ecfb1b650686a458c4994b2baddd27994c5981c0dea"
+    },
+    {
+      "path": "review/supporting/nirs-holdout-order.md",
+      "bytes": 1617,
+      "sha256_bytes": "dd666a78e984b50c5c6b0fc0f0b5d0c1d223c5ec01813ac1e5fd50cc9dd6fdd0",
+      "sha256_crlf_to_lf": "dd666a78e984b50c5c6b0fc0f0b5d0c1d223c5ec01813ac1e5fd50cc9dd6fdd0"
+    },
+    {
+      "path": "review/supporting/nirs-holdout-protocol.md",
+      "bytes": 3205,
+      "sha256_bytes": "14ee495f238288a40ff311fff66eed4040252079067f5ce30fc790c2783ab450",
+      "sha256_crlf_to_lf": "14ee495f238288a40ff311fff66eed4040252079067f5ce30fc790c2783ab450"
+    },
+    {
+      "path": "review/supporting/nirs-holdout-README-results.md",
+      "bytes": 5856,
+      "sha256_bytes": "6405dc280c7a22740e2c97edbcacc0280cebe1bf75655e6ecd617b34a531f162",
+      "sha256_crlf_to_lf": "6405dc280c7a22740e2c97edbcacc0280cebe1bf75655e6ecd617b34a531f162"
+    },
+    {
+      "path": "review/supporting/nirs-holdout-reproduction-decision.md",
+      "bytes": 1701,
+      "sha256_bytes": "1dbe5a452d7e36fd78739748476493e03a2e4db3f7a189d9822e0a0e6c2d1ae9",
+      "sha256_crlf_to_lf": "1dbe5a452d7e36fd78739748476493e03a2e4db3f7a189d9822e0a0e6c2d1ae9"
+    },
+    {
+      "path": "review/supporting/nirs-holdout-search.md",
+      "bytes": 5299,
+      "sha256_bytes": "1c22ff2e5e3437f0fbe8d1f3496bb5590f630d328b1b64e67c6add52d2bfb11e",
+      "sha256_crlf_to_lf": "1c22ff2e5e3437f0fbe8d1f3496bb5590f630d328b1b64e67c6add52d2bfb11e"
+    },
+    {
+      "path": "review/supporting/nirs-hypotheses-Reproduce.md",
+      "bytes": 3179,
+      "sha256_bytes": "a22443c2c0f5a124f93362f2f0f6acd14cef9aa69282326bb600521eb62148b9",
+      "sha256_crlf_to_lf": "a22443c2c0f5a124f93362f2f0f6acd14cef9aa69282326bb600521eb62148b9"
+    },
+    {
+      "path": "review/supporting/nirs-research-README.md",
+      "bytes": 4621,
+      "sha256_bytes": "03c60c59e736bb65cbcbddf43fd359b16f3915d3dc7cd5b2762f526920201a42",
+      "sha256_crlf_to_lf": "03c60c59e736bb65cbcbddf43fd359b16f3915d3dc7cd5b2762f526920201a42"
+    },
+    {
+      "path": "review/supporting/nirs-research-RECHECK_README.md",
+      "bytes": 3755,
+      "sha256_bytes": "c6e83d8ddca2f6728df4d7ddff18b954d095f4dcab4ed968f173f309239db3ae",
+      "sha256_crlf_to_lf": "c6e83d8ddca2f6728df4d7ddff18b954d095f4dcab4ed968f173f309239db3ae"
+    },
+    {
+      "path": "src/baseline.py",
+      "bytes": 8868,
+      "sha256_bytes": "b043e723c5a08bc878e3dc8e8dbfb2803787b33d17a196fca503ab76cb89c1cf",
+      "sha256_crlf_to_lf": "b043e723c5a08bc878e3dc8e8dbfb2803787b33d17a196fca503ab76cb89c1cf"
+    },
+    {
+      "path": "src/compare.py",
+      "bytes": 8253,
+      "sha256_bytes": "f59615c550a5bf3d055995441616f73bd3a856f304ef108c975e097456ea522d",
+      "sha256_crlf_to_lf": "f59615c550a5bf3d055995441616f73bd3a856f304ef108c975e097456ea522d"
+    },
+    {
+      "path": "src/dataset.py",
+      "bytes": 8662,
+      "sha256_bytes": "02fca3b10371f350c54c61253fa9e38b86ea420d0e42f34e4ace081d86081812",
+      "sha256_crlf_to_lf": "02fca3b10371f350c54c61253fa9e38b86ea420d0e42f34e4ace081d86081812"
+    },
+    {
+      "path": "src/detector_llm.py",
+      "bytes": 14700,
+      "sha256_bytes": "3cd945c7764cf7bb6f0ea2b664504cbc21e738ffd217ad279368c1072954fe81",
+      "sha256_crlf_to_lf": "3cd945c7764cf7bb6f0ea2b664504cbc21e738ffd217ad279368c1072954fe81"
+    },
+    {
+      "path": "src/download_data.py",
+      "bytes": 3432,
+      "sha256_bytes": "1cb04be0039fab5de2a4bd01c4517d0b74d22547510c6900f8b07d9604d21471",
+      "sha256_crlf_to_lf": "1cb04be0039fab5de2a4bd01c4517d0b74d22547510c6900f8b07d9604d21471"
+    },
+    {
+      "path": "src/evaluate.py",
+      "bytes": 1701,
+      "sha256_bytes": "2ce1bf2ed348316f9f8057d5d97c9fb6477128f6498831280ba5a90a0334e05b",
+      "sha256_crlf_to_lf": "2ce1bf2ed348316f9f8057d5d97c9fb6477128f6498831280ba5a90a0334e05b"
+    },
+    {
+      "path": "src/fetch_real_payloads.py",
+      "bytes": 4855,
+      "sha256_bytes": "1b47cda561927abef104a2419d26545f260c6b96bdbe7d94c3689dfb6ddce3e5",
+      "sha256_crlf_to_lf": "1b47cda561927abef104a2419d26545f260c6b96bdbe7d94c3689dfb6ddce3e5"
+    },
+    {
+      "path": "src/generate.py",
+      "bytes": 10301,
+      "sha256_bytes": "5108d1a87b90e6e78e226e9af1b3dd5d3692cf74641b5d230704d7266c9968af",
+      "sha256_crlf_to_lf": "5108d1a87b90e6e78e226e9af1b3dd5d3692cf74641b5d230704d7266c9968af"
+    },
+    {
+      "path": "src/normalize.py",
+      "bytes": 1659,
+      "sha256_bytes": "5091a4ab6c43c87308d0d1bf34cc4f022eb68fc8dc93c1186531c9ec33e693a5",
+      "sha256_crlf_to_lf": "5091a4ab6c43c87308d0d1bf34cc4f022eb68fc8dc93c1186531c9ec33e693a5"
+    },
+    {
+      "path": "src/reproduce_baseline.py",
+      "bytes": 19966,
+      "sha256_bytes": "fb423f3f7f65e0df31379003689634a0329d78c6831aeaa3e990d68da3617b49",
+      "sha256_crlf_to_lf": "fb423f3f7f65e0df31379003689634a0329d78c6831aeaa3e990d68da3617b49"
+    },
+    {
+      "path": "STAGE1_REPRODUCTION.md",
+      "bytes": 7754,
+      "sha256_bytes": "ad3048452984edaa4089393ea9ae24e455ac24004c9e47b95ab720366c06c50c",
+      "sha256_crlf_to_lf": "ad3048452984edaa4089393ea9ae24e455ac24004c9e47b95ab720366c06c50c"
+    },
+    {
+      "path": "tests/test_reproduce_baseline.py",
+      "bytes": 4654,
+      "sha256_bytes": "ac59e1a9999a2114b94da0cc0cab9b64b35cb5772be340c71b930660948f3720",
+      "sha256_crlf_to_lf": "ac59e1a9999a2114b94da0cc0cab9b64b35cb5772be340c71b930660948f3720"
+    }
+  ],
+  "newline_hash_rule": "Replace CRLF bytes with LF only; no trimming or SQL normalization",
+  "excluded": [
+    ".env",
+    ".git contents",
+    "unrelated files outside project"
+  ]
+}

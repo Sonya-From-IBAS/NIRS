@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "experiment": "stage1-historical-five-class-baseline",
+  "scope": "Published results; this is a subset of the complete local run archives.",
+  "included": [
+    "metrics",
+    "row-level predictions",
+    "split memberships",
+    "configuration",
+    "environment",
+    "input manifests",
+    "timings",
+    "warnings",
+    "independent repeat evidence",
+    "archive hashes"
+  ],
+  "not_included": [
+    "snapshot/",
+    "models/",
+    "local stage Markdown documents",
+    "correction plan"
+  ],
+  "archive_hashes_note": "archive_hashes.json is the original complete archive index; it also names files omitted from this publication. It is retained as provenance. Use the files map below to verify the published subset.",
+  "verification_before_export": {
+    "control": {
+      "status": "passed",
+      "artifacts_checked": 58,
+      "predictions_checked": 156144,
+      "loaded_models_checked": 3
+    },
+    "repeat": {
+      "status": "passed",
+      "artifacts_checked": 59,
+      "predictions_checked": 156144,
+      "loaded_models_checked": 3
+    }
+  },
+  "export_verification": {
+    "metric_tables_recomputed_from_predictions": true,
+    "predictions_metrics_and_splits_identical_between_runs": true
+  },
+  "files": {
+    "control/archive_hashes.json": "ef032293c9c262761844ae15f25a5e49cf0812ee55dbbbe39a9726ea9c6129d8",
+    "control/baseline_results.csv": "39f3b5163bf2eee5e25319c8547382e6e8619ba99a6674ba407c2422b241155e",
+    "control/config.json": "44cfea6da0a20b94bf8fdecdcaf4c25ac03433ceae43927e803f8ab6fb3e09e3",
+    "control/cv_results.csv": "a7b685cbfb10655a09a6f0fd875e8b276be4df8908384964d054c34793914c50",
+    "control/environment.json": "e46a2d14ae3143499f920b7d058b4be27cdc61f1fae1354e5e7697361fc13bee",
+    "control/fold_metrics.csv": "dc1997a130e70b64aa7e87f18b5c943ba74a48e3b370c5f96cab66c8c86ce3dc",
+    "control/historical_deltas.csv": "585ae71e59e3bcb47c4ab82346212b1b65324bc2fb704f4abceb6a003574006a",
+    "control/manifest.json": "f57d4332a608069824fdbe21dbe97dc15c60adfc8f365d9719bfb9bf530985ab",
+    "control/predictions.csv": "118e543c6036e8cb77f3a44c492b3237e15dcdbf30764d32b6097492899c83b6",
+    "control/splits/cv-0.csv": "891415a0475eb3f5c7be21f4753f293bd139fa0fdd5b276cc730c7a666cf044e",
+    "control/splits/cv-1.csv": "2506eb1d0b24d13c516fea0965fde0d30b98878c78cef0d8e7d1b5b462e01b2c",
+    "control/splits/cv-2.csv": "401c7c86d8d12e413a770dac973e73ec28ad212c73f74550e992a1509843c0be",
+    "control/splits/cv-3.csv": "5b02f11dbc3b2539cd23a9600be281c6714b001ad23e1660d885bb7bb08ef1be",
+    "control/splits/cv-4.csv": "a00d038c89df0f40cedb9d2aea3c3dd280458906307f3979e3ebcb2ce82987d9",
+    "control/splits/holdout-0.csv": "c938afa73dec5bd9c5be2e244cea62d31e8b185864d603eca2cc97fa869a50cf",
+    "control/status.json": "f94eb2d63efcf5824612f57b63b04ca00e7ddb801f44cd503d0f4aff59c6225d",
+    "control/timings.csv": "357deb3c954ca10de74ab0339250101384e3b34b0e974b95d8850ee1630c0a84",
+    "control/warnings.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "repeat/archive_hashes.json": "177516e286204ff99f5fb37a1384281ff63aec659ad99ad0a689fcf918aa494b",
+    "repeat/baseline_results.csv": "39f3b5163bf2eee5e25319c8547382e6e8619ba99a6674ba407c2422b241155e",
+    "repeat/config.json": "63afe9747490c370b6df7fc8b1f502febbadb29d2c614673392637ae00fbaa2d",
+    "repeat/cv_results.csv": "a7b685cbfb10655a09a6f0fd875e8b276be4df8908384964d054c34793914c50",
+    "repeat/environment.json": "e46a2d14ae3143499f920b7d058b4be27cdc61f1fae1354e5e7697361fc13bee",
+    "repeat/fold_metrics.csv": "dc1997a130e70b64aa7e87f18b5c943ba74a48e3b370c5f96cab66c8c86ce3dc",
+    "repeat/historical_deltas.csv": "585ae71e59e3bcb47c4ab82346212b1b65324bc2fb704f4abceb6a003574006a",
+    "repeat/manifest.json": "589eb7c8259ca983a607f8593cba97e7d6c523ccde5a4f8dbeb07a2401bd38b7",
+    "repeat/predictions.csv": "118e543c6036e8cb77f3a44c492b3237e15dcdbf30764d32b6097492899c83b6",
+    "repeat/reproducibility.json": "84890014ca67d050ca5959b189640d7f726d814f1acf883378bd8ff0d8e7c467",
+    "repeat/splits/cv-0.csv": "891415a0475eb3f5c7be21f4753f293bd139fa0fdd5b276cc730c7a666cf044e",
+    "repeat/splits/cv-1.csv": "2506eb1d0b24d13c516fea0965fde0d30b98878c78cef0d8e7d1b5b462e01b2c",
+    "repeat/splits/cv-2.csv": "401c7c86d8d12e413a770dac973e73ec28ad212c73f74550e992a1509843c0be",
+    "repeat/splits/cv-3.csv": "5b02f11dbc3b2539cd23a9600be281c6714b001ad23e1660d885bb7bb08ef1be",
+    "repeat/splits/cv-4.csv": "a00d038c89df0f40cedb9d2aea3c3dd280458906307f3979e3ebcb2ce82987d9",
+    "repeat/splits/holdout-0.csv": "c938afa73dec5bd9c5be2e244cea62d31e8b185864d603eca2cc97fa869a50cf",
+    "repeat/status.json": "4afc194da3c32c2a8e8c951db033922ec25aac569aad3691114b6eec906721b3",
+    "repeat/timings.csv": "17d573a2d1ecdde0ca13a30877922ee596ab6d33f356dc4bcc1869a7e16c0ada",
+    "repeat/warnings.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  }
+}

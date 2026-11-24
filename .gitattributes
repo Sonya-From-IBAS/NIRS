@@ -1,0 +1,2 @@
+# Preserve checksums of published experiment artifacts across checkouts.
+results/stage1/** -text

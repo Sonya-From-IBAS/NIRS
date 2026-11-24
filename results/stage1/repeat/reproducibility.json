@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "reference": "C:\\Users\\Leon\\OneDrive\\Рабочий стол\\НИРС\\nirs_sql\\results\\runs\\stage1-control",
+  "identical": [
+    "input manifests",
+    "environment",
+    "splits (deterministic reconstruction)",
+    "predictions.csv",
+    "baseline_results.csv",
+    "cv_results.csv",
+    "fold_metrics.csv"
+  ],
+  "excluded_from_equality": [
+    "wall times",
+    "timestamps",
+    "joblib byte representation"
+  ]
+}
