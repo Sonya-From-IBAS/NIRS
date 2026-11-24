@@ -1,0 +1,107 @@
+{
+  "source": "dstsmallbird/SQLStateGuard_Dataset",
+  "commit": "87c7cc7cbdbf27df9eae095b9800be7e27039ca4",
+  "tree_api": "https://api.github.com/repos/dstsmallbird/SQLStateGuard_Dataset/git/trees/87c7cc7cbdbf27df9eae095b9800be7e27039ca4?recursive=1",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/LICENSE",
+      "bytes": 1061,
+      "git_blob_sha1": "97af96bf2291fc3db10fe91a4b04af32b4230e0e",
+      "sha256_bytes": "076e7d5cbdc55f156d5ed05c8a161983e9cdab65040402fc08aa9f817ac7b8de"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/README.md",
+      "bytes": 765,
+      "git_blob_sha1": "5b803c4b16edc1f759af6607402eb534d780f39e",
+      "sha256_bytes": "2c4b5a7acbbc2c7c795595d724e2cf0f20df28b4fe2c15b21129d7b00146e01f"
+    },
+    {
+      "path": "web_app/bool_blind_11-29.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/web_app/bool_blind_11-29.txt",
+      "bytes": 441205,
+      "git_blob_sha1": "ab06c61af9b39863492a884de8bfa7e9fbdfb456",
+      "sha256_bytes": "43729f65b84937c1799830d74c72ac91587a2ba588e29e1b9060f64f5cf769e6"
+    },
+    {
+      "path": "web_app/illegal_11-30.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/web_app/illegal_11-30.txt",
+      "bytes": 816536,
+      "git_blob_sha1": "cad6dd27fe8ce12695438d504749c468ff448391",
+      "sha256_bytes": "0087cd68e867cc856e5aa8b70c3721d13340fdb7c9dec5f29b7e8ccd7165a794"
+    },
+    {
+      "path": "web_app/normal_1-18.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/web_app/normal_1-18.txt",
+      "bytes": 8394537,
+      "git_blob_sha1": "2428c9f857454d0176e0df5dcb3d4fa977a90a52",
+      "sha256_bytes": "4617c783f3ffd473b6ca7621200ada7c90bb0db9ebe469c3faba7f7eaf54b492"
+    },
+    {
+      "path": "web_app/tautology_12-02.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/web_app/tautology_12-02.txt",
+      "bytes": 1750591,
+      "git_blob_sha1": "779f104733ecf132b006c74fa6300d5fa9885b40",
+      "sha256_bytes": "1185755faae322173f8c4d9914b184657efcba0f6aa32cca96e0f5f18d6f8ac3"
+    },
+    {
+      "path": "web_app/time_blind_11-28.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/web_app/time_blind_11-28.txt",
+      "bytes": 269567,
+      "git_blob_sha1": "e5bf1b514b91a0c83e46e75eeddd0ffd74356476",
+      "sha256_bytes": "edb6d62262edbba28b7c79ac0b00403d45f1d4eb5ab64a7e2cbe001a41551cf3"
+    },
+    {
+      "path": "web_app/union_12-07.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/web_app/union_12-07.txt",
+      "bytes": 15291322,
+      "git_blob_sha1": "dc021b6dec07a495fbdc7082645d9d9550803d84",
+      "sha256_bytes": "2d4ea5ce65e88bc4fabdca1abb20dd980cdeec86d35a2bdad3d2e23b386cb2b7"
+    },
+    {
+      "path": "wordpress/bool_blind_wp.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/wordpress/bool_blind_wp.txt",
+      "bytes": 505911,
+      "git_blob_sha1": "bc5d733c34fdf950da9fe17151fa4ba5753a3dee",
+      "sha256_bytes": "083f20b3bbb4bb93c3689238dae4dad0191e8f100d5d8bd93db5441f41c2722c"
+    },
+    {
+      "path": "wordpress/illegal_wp.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/wordpress/illegal_wp.txt",
+      "bytes": 892657,
+      "git_blob_sha1": "1066156b9ab4ce426e7406fe025b4c494158f0d5",
+      "sha256_bytes": "7016182a3c4673cfc71a3a51f99841046d3bdc7e1b13e6f85595156ad5e8f054"
+    },
+    {
+      "path": "wordpress/normal_wp.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/wordpress/normal_wp.txt",
+      "bytes": 9089569,
+      "git_blob_sha1": "1ad40803ea8dbc63679f299b818e8ee21338e5c8",
+      "sha256_bytes": "3ac2055c11a5ae4ffbd8b4b3cdce6c49c2e40e2db8ffe0de78b2568c007a6bdb"
+    },
+    {
+      "path": "wordpress/tautology_wp.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/wordpress/tautology_wp.txt",
+      "bytes": 1999869,
+      "git_blob_sha1": "9cb3c0d70bd05c6c1ea27ad66bf33e50d33cdf1c",
+      "sha256_bytes": "89857b8de63f8fbaea2a36063f7b54d6bd3ade3087aa665e021557d4278cdd14"
+    },
+    {
+      "path": "wordpress/time_blind_wp.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/wordpress/time_blind_wp.txt",
+      "bytes": 300590,
+      "git_blob_sha1": "e23df4333c418d75f2fd95f4371af482bdf489b7",
+      "sha256_bytes": "ad55c756d002f26f6d5993d7ca3e8863a8b50e3c59a506c32956f90eb04171ab"
+    },
+    {
+      "path": "wordpress/union_wp.txt",
+      "url": "https://raw.githubusercontent.com/dstsmallbird/SQLStateGuard_Dataset/87c7cc7cbdbf27df9eae095b9800be7e27039ca4/wordpress/union_wp.txt",
+      "bytes": 17660477,
+      "git_blob_sha1": "b7508bdff6f3939e9aa5f3b56c3fae11eaf58c82",
+      "sha256_bytes": "bbeb4b6230c4b6daa0b7060cb48c01add10a20eae3e245ef050b741d2f0d7891"
+    }
+  ],
+  "sql_executed": false,
+  "downloaded_generators_or_attack_tools": false
+}

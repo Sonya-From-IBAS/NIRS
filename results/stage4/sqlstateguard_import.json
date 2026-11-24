@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "application": "web_app",
+      "source_version_id": "src_0c8fd09259559f083ebf5df39bce563a914a94e711dc472e3928aa670b9a8232",
+      "raw_rows": 149555,
+      "unique_observations": 92632,
+      "rejected": 0,
+      "reused": false
+    },
+    {
+      "application": "wordpress",
+      "source_version_id": "src_a449dfcb7a6739e4664afeb0dab427cafa839d861e1498b8a233ef61c7138fb1",
+      "raw_rows": 151073,
+      "unique_observations": 68390,
+      "rejected": 0,
+      "reused": false
+    }
+  ],
+  "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+  "protocol": "sqlstateguard-release-labels-v1"
+}

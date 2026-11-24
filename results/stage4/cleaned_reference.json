@@ -1,0 +1,9 @@
+{
+  "base_dataset_version_id": "ds_448fd86eb7d9fabc54129e02cb81ed235e4a86d056d6ab08bfa7bd8052872c3f",
+  "audit_id": "audit_5b1c4472cb9383eea30b9f282e91ab089c53df8aa69f3408c5e51f4359e6eaa8",
+  "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+  "rows": 32529,
+  "removed_blank_rows": 1,
+  "original_five_class_source_labels_preserved": true,
+  "new_verified_binary_ground_truth_claimed": false
+}

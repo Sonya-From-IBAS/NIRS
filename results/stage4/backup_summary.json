@@ -1,0 +1,112 @@
+{
+  "status": "created_and_checksums_verified",
+  "backup_directory": ".local/backups/stage4-verified",
+  "dump_sha256": "5513d5aad7a086cdebac8312c76a2bbb02a59542a837644f47127bcdf3884a9b",
+  "server_version": "17.12 (Debian 17.12-1.pgdg12+1)",
+  "tables": {
+    "annotations": {
+      "rows": 226115,
+      "sha256": "7b5764ed6f77bea15859b2adb214381efd52926d6fade11a0e1e76e8533ba667"
+    },
+    "artifacts": {
+      "rows": 57,
+      "sha256": "e578b4c32b8d809e9a688e5f611873a3562300734d3f3af19eb305a6b345a29d"
+    },
+    "data_audits": {
+      "rows": 1,
+      "sha256": "ab706af9ae019c2678fd5fb15d4bd517d197ba752cd0c1477a51b0848f19303c"
+    },
+    "dataset_members": {
+      "rows": 226081,
+      "sha256": "54e8bc513b152ec2e6ceb15b126dfbbb917bf9615ac4f97221a5b5352ab30390"
+    },
+    "dataset_versions": {
+      "rows": 3,
+      "sha256": "bde4cdd70b52bda1333c1ab2bf8a370c824c6f291f460d989bcba6f19ffd782e"
+    },
+    "experiment_runs": {
+      "rows": 8,
+      "sha256": "5609a46aa3e21c74ce69f8d9d21f80d5de70633832b420bea93278f3620ede4f"
+    },
+    "group_members": {
+      "rows": 161022,
+      "sha256": "ed216d624234d3c1c201fa84654fdd9c6e728c3fd1525b484761f28e6cc8d2fd"
+    },
+    "import_jobs": {
+      "rows": 10,
+      "sha256": "cb8be754c987c8409906788b897749ccacb7814fe91c7d041b0515fa602c94b9"
+    },
+    "metrics": {
+      "rows": 528,
+      "sha256": "ed146e9d1c322f4fa11edd891a4e7c6eae451d7d1388781392a056dc0db679cc"
+    },
+    "observation_audits": {
+      "rows": 32530,
+      "sha256": "c697ab54d28e542afc52f749bad8cc5e91c8e1b835f78da58c479e67dc24643d"
+    },
+    "observations": {
+      "rows": 226115,
+      "sha256": "8cd4bd88c455426864aead2935ba8bdf1ff5e6a448ab239d3ebb38cc51592a19"
+    },
+    "occurrences": {
+      "rows": 365721,
+      "sha256": "e00a87b3957193e6978a4cfb2d28ca8959cfdc43a4fa24f64acc0266192d0ddf"
+    },
+    "predictions": {
+      "rows": 312288,
+      "sha256": "caacd128203ac027f3cea3adf1764c3ce8c6397698c0335ac411f1d34f6e7041"
+    },
+    "rejected_records": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "representation_artifacts": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "representations": {
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_artifacts": {
+      "rows": 250,
+      "sha256": "512ee708ed86770139afbf6d149d3a8ff2e4b2ab8ac3fb8c1553b006fdd55570"
+    },
+    "sample_groups": {
+      "rows": 61508,
+      "sha256": "b80692bba681e5c556d5615c1ffc4ffa36213a3736ba76975f3d877e6aefe1cb"
+    },
+    "schema_migrations": {
+      "rows": 3,
+      "sha256": "c1ca4b3cffb1b3df9e0c1063dec04aa57f7d425a04ff7ed3f6cf7281e2ff4498"
+    },
+    "source_artifacts": {
+      "rows": 20,
+      "sha256": "0e5976ad0cc09888d2b31fb59c56675ea1d95bfdc63ba3210c198d36aa46a89d"
+    },
+    "source_candidates": {
+      "rows": 9,
+      "sha256": "885ea273f2d621c1a4b9e96dbd7e794cfeaa0e34c013d3f48ab06b0e877af549"
+    },
+    "source_versions": {
+      "rows": 6,
+      "sha256": "d9ec08753b46ba9447f34098b7dc688606d8c03608f7e6a29f1fa543ce73a79a"
+    },
+    "sources": {
+      "rows": 6,
+      "sha256": "394f98bbb146c2fd9c8583071d2079686b25e4af259c390c1c1b6afcf3f10d6c"
+    },
+    "split_members": {
+      "rows": 195180,
+      "sha256": "42ef59868f37dd8423efcaca796882c756cdbf7b61d991209e25ba5a1f95d6d7"
+    },
+    "splits": {
+      "rows": 2,
+      "sha256": "d296e806a5ddf2afae58e3d0e74af15e6e3a465cdf8c3d05cde7b8840c5fd317"
+    }
+  },
+  "ready_artifacts": 57,
+  "artifact_files_copied_and_verified": true,
+  "restore_check_for_this_checkpoint": "not_repeated; restore workflow validated at stage 3",
+  "private_dump_and_data_files_committed": false
+}

@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "legacy_reference": {
+    "rows": 32529,
+    "source_label_counts": {
+      "legit": 19836,
+      "sqli": 9479,
+      "obfuscated": 1910,
+      "privilege": 682,
+      "exfiltration": 622
+    }
+  },
+  "sqlstateguard": {
+    "rows": 161022,
+    "target_counts": {
+      "1": 132651,
+      "0": 28371
+    },
+    "raw_occurrences": 300628,
+    "repeat_import_reused": true,
+    "source_protocol": "author_release_reference_not_independent_human_relabeling",
+    "actual_raw_occurrences": 300628
+  },
+  "source_registry_candidates": 9,
+  "tests": {
+    "run": 47,
+    "passed": 47,
+    "skipped": 0
+  },
+  "new_llm_requests": 0,
+  "research_sql_executed": false,
+  "full_sql_parser_check": "not_run_installation_not_authorized"
+}

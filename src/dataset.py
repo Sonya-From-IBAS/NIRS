@@ -1,5 +1,9 @@
 """
-Загрузка, нормализация и разметка датасетов по вредоносному SQL.
+Версии исследовательских данных в PostgreSQL и исторические CSV-утилиты.
+
+Новые выборки загружаются через load_source_reference/load_verified.
+CSV-сборка и её старые эвристики сохранены для исторического контроля;
+по умолчанию CLI не запускает их и не перезаписывает dataset.csv.
 
 Классы угроз (label):
     0 - legit          легитимный SQL
@@ -188,7 +192,68 @@ def print_stats(df: pd.DataFrame) -> None:
     print()
 
 
+def load_source_reference(dataset_version_id: str, store=None) -> pd.DataFrame:
+    """Five-class original-source reference, explicitly not verified binary truth."""
+    if store is None:
+        from storage import Storage
+        store = Storage()
+    with store.connect() as connection:
+        rows = connection.execute("""SELECT d.ordinal AS row_id,o.observation_id,o.sql_text AS query,
+            c.source_name AS source,c.source_label
+            FROM nirs.dataset_members d JOIN nirs.observations o USING(observation_id)
+            JOIN nirs.occurrences c ON c.source_version_id=d.source_version_id AND c.record_id=d.record_id
+            WHERE d.dataset_version_id=%s ORDER BY d.ordinal""", (dataset_version_id,)).fetchall()
+    values = []
+    for row in rows:
+        source_label = row.pop("source_label")
+        label = source_label.get("label") if isinstance(source_label, dict) else None
+        if str(label) not in {str(key) for key in LABEL_NAMES}:
+            raise ValueError("This source does not provide the historical five-class label space")
+        row.update(label=int(label), label_name=LABEL_NAMES[int(label)], label_basis="original_source_reference")
+        values.append(row)
+    return pd.DataFrame(values, columns=["row_id", "observation_id", "query", "source", "label", "label_name", "label_basis"])
+
+
+def load_verified(dataset_version_id: str, store=None) -> pd.DataFrame:
+    """Binary targets pinned by this dataset version; service fields stay separate."""
+    if store is None:
+        from storage import Storage
+        store = Storage()
+    with store.connect() as connection:
+        rows = connection.execute("""SELECT d.ordinal AS row_id,o.observation_id,o.sql_text AS query,
+            a.target_label AS label,a.data->'threat_tags' AS threat_tags,c.source_name AS source
+            FROM nirs.dataset_members d JOIN nirs.observations o USING(observation_id)
+            JOIN nirs.annotations a ON a.annotation_id=d.annotation_id
+            JOIN nirs.occurrences c ON c.source_version_id=d.source_version_id AND c.record_id=d.record_id
+            WHERE d.dataset_version_id=%s AND a.status='verified' AND o.unit_kind='full_sql' AND o.purpose='research'
+            ORDER BY d.ordinal""", (dataset_version_id,)).fetchall()
+    return pd.DataFrame(rows, columns=["row_id", "observation_id", "query", "label", "threat_tags", "source"])
+
+
 if __name__ == "__main__":
-    df = build_dataset()
-    print_stats(df)
-    train_df, test_df = source_stratified_split(df)
+    import argparse
+    import json
+    from storage import Storage
+    parser = argparse.ArgumentParser(description="Read versioned PostgreSQL datasets; original CSVs are not overwritten.")
+    commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("list")
+    for mode in ("export-reference", "export-verified"):
+        command = commands.add_parser(mode)
+        command.add_argument("dataset_version_id")
+        command.add_argument("output", type=Path)
+    args = parser.parse_args()
+    storage = Storage()
+    if args.command == "list":
+        with storage.connect() as connection:
+            rows = connection.execute("""SELECT v.dataset_version_id,v.name,v.status,count(d.observation_id) AS rows
+                FROM nirs.dataset_versions v LEFT JOIN nirs.dataset_members d USING(dataset_version_id)
+                GROUP BY v.dataset_version_id ORDER BY v.name""").fetchall()
+        print(json.dumps(rows, ensure_ascii=False, indent=2))
+    else:
+        frame = (load_source_reference if args.command == "export-reference" else load_verified)(args.dataset_version_id, storage)
+        protected = {path.resolve() for path in (DATA_PROCESSED / "dataset.csv", DATA_PROCESSED / "generated.csv")}
+        if args.output.resolve() in protected:
+            raise ValueError("Export must not overwrite original inputs")
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        frame.to_csv(args.output, index=False, encoding="utf-8", lineterminator="\n")
+        print(f"Exported {len(frame)} rows")

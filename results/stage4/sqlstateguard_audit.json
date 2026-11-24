@@ -1,0 +1,129 @@
+{
+  "source_commit": "87c7cc7cbdbf27df9eae095b9800be7e27039ca4",
+  "rows": 300628,
+  "by_application": {
+    "web_app": {
+      "attack": 74555,
+      "benign": 75000
+    },
+    "wordpress": {
+      "attack": 71757,
+      "benign": 79316
+    }
+  },
+  "by_file": {
+    "web_app/bool_blind_11-29.txt": {
+      "rows": 2196,
+      "blank": 0,
+      "nul": 0
+    },
+    "web_app/illegal_11-30.txt": {
+      "rows": 3491,
+      "blank": 0,
+      "nul": 0
+    },
+    "web_app/normal_1-18.txt": {
+      "rows": 75000,
+      "blank": 0,
+      "nul": 0
+    },
+    "web_app/tautology_12-02.txt": {
+      "rows": 9135,
+      "blank": 0,
+      "nul": 0
+    },
+    "web_app/time_blind_11-28.txt": {
+      "rows": 1588,
+      "blank": 0,
+      "nul": 0
+    },
+    "web_app/union_12-07.txt": {
+      "rows": 58145,
+      "blank": 0,
+      "nul": 0
+    },
+    "wordpress/bool_blind_wp.txt": {
+      "rows": 2012,
+      "blank": 0,
+      "nul": 0
+    },
+    "wordpress/illegal_wp.txt": {
+      "rows": 3206,
+      "blank": 0,
+      "nul": 0
+    },
+    "wordpress/normal_wp.txt": {
+      "rows": 79316,
+      "blank": 0,
+      "nul": 0
+    },
+    "wordpress/tautology_wp.txt": {
+      "rows": 8359,
+      "blank": 0,
+      "nul": 0
+    },
+    "wordpress/time_blind_wp.txt": {
+      "rows": 1392,
+      "blank": 0,
+      "nul": 0
+    },
+    "wordpress/union_wp.txt": {
+      "rows": 56788,
+      "blank": 0,
+      "nul": 0
+    }
+  },
+  "unit_hints": {
+    "full_sql_candidate": 300628
+  },
+  "exact_unique_texts": 161022,
+  "exact_duplicate_excess": 139606,
+  "exact_mixed_label_groups": 0,
+  "exact_mixed_label_rows": 0,
+  "exact_mixed_label_examples": [],
+  "lexical_templates": 61508,
+  "mixed_label_templates": 1,
+  "overlap_with_legacy": {
+    "web_app": {
+      "exact_with_legacy": 0,
+      "strip_with_legacy": 0,
+      "template_with_legacy": 0
+    },
+    "wordpress": {
+      "exact_with_legacy": 345,
+      "strip_with_legacy": 345,
+      "template_with_legacy": 41753
+    }
+  },
+  "candidate_unique_reference": {
+    "web_app": {
+      "attack": 67859,
+      "benign": 24773
+    },
+    "wordpress": {
+      "attack": 64792,
+      "benign": 3598
+    }
+  },
+  "candidate_exclusions": {
+    "web_app": {
+      "same_application_same_text_repeat": 56923
+    },
+    "wordpress": {
+      "same_application_same_text_repeat": 82683
+    }
+  },
+  "selection_policy": "Keep one exact SQL per application; exclude all query-only exact label conflicts and blank/NUL rows. No filtering by detector score, parse success, or attack family.",
+  "context": {
+    "role": "unknown",
+    "permissions": "unknown",
+    "application_operation": "unknown",
+    "policy": "unknown",
+    "dialect": "unknown; MySQL-compatible syntax is a source characteristic, not inferred trusted role context"
+  },
+  "evaluation_role": "known development/transfer source; not a new blind holdout",
+  "label_basis": "author statement-level release and source-file category; attempts, not observed exploitation success",
+  "synthetic_origin": "laboratory generation from application templates and injection payload sources",
+  "parser_check": "not run; lexical diagnostics only",
+  "download_manifest_sha256": "ba9e6c22c35281a9481c284aafbebd9981fb785ffbb449acece9caaac08a89d8"
+}

@@ -197,6 +197,24 @@ class StorageIntegrationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             drop_scratch_database(self.admin, self.admin.config["dbname"])
 
+    def test_subset_preserves_pinned_labels_and_rejects_foreign_ids(self):
+        subset = self.store.create_subset(self.dataset, ["obs-001", "obs-002"], "test-subset", {"test_only": True})
+        self.assertEqual([row['observation_id'] for row in self.store.dataset_records(subset)], ["obs-001", "obs-002"])
+        with self.assertRaises(ValueError):
+            self.store.create_subset(self.dataset, ["outside"], "bad-subset", {})
+        with self.assertRaises(ValueError):
+            self.store.create_subset(self.dataset, ["obs-001", "obs-001"], "bad-subset", {})
+
+    def test_dataset_loader_uses_source_reference_without_forcing_manual_relabeling(self):
+        from dataset import load_source_reference, load_verified
+        path = self.csv_file([["SELECT 1", 0, "test", "legit"], ["GRANT SELECT ON t TO x", 3, "test", "privilege"]])
+        source = self.store.import_csv(path)
+        version = self.store.create_dataset(source['source_version_id'], "source-reference-test")
+        reference = load_source_reference(version, self.store)
+        self.assertEqual(reference['label'].tolist(), [0, 3])
+        self.assertTrue((reference['label_basis'] == 'original_source_reference').all())
+        self.assertEqual(len(load_verified(version, self.store)), 0)
+
 
 if __name__ == "__main__":
     unittest.main()

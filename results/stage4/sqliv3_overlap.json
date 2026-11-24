@@ -1,0 +1,13 @@
+{
+  "commit": "f7c08b7c4e589d981cfe9b1d945dd0a877cfb0e9",
+  "sha256_bytes": "a6b3024994feaab711ccfa3bd97096a5312c9f97e4b49111459e91bf3eeb398e",
+  "schema": "No header: query in column 0, binary source label in column 1; remaining empty columns retained in original artifact.",
+  "raw_records": 30919,
+  "valid_binary_label_records": 30864,
+  "other_label_records": 55,
+  "strip_matches_with_legacy_kaggle": 29966,
+  "positive_records": 11347,
+  "positive_strip_matches": 11341,
+  "independent_transfer_source": false,
+  "difference_from_reviewer_counts": "Raw CSV parsing reports 30919 records and 55 non-binary-label records; the accepted 30864 records, 11347 positives, 29966 overlaps and 11341 positive overlaps exactly match the review. Raw counter conventions differ by one record; no change in the accepted corpus is asserted."
+}

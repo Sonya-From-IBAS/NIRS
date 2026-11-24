@@ -1,0 +1,86 @@
+{
+  "review_scope": "source-level and operation-family audit, not independent manual annotation of every row",
+  "source_reference_preserved": true,
+  "automatic_target_changes": 0,
+  "classes": {
+    "privilege": {
+      "rows": 682,
+      "llm_generated_rows": 659,
+      "verified_role_permissions_operation_policy_rows": 0,
+      "lexical_operation_signal_counts": {
+        "rights_change": 90,
+        "account_role_change": 71,
+        "system_catalog": 122,
+        "privileged_execution": 158
+      },
+      "unit_hints": {
+        "full_sql_candidate": 619,
+        "non_sql_candidate": 42,
+        "fragment_candidate": 21
+      },
+      "review_reason": "Missing operational evidence prevents confirming threat semantics from SQL text alone."
+    },
+    "exfiltration": {
+      "rows": 622,
+      "llm_generated_rows": 611,
+      "verified_role_permissions_operation_policy_rows": 0,
+      "lexical_operation_signal_counts": {
+        "explicit_file_operation": 132,
+        "read_query": 381,
+        "file_read": 158,
+        "external_access_function": 148
+      },
+      "unit_hints": {
+        "full_sql_candidate": 515,
+        "fragment_candidate": 45,
+        "non_sql_candidate": 62
+      },
+      "review_reason": "Missing operational evidence prevents confirming threat semantics from SQL text alone."
+    }
+  },
+  "illustrative_cases": [
+    {
+      "legacy_row_id": 30905,
+      "source": "generated_groq_mysql_simple",
+      "original_label": "privilege",
+      "sql_sha256": "a4005d08f4a4d00307f08b6e46aab63d4b5476ec6fe564d175c9ebdcf6a9bcdd",
+      "operation_group": "rights_change",
+      "review_conclusion": "Candidate syntax anomaly; rights change can also be authorized administration. No parser conclusion or target change."
+    },
+    {
+      "legacy_row_id": 31564,
+      "source": "generated_groq_mysql_simple",
+      "original_label": "exfiltration",
+      "sql_sha256": "554d7e4f28c3dedb1a9cbbf66e91eed49f96d0aeb711d1f2ead4486db91f0566",
+      "operation_group": "file_export",
+      "review_conclusion": "Export may be authorized backup or prohibited data disclosure; operation and policy are missing."
+    },
+    {
+      "legacy_row_id": 31565,
+      "source": "generated_groq_mysql_simple",
+      "original_label": "exfiltration",
+      "sql_sha256": "b70ddb71ff4e742e185e452a05826d0d0b95b6e24f9181ae3ec89d293ebec7fa",
+      "operation_group": "system_catalog_read",
+      "review_conclusion": "Catalog reading may be ordinary discovery; no verified unauthorized-read context."
+    },
+    {
+      "legacy_row_id": 31566,
+      "source": "generated_groq_mysql_simple",
+      "original_label": "exfiltration",
+      "sql_sha256": "9fa9de1918932e319d4e6151a15bfbc83967787742588418d628718f5c43b65b",
+      "operation_group": "sensitive_catalog_read",
+      "review_conclusion": "Sensitivity of a table name does not establish unauthorized access."
+    },
+    {
+      "legacy_row_id": 31567,
+      "source": "generated_groq_mysql_simple",
+      "original_label": "exfiltration",
+      "sql_sha256": "305a03c14d024d3ca32493fcbb085ee1d59c0b4403509f85bce7925612124fcb",
+      "operation_group": "fragment",
+      "review_conclusion": "UNION SELECT fragment does not supply the enclosing statement or application operation."
+    }
+  ],
+  "decision": "Keep all nonblank records in the original five-class reference; do not promote rare-class source labels to verified binary contextual truth without rights/operation evidence. Add controlled positive/negative counterparts at stage 5.",
+  "groups_may_overlap": true,
+  "full_sql_parser_run": false
+}

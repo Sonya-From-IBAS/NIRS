@@ -300,6 +300,50 @@ class Storage:
                     "grouping": row["grouping_json"], "execution": row["execution_json"]})
             return results
 
+    def create_subset(self, base_dataset: str, observation_ids: list[str], name: str, specification: dict) -> str:
+        if not observation_ids or len(set(observation_ids)) != len(observation_ids):
+            raise ValueError("Subset needs nonempty, unique observation IDs")
+        with self.write() as connection:
+            rows = connection.execute("SELECT * FROM nirs.dataset_members WHERE dataset_version_id=%s ORDER BY ordinal",
+                                      (base_dataset,)).fetchall()
+            selected_ids = set(observation_ids)
+            rows = [row for row in rows if row["observation_id"] in selected_ids]
+            if len(rows) != len(selected_ids):
+                raise ValueError("Subset contains observations outside the base dataset")
+            spec = {"base_dataset_version_id": base_dataset, **specification}
+            dataset_id = "ds_" + digest(canonical({"members": rows, "specification": spec}).encode())
+            if connection.execute("SELECT 1 FROM nirs.dataset_versions WHERE dataset_version_id=%s", (dataset_id,)).fetchone():
+                return dataset_id
+            connection.execute("INSERT INTO nirs.dataset_versions(dataset_version_id,name,status,specification) VALUES (%s,%s,'building',%s)",
+                               (dataset_id, name, Jsonb(spec)))
+            self._copy(connection, "dataset_members", ["dataset_version_id", "observation_id", "annotation_id", "source_version_id", "record_id", "ordinal"],
+                [(dataset_id, row["observation_id"], row["annotation_id"], row["source_version_id"], row["record_id"], row["ordinal"]) for row in rows])
+            connection.execute("UPDATE nirs.dataset_versions SET status='frozen' WHERE dataset_version_id=%s", (dataset_id,))
+        return dataset_id
+
+    def create_verified_source_dataset(self, versions: list[str], name: str, specification: dict) -> str:
+        with self.write() as connection:
+            rows = connection.execute("""SELECT DISTINCT ON(o.observation_id)
+                o.observation_id,o.current_annotation_id,c.source_version_id,c.record_id,c.ordinal
+                FROM nirs.occurrences c JOIN nirs.observations o USING(observation_id)
+                JOIN nirs.annotations a ON a.annotation_id=o.current_annotation_id
+                WHERE c.source_version_id=ANY(%s) AND a.status='verified' AND o.unit_kind='full_sql' AND o.purpose='research'
+                ORDER BY o.observation_id,c.ordinal,c.record_id""", (versions,)).fetchall()
+            rows.sort(key=lambda row: (row["source_version_id"], row["ordinal"]))
+            if not rows:
+                raise ValueError("No verified full SQL observations")
+            spec = {"source_version_ids": sorted(versions), **specification}
+            dataset_id = "ds_" + digest(canonical({"members": rows, "specification": spec}).encode())
+            if connection.execute("SELECT 1 FROM nirs.dataset_versions WHERE dataset_version_id=%s", (dataset_id,)).fetchone():
+                return dataset_id
+            connection.execute("INSERT INTO nirs.dataset_versions(dataset_version_id,name,status,specification) VALUES (%s,%s,'building',%s)",
+                               (dataset_id, name, Jsonb(spec)))
+            self._copy(connection, "dataset_members", ["dataset_version_id", "observation_id", "annotation_id", "source_version_id", "record_id", "ordinal"],
+                [(dataset_id, row["observation_id"], row["current_annotation_id"], row["source_version_id"], row["record_id"], index)
+                 for index, row in enumerate(rows)])
+            connection.execute("UPDATE nirs.dataset_versions SET status='frozen' WHERE dataset_version_id=%s", (dataset_id,))
+        return dataset_id
+
     def append_annotation(self, observation_id: str, annotation: dict) -> None:
         with self.write() as connection:
             row = connection.execute("SELECT * FROM nirs.observations WHERE observation_id=%s FOR UPDATE", (observation_id,)).fetchone()
