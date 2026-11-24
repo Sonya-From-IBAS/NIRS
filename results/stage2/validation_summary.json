@@ -1,0 +1,43 @@
+{
+  "contract_version": "1.0.0",
+  "status": "passed",
+  "test_command": "python -B -m unittest discover -s tests -v",
+  "tests_run": 20,
+  "tests_passed": 20,
+  "contract_tests": 15,
+  "historical_baseline_regression_tests": 5,
+  "fixtures": {
+    "count": 17,
+    "purpose": "contract_fixture",
+    "research_eligible": 0,
+    "annotation_statuses": {
+      "verified": 14,
+      "needs_review": 3
+    },
+    "known_dialects": [
+      "mssql",
+      "mysql",
+      "oracle",
+      "postgresql"
+    ],
+    "authorship": "AI-authored instructional examples; not independent expert ground truth.",
+    "sql_executed": false
+  },
+  "legacy_dataset_records": 32530,
+  "legacy_source_count": 10,
+  "legacy_verified_context_counts": {
+    "dialect": 0,
+    "active_role": 0,
+    "permissions": 0,
+    "application_operation": 0,
+    "policy": 0
+  },
+  "audit_limitation": "No explicit reviewed context columns exist in this CSV. External source materials may provide additional evidence after a separate audit.",
+  "research_records_added": 0,
+  "legacy_target_labels_modified": false,
+  "api_requests": 0,
+  "commands": [
+    "python -B src/data_contract.py validate tests/fixtures/contract_examples.json",
+    "python -B src/data_contract.py audit-legacy data/processed/dataset.csv --output results/stage2/legacy_context_audit.json"
+  ]
+}

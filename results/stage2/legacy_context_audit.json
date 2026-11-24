@@ -1,0 +1,352 @@
+{
+  "audit_version": "1.0.0",
+  "input_file": "dataset.csv",
+  "sha256_bytes": "30ca83aa9c3de1ac079edd22e8dd8975c213406da18f0fa12f87d8d7e134e569",
+  "sha256_crlf_to_lf": "037cdc1e94eb67895b5dbf6378e12b615ae73b734c3d10803c71376bb5afadb3",
+  "columns": [
+    "query",
+    "label",
+    "source",
+    "label_name"
+  ],
+  "records": 32530,
+  "legacy_label_counts": {
+    "exfiltration": 622,
+    "legit": 19836,
+    "obfuscated": 1910,
+    "privilege": 682,
+    "sqli": 9480
+  },
+  "context_availability": {
+    "dialect": {
+      "known": 0,
+      "unknown": 32530,
+      "not_applicable": 0
+    },
+    "active_role": {
+      "known": 0,
+      "unknown": 32530,
+      "not_applicable": 0
+    },
+    "permissions": {
+      "known": 0,
+      "unknown": 32530,
+      "not_applicable": 0
+    },
+    "application_operation": {
+      "known": 0,
+      "unknown": 32530,
+      "not_applicable": 0
+    },
+    "policy": {
+      "known": 0,
+      "unknown": 32530,
+      "not_applicable": 0
+    }
+  },
+  "by_source": {
+    "generated_groq_mssql_advanced": {
+      "records": 200,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 200,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 200,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 200,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 200,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 200,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_mssql_simple": {
+      "records": 199,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 199,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 199,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 199,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 199,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 199,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_mysql_advanced": {
+      "records": 231,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 231,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 231,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 231,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 231,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 231,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_mysql_simple": {
+      "records": 193,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 193,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 193,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 193,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 193,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 193,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_oracle_advanced": {
+      "records": 186,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 186,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 186,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 186,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 186,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 186,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_oracle_simple": {
+      "records": 185,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 185,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 185,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 185,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 185,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 185,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_postgresql_advanced": {
+      "records": 206,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 206,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 206,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 206,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 206,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 206,
+          "not_applicable": 0
+        }
+      }
+    },
+    "generated_groq_postgresql_simple": {
+      "records": 179,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 179,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 179,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 179,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 179,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 179,
+          "not_applicable": 0
+        }
+      }
+    },
+    "kaggle_sqli": {
+      "records": 30905,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 30905,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 30905,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 30905,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 30905,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 30905,
+          "not_applicable": 0
+        }
+      }
+    },
+    "real_github": {
+      "records": 46,
+      "context_availability": {
+        "dialect": {
+          "known": 0,
+          "unknown": 46,
+          "not_applicable": 0
+        },
+        "active_role": {
+          "known": 0,
+          "unknown": 46,
+          "not_applicable": 0
+        },
+        "permissions": {
+          "known": 0,
+          "unknown": 46,
+          "not_applicable": 0
+        },
+        "application_operation": {
+          "known": 0,
+          "unknown": 46,
+          "not_applicable": 0
+        },
+        "policy": {
+          "known": 0,
+          "unknown": 46,
+          "not_applicable": 0
+        }
+      }
+    }
+  },
+  "inference_rule": "Only explicit verified context counts as known; source name tokens are not verified context.",
+  "recommended_initial_import_status": "needs_review",
+  "target_labels_modified": false
+}

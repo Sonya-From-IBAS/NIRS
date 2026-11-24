@@ -1,0 +1,2312 @@
+{
+  "schema_version": "1.0.0",
+  "scope_decision": "Confirmed unauthorized reading of sensitive data is included in exfiltration, as agreed with the user on 2026-11-24.",
+  "purpose": "AI-authored instructional fixtures, not an experimental dataset; SQL was not executed.",
+  "records": [
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-001",
+      "sql": {
+        "text": "SELECT order_id FROM orders WHERE customer_id = 17;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-001/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-001/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-001/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-001/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-37b3e76e0b6c",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-001/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "1",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-001-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 0,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The declared operation permits reading orders for customer 17.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-001",
+              "statement": "The declared operation permits reading orders for customer 17."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-001-ann-1",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-002",
+      "sql": {
+        "text": "SELECT order_id FROM orders WHERE customer_id = 17 OR 1=1;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-002/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-002/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-002/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-002/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-37b3e76e0b6c",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-002/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "2",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-002-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "sqli"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The declared scenario appends an injected OR condition to bypass the customer 17 constraint.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-002",
+              "statement": "The declared scenario appends an injected OR condition to bypass the customer 17 constraint."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-002-ann-1",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-003",
+      "sql": {
+        "text": "SELECT COUNT(*) FROM orders WHERE 1=1;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mssql",
+          "evidence_ref": "contract-fixture:obs-003/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-003/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-003/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.aggregate",
+            "description": "Compute a count over the orders table."
+          },
+          "evidence_ref": "contract-fixture:obs-003/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "orders.aggregate-policy",
+            "version": "1-6d89247f31bd",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-003/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "3",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-003-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 0,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The aggregate reporting operation explicitly permits a count over all orders.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-003",
+              "statement": "The aggregate reporting operation explicitly permits a count over all orders."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-003-ann-1",
+      "grouping": {
+        "group_id": "grp-002",
+        "scenario_id": "grp-002",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-004",
+      "sql": {
+        "text": "SELECT order_id FROM orders WHERE customer_id = 17/**/OR/**/1=1;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-004/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-004/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-004/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-004/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-37b3e76e0b6c",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-004/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "4",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-004-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "sqli"
+          ],
+          "representation_tags": [
+            "comments"
+          ],
+          "exfiltration_channels": [],
+          "reason": "An injected OR bypasses the declared customer constraint; comments are a representation property.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-004",
+              "statement": "An injected OR bypasses the declared customer constraint; comments are a representation property."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-004-ann-1",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": [
+          "obs-002"
+        ]
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-005",
+      "sql": {
+        "text": "SELECT order_id FROM orders /* reporting window */ WHERE customer_id = 17;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mssql",
+          "evidence_ref": "contract-fixture:obs-005/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-005/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-005/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-005/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-37b3e76e0b6c",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-005/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "5",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-005-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 0,
+          "threat_tags": [],
+          "representation_tags": [
+            "comments"
+          ],
+          "exfiltration_channels": [],
+          "reason": "A normal comment does not change the authorized customer filter.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-005",
+              "statement": "A normal comment does not change the authorized customer filter."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-005-ann-1",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-006",
+      "sql": {
+        "text": "GRANT SELECT ON payroll TO reporting_service;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "postgresql",
+          "evidence_ref": "contract-fixture:obs-006/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "database_operator",
+          "evidence_ref": "contract-fixture:obs-006/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-006/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "access.maintenance",
+            "description": "Perform database access maintenance under the current policy."
+          },
+          "evidence_ref": "contract-fixture:obs-006/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "grant"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "access.maintenance-policy",
+            "version": "1-3684eb70f170",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-006/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "6",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-006-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 0,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The database operator is authorized to grant SELECT during this maintenance operation.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-006",
+              "statement": "The database operator is authorized to grant SELECT during this maintenance operation."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-006-ann-1",
+      "grouping": {
+        "group_id": "grp-003",
+        "scenario_id": "grp-003",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-007",
+      "sql": {
+        "text": "GRANT SELECT ON payroll TO reporting_service;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "postgresql",
+          "evidence_ref": "contract-fixture:obs-007/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "database_operator",
+          "evidence_ref": "contract-fixture:obs-007/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-007/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "access.maintenance",
+            "description": "Perform database access maintenance under the current policy."
+          },
+          "evidence_ref": "contract-fixture:obs-007/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              },
+              {
+                "effect": "deny",
+                "actions": [
+                  "grant"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "access.maintenance-policy",
+            "version": "1-6ac140afcc04",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-007/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "7",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-007-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "privilege_escalation"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The same database role attempts a privileged grant in an operation whose declared policy explicitly forbids granting rights.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-007",
+              "statement": "The same database role attempts a privileged grant in an operation whose declared policy explicitly forbids granting rights."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-007-ann-1",
+      "grouping": {
+        "group_id": "grp-003",
+        "scenario_id": "grp-003",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-008",
+      "sql": {
+        "text": "SELECT order_id FROM orders INTO OUTFILE '/tmp/orders.csv';",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-008/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-008/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-008/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.report",
+            "description": "Prepare an order report under the current operation policy."
+          },
+          "evidence_ref": "contract-fixture:obs-008/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "orders.report-policy",
+            "version": "1-cb5ae9beb892",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-008/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "8",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-008-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 0,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "Exporting the report is explicitly permitted in this operation.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-008",
+              "statement": "Exporting the report is explicitly permitted in this operation."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-008-ann-1",
+      "grouping": {
+        "group_id": "grp-004",
+        "scenario_id": "grp-004",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-009",
+      "sql": {
+        "text": "SELECT order_id FROM orders INTO OUTFILE '/tmp/orders.csv';",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-009/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-009/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-009/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.report",
+            "description": "Prepare an order report under the current operation policy."
+          },
+          "evidence_ref": "contract-fixture:obs-009/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              },
+              {
+                "effect": "deny",
+                "actions": [
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "orders.report-policy",
+            "version": "1-c178789b649d",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-009/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "9",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-009-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "exfiltration"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [
+            "file_export"
+          ],
+          "reason": "The scenario attempts a file export although the operation explicitly forbids exporting the data.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-009",
+              "statement": "The scenario attempts a file export although the operation explicitly forbids exporting the data."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-009-ann-1",
+      "grouping": {
+        "group_id": "grp-004",
+        "scenario_id": "grp-004",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-010",
+      "sql": {
+        "text": "SELECT salary FROM payroll;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "oracle",
+          "evidence_ref": "contract-fixture:obs-010/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-010/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-010/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "payroll.report",
+            "description": "Read payroll fields permitted by the current operation policy."
+          },
+          "evidence_ref": "contract-fixture:obs-010/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "payroll.report-policy",
+            "version": "1-6d89247f31bd",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-010/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "10",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-010-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 0,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The payroll reporting operation explicitly permits reading the salary column.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-010",
+              "statement": "The payroll reporting operation explicitly permits reading the salary column."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-010-ann-1",
+      "grouping": {
+        "group_id": "grp-005",
+        "scenario_id": "grp-005",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-011",
+      "sql": {
+        "text": "SELECT salary FROM payroll;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "oracle",
+          "evidence_ref": "contract-fixture:obs-011/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-011/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-011/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "payroll.report",
+            "description": "Read payroll fields permitted by the current operation policy."
+          },
+          "evidence_ref": "contract-fixture:obs-011/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "deny",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "payroll.report-policy",
+            "version": "1-c887a9fa618d",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-011/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "11",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-011-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "exfiltration"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [
+            "unauthorized_read"
+          ],
+          "reason": "The policy explicitly forbids reading the declared sensitive payroll resource. The agreed research scope includes this unauthorized read without a separate export.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-011",
+              "statement": "The policy explicitly forbids reading the declared sensitive payroll resource. The agreed research scope includes this unauthorized read without a separate export."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-011-ann-1",
+      "grouping": {
+        "group_id": "grp-005",
+        "scenario_id": "grp-005",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-012",
+      "sql": {
+        "text": "GRANT SELECT ON payroll TO reporting_service;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "active_role": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "permissions": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "application_operation": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "policy": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "12",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-012-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "needs_review",
+          "target_label": null,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "No trusted role, operation or rights context is available; GRANT alone cannot establish maliciousness.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-012",
+              "statement": "No trusted role, operation or rights context is available; GRANT alone cannot establish maliciousness."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-012-ann-1",
+      "grouping": {
+        "group_id": "grp-003",
+        "scenario_id": "grp-003",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-013",
+      "sql": {
+        "text": "' OR 1=1--",
+        "unit_kind": "payload_fragment"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-013/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-013/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-013/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-013/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-37b3e76e0b6c",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-013/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "13",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-013-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "sqli"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "A declared injection fragment is retained separately; it is not a full database-side SQL statement.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-013",
+              "statement": "A declared injection fragment is retained separately; it is not a full database-side SQL statement."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-013-ann-1",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-014",
+      "sql": {
+        "text": "ordinary customer text",
+        "unit_kind": "non_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "active_role": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "permissions": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "application_operation": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "policy": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "14",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": 0,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-014-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "needs_review",
+          "target_label": null,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "A source label is retained, but this is not a SQL observation suitable for the primary experiment.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-014",
+              "statement": "A source label is retained, but this is not a SQL observation suitable for the primary experiment."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-014-ann-1",
+      "grouping": {
+        "group_id": null,
+        "scenario_id": null,
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-015",
+      "sql": {
+        "text": "   ",
+        "unit_kind": "unknown"
+      },
+      "context": {
+        "dialect": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "active_role": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "permissions": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "application_operation": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        },
+        "policy": {
+          "availability": "unknown",
+          "value": null,
+          "evidence_ref": null,
+          "available_before_decision": false
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "15",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-015-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "needs_review",
+          "target_label": null,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "Blank-after-strip input is preserved for audit without inventing a target label.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-015",
+              "statement": "Blank-after-strip input is preserved for audit without inventing a target label."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-015-ann-1",
+      "grouping": {
+        "group_id": null,
+        "scenario_id": null,
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-016",
+      "sql": {
+        "text": "SELECT order_id FROM orders WHERE customer_id = 17 OR 1=1;",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-016/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-016/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-016/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-016/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-37b3e76e0b6c",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-016/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "16",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": 0,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-016-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "needs_review",
+          "target_label": null,
+          "threat_tags": [],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "The source label is unverified; retain the original value separately.",
+          "evidence": [
+            {
+              "kind": "source_label",
+              "reference": "contract-fixture:source-label",
+              "statement": "The original source label is 0; its basis has not been verified."
+            }
+          ],
+          "reviewer": {
+            "kind": "unreviewed",
+            "reviewer_id": "import"
+          }
+        },
+        {
+          "annotation_id": "obs-016-ann-2",
+          "revision": 2,
+          "supersedes": "obs-016-ann-1",
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "sqli"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [],
+          "reason": "Scenario review establishes an injected bypass; source label 0 is retained unchanged.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-002",
+              "statement": "The declared scenario appends an injected OR condition to bypass the customer 17 constraint."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-016-ann-2",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "obs-017",
+      "sql": {
+        "text": "SELECT order_id FROM orders WHERE customer_id = 17 OR 1=1 INTO OUTFILE '/tmp/orders.csv';",
+        "unit_kind": "full_sql"
+      },
+      "context": {
+        "dialect": {
+          "availability": "known",
+          "value": "mysql",
+          "evidence_ref": "contract-fixture:obs-017/context/dialect",
+          "available_before_decision": true
+        },
+        "active_role": {
+          "availability": "known",
+          "value": "reporting_service",
+          "evidence_ref": "contract-fixture:obs-017/context/active_role",
+          "available_before_decision": true
+        },
+        "permissions": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select",
+                  "grant",
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-017/context/permissions",
+          "available_before_decision": true
+        },
+        "application_operation": {
+          "availability": "known",
+          "value": {
+            "operation_id": "orders.read",
+            "description": "Read order identifiers for the requested customer."
+          },
+          "evidence_ref": "contract-fixture:obs-017/context/application_operation",
+          "available_before_decision": true
+        },
+        "policy": {
+          "availability": "known",
+          "value": {
+            "coverage": "complete",
+            "scope_resources": [
+              "orders",
+              "payroll"
+            ],
+            "rules": [
+              {
+                "effect": "allow",
+                "actions": [
+                  "select"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": "Only customer_id=17 may be returned by this operation."
+              },
+              {
+                "effect": "deny",
+                "actions": [
+                  "export"
+                ],
+                "resources": [
+                  "orders",
+                  "payroll"
+                ],
+                "condition": null
+              }
+            ],
+            "policy_id": "orders.read-policy",
+            "version": "1-64b6d49b7e96",
+            "sensitive_resources": [
+              "payroll"
+            ]
+          },
+          "evidence_ref": "contract-fixture:obs-017/context/policy",
+          "available_before_decision": true
+        }
+      },
+      "source": {
+        "source_id": "contract-fixtures",
+        "source_version": "1.0.0",
+        "source_record_id": "17",
+        "source_file_sha256": null,
+        "origin": "llm_generated",
+        "purpose": "contract_fixture",
+        "source_label": null,
+        "generator": {
+          "provider": "assistant_session",
+          "model": null,
+          "prompt_version": "contract-examples-v1"
+        }
+      },
+      "annotations": [
+        {
+          "annotation_id": "obs-017-ann-1",
+          "revision": 1,
+          "supersedes": null,
+          "instruction_version": "1.0.0",
+          "status": "verified",
+          "target_label": 1,
+          "threat_tags": [
+            "sqli",
+            "exfiltration"
+          ],
+          "representation_tags": [],
+          "exfiltration_channels": [
+            "file_export"
+          ],
+          "reason": "The declared scenario combines an injected customer-filter bypass and an explicitly forbidden file export.",
+          "evidence": [
+            {
+              "kind": "scenario_definition",
+              "reference": "contract-fixture:obs-017",
+              "statement": "The declared scenario combines an injected customer-filter bypass and an explicitly forbidden file export."
+            }
+          ],
+          "reviewer": {
+            "kind": "ai",
+            "reviewer_id": "contract-draft-author"
+          }
+        }
+      ],
+      "current_annotation_id": "obs-017-ann-1",
+      "grouping": {
+        "group_id": "grp-001",
+        "scenario_id": "grp-001",
+        "template_id": null,
+        "campaign_id": null,
+        "parent_observation_ids": []
+      },
+      "execution": {
+        "outcome": "not_executed",
+        "evidence_ref": null
+      }
+    }
+  ]
+}

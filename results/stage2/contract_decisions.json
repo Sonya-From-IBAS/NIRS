@@ -1,0 +1,52 @@
+{
+  "contract_version": "1.0.0",
+  "date": "2026-11-24",
+  "status": "accepted_for_implementation",
+  "target": {
+    "0": "benign",
+    "1": "malicious",
+    "null": "unresolved_or_excluded"
+  },
+  "confirmed_user_decision": {
+    "exfiltration_includes_confirmed_unauthorized_sensitive_reads": true,
+    "channels": [
+      "unauthorized_read",
+      "file_export",
+      "external_transfer",
+      "unknown"
+    ],
+    "requires_trusted_evidence_of_violation": true
+  },
+  "attempts_are_positive_even_if_execution_fails": true,
+  "obfuscation_is_not_an_independent_target_class": true,
+  "unknown_context_is_not_a_denial": true,
+  "original_source_labels_are_not_automatically_verified_targets": true,
+  "current_annotation_is_versioned_and_separate_from_source_label": true,
+  "required_context_slots": [
+    "dialect",
+    "active_role",
+    "permissions",
+    "application_operation",
+    "policy"
+  ],
+  "missing_context_value": null,
+  "strict_paired_context_cohort": "Same reviewed research observation IDs, full_sql, all five context slots known before the decision. Partial-context analyses require a separate fixed protocol.",
+  "model_input_excludes": [
+    "ground_truth",
+    "annotation_evidence",
+    "source_labels",
+    "source_ids",
+    "generator_metadata",
+    "campaign_ids",
+    "execution_outcomes",
+    "context_evidence_refs",
+    "policy_identity_and_version"
+  ],
+  "primary_research_selection": [
+    "purpose=research",
+    "unit_kind=full_sql",
+    "current annotation status=verified"
+  ],
+  "legacy_import_initial_status": "needs_review",
+  "implementation_boundary": "No database migration, source relabeling, SQL execution, LLM calls or new model training in stage 2."
+}

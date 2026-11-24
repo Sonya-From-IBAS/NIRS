@@ -1,0 +1,55 @@
+{
+  "contract_version": "1.0.0",
+  "file_hashes": {
+    ".gitattributes": {
+      "sha256_bytes": "e2da65fb1814424b98993822455ae472ec0562265d7db2e5e187bc9920b83b00",
+      "sha256_crlf_to_lf": "e2da65fb1814424b98993822455ae472ec0562265d7db2e5e187bc9920b83b00"
+    },
+    "docs/annotation_guidelines.md": {
+      "sha256_bytes": "ac7b2913d671b2655f0c296bff04ef8c64e85d744969cb7764a9b94cec08b08f",
+      "sha256_crlf_to_lf": "ac7b2913d671b2655f0c296bff04ef8c64e85d744969cb7764a9b94cec08b08f"
+    },
+    "docs/data_contract.md": {
+      "sha256_bytes": "22e3028e99343a2d07429709f758766ca37a0fd27c1d90725d4b51bb95069a2d",
+      "sha256_crlf_to_lf": "22e3028e99343a2d07429709f758766ca37a0fd27c1d90725d4b51bb95069a2d"
+    },
+    "requirements-lock.txt": {
+      "sha256_bytes": "6ec1be6b13ab7eeddfbcb0bbf98a07c2b116a6b523ef9faa560939182d504038",
+      "sha256_crlf_to_lf": "6ec1be6b13ab7eeddfbcb0bbf98a07c2b116a6b523ef9faa560939182d504038"
+    },
+    "requirements.txt": {
+      "sha256_bytes": "caad54d1a648a6564760390c0128c182921bc1af007de58ce4cc3fb7c98be033",
+      "sha256_crlf_to_lf": "caad54d1a648a6564760390c0128c182921bc1af007de58ce4cc3fb7c98be033"
+    },
+    "results/stage2/contract_decisions.json": {
+      "sha256_bytes": "b38672a54cd715b602bc07475a55dec2b4e9390e5be418cad5134d4065ef8c95",
+      "sha256_crlf_to_lf": "b38672a54cd715b602bc07475a55dec2b4e9390e5be418cad5134d4065ef8c95"
+    },
+    "results/stage2/legacy_context_audit.json": {
+      "sha256_bytes": "37077725f5f4d35db0343552e6d9cf2a8ebd66924921f185ff2d4d2466e3b097",
+      "sha256_crlf_to_lf": "37077725f5f4d35db0343552e6d9cf2a8ebd66924921f185ff2d4d2466e3b097"
+    },
+    "results/stage2/validation_summary.json": {
+      "sha256_bytes": "dfb33e3697c37caaa3c880f1bf93c274513b1ba8a4c9dab28f4e4cbf33b3c469",
+      "sha256_crlf_to_lf": "dfb33e3697c37caaa3c880f1bf93c274513b1ba8a4c9dab28f4e4cbf33b3c469"
+    },
+    "schemas/observation-v1.schema.json": {
+      "sha256_bytes": "b2867e701e569ebbf77ce38706fe300c2ee4b2df344c4fe7471e5e4544c7d6af",
+      "sha256_crlf_to_lf": "b2867e701e569ebbf77ce38706fe300c2ee4b2df344c4fe7471e5e4544c7d6af"
+    },
+    "src/data_contract.py": {
+      "sha256_bytes": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+      "sha256_crlf_to_lf": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030"
+    },
+    "tests/fixtures/contract_examples.json": {
+      "sha256_bytes": "473a6613836f63c6981ea3a49ce94320be28ace7aafd75e57e126a08ee709848",
+      "sha256_crlf_to_lf": "473a6613836f63c6981ea3a49ce94320be28ace7aafd75e57e126a08ee709848"
+    },
+    "tests/test_data_contract.py": {
+      "sha256_bytes": "eb8c5f4123294aac561ce14c25eb9e82f2fbd8a4d0ab0e9a8de77ff6f16de545",
+      "sha256_crlf_to_lf": "eb8c5f4123294aac561ce14c25eb9e82f2fbd8a4d0ab0e9a8de77ff6f16de545"
+    }
+  },
+  "newline_rule": "The second hash replaces CRLF bytes with LF only; preserve exact JSON bytes via .gitattributes.",
+  "local_stage_markdown_and_correction_plan_published": false
+}
