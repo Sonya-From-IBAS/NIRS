@@ -1,0 +1,20 @@
+name: nirs-sql
+services:
+  postgres:
+    image: postgres:17.12-bookworm@sha256:1eff563f6c868b9b433566e9f3cf6e5c79fbd3b95bf70ec7277d376cdbfc50d7
+    environment:
+      POSTGRES_DB: ${NIRS_DB_NAME:-nirs}
+      POSTGRES_USER: ${NIRS_DB_USER:-nirs}
+      POSTGRES_PASSWORD: ${NIRS_DB_PASSWORD:?Set NIRS_DB_PASSWORD in .env.db.local}
+    ports:
+      - "127.0.0.1:${NIRS_DB_PORT:-55432}:5432"
+    volumes:
+      - nirs_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+volumes:
+  nirs_pgdata:

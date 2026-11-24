@@ -1,0 +1,56 @@
+{
+  "archives": [
+    {
+      "archive": "stage1-control",
+      "runs": [
+        {
+          "run_id": "stage1-control:Regex",
+          "predictions": 39036,
+          "reused": false
+        },
+        {
+          "run_id": "stage1-control:TF-IDF + LogReg",
+          "predictions": 39036,
+          "reused": false
+        },
+        {
+          "run_id": "stage1-control:TF-IDF + LinearSVC",
+          "predictions": 39036,
+          "reused": false
+        },
+        {
+          "run_id": "stage1-control:TF-IDF + RandomForest",
+          "predictions": 39036,
+          "reused": false
+        }
+      ],
+      "registered_archive_files": 33
+    },
+    {
+      "archive": "stage1-repeat",
+      "runs": [
+        {
+          "run_id": "stage1-repeat:Regex",
+          "predictions": 39036,
+          "reused": false
+        },
+        {
+          "run_id": "stage1-repeat:TF-IDF + LogReg",
+          "predictions": 39036,
+          "reused": false
+        },
+        {
+          "run_id": "stage1-repeat:TF-IDF + LinearSVC",
+          "predictions": 39036,
+          "reused": false
+        },
+        {
+          "run_id": "stage1-repeat:TF-IDF + RandomForest",
+          "predictions": 39036,
+          "reused": false
+        }
+      ],
+      "registered_archive_files": 34
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "postgresql_server": "17.12 (Debian 17.12-1.pgdg12+1)",
+  "psycopg": "3.3.9",
+  "psycopg_binary": "3.3.9",
+  "libpq_version": 180004,
+  "docker_image": "postgres:17.12-bookworm@sha256:1eff563f6c868b9b433566e9f3cf6e5c79fbd3b95bf70ec7277d376cdbfc50d7",
+  "database_host": "127.0.0.1",
+  "database_port": 55432,
+  "persistent_volume": "nirs-sql_nirs_pgdata",
+  "artifact_root": ".local/artifacts",
+  "dataset_version_id": "ds_448fd86eb7d9fabc54129e02cb81ed235e4a86d056d6ab08bfa7bd8052872c3f",
+  "migrations": [
+    {
+      "version": "001_initial",
+      "checksum": "7c5eec4f2aa39faf55510305987d94f5f0e08ce6a9784577def38aa5860bd840"
+    },
+    {
+      "version": "002_integrity",
+      "checksum": "7e3a0455d13a280f4d7ca2008e1f6ef467a9028d1e7c0da0d7b89702322d12ae"
+    }
+  ],
+  "table_rows": {
+    "annotations": 65093,
+    "artifacts": 43,
+    "dataset_members": 32530,
+    "dataset_versions": 1,
+    "experiment_runs": 8,
+    "group_members": 0,
+    "import_jobs": 8,
+    "metrics": 528,
+    "observations": 65093,
+    "occurrences": 65093,
+    "predictions": 312288,
+    "rejected_records": 0,
+    "representation_artifacts": 0,
+    "representations": 0,
+    "run_artifacts": 250,
+    "sample_groups": 0,
+    "schema_migrations": 2,
+    "source_artifacts": 4,
+    "source_versions": 4,
+    "sources": 4,
+    "split_members": 195180,
+    "splits": 2
+  },
+  "stage1_reimport_reused": true,
+  "historical_label_space": "legacy_five_class; original source labels retained separately from new binary target",
+  "new_target_labels_verified": 0,
+  "tests": {
+    "run": 35,
+    "passed": 35,
+    "skipped": 0,
+    "postgresql_integration": 15,
+    "previous_stage_regressions": 20
+  },
+  "artifact_check": {
+    "ready_verified": 43,
+    "not_ready": 0,
+    "failures": []
+  },
+  "restore_check": {
+    "status": "passed",
+    "tables_checked": 22,
+    "ready_artifacts_checked": 43,
+    "legacy_holdout_models_checked": 6,
+    "dump_sha256": "974e0999cdf85223d9a33d267a86391cc4604adf467f5f6675d254c595abf39c",
+    "database_fingerprints_match": true,
+    "scratch_database_dropped_after_check": true
+  },
+  "no_research_sql_executed": true,
+  "new_llm_requests": 0
+}

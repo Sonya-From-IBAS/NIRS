@@ -1,0 +1,75 @@
+{
+  "imports": [
+    {
+      "file": "data/processed/dataset.csv",
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "rows": 32530,
+      "accepted": 32530,
+      "rejected": 0,
+      "reused": false,
+      "repeat_import_reused": true,
+      "input_artifact_sha256": "30ca83aa9c3de1ac079edd22e8dd8975c213406da18f0fa12f87d8d7e134e569"
+    },
+    {
+      "file": "data/processed/generated.csv",
+      "source_version_id": "src_98ab36743b528bacefc16c7427e08bdbd34c5eb578b90df1e9dd5700a60c1af6",
+      "rows": 1594,
+      "accepted": 1594,
+      "rejected": 0,
+      "reused": false,
+      "repeat_import_reused": true,
+      "input_artifact_sha256": "e0483c6d64115d3c5d747a2272c737714b546eb32596a20a115d7b3001b9693e"
+    },
+    {
+      "file": "data/raw/real_payloads.csv",
+      "source_version_id": "src_73c7a8ebcf314db711c52c9263252ee5cdffe0711fd4ea019a60557d9708049c",
+      "rows": 50,
+      "accepted": 50,
+      "rejected": 0,
+      "reused": false,
+      "repeat_import_reused": true,
+      "input_artifact_sha256": "e3012dd150a9c885f019a61428ed0b54ebcf98b86c1fe3eb543810ebda2d1ffa"
+    },
+    {
+      "file": "data/raw/sqli_dataset.csv",
+      "source_version_id": "src_9aa3c5b3607775c07e992735850b57ae236e38819134ef26389a1145a468025f",
+      "rows": 30919,
+      "accepted": 30919,
+      "rejected": 0,
+      "reused": false,
+      "repeat_import_reused": true,
+      "input_artifact_sha256": "60af1d160dcc5c3f61440dc8f0c019e8898243951e283402857c10294c6f5cc5"
+    }
+  ],
+  "dataset_version_id": "ds_448fd86eb7d9fabc54129e02cb81ed235e4a86d056d6ab08bfa7bd8052872c3f",
+  "stored_occurrences": 65093,
+  "dataset_rows": 32530,
+  "source_labels": [
+    {
+      "label_name": "exfiltration",
+      "n": 622
+    },
+    {
+      "label_name": "legit",
+      "n": 19836
+    },
+    {
+      "label_name": "obfuscated",
+      "n": 1910
+    },
+    {
+      "label_name": "privilege",
+      "n": 682
+    },
+    {
+      "label_name": "sqli",
+      "n": 9480
+    }
+  ],
+  "annotation_statuses": [
+    {
+      "status": "needs_review",
+      "n": 32530
+    }
+  ]
+}

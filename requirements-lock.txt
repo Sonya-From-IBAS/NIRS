@@ -1,6 +1,6 @@
 # Installed dependency closure for Windows x64 / CPython 3.12.4.
-# Generated from installed package metadata; optional extras only when requested.
-# Exact versions, not distribution hashes; no downloads were performed.
+# Updated at stage 3: Psycopg is installed in the project venv.
+# Exact versions, not wheel hashes; optional extras only when requested.
 annotated-types==0.7.0
 anyio==4.13.0
 argon2-cffi==25.1.0
@@ -86,6 +86,8 @@ prometheus-client==0.25.0
 prompt-toolkit==3.0.48
 protobuf==7.35.0
 psutil==6.0.0
+psycopg==3.3.9
+psycopg-binary==3.3.9
 pure-eval==0.2.3
 pycparser==3.0
 pydantic==2.13.4

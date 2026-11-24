@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "file": "data/processed/dataset.csv",
+      "rows_checked": 32530,
+      "sql_and_original_fields_equal": true,
+      "initial_targets_unresolved": true
+    },
+    {
+      "file": "data/processed/generated.csv",
+      "rows_checked": 1594,
+      "sql_and_original_fields_equal": true,
+      "initial_targets_unresolved": true
+    },
+    {
+      "file": "data/raw/real_payloads.csv",
+      "rows_checked": 50,
+      "sql_and_original_fields_equal": true,
+      "initial_targets_unresolved": true
+    },
+    {
+      "file": "data/raw/sqli_dataset.csv",
+      "rows_checked": 30919,
+      "sql_and_original_fields_equal": true,
+      "initial_targets_unresolved": true
+    }
+  ]
+}

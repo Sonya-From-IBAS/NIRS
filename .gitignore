@@ -26,6 +26,8 @@ results/runs/
 /stage.md
 /PROJECT_CORRECTION_PLAN.md
 /correction_plan.md
+/.env.db.local
+/.local/
 
 # Jupyter
 .ipynb_checkpoints/

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tables_checked": 22,
+  "ready_artifacts_checked": 43,
+  "legacy_holdout_models_checked": 6,
+  "dump_sha256": "974e0999cdf85223d9a33d267a86391cc4604adf467f5f6675d254c595abf39c",
+  "database_fingerprints_match": true,
+  "scratch_database_dropped_after_check": true
+}

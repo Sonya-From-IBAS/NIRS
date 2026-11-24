@@ -1,0 +1,111 @@
+{
+  "stage": 3,
+  "status": "complete",
+  "base_git_commit": "03586844296500adab4e18dc01050f66f1d01dac",
+  "files": {
+    ".gitignore": {
+      "bytes": 673,
+      "sha256_bytes": "e749943fcb554527c0cb7ef53580caff1523d35cde6ce1736dac942fa5fd13b9",
+      "sha256_crlf_to_lf": "e749943fcb554527c0cb7ef53580caff1523d35cde6ce1736dac942fa5fd13b9"
+    },
+    ".gitattributes": {
+      "bytes": 186,
+      "sha256_bytes": "37c6c32159fd662910158ff222ebc83c7f29117c3f5f3b0662b794691a4c625c",
+      "sha256_crlf_to_lf": "37c6c32159fd662910158ff222ebc83c7f29117c3f5f3b0662b794691a4c625c"
+    },
+    ".env.db.example": {
+      "bytes": 168,
+      "sha256_bytes": "4b0540aafb35e925fcacea9a1f0d343bd1d471d60341c6aff7cc86e13c9bad0f",
+      "sha256_crlf_to_lf": "4b0540aafb35e925fcacea9a1f0d343bd1d471d60341c6aff7cc86e13c9bad0f"
+    },
+    "compose.yaml": {
+      "bytes": 654,
+      "sha256_bytes": "8723017525a4c8d6d5a99c28ba7530434741d3bbcfb46f31b0a07528070855f7",
+      "sha256_crlf_to_lf": "8723017525a4c8d6d5a99c28ba7530434741d3bbcfb46f31b0a07528070855f7"
+    },
+    "requirements.txt": {
+      "bytes": 420,
+      "sha256_bytes": "89427c77d9f4575f76fedaf2a726a3e5a8834c794cfba6ad0147f89d223365d7",
+      "sha256_crlf_to_lf": "89427c77d9f4575f76fedaf2a726a3e5a8834c794cfba6ad0147f89d223365d7"
+    },
+    "requirements-lock.txt": {
+      "bytes": 2648,
+      "sha256_bytes": "2487c1cfdb7ccf30094098f52ab975ed4a996c39c9338e281e0ddd80d4136f11",
+      "sha256_crlf_to_lf": "2487c1cfdb7ccf30094098f52ab975ed4a996c39c9338e281e0ddd80d4136f11"
+    },
+    "docs/storage.md": {
+      "bytes": 14917,
+      "sha256_bytes": "6e8f150cf45738d40dc5d6d65d07f7ff88415376f2705501806205c01d6ee27e",
+      "sha256_crlf_to_lf": "6e8f150cf45738d40dc5d6d65d07f7ff88415376f2705501806205c01d6ee27e"
+    },
+    "migrations/001_initial.sql": {
+      "bytes": 10484,
+      "sha256_bytes": "7c5eec4f2aa39faf55510305987d94f5f0e08ce6a9784577def38aa5860bd840",
+      "sha256_crlf_to_lf": "7c5eec4f2aa39faf55510305987d94f5f0e08ce6a9784577def38aa5860bd840"
+    },
+    "migrations/002_integrity.sql": {
+      "bytes": 2415,
+      "sha256_bytes": "7e3a0455d13a280f4d7ca2008e1f6ef467a9028d1e7c0da0d7b89702322d12ae",
+      "sha256_crlf_to_lf": "7e3a0455d13a280f4d7ca2008e1f6ef467a9028d1e7c0da0d7b89702322d12ae"
+    },
+    "src/init_storage.py": {
+      "bytes": 1054,
+      "sha256_bytes": "095467c0dd99b3f33d53646f7d54d90eed550b90d2707ccc4b65b17883ac61ef",
+      "sha256_crlf_to_lf": "095467c0dd99b3f33d53646f7d54d90eed550b90d2707ccc4b65b17883ac61ef"
+    },
+    "src/storage.py": {
+      "bytes": 23875,
+      "sha256_bytes": "c443f07b8d09e1a5567bbb419b5a5d82bee28d2db5f233e7228dd3610deb2892",
+      "sha256_crlf_to_lf": "c443f07b8d09e1a5567bbb419b5a5d82bee28d2db5f233e7228dd3610deb2892"
+    },
+    "src/storage_backup.py": {
+      "bytes": 7284,
+      "sha256_bytes": "ec820c77317787854a8739f71dbd78c70799d4965b74628359c683345cd2b180",
+      "sha256_crlf_to_lf": "ec820c77317787854a8739f71dbd78c70799d4965b74628359c683345cd2b180"
+    },
+    "src/storage_experiments.py": {
+      "bytes": 6823,
+      "sha256_bytes": "4b7c49da6b41fcc85e0b31cc847b48201061f3d82059acb3cde0074d60362df4",
+      "sha256_crlf_to_lf": "4b7c49da6b41fcc85e0b31cc847b48201061f3d82059acb3cde0074d60362df4"
+    },
+    "src/manage_storage.py": {
+      "bytes": 3038,
+      "sha256_bytes": "11c47c51b051da95b1d12a70cab1367c2e7a66bc14c10e526696041481beb37a",
+      "sha256_crlf_to_lf": "11c47c51b051da95b1d12a70cab1367c2e7a66bc14c10e526696041481beb37a"
+    },
+    "tests/test_storage.py": {
+      "bytes": 11605,
+      "sha256_bytes": "4a37748d17719526484472351bedfb9acaa5c22c889dd7e5ebdcebe02e3692f9",
+      "sha256_crlf_to_lf": "4a37748d17719526484472351bedfb9acaa5c22c889dd7e5ebdcebe02e3692f9"
+    },
+    "results/stage3/experiment_import_report.json": {
+      "bytes": 1298,
+      "sha256_bytes": "cd221b41faf3b7cd68211e8d7e7b52f6e40b139f615d87f3ea508ae27a602eff",
+      "sha256_crlf_to_lf": "cd221b41faf3b7cd68211e8d7e7b52f6e40b139f615d87f3ea508ae27a602eff"
+    },
+    "results/stage3/import_report.json": {
+      "bytes": 2108,
+      "sha256_bytes": "afe86e457849761e00b840c79824087c24beb8c15bed6300e7eed586c4982351",
+      "sha256_crlf_to_lf": "afe86e457849761e00b840c79824087c24beb8c15bed6300e7eed586c4982351"
+    },
+    "results/stage3/restore_report.json": {
+      "bytes": 292,
+      "sha256_bytes": "b5d20c081955bc652ac14a177cfd7971863219f609f99c8521ce26ac9512d3e9",
+      "sha256_crlf_to_lf": "b5d20c081955bc652ac14a177cfd7971863219f609f99c8521ce26ac9512d3e9"
+    },
+    "results/stage3/roundtrip_report.json": {
+      "bytes": 728,
+      "sha256_bytes": "f9852107aea59f8a55741ff6ab46882cf0918526fc4848ea4cac87566be96f1c",
+      "sha256_crlf_to_lf": "f9852107aea59f8a55741ff6ab46882cf0918526fc4848ea4cac87566be96f1c"
+    },
+    "results/stage3/storage_summary.json": {
+      "bytes": 2327,
+      "sha256_bytes": "87b2916c79a63631dc132686083aff7eab0701fe4b9cd0bfcbe30012ded533a6",
+      "sha256_crlf_to_lf": "87b2916c79a63631dc132686083aff7eab0701fe4b9cd0bfcbe30012ded533a6"
+    }
+  },
+  "database_and_artifact_backup_kept_local": true,
+  "local_plans_and_stage_markdown_excluded": true,
+  "database_backup_sha256": "974e0999cdf85223d9a33d267a86391cc4604adf467f5f6675d254c595abf39c",
+  "live_database_matches_backup_fingerprint": true
+}

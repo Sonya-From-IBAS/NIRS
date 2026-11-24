@@ -1,5 +1,6 @@
 # Preserve checksums of published experiment artifacts across checkouts.
 results/stage1/** -text
 results/stage2/** -text
+results/stage3/** -text
 schemas/** -text
 tests/fixtures/** -text
