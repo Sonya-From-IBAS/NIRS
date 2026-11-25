@@ -1,0 +1,38 @@
+{
+  "stage": 9,
+  "date": "2026-11-25",
+  "base_commit": "bdc9faf",
+  "status": "technical_pilot_complete_next_budget_pending",
+  "tests": {
+    "run": 119,
+    "passed": 119,
+    "skipped": 0,
+    "status": "OK"
+  },
+  "test_log_sha256": "afc988eee24431050d3377b62e33f6a20fe24582d8903fc097cb48502483982f",
+  "actual_API_attempts": 22,
+  "agreed_ceiling": 46,
+  "new_API_attempts_in_replay": 0,
+  "checked_prediction_rows": 180,
+  "files_sha256": {
+    ".gitattributes": "04da656aa1fb94cf1cbe1299f0767ef40b3a00ad0597c202180bc766228e7ce6",
+    "src/detector_llm.py": "8b041c953166d3c8c17dfb6fc9e86641d60c75ee3bdb5423f208c77af7825fe6",
+    "src/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+    "src/llm_pilot.py": "0d2615f325851510d07de92ff7c55826d0af2316bac7a5fc232419e6bc5a6549",
+    "src/audit_llm_pilot.py": "ee75e60c6c3aa81462dc71e4a49f7038f58ce464e3bc599bc2f8613a5247ec7c",
+    "migrations/006_llm_request_cache.sql": "1a10212f85d2bd5199a24b2f9327019d594e8ba2df4f94ac6dc9798c32bd6ca6",
+    "tests/test_llm.py": "df4242273aa1480b63ad84345c1950075b980c5d68193bf87aaebbf84a39a655",
+    "tests/test_storage.py": "25579bbf9d449f1d909de3ba4949c0c1f04b4c86348e9e960a24cca51ece2c10",
+    "docs/llm_pilot.md": "684292d8e5e5c3af672f634dd1756cbdc5849becdfe3f483f2d3efb7de60b189",
+    "results/stage9/next_step_proposal.json": "54e659149b7447bbd7d6e4bd89f3290e9207efb9d0404f443adc089e38cf4b23",
+    "results/stage9/pilot_audit.json": "d70313028b0f43754d1bc7b5568c17825b0a88fde4d817785aebbb79a3ae317d",
+    "results/stage9/pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+    "results/stage9/pilot_plan.json": "3834c44697567c0fcfe8ab55edf954f8e354ff1aba51e5a5b4f738b3a84be58b",
+    "results/stage9/pilot_report.json": "1fd201937b486a1e3cc82f4fca98ce93b02bbe49cd924657c1e4399bee1ca12c",
+    "results/stage9/prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe",
+    "results/stage9/request_outcomes.json": "6c061c95229db66a42de84f08243ef21f8ffcdba119f872508a6406477aab567",
+    "results/stage9/request_plan.json": "4090d6c71528c558ea0f3f6d6489afa882f276e02cc120416eb4bc1d2253f776",
+    "results/stage9/resume_check.json": "860c0be7f62ba77fce7d8f2b0664a8ac654c838ef82cf836eb8301d179c47828"
+  },
+  "hash_convention": "LF-normalized source; exact result and migration bytes"
+}

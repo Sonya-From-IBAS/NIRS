@@ -1,0 +1,41 @@
+{
+  "stage": 9,
+  "pilot_id": "pilot_97e8959f670f8a2d6e41db9f933470f1b43b62d417eb2d97d2ed4c31e182abce",
+  "checked_runs": [
+    "run_b6a70c321a02de7a1a93b407b3e39d7d0647da8c2f3628cecd619f27d16b3201",
+    "run_6660839b0c4fa028ba5c6cbf3c78e7752919ea68ae06c111fcd4f23c0e9d5357",
+    "run_a5ec0eed2e73007f1226f0a07947e434d7085177b4a2c08492cd42a7cd9c57ba",
+    "run_e99cad083920b92be3062636a0ec9587fd8fbbc2e55b6b4d861832c0d14f9af1",
+    "run_369e69470b21393ff6c63c952293070355bde2863d28ea63aca0a84b1369d531",
+    "run_9802ed8f7ed9c09023c9a8cab69b5aa6b55a2b58ec75c7fc96864953ba7b64dc",
+    "run_2be3e9bec4f2ea5d72521e8bfc40be28d23a79e473f3454dd771a1ed6c900c0f",
+    "run_421b4f684f4dfb947e653805099c8516685d9e2162d78b32afca9692201382ae",
+    "run_e3ec519aa8d07cbbb4e32bc1e2f38e865747019e5e27b3b8487184e03a20444d",
+    "run_1080c5ed432317e41f870de3f1c2647baf60e970b246af16dca00d1a63e0a2f1",
+    "run_7f061a108ad44d5b2c972794a5ca6152087722fedaabff3e7b894309656876ef",
+    "run_38d9fbdd639edd83bd031953a9d7d02a98da1a3bdd494522754d9691138d06b6"
+  ],
+  "planned_classifications": 180,
+  "api_attempts": 22,
+  "ceiling": 46,
+  "artifact_integrity": {
+    "ready_verified": 1631,
+    "not_ready": 0,
+    "failures": []
+  },
+  "decision_status_counts": {
+    "api_error": 13,
+    "not_run": 107,
+    "ok": 60
+  },
+  "checks": [
+    "strict_final_JSON_reparse",
+    "ordered_batch_cache_keys",
+    "durable_API_budget",
+    "pinned_pilot_references",
+    "database_prediction_alignment",
+    "metrics_recomputed_from_rows",
+    "archived_source",
+    "artifact_checksums"
+  ]
+}

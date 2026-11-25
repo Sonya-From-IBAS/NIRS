@@ -327,6 +327,59 @@ class StorageIntegrationTests(unittest.TestCase):
                 rows = connection.execute('SELECT observation_id FROM nirs.predictions WHERE run_id=%s',(model['run_id'],)).fetchall()
             self.assertEqual({row['observation_id'] for row in rows},set(ids[:8]))
 
+    def test_LLM_cache_budget_and_finalized_response_are_enforced_in_PostgreSQL(self):
+        from detector_llm import MODELS,build_specification,prompt_observation
+        from llm_store import prepare_pilot,reserve_request,finish_request
+        prepare_pilot(self.store,'unit-llm-budget',{'test':True},1)
+        spec=build_specification(MODELS[0],'zero_shot',[prompt_observation('q001','SELECT 1')])
+        with patch('llm_store.LOCAL',self.folder/'llm-budget'):
+            key,result,new=reserve_request(self.store,'unit-llm-budget',spec)
+            self.assertTrue(new);self.assertIsNone(result)
+            finish_request(self.store,key,{'status':'ok','labels':[0],'usage':None})
+            repeated,cached,new=reserve_request(self.store,'unit-llm-budget',spec)
+            self.assertEqual(repeated,key);self.assertFalse(new);self.assertEqual(cached['labels'],[0])
+            changed=build_specification(MODELS[0],'zero_shot',[prompt_observation('q001','SELECT 2')])
+            with self.assertRaises(psycopg.errors.RaiseException):
+                reserve_request(self.store,'unit-llm-budget',changed)
+        with self.assertRaises(psycopg.errors.RaiseException),self.store.write() as connection:
+            connection.execute('DELETE FROM nirs.llm_requests WHERE request_key=%s',(key,))
+
+    def test_LLM_interrupted_request_is_never_automatically_reissued(self):
+        from detector_llm import MODELS,build_specification,prompt_observation
+        from llm_store import prepare_pilot,reserve_request
+        prepare_pilot(self.store,'unit-llm-interrupted',{},1)
+        spec=build_specification(MODELS[1],'zero_shot',[prompt_observation('q001','SELECT 3')])
+        with patch('llm_store.LOCAL',self.folder/'llm-interrupted'):
+            reserve_request(self.store,'unit-llm-interrupted',spec)
+            key,result,new=reserve_request(self.store,'unit-llm-interrupted',spec)
+            self.assertFalse(new);self.assertEqual(result['status'],'api_error');self.assertIsNone(result['labels'])
+            _,_,new=reserve_request(self.store,'unit-llm-interrupted',spec)
+            self.assertFalse(new)
+        with self.store.connect() as connection:
+            row=connection.execute('SELECT state,api_attempts FROM nirs.llm_requests WHERE request_key=%s',(key,)).fetchone()
+        self.assertEqual(row,{'state':'interrupted','api_attempts':1})
+
+    def test_LLM_failed_model_stops_while_other_model_continues_and_resume_uses_cache(self):
+        from detector_llm import MODELS,build_specification,prompt_observation,request_key
+        from llm_pilot import request_results
+        from llm_store import prepare_pilot
+        from unittest.mock import Mock
+        prepare_pilot(self.store,'unit-llm-stops',{},2)
+        requests=[]
+        for model,sql in ((MODELS[0],'SELECT 5'),(MODELS[0],'SELECT 6'),(MODELS[2],'SELECT 7')):
+            spec=build_specification(model,'zero_shot',[prompt_observation('q001',sql)])
+            requests.append({'model_name':model['name'],'mode':'zero_shot','batch':0,'specification':spec,'request_key':request_key(spec)})
+        def answer(client,spec):
+            return {'status':'api_error','labels':None,'http_status':404,'stop_model':True,'stop_provider':False} if spec['provider']=='groq' else {'status':'ok','labels':[0],'stop_model':False,'stop_provider':False}
+        caller=Mock(side_effect=answer)
+        with patch('llm_store.LOCAL',self.folder/'llm-stops'):
+            result=request_results(self.store,{'pilot_id':'unit-llm-stops'},requests,lambda model:object(),caller,False)
+            self.assertEqual([item['status'] for item in result],['api_error','not_run','ok'])
+            self.assertEqual(caller.call_count,2)
+            replay=request_results(self.store,{'pilot_id':'unit-llm-stops'},requests,lambda model:object(),caller,False)
+            self.assertEqual(caller.call_count,2)
+            self.assertEqual([item['status'] for item in replay],['api_error','not_run','ok'])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,22 @@
+{
+  "status": "proposal_not_authorized_not_executed",
+  "reason": "Two original models were unavailable in the agreed pilot",
+  "existing_completed_pilot_api_attempts": 22,
+  "recommended_option": {
+    "action": "pilot_two_explicit_replacements_before_setting_main_budget",
+    "replacements": [
+      {"replaces": "llama-3.3-70b-versatile", "provider": "synthetic", "model": "hf:Qwen/Qwen3.8-27B"},
+      {"replaces": "hf:zai-org/GLM-5.1", "provider": "synthetic", "model": "hf:zai-org/GLM-5.3", "catalog_status": "beta"}
+    ],
+    "observations": 30,
+    "modes": ["zero_shot", "few_shot"],
+    "batch_size": 3,
+    "classifications": 120,
+    "additional_api_ceiling": 40,
+    "combined_stage9_api_ceiling": 62,
+    "automatic_retries": 0,
+    "main_test_calls": 0
+  },
+  "alternative": "Keep only the available gpt-oss-120b and separately agree the main sample and API budget",
+  "catalog_source": "https://dev.synthetic.new/docs/api/models"
+}
