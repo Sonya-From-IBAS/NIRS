@@ -15,6 +15,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from sklearn.base import clone
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split, StratifiedKFold, cross_validate
@@ -108,7 +109,7 @@ ML_MODELS = {
 class MLDetector:
     def __init__(self, model_name: str = "TF-IDF + LogReg"):
         self.model_name = model_name
-        self.pipeline = ML_MODELS[model_name]
+        self.pipeline = clone(ML_MODELS[model_name])
 
     def fit(self, X_train: list[str], y_train: np.ndarray) -> None:
         print(f"[*] Training {self.model_name}...")
@@ -149,7 +150,7 @@ def cross_val_ml(X: list[str], y: np.ndarray, n_splits: int = 5) -> list[dict]:
     for name, pipeline in ML_MODELS.items():
         print(f"\n[*] Cross-val {name} ({n_splits} folds)...")
         scores = cross_validate(
-            pipeline, X, y,
+            clone(pipeline), X, y,
             cv=cv,
             scoring={"f1_macro": "f1_macro", "f1_weighted": "f1_weighted"},
             n_jobs=1,  # Pipeline с TF-IDF нельзя параллелить с n_jobs=-1 внутри cv
@@ -171,7 +172,7 @@ def cross_val_ml(X: list[str], y: np.ndarray, n_splits: int = 5) -> list[dict]:
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
-def main(dataset_file: str = "dataset.csv", results_suffix: str = "") -> list[dict]:
+def historical_main(dataset_file: str = "dataset.csv", results_suffix: str = "") -> list[dict]:
     df = pd.read_csv(DATA_PROCESSED / dataset_file, encoding="utf-8")
     df = df.dropna(subset=["query", "label"])
     df["query"] = df["query"].astype(str)
@@ -219,4 +220,5 @@ def main(dataset_file: str = "dataset.csv", results_suffix: str = "") -> list[di
 
 
 if __name__ == "__main__":
+    from experiment_runner import main
     main()

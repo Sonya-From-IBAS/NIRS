@@ -1,0 +1,17 @@
+{
+  "version": "stage8-models-v1",
+  "scopes": [
+    "controlled-inner-0",
+    "legacy-inner-0",
+    "transfer-web_app-to-wordpress-inner"
+  ],
+  "outer_test_used": false,
+  "classifier_fits": 351,
+  "selected_models": 12,
+  "rule_runs": 7,
+  "reports": [
+    "controlled-inner-0.json",
+    "legacy-inner-0.json",
+    "transfer-web_app-to-wordpress-inner.json"
+  ]
+}

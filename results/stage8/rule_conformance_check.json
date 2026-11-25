@@ -1,0 +1,13 @@
+{
+  "purpose": "fixed_rule_implementation_conformance_on_known_scenarios",
+  "scope": "entire controlled corpus, including observations assigned to outer test",
+  "observations": 1200,
+  "supported_policy_decisions": 554,
+  "matching_pinned_annotations_among_supported": 554,
+  "unsupported": 646,
+  "rule_source_sha256_lf": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+  "rule_changes_after_this_check": false,
+  "used_for_ML_or_threshold_selection": false,
+  "blind_quality_estimate": false,
+  "interpretation": "Aggregate agreement of this fixed narrow policy implementation was inspected on the known full corpus during development. Later scores for this rule baseline on that corpus must not be described as a blind test. ML selection and refit code reads only the pinned outer training scope."
+}

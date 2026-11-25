@@ -1,0 +1,37 @@
+{
+  "stage": 8,
+  "date": "2026-11-25",
+  "base_commit": "74347a3",
+  "test_command": "NIRS_RUN_DB_TESTS=1 .venv/Scripts/python.exe -B -m unittest discover -s tests -v",
+  "tests": {
+    "run": 107,
+    "passed": 107,
+    "skipped": 0,
+    "status": "OK"
+  },
+  "test_log_sha256": "04d1706f1648f2977ecb32c7e46e60525793d6f019f8bbccccd039944faab163",
+  "checked_research_runs": 19,
+  "reconstructed_classifier_trials": 351,
+  "checked_predictions": 574160,
+  "source_hash_convention": "LF-normalized source bytes; exact result and migration bytes",
+  "files_sha256": {
+    ".gitattributes": "202454a13568bc265ac3c122ba9ccbc225ecd5f4338f4b4ed89c97c4981d63ba",
+    "src/baseline.py": "d3acc474280d8d3e94e540db3a9709f0e4dd1d6bbcf8290362f27c268fa7699b",
+    "src/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+    "src/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+    "src/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+    "src/experiment_runner.py": "2bbc7c3dd89a89c791eeb8e20d72ee4ad9237b3246dde1cf6d220d3194c253ff",
+    "src/audit_model_runs.py": "960c8e30c0f22c8c132a82f5a956bea9aa9f1e1fc0d3f0d8d98ca8cde7cfea4d",
+    "migrations/005_validation_predictions.sql": "0262d534b5c9521e0c398723cf0e85f238e4d5cb47586f28b228490e3abb7adb",
+    "tests/test_model_selection.py": "9887bd1fa7a9cae4d6da1722bc70bc752222b2d2eab1b70b9e227f39b9543c3f",
+    "tests/test_storage.py": "8cdcc7ea199bb5144e58f365322f344b0682a5437f8cb1621792a0091307d74a",
+    "docs/ml_models.md": "ad7b593432326cebb83e354998fc5914c263a1710d7b5c08f643345fa62fc88b",
+    "results/stage8/controlled-inner-0.json": "1add2c194febb74f2870b891b1238d3977e96029c61dd83376119415e405aeb5",
+    "results/stage8/legacy-inner-0.json": "353e673d9e4b774e243e5c8f3848eb9c635921047a3ae479f1e62f7dd1c860c4",
+    "results/stage8/rule_conformance_check.json": "cd3bfd9d801cc761fa9a8e88e240498ce8d913d516c519acc0e21a004b85a641",
+    "results/stage8/run_audit.json": "55f0b96fe0763840d07d4c3fd086cfe36d440120560a2c35023d5d7c11566444",
+    "results/stage8/search_plan.json": "c85a87d8d98a093df0022faf5efe0bba32788f1baf011747b53bffe95f2d7112",
+    "results/stage8/summary.json": "ebc72d24999ac9abb143e704cbf625c0c701e576f1306779f926ebfc08c476b8",
+    "results/stage8/transfer-web_app-to-wordpress-inner.json": "b1d16d67d52547f147c60f3a16e4d6ba2a7e632fa225b838dc329c4953930d1e"
+  }
+}

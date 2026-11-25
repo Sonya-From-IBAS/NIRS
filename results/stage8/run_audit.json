@@ -1,0 +1,42 @@
+{
+  "stage": 8,
+  "checked_runs": [
+    "run_c35d857607c868c70d65276c07fbc3ddebff0a362dbcf3b914d93ccfc6478300",
+    "run_f5a9decac36913fdaf12633dd46d7967a74e298de6dc0cae2fa92b8d9e81acd5",
+    "run_79cbca8dfe81b89e23b875729d118a4040df7c2330bdb52e647baa1fd94ebcad",
+    "run_503933dda361e8563e3b5e9f67728730bdbdb48c7d07a18f09c027a5477341d7",
+    "run_1cf08c9c3acf34351affa0986a9c925eeac54152df513f98c361e6c1ee00ad3e",
+    "run_2ef6f46af065fc2a4769046394c2da90aa2d713220028c64c393ae5b17f5eb62",
+    "run_686cc4f5fcdf719f91a08e0db6689b73a57a32b89fff4f0418392a491b4cfcc9",
+    "run_462106c70e08a9fb1f4030d6667cfe568d1b4aedd654e14febf0d6f1c76ae722",
+    "run_fbcf697cdeae49dfcf107f31ac90562eb282e3a0544b994d08610db0d79c7c9c",
+    "run_9bcc2df5fd59af173c15d8c2ecf60e9e8910bf52bef073c32a0a50ca746019da",
+    "run_414cb2f03a5021ad01715ef51d29c18710fba8e4059796b4a7f82b952e51ba76",
+    "run_42a116bdc3c80bf18c791d1a724309fd68d6dc2b602c98147a84747a8235d3ff",
+    "run_cfaa065ca0a6f602ca783199885f138443562fe8ea0951c86e09b58b290c0718",
+    "run_5e07c04184dc420c71c73eda982c8f9919c3e2a3b93a81855a3952b27360ec36",
+    "run_70350b0e80f9d25950865fdf77302cbcb25fd44ec84e0c42e8bd2b1e0ac28967",
+    "run_e1fb13bec06a136258a9b5514078f33082c76cfab659c080aad4896d4fb27d34",
+    "run_499589d1b6dee75d7141ad09a2606d34b8bc2093a7c44b9f9c834a077a99e4aa",
+    "run_b459a964ac8eb7cab24b9218470338368ace34797e451780f8d3f6b6fdf0dcff",
+    "run_c8af2c0ec2cf05af28d4e04ba2aef912aa4cc70c545a00c68424b1db98c839bb"
+  ],
+  "reconstructed_classifier_trials": 351,
+  "checked_predictions": 574160,
+  "artifact_integrity": {
+    "ready_verified": 1577,
+    "not_ready": 0,
+    "failures": []
+  },
+  "checks": [
+    "pinned_validation_coordinates",
+    "pooled_metrics_from_DB_rows",
+    "candidate_metrics_from_archived_fold_scores",
+    "selection_ranking",
+    "binary_threshold_predictions",
+    "refit_training_scope",
+    "archived_code_hashes",
+    "file_checksums"
+  ],
+  "outer_test_predictions_in_these_runs": 0
+}

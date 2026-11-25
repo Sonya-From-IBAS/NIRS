@@ -269,6 +269,64 @@ class StorageIntegrationTests(unittest.TestCase):
         self.assertEqual(matrix['shape'][0], 2)
         self.assertEqual(matrix['encoder_artifact'], first['artifacts']['encoder.joblib'])
 
+    def test_inner_validation_storage_is_pinned_and_cannot_masquerade_as_test(self):
+        from experiment_store import persist_run
+        ids = [row['observation_id'] for row in self.store.dataset_records(self.dataset)]
+        saved = self.store.save_split(self.dataset, {'unit_test': 'stage8-validation'},
+            {0: {oid: 'validation' if oid == 'obs-001' else 'train' for oid in ids}})
+        entry = {'split_id': saved['split_id'], 'dataset_version_id': self.dataset}
+        config = {'role': 'inner_validation_rule_development', 'split_id': saved['split_id']}
+        rows = [{'fold': 0, 'observation_id': 'obs-001', 'truth': 0, 'prediction': 0, 'status': 'ok', 'metadata': {}}]
+        run_id, _ = persist_run(self.store, entry, 'stage8-storage-test', 'binary', config, rows, {}, {})
+        again, _ = persist_run(self.store, entry, 'stage8-storage-test', 'binary', config, rows, {}, {})
+        self.assertEqual(run_id, again)
+        with self.assertRaises(ValueError):
+            persist_run(self.store, entry, 'stage8-storage-test', 'binary', config, [dict(rows[0], truth=1)], {}, {})
+        with self.assertRaises(psycopg.errors.RaiseException), self.store.write() as connection:
+            connection.execute("INSERT INTO nirs.predictions VALUES (%s,%s,%s,'obs-001','holdout',0,0,0,'ok','{}')",
+                               (run_id, self.dataset, saved['split_id']))
+        with self.assertRaises(psycopg.errors.RaiseException), self.store.write() as connection:
+            connection.execute("INSERT INTO nirs.experiment_runs VALUES ('unbound-validation',%s,'test','binary','prepared','{}')", (self.dataset,))
+            connection.execute("INSERT INTO nirs.predictions VALUES ('unbound-validation',%s,%s,'obs-001','inner_validation',0,0,0,'ok','{}')",
+                               (self.dataset,saved['split_id']))
+
+    def test_stage8_selection_refits_reload_and_resume_without_outer_test(self):
+        import experiment_runner as runner
+        from ml_models import classifier_candidates
+        ids = [row['observation_id'] for row in self.store.dataset_records(self.dataset)]
+        parent = self.store.save_split(self.dataset, {'unit_test': 'stage8-parent'},
+            {0: {oid: 'train' if index < 8 else 'test' for index,oid in enumerate(ids)}})
+        parent_scope = {'split_id':parent['split_id'], 'fold':0, 'part':'train'}
+        inner = self.store.save_split(self.dataset, {'parent_scope':parent_scope},
+            {fold: {oid:'validation' if (index//4)==fold else 'train' for index,oid in enumerate(ids[:8])} for fold in (0,1)})
+        entry = {'split_id':inner['split_id'], 'dataset_version_id':self.dataset,
+                 'cohort':'controlled','parent_scope':parent_scope,'folds':{'0':{},'1':{}}}
+        root = self.folder/'stage8-e2e'
+        (root/'results/stage6').mkdir(parents=True)
+        (root/'results/stage6/split_registry.json').write_text(json.dumps({'protocols':{'unit-inner':entry}}), encoding='utf-8')
+        features = [{'name':'masked','input_mode':'sql_only','relations':False,
+                     'parameters':{'text_mode':'masked','structure':True}}]
+        def small_grid(method):
+            values = classifier_candidates(method)[0]
+            if method == 'RandomForest':
+                values = dict(values,n_estimators=5)
+            return [values]
+        with patch('experiment_runner.ROOT',root), patch('experiment_runner.OUTPUT',root/'results/stage8'), \
+             patch('experiment_runner.LOCAL',root/'local'), patch('experiment_store.LOCAL',root/'local'), \
+             patch('experiment_runner.code_signature',return_value={}), \
+             patch('experiment_runner.feature_candidates',return_value=features), \
+             patch('experiment_runner.classifier_candidates',side_effect=small_grid):
+            first = runner.run_scope(self.store,'unit-inner',{}, {})
+            with patch('experiment_runner.new_classifier', side_effect=AssertionError('Resume must not fit again')):
+                second = runner.run_scope(self.store,'unit-inner',{}, {})
+        self.assertEqual([x['run_id'] for x in first['selected_models']], [x['run_id'] for x in second['selected_models']])
+        self.assertEqual(len(first['selected_models']),3)
+        self.assertFalse(first['outer_test_used'])
+        for model in first['selected_models']:
+            with self.store.connect() as connection:
+                rows = connection.execute('SELECT observation_id FROM nirs.predictions WHERE run_id=%s',(model['run_id'],)).fetchall()
+            self.assertEqual({row['observation_id'] for row in rows},set(ids[:8]))
+
 
 if __name__ == "__main__":
     unittest.main()

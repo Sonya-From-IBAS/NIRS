@@ -1,0 +1,246 @@
+{
+  "version": "stage8-models-v1",
+  "scopes": [
+    "controlled-inner-0",
+    "legacy-inner-0",
+    "transfer-web_app-to-wordpress-inner"
+  ],
+  "phase": "inner_validation_and_train_refits",
+  "outer_test_used": false,
+  "code_sha256_lf": {
+    "baseline.py": "d3acc474280d8d3e94e540db3a9709f0e4dd1d6bbcf8290362f27c268fa7699b",
+    "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+    "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+    "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+    "experiment_runner.py": "2bbc7c3dd89a89c791eeb8e20d72ee4ad9237b3246dde1cf6d220d3194c253ff",
+    "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+    "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+    "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+    "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+    "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e"
+  },
+  "selection": "pooled inner out-of-fold F1; lower FPR; higher recall; fixed complexity order",
+  "threshold": "exact sweep of pooled inner validation scores; equal scores move together",
+  "features": {
+    "controlled": [
+      {
+        "name": "raw_10k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "raw",
+          "structure": false,
+          "max_features": 10000
+        }
+      },
+      {
+        "name": "masked",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": false
+        }
+      },
+      {
+        "name": "masked_structure_1k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": true,
+          "select_k": 1000
+        }
+      },
+      {
+        "name": "text_context",
+        "input_mode": "sql_context",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": false,
+          "context": true
+        }
+      },
+      {
+        "name": "full_relations",
+        "input_mode": "sql_context",
+        "relations": true,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": true,
+          "context": true
+        }
+      },
+      {
+        "name": "structure_context_relations",
+        "input_mode": "sql_context",
+        "relations": true,
+        "parameters": {
+          "text_mode": null,
+          "structure": true,
+          "context": true
+        }
+      }
+    ],
+    "legacy": [
+      {
+        "name": "raw_10k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "raw",
+          "structure": false,
+          "max_features": 10000
+        }
+      },
+      {
+        "name": "raw_50k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "raw",
+          "structure": false
+        }
+      },
+      {
+        "name": "masked",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": false
+        }
+      },
+      {
+        "name": "masked_structure_1k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": true,
+          "select_k": 1000
+        }
+      },
+      {
+        "name": "historical_text",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "legacy",
+          "structure": false
+        }
+      }
+    ],
+    "sqlstateguard": [
+      {
+        "name": "raw_10k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "raw",
+          "structure": false,
+          "max_features": 10000
+        }
+      },
+      {
+        "name": "raw_50k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "raw",
+          "structure": false
+        }
+      },
+      {
+        "name": "masked",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": false
+        }
+      },
+      {
+        "name": "masked_structure_1k",
+        "input_mode": "sql_only",
+        "relations": false,
+        "parameters": {
+          "text_mode": "masked",
+          "structure": true,
+          "select_k": 1000
+        }
+      }
+    ]
+  },
+  "classifiers": {
+    "LogisticRegression": [
+      {
+        "C": 0.05,
+        "class_weight": "balanced"
+      },
+      {
+        "C": 1.0,
+        "class_weight": "balanced"
+      },
+      {
+        "C": 1.0,
+        "class_weight": null
+      }
+    ],
+    "LinearSVC": [
+      {
+        "C": 0.05,
+        "class_weight": "balanced"
+      },
+      {
+        "C": 1.0,
+        "class_weight": "balanced"
+      },
+      {
+        "C": 1.0,
+        "class_weight": null
+      }
+    ],
+    "RandomForest": [
+      {
+        "n_estimators": 100,
+        "max_depth": 12,
+        "min_samples_leaf": 3,
+        "class_weight": "balanced"
+      },
+      {
+        "n_estimators": 100,
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced"
+      },
+      {
+        "n_estimators": 100,
+        "max_depth": null,
+        "min_samples_leaf": 3,
+        "class_weight": null
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.12.4",
+    "packages": {
+      "numpy": "2.1.2",
+      "scipy": "1.14.1",
+      "scikit-learn": "1.5.2",
+      "joblib": "1.4.2",
+      "threadpoolctl": "3.5.0",
+      "psycopg": "3.3.9"
+    },
+    "threads": 1,
+    "random_seed": 20261125
+  },
+  "migration_hashes": {
+    "001_initial.sql": "7c5eec4f2aa39faf55510305987d94f5f0e08ce6a9784577def38aa5860bd840",
+    "002_integrity.sql": "7e3a0455d13a280f4d7ca2008e1f6ef467a9028d1e7c0da0d7b89702322d12ae",
+    "003_data_audits.sql": "9dff2e258d1ba1f61cd4457eca2b66e8b08d5248088f878b891d6497bd626390",
+    "004_frozen_splits.sql": "e18b0d04fef9214652216ca1a366af65e3a0a577f1b44fbffcf6133df9b49b9a",
+    "005_validation_predictions.sql": "0262d534b5c9521e0c398723cf0e85f238e4d5cb47586f28b228490e3abb7adb"
+  }
+}

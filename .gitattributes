@@ -6,6 +6,8 @@ results/stage4/** -text
 results/stage5/** -text
 results/stage6/** -text
 results/stage7/** -text
+results/stage8/** -text
 data/scenarios/** -text
 schemas/** -text
+migrations/** -text
 tests/fixtures/** -text
