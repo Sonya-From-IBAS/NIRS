@@ -45,3 +45,14 @@ def save_results(results: list[dict], path) -> None:
     df = pd.DataFrame(results)
     df.to_csv(path, index=False, encoding="utf-8")
     print(f"\n[+] Results saved -> {path}")
+
+
+if __name__ == '__main__':
+    import argparse
+    from pathlib import Path
+    import preview_analysis
+    parser=argparse.ArgumentParser(description='Recompute current metrics from registered PostgreSQL prediction runs; no API calls.')
+    parser.add_argument('--manifest',type=Path,default=Path(__file__).resolve().parents[1]/'results/preview/run_manifest.json')
+    args=parser.parse_args()
+    preview_analysis.OUTPUT=args.manifest.resolve().parent
+    preview_analysis.main()

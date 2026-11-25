@@ -1,0 +1,8 @@
+{
+  "scope": "legacy-inner-1",
+  "completed_runs": 4,
+  "recovered_classifier_fits": 135,
+  "fits_repeated": 0,
+  "original_training_plan_artifact": "ccb60dd9151f1bad0c1b76538bbbca4018ccb8f6fcd82bc7527391689e1288ef",
+  "reason": "driver_checksum_dictionary_contained_extra_source_key"
+}

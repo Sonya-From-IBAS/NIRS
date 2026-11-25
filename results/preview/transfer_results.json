@@ -1,0 +1,1368 @@
+[
+  {
+    "run_id": "run_1e0e3d0d26e3c19c4e4d50b5e292011d6d964c97c3360730725105a2cd13d079",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6818181818181818,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6818181818181818,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.9333333333333333,
+        "attack_precision": 0.5172413793103449,
+        "confusion_matrix": [
+          [
+            10,
+            140
+          ],
+          [
+            0,
+            150
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 150,
+          "fp": 140,
+          "fn": 0,
+          "tn": 10
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 10,
+            "precision": 1.0,
+            "recall": 0.06666666666666667,
+            "f1": 0.125
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 290,
+            "precision": 0.5172413793103449,
+            "recall": 1.0,
+            "f1": 0.6818181818181818
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "6b21e7572178ba9a2756375f5dd82d259468ec9cd9f8336660fbe38f9b1b02ca",
+      "fit_metadata.json": "4d84fc327f7f93a7b6db9ad955288d60fc887bfa1eda6dea060005538a665766"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-web_app-to-wordpress",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "6b21e7572178ba9a2756375f5dd82d259468ec9cd9f8336660fbe38f9b1b02ca",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "a5ec1d5ab1f0f69a0c5f5219655f7ad01e8db7f223b424921a75b765cc7affe4",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-web_app-to-wordpress",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.19778390000283252,
+    "observations": 300,
+    "model_bytes": 29555,
+    "transform": null
+  },
+  {
+    "run_id": "run_1662cf61f5a052dd8b0215896df30342dc42a3550498b57b18a0e091fc9ed934",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6802721088435374,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6802721088435374,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.94,
+        "attack_precision": 0.5154639175257731,
+        "confusion_matrix": [
+          [
+            9,
+            141
+          ],
+          [
+            0,
+            150
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 150,
+          "fp": 141,
+          "fn": 0,
+          "tn": 9
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 9,
+            "precision": 1.0,
+            "recall": 0.06,
+            "f1": 0.11320754716981132
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 291,
+            "precision": 0.5154639175257731,
+            "recall": 1.0,
+            "f1": 0.6802721088435374
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "15ac093607703fcbe13bb137bc922f8674f36bd7e68c97e8dc9795570a080d54",
+      "fit_metadata.json": "b50f78b716b5faf32fc695aa0b63db41d33d3dbcccb146be72ef8a8483ce12e0"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-web_app-to-wordpress",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "15ac093607703fcbe13bb137bc922f8674f36bd7e68c97e8dc9795570a080d54",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "a5ec1d5ab1f0f69a0c5f5219655f7ad01e8db7f223b424921a75b765cc7affe4",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-web_app-to-wordpress",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.19864820000657346,
+    "observations": 300,
+    "model_bytes": 29516,
+    "transform": null
+  },
+  {
+    "run_id": "run_386ad4c2c2e9174f6e07dbac1696c8978ab87c0c9fc467a9c8bc18b6ebea40d7",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.672645739910314,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.672645739910314,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.9733333333333334,
+        "attack_precision": 0.5067567567567568,
+        "confusion_matrix": [
+          [
+            4,
+            146
+          ],
+          [
+            0,
+            150
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 150,
+          "fp": 146,
+          "fn": 0,
+          "tn": 4
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 4,
+            "precision": 1.0,
+            "recall": 0.02666666666666667,
+            "f1": 0.05194805194805195
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 296,
+            "precision": 0.5067567567567568,
+            "recall": 1.0,
+            "f1": 0.672645739910314
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "6316b436494f242e15779a847e233afad8f9333d9bbcda104faf29e7e923985d",
+      "fit_metadata.json": "0ebc74535ecde61ac5d664917ba4cde19e842cd93368d68e558ee630884cc97c"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-web_app-to-wordpress",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "6316b436494f242e15779a847e233afad8f9333d9bbcda104faf29e7e923985d",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": null,
+      "sample_ids_sha256": "a5ec1d5ab1f0f69a0c5f5219655f7ad01e8db7f223b424921a75b765cc7affe4",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-web_app-to-wordpress",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.21628820001205895,
+    "observations": 300,
+    "model_bytes": 50839,
+    "transform": null
+  },
+  {
+    "run_id": "run_7a8e250f1a45185d8905b5ca627c4318dc1692e06e4860b9ec0bc4a07b157456",
+    "method": "Historical TF-IDF + LogReg",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.7213114754098361,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.7213114754098361,
+        "attack_recall": 0.5866666666666667,
+        "false_positive_rate": 0.04,
+        "attack_precision": 0.9361702127659575,
+        "confusion_matrix": [
+          [
+            144,
+            6
+          ],
+          [
+            62,
+            88
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 88,
+          "fp": 6,
+          "fn": 62,
+          "tn": 144
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 206,
+            "precision": 0.6990291262135923,
+            "recall": 0.96,
+            "f1": 0.8089887640449438
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 94,
+            "precision": 0.9361702127659575,
+            "recall": 0.5866666666666667,
+            "f1": 0.7213114754098361
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "historical_model.joblib": "17f71be646784fb2cdf585cabc3799fb932ed207f00029b6811eea2d38c6b2cc"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-web_app-to-wordpress",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "17f71be646784fb2cdf585cabc3799fb932ed207f00029b6811eea2d38c6b2cc",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "a5ec1d5ab1f0f69a0c5f5219655f7ad01e8db7f223b424921a75b765cc7affe4",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-web_app-to-wordpress",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.1525549000070896,
+    "observations": 300,
+    "model_bytes": 2188485,
+    "transform": null
+  },
+  {
+    "run_id": "run_07ae80a6e2c92dc160a85468c47479810426c5ee8b4874fbdea2990e30fe5636",
+    "method": "Historical TF-IDF + LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6695278969957081,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6695278969957081,
+        "attack_recall": 0.52,
+        "false_positive_rate": 0.03333333333333333,
+        "attack_precision": 0.9397590361445783,
+        "confusion_matrix": [
+          [
+            145,
+            5
+          ],
+          [
+            72,
+            78
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 78,
+          "fp": 5,
+          "fn": 72,
+          "tn": 145
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 217,
+            "precision": 0.6682027649769585,
+            "recall": 0.9666666666666667,
+            "f1": 0.7901907356948229
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 83,
+            "precision": 0.9397590361445783,
+            "recall": 0.52,
+            "f1": 0.6695278969957081
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "historical_model.joblib": "381fc39c748e9abca667d6c7c0c1d6ef9b4e92c129019516da11602cde06ee59"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-web_app-to-wordpress",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "381fc39c748e9abca667d6c7c0c1d6ef9b4e92c129019516da11602cde06ee59",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "a5ec1d5ab1f0f69a0c5f5219655f7ad01e8db7f223b424921a75b765cc7affe4",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-web_app-to-wordpress",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.256183699995745,
+    "observations": 300,
+    "model_bytes": 1452405,
+    "transform": null
+  },
+  {
+    "run_id": "run_b3859715d1d7bc4f9c6c426aabd5dd06a25726ca8ecb03249394fa9893e5c6f1",
+    "method": "Historical TF-IDF + RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.4536082474226804,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.4536082474226804,
+        "attack_recall": 0.29333333333333333,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            150,
+            0
+          ],
+          [
+            106,
+            44
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 44,
+          "fp": 0,
+          "fn": 106,
+          "tn": 150
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 256,
+            "precision": 0.5859375,
+            "recall": 1.0,
+            "f1": 0.7389162561576355
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 44,
+            "precision": 1.0,
+            "recall": 0.29333333333333333,
+            "f1": 0.4536082474226804
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "historical_model.joblib": "6bd695bfec4d3d416f08cecac7bf4cb2146f167e645be9e9694f645e5688d1d9"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-web_app-to-wordpress",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "6bd695bfec4d3d416f08cecac7bf4cb2146f167e645be9e9694f645e5688d1d9",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "a5ec1d5ab1f0f69a0c5f5219655f7ad01e8db7f223b424921a75b765cc7affe4",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-web_app-to-wordpress",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.3451327999937348,
+    "observations": 300,
+    "model_bytes": 13886342,
+    "transform": null
+  },
+  {
+    "run_id": "run_b01ef97b1d16b4b63140efb2c987160a5ab06a3bc081911e6d8a90fa362529d6",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.920863309352518,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.920863309352518,
+        "attack_recall": 0.8533333333333334,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            150,
+            0
+          ],
+          [
+            22,
+            128
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 128,
+          "fp": 0,
+          "fn": 22,
+          "tn": 150
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 172,
+            "precision": 0.872093023255814,
+            "recall": 1.0,
+            "f1": 0.9316770186335404
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 128,
+            "precision": 1.0,
+            "recall": 0.8533333333333334,
+            "f1": 0.920863309352518
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "61c340cf0373c5d76afcef3d125df996c92acd65148abf103c2fb511cb94a140",
+      "fit_metadata.json": "60dd938b73140ca1c95295d23405480946d527d4739e9ec1e8564ea3fbfab274"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-wordpress-to-web_app",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "61c340cf0373c5d76afcef3d125df996c92acd65148abf103c2fb511cb94a140",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "f269022cde2d31bf30b8910d7f2f65b0bfdbaecb1ade54ca0f6488f0b9293727",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-wordpress-to-web_app",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.21034299999882933,
+    "observations": 300,
+    "model_bytes": 33110,
+    "transform": null
+  },
+  {
+    "run_id": "run_73576e22729c3e2f70885730b97a9f90be4e4ca9d3d5971fb736d8b6e0c06886",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.9473684210526315,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9473684210526315,
+        "attack_recall": 0.9,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            150,
+            0
+          ],
+          [
+            15,
+            135
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 135,
+          "fp": 0,
+          "fn": 15,
+          "tn": 150
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 165,
+            "precision": 0.9090909090909091,
+            "recall": 1.0,
+            "f1": 0.9523809523809523
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 135,
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.9473684210526315
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "9b39320119d693e7dda2546cd226a95099bdd3b88744392160604eb5d517e68a",
+      "fit_metadata.json": "348998a8dc1d014b56ad8e33223a6b6dc260cf544766cb9e434bcdb5e47a7f65"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-wordpress-to-web_app",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "9b39320119d693e7dda2546cd226a95099bdd3b88744392160604eb5d517e68a",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "f269022cde2d31bf30b8910d7f2f65b0bfdbaecb1ade54ca0f6488f0b9293727",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-wordpress-to-web_app",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.18038469999737572,
+    "observations": 300,
+    "model_bytes": 33028,
+    "transform": null
+  },
+  {
+    "run_id": "run_81aa9fa47709f2631f42e75723bd4f20af29d4ae415ab23685f60a3fc6e3c600",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.9761092150170648,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9761092150170648,
+        "attack_recall": 0.9533333333333334,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            150,
+            0
+          ],
+          [
+            7,
+            143
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 143,
+          "fp": 0,
+          "fn": 7,
+          "tn": 150
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 157,
+            "precision": 0.9554140127388535,
+            "recall": 1.0,
+            "f1": 0.9771986970684039
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 143,
+            "precision": 1.0,
+            "recall": 0.9533333333333334,
+            "f1": 0.9761092150170648
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "74b349f2225b104232bec88ea2ec0f71566ad6bc66329934894ffa407272eceb",
+      "fit_metadata.json": "ceeddebc4e12a52f00919d554ca2768a82b6522582e03bbf74315e969c392bfa"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-wordpress-to-web_app",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "74b349f2225b104232bec88ea2ec0f71566ad6bc66329934894ffa407272eceb",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": null,
+      "sample_ids_sha256": "f269022cde2d31bf30b8910d7f2f65b0bfdbaecb1ade54ca0f6488f0b9293727",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-wordpress-to-web_app",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.19366340000124183,
+    "observations": 300,
+    "model_bytes": 145625,
+    "transform": null
+  },
+  {
+    "run_id": "run_7d3478041f8817b63e099ae092150cd68a2c1ec8e357a05fda4ef176db6f7e47",
+    "method": "Historical TF-IDF + LogReg",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6189376443418014,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6189376443418014,
+        "attack_recall": 0.8933333333333333,
+        "false_positive_rate": 0.9933333333333333,
+        "attack_precision": 0.4734982332155477,
+        "confusion_matrix": [
+          [
+            1,
+            149
+          ],
+          [
+            16,
+            134
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 134,
+          "fp": 149,
+          "fn": 16,
+          "tn": 1
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 17,
+            "precision": 0.058823529411764705,
+            "recall": 0.006666666666666667,
+            "f1": 0.011976047904191617
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 283,
+            "precision": 0.4734982332155477,
+            "recall": 0.8933333333333333,
+            "f1": 0.6189376443418014
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "historical_model.joblib": "17f71be646784fb2cdf585cabc3799fb932ed207f00029b6811eea2d38c6b2cc"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-wordpress-to-web_app",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "17f71be646784fb2cdf585cabc3799fb932ed207f00029b6811eea2d38c6b2cc",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "f269022cde2d31bf30b8910d7f2f65b0bfdbaecb1ade54ca0f6488f0b9293727",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-wordpress-to-web_app",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.08836449999944307,
+    "observations": 300,
+    "model_bytes": 2188485,
+    "transform": null
+  },
+  {
+    "run_id": "run_ac290c4b0a8965acab3994cf8eb39d66563d8d3a4fee2137390b549b2ae52110",
+    "method": "Historical TF-IDF + LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.66,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.66,
+        "attack_recall": 0.88,
+        "false_positive_rate": 0.7866666666666666,
+        "attack_precision": 0.528,
+        "confusion_matrix": [
+          [
+            32,
+            118
+          ],
+          [
+            18,
+            132
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 132,
+          "fp": 118,
+          "fn": 18,
+          "tn": 32
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 50,
+            "precision": 0.64,
+            "recall": 0.21333333333333335,
+            "f1": 0.32
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 250,
+            "precision": 0.528,
+            "recall": 0.88,
+            "f1": 0.66
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "historical_model.joblib": "381fc39c748e9abca667d6c7c0c1d6ef9b4e92c129019516da11602cde06ee59"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-wordpress-to-web_app",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "381fc39c748e9abca667d6c7c0c1d6ef9b4e92c129019516da11602cde06ee59",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "f269022cde2d31bf30b8910d7f2f65b0bfdbaecb1ade54ca0f6488f0b9293727",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-wordpress-to-web_app",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.08446339999500196,
+    "observations": 300,
+    "model_bytes": 1452405,
+    "transform": null
+  },
+  {
+    "run_id": "run_a3c1a45e4238787a0837542eb773a36d1d49b333cd73f63ceeed93ed73ce875a",
+    "method": "Historical TF-IDF + RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.49,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.49,
+        "attack_recall": 0.32666666666666666,
+        "false_positive_rate": 0.006666666666666667,
+        "attack_precision": 0.98,
+        "confusion_matrix": [
+          [
+            149,
+            1
+          ],
+          [
+            101,
+            49
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 49,
+          "fp": 1,
+          "fn": 101,
+          "tn": 149
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 250,
+            "precision": 0.596,
+            "recall": 0.9933333333333333,
+            "f1": 0.745
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 50,
+            "precision": 0.98,
+            "recall": 0.32666666666666666,
+            "f1": 0.49
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "historical_model.joblib": "6bd695bfec4d3d416f08cecac7bf4cb2146f167e645be9e9694f645e5688d1d9"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "transfer-wordpress-to-web_app",
+      "phase": "transfer_300",
+      "input_mode": "sql_only",
+      "model_identity": "6bd695bfec4d3d416f08cecac7bf4cb2146f167e645be9e9694f645e5688d1d9",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "f269022cde2d31bf30b8910d7f2f65b0bfdbaecb1ade54ca0f6488f0b9293727",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "transfer-wordpress-to-web_app",
+    "phase": "transfer_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.17774280000594445,
+    "observations": 300,
+    "model_bytes": 13886342,
+    "transform": null
+  }
+]

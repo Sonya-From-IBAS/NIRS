@@ -1,0 +1,3095 @@
+{
+  "samples": [
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_515dbab5a0acedab4b17abbfa0c2b21f2ed6aef45a711be6a8d2ea9638adf297",
+      "observation_id": "obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c",
+      "rank_in_stratum": 1,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:0",
+      "target": 0,
+      "task": "sqli",
+      "alias": "q003",
+      "payload": {
+        "sql": {
+          "text": "SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) "
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_231ea539629bdc323362e1ce6a45b8f3",
+      "rank_in_stratum": 4,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:1",
+      "target": 1,
+      "task": "privilege",
+      "alias": "q022",
+      "payload": {
+        "sql": {
+          "text": "BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */\nlab_support.assign_delivery(1402)'; END;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1402,\"resources\":[\"lab_support.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_support.tickets\"]}}",
+                  "resources": [
+                    "lab_support.assign_delivery",
+                    "lab_support.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1402,\"resources\":[\"lab_support.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_support.messages\"]}}",
+                  "resources": [
+                    "lab_support.assign_delivery",
+                    "lab_support.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_4f56a807b51c98e9c1e64b63",
+              "scope_resources": [
+                "lab_support.assign_delivery",
+                "lab_support.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4f56a807b51c98e9c1e64b63/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "oracle",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4f56a807b51c98e9c1e64b63/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4f56a807b51c98e9c1e64b63/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_support.assign_delivery",
+                    "lab_support.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_support.assign_delivery",
+                "lab_support.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4f56a807b51c98e9c1e64b63/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1402,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "support.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4f56a807b51c98e9c1e64b63/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_231ea539629bdc323362e1ce6a45b8f3_a1",
+      "representation_tags": [
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_19fe6cb10096f03771ff4d31b3ee521f",
+      "rank_in_stratum": 0,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:1",
+      "target": 1,
+      "task": "privilege",
+      "alias": "q024",
+      "payload": {
+        "sql": {
+          "text": "EXEC lab_finance.assign_delivery 1404;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1404,\"resources\":[\"lab_finance.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_finance.ledger_entries\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1404,\"resources\":[\"lab_finance.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_finance.reconciliations\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_b506285b0e009c3b808e22d5",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mssql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1404,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "finance.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_19fe6cb10096f03771ff4d31b3ee521f_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_9afde387eb4e31b1c00f2b729716b339",
+      "rank_in_stratum": 1,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:0",
+      "target": 0,
+      "task": "privilege",
+      "alias": "q029",
+      "payload": {
+        "sql": {
+          "text": "EXEC(N'eX' + N'eC/* q */\nlab_finance.assign_review/* q */\n1404');"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1404,\"resources\":[\"lab_finance.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_finance.ledger_entries\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1404,\"resources\":[\"lab_finance.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_finance.reconciliations\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_b506285b0e009c3b808e22d5",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mssql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1404,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "finance.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_b506285b0e009c3b808e22d5/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_9afde387eb4e31b1c00f2b729716b339_a1",
+      "representation_tags": [
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_4daa5403ea0c86ccd7ef9612112160a75f2a636f5be408454900f6aa67afb80d",
+      "observation_id": "obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976",
+      "rank_in_stratum": 2,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:0",
+      "target": 0,
+      "task": "sqli",
+      "alias": "q050",
+      "payload": {
+        "sql": {
+          "text": "UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\\\"custom_css_post_id\\\";i:-1;s:18:\\\"nav_menu_locations\\\";a:0:{}s:13:\\\"primary_color\\\";s:6:\\\"custom\\\";s:17:\\\"primary_color_hue\\\";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d",
+      "rank_in_stratum": 0,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:1",
+      "target": 1,
+      "task": "exfiltration",
+      "alias": "q054",
+      "payload": {
+        "sql": {
+          "text": "WITH scope_rows AS (SELECT entry_id, tenant_key, reading_a FROM lab_research.samples WHERE tenant_key = 42) SELECT entry_id, reading_a FROM scope_rows ORDER BY entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"reading_b\",\"related_resource\":null,\"resources\":[\"lab_research.samples\"],\"tenant\":42}",
+                  "resources": [
+                    "lab_research.samples"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"reading_a\",\"related_resource\":null,\"resources\":[\"lab_research.samples\"],\"tenant\":42}",
+                  "resources": [
+                    "lab_research.samples"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_f7fa0fc2085035c23e45aef2",
+              "scope_resources": [
+                "lab_research.samples"
+              ],
+              "sensitive_resources": [
+                "lab_research.samples"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f7fa0fc2085035c23e45aef2/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "postgresql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f7fa0fc2085035c23e45aef2/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f7fa0fc2085035c23e45aef2/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_research.samples"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_research.samples"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f7fa0fc2085035c23e45aef2/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1007,\"workflow\":\"read_rows_v1\"}",
+              "operation_id": "research.read_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f7fa0fc2085035c23e45aef2/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_14993f9b8ee330df933dc5c57da46cab",
+      "rank_in_stratum": 3,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:1",
+      "target": 1,
+      "task": "exfiltration",
+      "alias": "q063",
+      "payload": {
+        "sql": {
+          "text": "wItH/**/scope_rows/**/aS/**/(sElEcT/**/entry_id,/**/tenant_key,/**/amount/**/fRoM/**/lab_commerce.orders/**/wHeRe/**/tenant_key/**/=/**/tO_NuMbEr(cHr(49)/**/||/**/cHr(50)))/**/sElEcT/**/entry_id,/**/amount/**/fRoM/**/scope_rows/**/oRdEr/**/bY/**/entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"destination\":\"/app/commerce/reports/reconciliation.csv\",\"related_resource\":null,\"resources\":[\"lab_commerce.orders\"],\"tenant\":12}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"destination\":\"/app/commerce/reports/periodic.csv\",\"related_resource\":null,\"resources\":[\"lab_commerce.orders\"],\"tenant\":12}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_9009e510903494ff6b367d3f",
+              "scope_resources": [
+                "lab_commerce.orders"
+              ],
+              "sensitive_resources": [
+                "lab_commerce.orders"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9009e510903494ff6b367d3f/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "oracle",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9009e510903494ff6b367d3f/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9009e510903494ff6b367d3f/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.orders"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9009e510903494ff6b367d3f/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"destination\":\"/app/commerce/reports/periodic.csv\",\"destination_kind\":\"application_local_file\",\"request_id\":1401,\"workflow\":\"export_rows_v1\"}",
+              "operation_id": "commerce.export_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9009e510903494ff6b367d3f/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_14993f9b8ee330df933dc5c57da46cab_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_3f16195da834e1151f0663a0a642313d",
+      "rank_in_stratum": 4,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:0",
+      "target": 0,
+      "task": "privilege",
+      "alias": "q074",
+      "payload": {
+        "sql": {
+          "text": "EXEC lab_finance.assign_delivery 1405;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1405,\"resources\":[\"lab_finance.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_finance.reconciliations\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1405,\"resources\":[\"lab_finance.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_finance.ledger_entries\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_f1e47c54dde4b5f6a3e0b8b0",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f1e47c54dde4b5f6a3e0b8b0/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mssql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f1e47c54dde4b5f6a3e0b8b0/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f1e47c54dde4b5f6a3e0b8b0/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f1e47c54dde4b5f6a3e0b8b0/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1405,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "finance.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_f1e47c54dde4b5f6a3e0b8b0/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_3f16195da834e1151f0663a0a642313d_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_f50104f7816bbd6efb8af80c710df977",
+      "rank_in_stratum": 2,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:0",
+      "target": 0,
+      "task": "exfiltration",
+      "alias": "q076",
+      "payload": {
+        "sql": {
+          "text": "sElEcT/* q */\ns.entry_id,/* q */\ns.priority/* q */\nfRoM/* q */\n(sElEcT/* q */\nentry_id,/* q */\ntenant_key,/* q */\npriority/* q */\nfRoM/* q */\nlab_support.tickets/* q */\nwHeRe/* q */\ntenant_key/* q */\n=/* q */\ntO_NuMbEr(cHr(50)/* q */\n||/* q */\ncHr(49)))/* q */\ns/* q */\noRdEr/* q */\nbY/* q */\ns.entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"priority\",\"destination\":\"/app/support/reports/periodic.csv\",\"related_resource\":null,\"resources\":[\"lab_support.tickets\"],\"tenant\":21}",
+                  "resources": [
+                    "lab_support.tickets"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"priority\",\"destination\":\"/app/support/reports/reconciliation.csv\",\"related_resource\":null,\"resources\":[\"lab_support.tickets\"],\"tenant\":21}",
+                  "resources": [
+                    "lab_support.tickets"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_c234a7f629f91eeff5b72878",
+              "scope_resources": [
+                "lab_support.tickets"
+              ],
+              "sensitive_resources": [
+                "lab_support.tickets"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c234a7f629f91eeff5b72878/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "oracle",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c234a7f629f91eeff5b72878/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c234a7f629f91eeff5b72878/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_support.tickets"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_support.tickets"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c234a7f629f91eeff5b72878/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"destination\":\"/app/support/reports/periodic.csv\",\"destination_kind\":\"application_local_file\",\"request_id\":1402,\"workflow\":\"export_rows_v1\"}",
+              "operation_id": "support.export_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c234a7f629f91eeff5b72878/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_f50104f7816bbd6efb8af80c710df977_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_c66dcc7045b3e148c6b3ebc37c8ccc19102a866652cf13538bda62f76001d890",
+      "observation_id": "obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5",
+      "rank_in_stratum": 0,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:1",
+      "target": 1,
+      "task": "sqli",
+      "alias": "q092",
+      "payload": {
+        "sql": {
+          "text": "SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_f4ef64719915776bdfe8faa1a4d42e26c0cea3e73f0671a554c287bf08f8fb32",
+      "observation_id": "obs_sg_994698a0c81a139b1556fcce498c526721cd8102736bf152f22b8e445ca146dd",
+      "rank_in_stratum": 3,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:1",
+      "target": 1,
+      "task": "sqli",
+      "alias": "q099",
+      "payload": {
+        "sql": {
+          "text": "SELECT wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_type = 'post' AND ((wp_posts.post_author = 3 AND (wp_posts.post_status = 'future'))) union all select null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null and ((('ujdw' like 'ujdw'))) ORDER BY wp_posts.post_date ASC LIMIT 0, 5"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_994698a0c81a139b1556fcce498c526721cd8102736bf152f22b8e445ca146dd_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_473f3c50fc1ec597cfa3b837b0ed614b",
+      "rank_in_stratum": 4,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:1",
+      "target": 1,
+      "task": "exfiltration",
+      "alias": "q119",
+      "payload": {
+        "sql": {
+          "text": "sElEcT/* q */\nt.entry_id,/* q */\nt.discount/* q */\nfRoM/* q */\nlab_commerce.orders/* q */\nt/* q */\nwHeRe/* q */\nt.tenant_key/* q */\n=/* q */\ncAsT(cHaR(49)/* q */\n+/* q */\ncHaR(49)/* q */\naS/* q */\niNt)/* q */\noRdEr/* q */\nbY/* q */\nt.entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_commerce.orders\"],\"tenant\":11}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"discount\",\"related_resource\":null,\"resources\":[\"lab_commerce.orders\"],\"tenant\":11}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_c9dde6c3aa0621b8e95de357",
+              "scope_resources": [
+                "lab_commerce.orders"
+              ],
+              "sensitive_resources": [
+                "lab_commerce.orders"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c9dde6c3aa0621b8e95de357/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mssql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c9dde6c3aa0621b8e95de357/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c9dde6c3aa0621b8e95de357/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.orders"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c9dde6c3aa0621b8e95de357/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1000,\"workflow\":\"read_rows_v1\"}",
+              "operation_id": "commerce.read_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_c9dde6c3aa0621b8e95de357/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_473f3c50fc1ec597cfa3b837b0ed614b_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_fde1f27eddb2570afef00a660a2c582a",
+      "rank_in_stratum": 0,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:0",
+      "target": 0,
+      "task": "privilege",
+      "alias": "q121",
+      "payload": {
+        "sql": {
+          "text": "CALL lab_commerce.assign_delivery(1401);"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1401,\"resources\":[\"lab_commerce.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service@localhost\",\"resources\":[\"lab_commerce.payments\"]}}",
+                  "resources": [
+                    "lab_commerce.assign_delivery",
+                    "lab_commerce.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1401,\"resources\":[\"lab_commerce.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service@localhost\",\"resources\":[\"lab_commerce.orders\"]}}",
+                  "resources": [
+                    "lab_commerce.assign_delivery",
+                    "lab_commerce.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_9f9d7869a6074c8a10986f22",
+              "scope_resources": [
+                "lab_commerce.assign_delivery",
+                "lab_commerce.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9f9d7869a6074c8a10986f22/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mysql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9f9d7869a6074c8a10986f22/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service@localhost",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9f9d7869a6074c8a10986f22/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_commerce.assign_delivery",
+                    "lab_commerce.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.assign_delivery",
+                "lab_commerce.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9f9d7869a6074c8a10986f22/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1401,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "commerce.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9f9d7869a6074c8a10986f22/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_fde1f27eddb2570afef00a660a2c582a_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_642b8318fbe9bce74b512cd352287477",
+      "rank_in_stratum": 2,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:1",
+      "target": 1,
+      "task": "privilege",
+      "alias": "q128",
+      "payload": {
+        "sql": {
+          "text": "CALL lab_finance.assign_review(1405);"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1405,\"resources\":[\"lab_finance.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_finance.reconciliations\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1405,\"resources\":[\"lab_finance.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_finance.ledger_entries\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_a485702df341f33bd126c3c9",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a485702df341f33bd126c3c9/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "oracle",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a485702df341f33bd126c3c9/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a485702df341f33bd126c3c9/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a485702df341f33bd126c3c9/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1405,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "finance.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a485702df341f33bd126c3c9/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_642b8318fbe9bce74b512cd352287477_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_9b707111361dc4b5d07591a542ed0cd5",
+      "rank_in_stratum": 3,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:1",
+      "target": 1,
+      "task": "privilege",
+      "alias": "q134",
+      "payload": {
+        "sql": {
+          "text": "EXEC lab_support.assign_review 1403;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1403,\"resources\":[\"lab_support.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_support.messages\"]}}",
+                  "resources": [
+                    "lab_support.assign_delivery",
+                    "lab_support.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1403,\"resources\":[\"lab_support.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_support.tickets\"]}}",
+                  "resources": [
+                    "lab_support.assign_delivery",
+                    "lab_support.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_309a56c4303b34a05c04f93f",
+              "scope_resources": [
+                "lab_support.assign_delivery",
+                "lab_support.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_309a56c4303b34a05c04f93f/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mssql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_309a56c4303b34a05c04f93f/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_309a56c4303b34a05c04f93f/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_support.assign_delivery",
+                    "lab_support.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_support.assign_delivery",
+                "lab_support.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_309a56c4303b34a05c04f93f/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1403,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "support.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_309a56c4303b34a05c04f93f/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_9b707111361dc4b5d07591a542ed0cd5_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_4afb0fdd53ca1626935f6d43f2425c24295628ec510bcf5277875575571d5a79",
+      "observation_id": "obs_sg_eac5377cc48141589493e23e59e78021a29d351539a45852d856216bfe056d89",
+      "rank_in_stratum": 4,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:1",
+      "target": 1,
+      "task": "sqli",
+      "alias": "q155",
+      "payload": {
+        "sql": {
+          "text": "SELECT term_taxonomy_id FROM wp_term_relationships WHERE object_id = 35 AND term_taxonomy_id = 2 union select 1,concat_ws(0x3a,database(),user(),version())#"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_eac5377cc48141589493e23e59e78021a29d351539a45852d856216bfe056d89_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_2739dc5d44cdeed7cad5bcc094932c14",
+      "rank_in_stratum": 2,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:1",
+      "target": 1,
+      "task": "exfiltration",
+      "alias": "q164",
+      "payload": {
+        "sql": {
+          "text": "SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_commerce.orders\"],\"tenant\":11}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_commerce.orders\"],\"tenant\":12}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_4272506d53162be8c5c304e3",
+              "scope_resources": [
+                "lab_commerce.orders"
+              ],
+              "sensitive_resources": [
+                "lab_commerce.orders"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4272506d53162be8c5c304e3/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mysql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4272506d53162be8c5c304e3/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service@localhost",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4272506d53162be8c5c304e3/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_commerce.orders"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.orders"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4272506d53162be8c5c304e3/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1100,\"workflow\":\"read_rows_v1\"}",
+              "operation_id": "commerce.read_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_4272506d53162be8c5c304e3/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_2739dc5d44cdeed7cad5bcc094932c14_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_ac1f7f2be2b80d9e9df433e5be3e687ba83e9a76a4d52a09a3a45ab1611a6ae1",
+      "observation_id": "obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60",
+      "rank_in_stratum": 4,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:0",
+      "target": 0,
+      "task": "sqli",
+      "alias": "q198",
+      "payload": {
+        "sql": {
+          "text": "SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_72d7d2eebfba0593c4b40f9807f91cf9d80a643b99c818100e15ccce4c8e13df",
+      "observation_id": "obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352",
+      "rank_in_stratum": 3,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:0",
+      "target": 0,
+      "task": "sqli",
+      "alias": "q217",
+      "payload": {
+        "sql": {
+          "text": "UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time'"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_dc382b62d26a2ff4333323bede85b656",
+      "rank_in_stratum": 0,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:0",
+      "target": 0,
+      "task": "exfiltration",
+      "alias": "q227",
+      "payload": {
+        "sql": {
+          "text": "wItH/* q */\nscope_rows/* q */\naS/* q */\n(sElEcT/* q */\nentry_id,/* q */\ntenant_key,/* q */\namount/* q */\nfRoM/* q */\nlab_finance.ledger_entries/* q */\nwHeRe/* q */\ntenant_key/* q */\n=/* q */\ncAsT(cOnCaT(cHaR(51),/* q */\ncHaR(49))/* q */\naS/* q */\nuNsIgNeD))/* q */\nsElEcT/* q */\nentry_id,/* q */\namount/* q */\nfRoM/* q */\nscope_rows/* q */\noRdEr/* q */\nbY/* q */\nentry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_finance.ledger_entries\"],\"tenant\":31}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_finance.ledger_entries\"],\"tenant\":32}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_af942e289d639dd1e70d52ca",
+              "scope_resources": [
+                "lab_finance.ledger_entries"
+              ],
+              "sensitive_resources": [
+                "lab_finance.ledger_entries"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_af942e289d639dd1e70d52ca/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mysql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_af942e289d639dd1e70d52ca/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service@localhost",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_af942e289d639dd1e70d52ca/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.ledger_entries"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_af942e289d639dd1e70d52ca/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1104,\"workflow\":\"read_rows_v1\"}",
+              "operation_id": "finance.read_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_af942e289d639dd1e70d52ca/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_dc382b62d26a2ff4333323bede85b656_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4",
+      "rank_in_stratum": 2,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:0",
+      "target": 0,
+      "task": "privilege",
+      "alias": "q231",
+      "payload": {
+        "sql": {
+          "text": "cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1401,\"resources\":[\"lab_commerce.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_commerce.payments\"]}}",
+                  "resources": [
+                    "lab_commerce.assign_delivery",
+                    "lab_commerce.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1401,\"resources\":[\"lab_commerce.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service\",\"resources\":[\"lab_commerce.orders\"]}}",
+                  "resources": [
+                    "lab_commerce.assign_delivery",
+                    "lab_commerce.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_a881886960de4faa0004fe0c",
+              "scope_resources": [
+                "lab_commerce.assign_delivery",
+                "lab_commerce.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a881886960de4faa0004fe0c/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "oracle",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a881886960de4faa0004fe0c/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a881886960de4faa0004fe0c/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_commerce.assign_delivery",
+                    "lab_commerce.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.assign_delivery",
+                "lab_commerce.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a881886960de4faa0004fe0c/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1401,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "commerce.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a881886960de4faa0004fe0c/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_769c6652f2398e79cff22012af31c5058cd8d9f2de9b30c072d02fc9e886c490",
+      "observation_id": "obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4",
+      "rank_in_stratum": 0,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:0",
+      "target": 0,
+      "task": "sqli",
+      "alias": "q234",
+      "payload": {
+        "sql": {
+          "text": "SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC "
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_ba139eaadd9da1349ef772b126b87b16",
+      "rank_in_stratum": 1,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:0",
+      "target": 0,
+      "task": "exfiltration",
+      "alias": "q241",
+      "payload": {
+        "sql": {
+          "text": "wItH/* q */\nscope_rows/* q */\naS/* q */\n(sElEcT/* q */\nentry_id,/* q */\ntenant_key,/* q */\namount/* q */\nfRoM/* q */\nlab_finance.ledger_entries/* q */\nwHeRe/* q */\ntenant_key/* q */\n=/* q */\ncAsT(cHr(51)/* q */\n||/* q */\ncHr(49)/* q */\naS/* q */\niNtEgEr))/* q */\nsElEcT/* q */\nentry_id,/* q */\namount/* q */\nfRoM/* q */\nscope_rows/* q */\noRdEr/* q */\nbY/* q */\nentry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_finance.ledger_entries\"],\"tenant\":31}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":null,\"resources\":[\"lab_finance.ledger_entries\"],\"tenant\":32}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_25a1c46f1f40b9dc4f8624ab",
+              "scope_resources": [
+                "lab_finance.ledger_entries"
+              ],
+              "sensitive_resources": [
+                "lab_finance.ledger_entries"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_25a1c46f1f40b9dc4f8624ab/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "postgresql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_25a1c46f1f40b9dc4f8624ab/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_25a1c46f1f40b9dc4f8624ab/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.ledger_entries"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_25a1c46f1f40b9dc4f8624ab/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1104,\"workflow\":\"read_rows_v1\"}",
+              "operation_id": "finance.read_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_25a1c46f1f40b9dc4f8624ab/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_ba139eaadd9da1349ef772b126b87b16_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_87c70c7bf167c16b969ce02f20e96660",
+      "rank_in_stratum": 1,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:1",
+      "target": 1,
+      "task": "exfiltration",
+      "alias": "q242",
+      "payload": {
+        "sql": {
+          "text": "SELECT t.entry_id, t.metric_a FROM lab_operations.events t WHERE t.tenant_key = 52 ORDER BY t.entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"metric_b\",\"related_resource\":null,\"resources\":[\"lab_operations.events\"],\"tenant\":52}",
+                  "resources": [
+                    "lab_operations.events"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"metric_a\",\"related_resource\":null,\"resources\":[\"lab_operations.events\"],\"tenant\":52}",
+                  "resources": [
+                    "lab_operations.events"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_a3e5dc5b146fb73bc351d2ae",
+              "scope_resources": [
+                "lab_operations.events"
+              ],
+              "sensitive_resources": [
+                "lab_operations.events"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a3e5dc5b146fb73bc351d2ae/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mysql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a3e5dc5b146fb73bc351d2ae/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service@localhost",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a3e5dc5b146fb73bc351d2ae/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_operations.events"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_operations.events"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a3e5dc5b146fb73bc351d2ae/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1009,\"workflow\":\"read_rows_v1\"}",
+              "operation_id": "operations.read_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_a3e5dc5b146fb73bc351d2ae/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_87c70c7bf167c16b969ce02f20e96660_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_2ed005ac597c3a7a8bbc8c934d12245a",
+      "rank_in_stratum": 3,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:0",
+      "target": 0,
+      "task": "privilege",
+      "alias": "q246",
+      "payload": {
+        "sql": {
+          "text": "CALL lab_research.assign_delivery(1407);"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1407,\"resources\":[\"lab_research.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service@localhost\",\"resources\":[\"lab_research.measurements\"]}}",
+                  "resources": [
+                    "lab_research.assign_delivery",
+                    "lab_research.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1407,\"resources\":[\"lab_research.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"batch_service@localhost\",\"resources\":[\"lab_research.samples\"]}}",
+                  "resources": [
+                    "lab_research.assign_delivery",
+                    "lab_research.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_8f6a817b98994b04b9a0ce3d",
+              "scope_resources": [
+                "lab_research.assign_delivery",
+                "lab_research.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mysql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service@localhost",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_research.assign_delivery",
+                    "lab_research.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_research.assign_delivery",
+                "lab_research.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1407,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "research.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_2ed005ac597c3a7a8bbc8c934d12245a_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72",
+      "observation_id": "obs_s5_fc3d40968998a993768a1d143c1a59f0",
+      "rank_in_stratum": 1,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "privilege:1",
+      "target": 1,
+      "task": "privilege",
+      "alias": "q248",
+      "payload": {
+        "sql": {
+          "text": "BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */\nlab_finance.assign_delivery(1404)'; END;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1404,\"resources\":[\"lab_finance.assign_review\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_finance.ledger_entries\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"request_id\":1404,\"resources\":[\"lab_finance.assign_delivery\"],\"rights_effect\":{\"action\":\"grant\",\"delegable\":false,\"privileges\":[\"select\"],\"recipient\":\"report_service\",\"resources\":[\"lab_finance.reconciliations\"]}}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_bc4de75a31c4771cdd020bba",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ],
+              "sensitive_resources": []
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bc4de75a31c4771cdd020bba/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "oracle",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bc4de75a31c4771cdd020bba/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bc4de75a31c4771cdd020bba/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "execute"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.assign_delivery",
+                    "lab_finance.assign_review"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.assign_delivery",
+                "lab_finance.assign_review"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bc4de75a31c4771cdd020bba/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"request_id\":1404,\"workflow\":\"delegate_access_v1\"}",
+              "operation_id": "finance.delegate_access_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bc4de75a31c4771cdd020bba/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_fc3d40968998a993768a1d143c1a59f0_a1",
+      "representation_tags": [
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_dad91727986a8b716fd773daf1c0541d6d86ee246405f4e3688a540481b155d4",
+      "observation_id": "obs_sg_e5acd259e1b0fda4968dbf485eef752f468bf9c0442bbc839bc59238ae41ad08",
+      "rank_in_stratum": 2,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:1",
+      "target": 1,
+      "task": "sqli",
+      "alias": "q258",
+      "payload": {
+        "sql": {
+          "text": "SELECT umeta_id FROM wp_usermeta WHERE meta_key = 'rich_editing'+(select 'mgcb' FROM DUAL WHERE 1364=1364) union all select null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null#' AND user_id = 1"
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_e5acd259e1b0fda4968dbf485eef752f468bf9c0442bbc839bc59238ae41ad08_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "fold": 0,
+      "group_id": "g6_7360ffac0383653c1422dff8701a33c9a29dea2f919f78c6d8d45feeac33a98f",
+      "observation_id": "obs_sg_7c9d96c339419d5fcc1a72921f80de8223a6fb854ee8f629d83d14a6adf4b3c0",
+      "rank_in_stratum": 1,
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "stratum": "sqli:1",
+      "target": 1,
+      "task": "sqli",
+      "alias": "q268",
+      "payload": {
+        "sql": {
+          "text": "SELECT COUNT(*) FROM wp_comments WHERE comment_author_email = 'wapuu@wordpress.example' AND comment_author = 'A WordPress Commenter' AND comment_author_url = 'https://wordpress.org/' AND comment_approved = 1 union all select concat_ws(0x3a,user(),version(),database()) -- "
+        },
+        "context": {
+          "policy": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "dialect": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "active_role": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "permissions": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          },
+          "application_operation": {
+            "value": null,
+            "availability": "unknown",
+            "evidence_ref": null,
+            "available_before_decision": false
+          }
+        }
+      },
+      "annotation_id": "obs_sg_7c9d96c339419d5fcc1a72921f80de8223a6fb854ee8f629d83d14a6adf4b3c0_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_95effa15e90b342fbe85536699791d15",
+      "rank_in_stratum": 3,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:0",
+      "target": 0,
+      "task": "exfiltration",
+      "alias": "q271",
+      "payload": {
+        "sql": {
+          "text": "WITH scope_rows AS (SELECT entry_id, tenant_key, amount FROM lab_finance.ledger_entries WHERE tenant_key = 31) SELECT entry_id, amount FROM scope_rows ORDER BY entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"destination\":\"/app/finance/reports/periodic.csv\",\"related_resource\":null,\"resources\":[\"lab_finance.ledger_entries\"],\"tenant\":31}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"destination\":\"/app/finance/reports/reconciliation.csv\",\"related_resource\":null,\"resources\":[\"lab_finance.ledger_entries\"],\"tenant\":31}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_fb591683a9b564ed267cde25",
+              "scope_resources": [
+                "lab_finance.ledger_entries"
+              ],
+              "sensitive_resources": [
+                "lab_finance.ledger_entries"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_fb591683a9b564ed267cde25/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "mssql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_fb591683a9b564ed267cde25/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_fb591683a9b564ed267cde25/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.ledger_entries"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.ledger_entries"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_fb591683a9b564ed267cde25/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"destination\":\"/app/finance/reports/periodic.csv\",\"destination_kind\":\"application_local_file\",\"request_id\":1404,\"workflow\":\"export_rows_v1\"}",
+              "operation_id": "finance.export_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_fb591683a9b564ed267cde25/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_95effa15e90b342fbe85536699791d15_a1",
+      "representation_tags": []
+    },
+    {
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "fold": 0,
+      "group_id": "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607",
+      "observation_id": "obs_s5_a071f14cd713f75a3cf8eb44bc2eed81",
+      "rank_in_stratum": 4,
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "stratum": "exfiltration:0",
+      "target": 0,
+      "task": "exfiltration",
+      "alias": "q277",
+      "payload": {
+        "sql": {
+          "text": "sElEcT/**/t.entry_id,/**/t.priority/**/fRoM/**/lab_support.tickets/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHr(50)/**/||/**/cHr(50)/**/aS/**/iNtEgEr)/**/oRdEr/**/bY/**/t.entry_id;"
+        },
+        "context": {
+          "policy": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"priority\",\"destination\":\"/app/support/reports/reconciliation.csv\",\"related_resource\":null,\"resources\":[\"lab_support.tickets\"],\"tenant\":22}",
+                  "resources": [
+                    "lab_support.tickets"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"priority\",\"destination\":\"/app/support/reports/periodic.csv\",\"related_resource\":null,\"resources\":[\"lab_support.tickets\"],\"tenant\":22}",
+                  "resources": [
+                    "lab_support.tickets"
+                  ]
+                }
+              ],
+              "version": "stage5-static-v1",
+              "coverage": "complete",
+              "policy_id": "scenario-policy:sc5_bea79c4d57810dc3d77aa432",
+              "scope_resources": [
+                "lab_support.tickets"
+              ],
+              "sensitive_resources": [
+                "lab_support.tickets"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bea79c4d57810dc3d77aa432/context/policy",
+            "available_before_decision": true
+          },
+          "dialect": {
+            "value": "postgresql",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bea79c4d57810dc3d77aa432/context/dialect",
+            "available_before_decision": true
+          },
+          "active_role": {
+            "value": "ops_service",
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bea79c4d57810dc3d77aa432/context/active_role",
+            "available_before_decision": true
+          },
+          "permissions": {
+            "value": {
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "export"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_support.tickets"
+                  ]
+                }
+              ],
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_support.tickets"
+              ]
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bea79c4d57810dc3d77aa432/context/permissions",
+            "available_before_decision": true
+          },
+          "application_operation": {
+            "value": {
+              "description": "{\"destination\":\"/app/support/reports/reconciliation.csv\",\"destination_kind\":\"application_local_file\",\"request_id\":1403,\"workflow\":\"export_rows_v1\"}",
+              "operation_id": "support.export_rows_v1"
+            },
+            "availability": "known",
+            "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_bea79c4d57810dc3d77aa432/context/application_operation",
+            "available_before_decision": true
+          }
+        }
+      },
+      "annotation_id": "obs_s5_a071f14cd713f75a3cf8eb44bc2eed81_a1",
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    }
+  ],
+  "few_shot_candidates": [
+    {
+      "observation_id": "obs_s5_3cdb389b84e6164d4e5f43afb142621f",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "split_id": "split_3be167948549fd4a1a1bedcccc8b65751669fe0d64dfc2999bd7478eab10c66e",
+      "fold": 0,
+      "part": "train",
+      "task": "exfiltration",
+      "target": 0,
+      "group_id": "g6_5d88cefde5521224994d030b4861d0fb4bbda9e4a8f3257c07b83ee359816ccb",
+      "input": {
+        "sql": "sElEcT/**/t.entry_id,/**/t.amount/**/fRoM/**/lab_commerce.orders/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHaR(49)/**/+/**/cHaR(50)/**/aS/**/iNt)/**/aNd/**/eXiStS/**/(sElEcT/**/cAsT(cHaR(49)/**/aS/**/iNt)/**/fRoM/**/lab_commerce.customers/**/u/**/wHeRe/**/u.entry_id/**/=/**/t.entry_id/**/aNd/**/u.tenant_key/**/=/**/t.tenant_key)/**/oRdEr/**/bY/**/t.entry_id;",
+        "context": {
+          "dialect": {
+            "availability": "known",
+            "value": "mssql"
+          },
+          "active_role": {
+            "availability": "known",
+            "value": "ops_service"
+          },
+          "permissions": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.customers",
+                "lab_commerce.orders",
+                "lab_commerce.payments"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_commerce.customers",
+                    "lab_commerce.orders",
+                    "lab_commerce.payments"
+                  ]
+                }
+              ]
+            }
+          },
+          "application_operation": {
+            "availability": "known",
+            "value": {
+              "operation_id": "commerce.read_rows_v1",
+              "description": "{\"request_id\":1201,\"workflow\":\"read_rows_v1\"}"
+            }
+          },
+          "policy": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_commerce.customers",
+                "lab_commerce.orders",
+                "lab_commerce.payments"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":\"lab_commerce.customers\",\"resources\":[\"lab_commerce.customers\",\"lab_commerce.orders\"],\"tenant\":12}",
+                  "resources": [
+                    "lab_commerce.customers",
+                    "lab_commerce.orders",
+                    "lab_commerce.payments"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":\"lab_commerce.payments\",\"resources\":[\"lab_commerce.orders\",\"lab_commerce.payments\"],\"tenant\":12}",
+                  "resources": [
+                    "lab_commerce.customers",
+                    "lab_commerce.orders",
+                    "lab_commerce.payments"
+                  ]
+                }
+              ],
+              "sensitive_resources": [
+                "lab_commerce.customers",
+                "lab_commerce.orders",
+                "lab_commerce.payments"
+              ]
+            }
+          }
+        }
+      },
+      "representation_tags": [
+        "char_function",
+        "comments",
+        "string_concatenation"
+      ]
+    },
+    {
+      "observation_id": "obs_s5_7c7369cfdc492ab3ce3eaafe19c1dc18",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "split_id": "split_3be167948549fd4a1a1bedcccc8b65751669fe0d64dfc2999bd7478eab10c66e",
+      "fold": 0,
+      "part": "train",
+      "task": "privilege",
+      "target": 0,
+      "group_id": "g6_5355d527d397747d593f876daa9c0a73b639e32c3e896f1b35b6cd60691bd111",
+      "input": {
+        "sql": "gRaNt/* q */\nsElEcT/* q */\noN/* q */\nlab_support.tickets/* q */\ntO/* q */\n'report_service'@'localhost'/* q */\nwItH/* q */\ngRaNt/* q */\noPtIoN;",
+        "context": {
+          "dialect": {
+            "availability": "known",
+            "value": "mysql"
+          },
+          "active_role": {
+            "availability": "known",
+            "value": "ops_service@localhost"
+          },
+          "permissions": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_support.messages",
+                "lab_support.tickets"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "grant"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_support.messages",
+                    "lab_support.tickets"
+                  ]
+                }
+              ]
+            }
+          },
+          "application_operation": {
+            "availability": "known",
+            "value": {
+              "operation_id": "support.delegate_access_v1",
+              "description": "{\"request_id\":1302,\"workflow\":\"delegate_access_v1\"}"
+            }
+          },
+          "policy": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_support.messages",
+                "lab_support.tickets"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "grant"
+                  ],
+                  "condition": "{\"delegable\":true,\"privileges\":[\"select\"],\"recipient\":\"report_service@localhost\",\"resources\":[\"lab_support.tickets\"]}",
+                  "resources": [
+                    "lab_support.messages",
+                    "lab_support.tickets"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "grant"
+                  ],
+                  "condition": "{\"delegable\":true,\"privileges\":[\"select\"],\"recipient\":\"report_service@localhost\",\"resources\":[\"lab_support.messages\"]}",
+                  "resources": [
+                    "lab_support.messages",
+                    "lab_support.tickets"
+                  ]
+                }
+              ],
+              "sensitive_resources": []
+            }
+          }
+        }
+      },
+      "representation_tags": [
+        "comments"
+      ]
+    },
+    {
+      "observation_id": "obs_s5_c8c0f115b71ef8886baf41109b835848",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "split_id": "split_3be167948549fd4a1a1bedcccc8b65751669fe0d64dfc2999bd7478eab10c66e",
+      "fold": 0,
+      "part": "train",
+      "task": "exfiltration",
+      "target": 1,
+      "group_id": "g6_5d88cefde5521224994d030b4861d0fb4bbda9e4a8f3257c07b83ee359816ccb",
+      "input": {
+        "sql": "SELECT t.entry_id, u.amount FROM lab_finance.ledger_entries t JOIN lab_finance.allocations u ON t.entry_id = u.entry_id AND t.tenant_key = u.tenant_key WHERE t.tenant_key = 31 ORDER BY t.entry_id;",
+        "context": {
+          "dialect": {
+            "availability": "known",
+            "value": "postgresql"
+          },
+          "active_role": {
+            "availability": "known",
+            "value": "ops_service"
+          },
+          "permissions": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.allocations",
+                "lab_finance.ledger_entries",
+                "lab_finance.reconciliations"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"grant_authority\":null,\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "lab_finance.allocations",
+                    "lab_finance.ledger_entries",
+                    "lab_finance.reconciliations"
+                  ]
+                }
+              ]
+            }
+          },
+          "application_operation": {
+            "availability": "known",
+            "value": {
+              "operation_id": "finance.read_rows_v1",
+              "description": "{\"request_id\":1204,\"workflow\":\"read_rows_v1\"}"
+            }
+          },
+          "policy": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "lab_finance.allocations",
+                "lab_finance.ledger_entries",
+                "lab_finance.reconciliations"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":\"lab_finance.reconciliations\",\"resources\":[\"lab_finance.ledger_entries\",\"lab_finance.reconciliations\"],\"tenant\":31}",
+                  "resources": [
+                    "lab_finance.allocations",
+                    "lab_finance.ledger_entries",
+                    "lab_finance.reconciliations"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "select"
+                  ],
+                  "condition": "{\"aggregate\":null,\"column\":\"amount\",\"related_resource\":\"lab_finance.allocations\",\"resources\":[\"lab_finance.allocations\",\"lab_finance.ledger_entries\"],\"tenant\":31}",
+                  "resources": [
+                    "lab_finance.allocations",
+                    "lab_finance.ledger_entries",
+                    "lab_finance.reconciliations"
+                  ]
+                }
+              ],
+              "sensitive_resources": [
+                "lab_finance.allocations",
+                "lab_finance.ledger_entries",
+                "lab_finance.reconciliations"
+              ]
+            }
+          }
+        }
+      },
+      "representation_tags": []
+    },
+    {
+      "observation_id": "obs_sg_3139d71704bce03f36e19ffdff3ad76c2c9aed46e7d1d0116c730d1e7cbcbf9d",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "split_id": "split_552e571c641d8227168c41cf7a397c97256e24dfffaa9ad2deb98f3a748013f2",
+      "fold": 0,
+      "part": "train",
+      "task": "sqli",
+      "target": 0,
+      "group_id": "g6_619aeb7d528a59261aac4344f89a5f6937171ea4aa684aba0c34b6bf44e2d785",
+      "input": {
+        "sql": "select username, password, status from info.admin where id=2383",
+        "context": {
+          "dialect": {
+            "availability": "unknown",
+            "value": null
+          },
+          "active_role": {
+            "availability": "unknown",
+            "value": null
+          },
+          "permissions": {
+            "availability": "unknown",
+            "value": null
+          },
+          "application_operation": {
+            "availability": "unknown",
+            "value": null
+          },
+          "policy": {
+            "availability": "unknown",
+            "value": null
+          }
+        }
+      },
+      "representation_tags": []
+    },
+    {
+      "observation_id": "obs_s5_b426166d1755bbaa274ba0fd1f2cab2e",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "split_id": "split_3be167948549fd4a1a1bedcccc8b65751669fe0d64dfc2999bd7478eab10c66e",
+      "fold": 0,
+      "part": "train",
+      "task": "privilege",
+      "target": 1,
+      "group_id": "g6_1a0cc9b8861d001add76dc85b4b493b5b96566182b313d410bb28347f6b29f15",
+      "input": {
+        "sql": "ALTER ROLE commerce_delivery_team ADD MEMBER report_service;",
+        "context": {
+          "dialect": {
+            "availability": "known",
+            "value": "mssql"
+          },
+          "active_role": {
+            "availability": "known",
+            "value": "ops_service"
+          },
+          "permissions": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "role:commerce_delivery_team",
+                "role:commerce_review_team"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "grant"
+                  ],
+                  "condition": "{\"grant_authority\":\"fixture-owned objects and role administration\",\"technical_scope\":\"both declared candidate actions are technically available; the operation policy is narrower\"}",
+                  "resources": [
+                    "role:commerce_delivery_team",
+                    "role:commerce_review_team"
+                  ]
+                }
+              ]
+            }
+          },
+          "application_operation": {
+            "availability": "known",
+            "value": {
+              "operation_id": "commerce.delegate_access_v1",
+              "description": "{\"request_id\":1200,\"workflow\":\"delegate_access_v1\"}"
+            }
+          },
+          "policy": {
+            "availability": "known",
+            "value": {
+              "coverage": "complete",
+              "scope_resources": [
+                "role:commerce_delivery_team",
+                "role:commerce_review_team"
+              ],
+              "rules": [
+                {
+                  "effect": "allow",
+                  "actions": [
+                    "grant"
+                  ],
+                  "condition": "{\"delegable\":false,\"privileges\":[\"membership\"],\"recipient\":\"report_service\",\"resources\":[\"role:commerce_review_team\"]}",
+                  "resources": [
+                    "role:commerce_delivery_team",
+                    "role:commerce_review_team"
+                  ]
+                },
+                {
+                  "effect": "deny",
+                  "actions": [
+                    "grant"
+                  ],
+                  "condition": "{\"delegable\":false,\"privileges\":[\"membership\"],\"recipient\":\"report_service\",\"resources\":[\"role:commerce_delivery_team\"]}",
+                  "resources": [
+                    "role:commerce_delivery_team",
+                    "role:commerce_review_team"
+                  ]
+                }
+              ],
+              "sensitive_resources": []
+            }
+          }
+        }
+      },
+      "representation_tags": []
+    },
+    {
+      "observation_id": "obs_sg_63384488b9439ea139744a48f82c3d92f01b6dd27fd673f37adeaad5434a19f2",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "split_id": "split_552e571c641d8227168c41cf7a397c97256e24dfffaa9ad2deb98f3a748013f2",
+      "fold": 0,
+      "part": "train",
+      "task": "sqli",
+      "target": 1,
+      "group_id": "g6_2fea253ed605b65c7299c2cfd90041a566e1e603fd469802bd48dda90ed9bec7",
+      "input": {
+        "sql": "select username, password from info.admin where id < (select user_id from info.users where username not in (select login_user from info.login where not exists (select * from info.admin where username=\"826.9\"))) and ascii(substr(database(),4,1))=98-- and (((\"stgd\"=\"stgd\")))",
+        "context": {
+          "dialect": {
+            "availability": "unknown",
+            "value": null
+          },
+          "active_role": {
+            "availability": "unknown",
+            "value": null
+          },
+          "permissions": {
+            "availability": "unknown",
+            "value": null
+          },
+          "application_operation": {
+            "availability": "unknown",
+            "value": null
+          },
+          "policy": {
+            "availability": "unknown",
+            "value": null
+          }
+        }
+      },
+      "representation_tags": []
+    }
+  ]
+}

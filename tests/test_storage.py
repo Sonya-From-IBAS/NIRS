@@ -344,6 +344,51 @@ class StorageIntegrationTests(unittest.TestCase):
         with self.assertRaises(psycopg.errors.RaiseException),self.store.write() as connection:
             connection.execute('DELETE FROM nirs.llm_requests WHERE request_key=%s',(key,))
 
+    def test_stage10_final_test_rejects_train_rows_and_changed_replayed_predictions(self):
+        from stage10_store import load_test,persist_test
+        verified=[row for row in self.records if row['annotations'][-1]['status']=='verified']
+        ids=[row['observation_id'] for row in verified]
+        all_ids=[row['observation_id'] for row in self.records]
+        selected=set(ids[-2:])
+        split=self.store.save_split(self.dataset,{'unit_test':'stage10-final'},
+            {0:{oid:'test' if oid in selected else 'train' for oid in all_ids}})
+        records=load_test(self.store,self.dataset,split['split_id'],0,sorted(selected))
+        rows=[{'observation_id':row['observation_id'],'split_id':split['split_id'],'fold':0,
+               'truth':row['truth'],'prediction':row['truth'],'status':'ok'} for row in records]
+        config={'stage':10,'role':'final_test'}
+        first=persist_test(self.store,self.dataset,'stage10-test',config,rows,{})
+        self.assertEqual(persist_test(self.store,self.dataset,'stage10-test',config,rows,{})['run_id'],first['run_id'])
+        changed=deepcopy(rows);changed[0]['prediction']=1-changed[0]['truth']
+        with self.assertRaises(ValueError):
+            persist_test(self.store,self.dataset,'stage10-test',config,changed,{})
+        with self.assertRaises(ValueError):
+            load_test(self.store,self.dataset,split['split_id'],0,[ids[0]])
+
+    def test_stage10_frozen_fit_outer_prediction_and_resume_do_not_refit_or_predict_again(self):
+        import stage10_evaluate as evaluation
+        from experiment_store import load_inputs
+        verified=[row['observation_id'] for row in self.records if row['annotations'][-1]['status']=='verified']
+        test_ids=set(verified[-2:])
+        subset=self.store.create_subset(self.dataset,verified,'stage10 verified fixture',{'unit_test':'verified-fixture'})
+        split=self.store.save_split(subset,{'unit_test':'stage10-model-roundtrip'},
+            {0:{oid:'test' if oid in test_ids else 'train' for oid in verified}})
+        entry={'dataset_version_id':subset,'split_id':split['split_id'],'cohort':'controlled',
+            'parent_scope':{'split_id':split['split_id'],'fold':0,'part':'train'}}
+        ids,inputs,labels=load_inputs(self.store,entry)
+        selection={'candidate':{'method':'LogisticRegression','parameters':{'C':1.,'class_weight':'balanced'},
+            'feature':{'name':'raw','input_mode':'sql_only','relations':False,'parameters':{'text_mode':'raw','structure':False,'max_features':1000}}},'threshold':0.}
+        folder=self.folder/'stage10-roundtrip';folder.mkdir()
+        (folder/'evaluation_plan.json').write_text('{}',encoding='utf-8')
+        with patch('stage10_evaluate.LOCAL',folder/'local'),patch('stage10_evaluate.OUTPUT',folder), \
+             patch('experiment_store.LOCAL',folder/'matrices'):
+            model,_=evaluation.fit_frozen(self.store,entry,selection,ids,inputs,labels,evaluation.signature())
+            first=evaluation.evaluate_models(self.store,entry,[model],'unit','test',evaluation.signature())
+            with patch.object(model['estimator'],'predict',side_effect=AssertionError('Resume must not predict again')), \
+                 patch('stage10_evaluate.new_classifier',side_effect=AssertionError('Resume must not fit again')):
+                again=evaluation.evaluate_models(self.store,entry,[model],'unit','test',evaluation.signature())
+            self.assertEqual(first,again)
+            self.assertEqual(first[0]['metrics']['observations'],2)
+
     def test_LLM_interrupted_request_is_never_automatically_reissued(self):
         from detector_llm import MODELS,build_specification,prompt_observation
         from llm_store import prepare_pilot,reserve_request

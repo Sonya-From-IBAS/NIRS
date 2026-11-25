@@ -1,0 +1,584 @@
+{
+  "purpose": "preliminary_preview",
+  "runs": [
+    {
+      "run_id": "run_10ba5678d0eba82424dd061b4641d231f6be9d6508bdf8c828117042075de560",
+      "method": "LLM gptoss120 zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.8275862068965517,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.8275862068965517,
+          "attack_recall": 0.8,
+          "false_positive_rate": 0.13333333333333333,
+          "attack_precision": 0.8571428571428571,
+          "confusion_matrix": [
+            [
+              13,
+              2
+            ],
+            [
+              3,
+              12
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 12,
+            "fp": 2,
+            "fn": 3,
+            "tn": 13
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 16,
+              "precision": 0.8125,
+              "recall": 0.8666666666666667,
+              "f1": 0.8387096774193549
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 14,
+              "precision": 0.8571428571428571,
+              "recall": 0.8,
+              "f1": 0.8275862068965517
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+        "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "code/detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3",
+        "llm_plan.json": "b9cdccd02b64469524e309ad1f1e9acc0604a99be7641ccfa36ef87885bdbcd6",
+        "common_inputs.json": "96c507610c41cdd8ee951c78cf94964814f5b7779f846b49ba46bf6ee87901ad",
+        "llm_requests.json": "b1db9c4b072a80864419734304ebd7895022448259c905382fbb2310ce259561"
+      },
+      "configuration": {
+        "stage": 10,
+        "role": "preliminary_preview",
+        "model": "gptoss120",
+        "mode": "zero_shot",
+        "input_mode": "sql_context",
+        "preview_id": "preview_99b91e08d4c470e0f79d2629e55ae014c2902dba2c2b66ba27663ad8fd17150f",
+        "code_sha256_lf": {
+          "main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+          "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+          "detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+          "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+          "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+          "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+          "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+          "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+          "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+          "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+          "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+          "preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3"
+        },
+        "not_a_new_blind_test": true
+      }
+    },
+    {
+      "run_id": "run_ad7dc676c516728180eca65bb7d8cb9e8f85304ee06a09cb69c6e79961a8f0e0",
+      "method": "LLM gptoss120 few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.8148148148148148,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.8148148148148148,
+          "attack_recall": 0.7333333333333333,
+          "false_positive_rate": 0.06666666666666667,
+          "attack_precision": 0.9166666666666666,
+          "confusion_matrix": [
+            [
+              14,
+              1
+            ],
+            [
+              4,
+              11
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 11,
+            "fp": 1,
+            "fn": 4,
+            "tn": 14
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 18,
+              "precision": 0.7777777777777778,
+              "recall": 0.9333333333333333,
+              "f1": 0.8484848484848485
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 12,
+              "precision": 0.9166666666666666,
+              "recall": 0.7333333333333333,
+              "f1": 0.8148148148148148
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+        "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "code/detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3",
+        "llm_plan.json": "b9cdccd02b64469524e309ad1f1e9acc0604a99be7641ccfa36ef87885bdbcd6",
+        "common_inputs.json": "96c507610c41cdd8ee951c78cf94964814f5b7779f846b49ba46bf6ee87901ad",
+        "llm_requests.json": "b1db9c4b072a80864419734304ebd7895022448259c905382fbb2310ce259561"
+      },
+      "configuration": {
+        "stage": 10,
+        "role": "preliminary_preview",
+        "model": "gptoss120",
+        "mode": "few_shot",
+        "input_mode": "sql_context",
+        "preview_id": "preview_99b91e08d4c470e0f79d2629e55ae014c2902dba2c2b66ba27663ad8fd17150f",
+        "code_sha256_lf": {
+          "main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+          "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+          "detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+          "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+          "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+          "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+          "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+          "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+          "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+          "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+          "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+          "preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3"
+        },
+        "not_a_new_blind_test": true
+      }
+    },
+    {
+      "run_id": "run_924bb67e4ff36ebb8c2f0cce59a32cd64107e49542b3109d056ab8a4a20903d5",
+      "method": "LLM glm53 zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+        "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "code/detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3",
+        "llm_plan.json": "b9cdccd02b64469524e309ad1f1e9acc0604a99be7641ccfa36ef87885bdbcd6",
+        "common_inputs.json": "96c507610c41cdd8ee951c78cf94964814f5b7779f846b49ba46bf6ee87901ad",
+        "llm_requests.json": "b1db9c4b072a80864419734304ebd7895022448259c905382fbb2310ce259561"
+      },
+      "configuration": {
+        "stage": 10,
+        "role": "preliminary_preview",
+        "model": "glm53",
+        "mode": "zero_shot",
+        "input_mode": "sql_context",
+        "preview_id": "preview_99b91e08d4c470e0f79d2629e55ae014c2902dba2c2b66ba27663ad8fd17150f",
+        "code_sha256_lf": {
+          "main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+          "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+          "detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+          "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+          "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+          "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+          "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+          "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+          "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+          "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+          "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+          "preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3"
+        },
+        "not_a_new_blind_test": true
+      }
+    },
+    {
+      "run_id": "run_a910d2eb93968cb9cf238475f39408233628dba6d3ab9c0a6a767174e87d253b",
+      "method": "LLM glm53 few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+        "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "code/detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3",
+        "llm_plan.json": "b9cdccd02b64469524e309ad1f1e9acc0604a99be7641ccfa36ef87885bdbcd6",
+        "common_inputs.json": "96c507610c41cdd8ee951c78cf94964814f5b7779f846b49ba46bf6ee87901ad",
+        "llm_requests.json": "b1db9c4b072a80864419734304ebd7895022448259c905382fbb2310ce259561"
+      },
+      "configuration": {
+        "stage": 10,
+        "role": "preliminary_preview",
+        "model": "glm53",
+        "mode": "few_shot",
+        "input_mode": "sql_context",
+        "preview_id": "preview_99b91e08d4c470e0f79d2629e55ae014c2902dba2c2b66ba27663ad8fd17150f",
+        "code_sha256_lf": {
+          "main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+          "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+          "detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+          "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+          "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+          "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+          "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+          "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+          "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+          "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+          "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+          "preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3"
+        },
+        "not_a_new_blind_test": true
+      }
+    },
+    {
+      "run_id": "run_4842125d713afc9bf2a4f96b183d54994b3e8effa94452ae2d32fab6124a2a1f",
+      "method": "LLM kimi31pro zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+        "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "code/detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3",
+        "llm_plan.json": "b9cdccd02b64469524e309ad1f1e9acc0604a99be7641ccfa36ef87885bdbcd6",
+        "common_inputs.json": "96c507610c41cdd8ee951c78cf94964814f5b7779f846b49ba46bf6ee87901ad",
+        "llm_requests.json": "b1db9c4b072a80864419734304ebd7895022448259c905382fbb2310ce259561"
+      },
+      "configuration": {
+        "stage": 10,
+        "role": "preliminary_preview",
+        "model": "kimi31pro",
+        "mode": "zero_shot",
+        "input_mode": "sql_context",
+        "preview_id": "preview_99b91e08d4c470e0f79d2629e55ae014c2902dba2c2b66ba27663ad8fd17150f",
+        "code_sha256_lf": {
+          "main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+          "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+          "detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+          "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+          "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+          "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+          "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+          "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+          "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+          "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+          "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+          "preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3"
+        },
+        "not_a_new_blind_test": true
+      }
+    },
+    {
+      "run_id": "run_a8cce7a5c4af948a85868fe822e946ed72d844a72055a82188181949ff1f1d77",
+      "method": "LLM kimi31pro few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+        "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "code/detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3",
+        "llm_plan.json": "b9cdccd02b64469524e309ad1f1e9acc0604a99be7641ccfa36ef87885bdbcd6",
+        "common_inputs.json": "96c507610c41cdd8ee951c78cf94964814f5b7779f846b49ba46bf6ee87901ad",
+        "llm_requests.json": "b1db9c4b072a80864419734304ebd7895022448259c905382fbb2310ce259561"
+      },
+      "configuration": {
+        "stage": 10,
+        "role": "preliminary_preview",
+        "model": "kimi31pro",
+        "mode": "few_shot",
+        "input_mode": "sql_context",
+        "preview_id": "preview_99b91e08d4c470e0f79d2629e55ae014c2902dba2c2b66ba27663ad8fd17150f",
+        "code_sha256_lf": {
+          "main_llm.py": "96a5b6fc904ce3dcad4f95f316c4bc868b8e3696f0ff306e02a9d4c3b8473cbb",
+          "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+          "detector_llm.py": "3a6590baa3bb669b56cd6b0e2223675a5360d2b36bf75883426e02d928e472d6",
+          "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+          "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+          "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+          "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+          "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+          "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+          "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+          "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+          "preview_llm.py": "2e4b2a9e7fbf45f2e2d96fc7df1d50528e3bb0707d6bc8e597d6cffa68e459b3"
+        },
+        "not_a_new_blind_test": true
+      }
+    }
+  ],
+  "new_API_attempts": 34,
+  "new_API_ceiling": 34,
+  "reused_decisions": 37,
+  "observed_tokens": {
+    "prompt_tokens": 94514,
+    "completion_tokens": 21149,
+    "total_tokens": 115663
+  },
+  "cached_origin": "main_adb9d11cc26e58c31997f07a298d8063d4d44e16b8f133d0bcc36c2bd10999d6"
+}

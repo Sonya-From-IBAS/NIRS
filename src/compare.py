@@ -223,4 +223,14 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    import preview_report
+    parser=argparse.ArgumentParser(description='Build current PostgreSQL-based report, or explicitly use historical CSV controls.')
+    parser.add_argument('--manifest',type=Path,default=Path(__file__).resolve().parents[1]/'results/preview/run_manifest.json')
+    parser.add_argument('--historical',action='store_true')
+    args=parser.parse_args()
+    if args.historical:
+        main()
+    else:
+        preview_report.OUTPUT=args.manifest.resolve().parent
+        preview_report.main()

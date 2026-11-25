@@ -1,0 +1,1082 @@
+[
+  {
+    "request_key": "llm_83537ef1c9e5a99682359f506318bc5cc61d351b8cd6c401503df10fd7a4fbe7",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-82891c82a1c0fdeb",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635920,
+    "request_id": null,
+    "elapsed_s": 3.821117,
+    "usage": {
+      "completion_tokens": 163,
+      "prompt_tokens": 3277,
+      "total_tokens": 3440,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2352
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q074\",\"label\":0},{\"id\":\"q076\",\"label\":0},{\"id\":\"q092\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_e960b2b550e2be20fa345b7d7ae2d6df1ef5189e2781a85b6c47acd51708a038",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      0
+    ],
+    "response_id": "chatcmpl-90a9a3050cfcac4a",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635932,
+    "request_id": null,
+    "elapsed_s": 3.410621,
+    "usage": {
+      "completion_tokens": 135,
+      "prompt_tokens": 3304,
+      "total_tokens": 3439,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2384
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q099\",\"label\":0},{\"id\":\"q119\",\"label\":1},{\"id\":\"q121\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_9eea9aee0b7f191a202fa43e56b99315f8abfd527df877ebe75ab4b0da39c8e3",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      1
+    ],
+    "response_id": "chatcmpl-8d8fa0296b9b11c3",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635943,
+    "request_id": null,
+    "elapsed_s": 3.545786,
+    "usage": {
+      "completion_tokens": 152,
+      "prompt_tokens": 3180,
+      "total_tokens": 3332,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2384
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q128\",\"label\":1},{\"id\":\"q134\",\"label\":1},{\"id\":\"q155\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_05e7a8121b065fd4f016fbfcca8801649c540e1058f581a8d935972c867b8e96",
+    "status": "ok",
+    "labels": [
+      1,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-9e122b737defc4a6",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635955,
+    "request_id": null,
+    "elapsed_s": 3.501841,
+    "usage": {
+      "completion_tokens": 141,
+      "prompt_tokens": 2866,
+      "total_tokens": 3007,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2352
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q164\",\"label\":1},{\"id\":\"q198\",\"label\":0},{\"id\":\"q217\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_69498a9a3e2a39471749c0e81486d465e36af35e78c5b1f3898e8bbb5ba1d265",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-aca5387de3e2eadc",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635966,
+    "request_id": null,
+    "elapsed_s": 4.20196,
+    "usage": {
+      "completion_tokens": 185,
+      "prompt_tokens": 3358,
+      "total_tokens": 3543,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2352
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q227\",\"label\":0},{\"id\":\"q231\",\"label\":0},{\"id\":\"q234\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_f289a86040687f6d3e37d1a67f164b8c70deddbbd8d2871d77eb6f8204556c31",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      0
+    ],
+    "response_id": "chatcmpl-95cbd8ff0d6019fc",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635979,
+    "request_id": null,
+    "elapsed_s": 3.379211,
+    "usage": {
+      "completion_tokens": 166,
+      "prompt_tokens": 3491,
+      "total_tokens": 3657,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2352
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q241\",\"label\":0},{\"id\":\"q242\",\"label\":1},{\"id\":\"q246\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_b64d93829ed977e2b1633a8f174ed2ce3ab6ad350f07da24cf9d084a9995ea6f",
+    "status": "ok",
+    "labels": [
+      1,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-bdc4f2028f2e7301",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795635990,
+    "request_id": null,
+    "elapsed_s": 4.492805,
+    "usage": {
+      "completion_tokens": 248,
+      "prompt_tokens": 3012,
+      "total_tokens": 3260,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2688
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q248\",\"label\":1},{\"id\":\"q258\",\"label\":0},{\"id\":\"q268\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_5e45017fb23f15df0f1176619c8d616fc618699a84c5469f4f605cd40edd0668",
+    "status": "ok",
+    "labels": [
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-8f8cb593650b30c4",
+    "actual_model": "openai/gpt-oss-120b",
+    "created": 1795636003,
+    "request_id": null,
+    "elapsed_s": 3.148213,
+    "usage": {
+      "completion_tokens": 128,
+      "prompt_tokens": 3117,
+      "total_tokens": 3245,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2352
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q271\",\"label\":0},{\"id\":\"q277\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_13292e9a688ee3f20ad07c709bba1157d15be19a6ef1c3fdf77e9221b54c6871",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1
+    ],
+    "response_id": "10f5c86fb8884fcbbcb568387e671964",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636015,
+    "request_id": null,
+    "elapsed_s": 19.000134,
+    "usage": {
+      "completion_tokens": 1085,
+      "prompt_tokens": 1138,
+      "total_tokens": 2223,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1050
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q003\",\"label\":0},{\"id\":\"q022\",\"label\":1},{\"id\":\"q024\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_f1fe8f0d080cc3d078084d105f24bec969ff6707ac65b8711927d799afc5c4da",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      1
+    ],
+    "response_id": "6ac54514a8834a0d9d04d7d8cacac061",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636050,
+    "request_id": null,
+    "elapsed_s": 29.0363,
+    "usage": {
+      "completion_tokens": 1214,
+      "prompt_tokens": 1139,
+      "total_tokens": 2353,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "reasoning_tokens": 1179
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q029\",\"label\":0},{\"id\":\"q050\",\"label\":0},{\"id\":\"q054\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_fb26afcf940961284bbeaeb28600830a021f6380bfd2aaaa329982ba259af366",
+    "status": "ok",
+    "labels": [
+      1,
+      0,
+      0
+    ],
+    "response_id": "0056775b4003478098d62ffde1f1f432",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636079,
+    "request_id": null,
+    "elapsed_s": 14.103465,
+    "usage": {
+      "completion_tokens": 782,
+      "prompt_tokens": 1537,
+      "total_tokens": 2319,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "reasoning_tokens": 747
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q063\",\"label\":1},{\"id\":\"q074\",\"label\":0},{\"id\":\"q076\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_b148cf5f06c63c02df5a5e5aec75c4faffcb4c778efedbd8e8754e70a86c7eb6",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      1
+    ],
+    "response_id": "35bfd6428e10431eb77153266a5284d6",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636101,
+    "request_id": null,
+    "elapsed_s": 13.803788,
+    "usage": {
+      "completion_tokens": 785,
+      "prompt_tokens": 959,
+      "total_tokens": 1744,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 320
+      },
+      "reasoning_tokens": 751
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q092\",\"label\":1},{\"id\":\"q099\",\"label\":1},{\"id\":\"q119\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_29498a4afddf3e738d303662060030550f1a731ea15a68a1a58a21fadde00cb1",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1
+    ],
+    "response_id": "39fb20e34d6b47b5a311c80f151805ef",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636123,
+    "request_id": null,
+    "elapsed_s": 7.905025,
+    "usage": {
+      "completion_tokens": 400,
+      "prompt_tokens": 1374,
+      "total_tokens": 1774,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "reasoning_tokens": 368
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q121\",\"label\":0},{\"id\":\"q128\",\"label\":1},{\"id\":\"q134\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_b117bbdd7db6d7b0345ea3c24daf003938d979a9075be05db71ed5998624c070",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      0
+    ],
+    "response_id": "7b7245f8520c46efb75f02f093c6be83",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636139,
+    "request_id": null,
+    "elapsed_s": 11.983157,
+    "usage": {
+      "completion_tokens": 657,
+      "prompt_tokens": 800,
+      "total_tokens": 1457,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 320
+      },
+      "reasoning_tokens": 625
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q155\",\"label\":1},{\"id\":\"q164\",\"label\":1},{\"id\":\"q198\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_ae345fd32e43f344d77cddaa1a47807745f6a9c6381b7254c602913aca685649",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      0
+    ],
+    "response_id": "5990f57ffc19449b8b419a5d41edc592",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636159,
+    "request_id": null,
+    "elapsed_s": 17.886637,
+    "usage": {
+      "completion_tokens": 1053,
+      "prompt_tokens": 1264,
+      "total_tokens": 2317,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 320
+      },
+      "reasoning_tokens": 1019
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q217\",\"label\":0},{\"id\":\"q227\",\"label\":0},{\"id\":\"q231\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_622a635c225c3381dd3e08208d22b2a4d8a89477a192a5040578a8c4c60d505e",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      1
+    ],
+    "response_id": "7d218c3b1a1d4ecb85555d246c5f26c0",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636185,
+    "request_id": null,
+    "elapsed_s": 22.818379,
+    "usage": {
+      "completion_tokens": 1313,
+      "prompt_tokens": 1168,
+      "total_tokens": 2481,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 320
+      },
+      "reasoning_tokens": 1278
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q234\",\"label\":0},{\"id\":\"q241\",\"label\":0},{\"id\":\"q242\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_3f28ec7cb784b168cb1e356eadf5f4fa96452dca6b30178ba2b22c6b5c9989c0",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1
+    ],
+    "response_id": "079fd881f39046859cf30c5d921f8d3c",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636216,
+    "request_id": null,
+    "elapsed_s": 17.930185,
+    "usage": {
+      "completion_tokens": 1010,
+      "prompt_tokens": 1194,
+      "total_tokens": 2204,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "reasoning_tokens": 975
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q246\",\"label\":0},{\"id\":\"q248\",\"label\":1},{\"id\":\"q258\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_b2575c766511f2586fe28d5eb11e1689e530e8d2a521b43dcd2b7995c2392661",
+    "status": "ok",
+    "labels": [
+      1,
+      0,
+      0
+    ],
+    "response_id": "8245ae7f1da64f8491c374cf82e9bb43",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636242,
+    "request_id": null,
+    "elapsed_s": 9.907613,
+    "usage": {
+      "completion_tokens": 543,
+      "prompt_tokens": 1173,
+      "total_tokens": 1716,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 320
+      },
+      "reasoning_tokens": 508
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q268\",\"label\":1},{\"id\":\"q271\",\"label\":0},{\"id\":\"q277\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_cb33ff8c0bcdb85c988c4c11b610f5ff6729b9043f284544d099256359f7d677",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1
+    ],
+    "response_id": "11fdb76552894aef8fa6c2edefbca58d",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636262,
+    "request_id": null,
+    "elapsed_s": 15.348468,
+    "usage": {
+      "completion_tokens": 765,
+      "prompt_tokens": 3092,
+      "total_tokens": 3857,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "reasoning_tokens": 730
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q003\",\"label\":0},{\"id\":\"q022\",\"label\":1},{\"id\":\"q024\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_bb446bc6e0f1c0bcfad5946020331ca75f95cabcca7eb0a992ee1fde1e5fe17a",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      1
+    ],
+    "response_id": "e54d07d332504a06b2938f901da3e5b9",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636285,
+    "request_id": null,
+    "elapsed_s": 19.936409,
+    "usage": {
+      "completion_tokens": 1039,
+      "prompt_tokens": 3093,
+      "total_tokens": 4132,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2176
+      },
+      "reasoning_tokens": 1004
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q029\",\"label\":0},{\"id\":\"q050\",\"label\":0},{\"id\":\"q054\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_7f778aff925b60a05d307d0804ac3e83af1aa5ba508a772e935a0063a9878518",
+    "status": "ok",
+    "labels": [
+      1,
+      0,
+      0
+    ],
+    "response_id": "54cc7e994d604ce4bb14e68c5a8b6371",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636313,
+    "request_id": null,
+    "elapsed_s": 14.3015,
+    "usage": {
+      "completion_tokens": 771,
+      "prompt_tokens": 3491,
+      "total_tokens": 4262,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 736
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q063\",\"label\":1},{\"id\":\"q074\",\"label\":0},{\"id\":\"q076\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_92d585f349bdb61d242e23b8e870b6b131b1eb3b027165f8cd78b99e245955f9",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      1
+    ],
+    "response_id": "c5ba0c73f1f9478b9936e77676a4b5bd",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636336,
+    "request_id": null,
+    "elapsed_s": 23.454385,
+    "usage": {
+      "completion_tokens": 1234,
+      "prompt_tokens": 2913,
+      "total_tokens": 4147,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 1200
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q092\",\"label\":1},{\"id\":\"q099\",\"label\":1},{\"id\":\"q119\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_cced5f9446c25f5a23fb4fa32ead8422f30c23a9a0fd1bba8eb582c3a3348e22",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1
+    ],
+    "response_id": "263a41d956b54bf5b3b0edcb1b593e5d",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636367,
+    "request_id": null,
+    "elapsed_s": 6.358888,
+    "usage": {
+      "completion_tokens": 329,
+      "prompt_tokens": 3328,
+      "total_tokens": 3657,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2176
+      },
+      "reasoning_tokens": 297
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q121\",\"label\":0},{\"id\":\"q128\",\"label\":1},{\"id\":\"q134\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_151639b886f33784fd95034d1bfd2922b3ed9db1f26d3d7e415371d1923cfb9a",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      0
+    ],
+    "response_id": "401e12f6548545d9a60ee2b725a5bd63",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636381,
+    "request_id": null,
+    "elapsed_s": 9.360247,
+    "usage": {
+      "completion_tokens": 499,
+      "prompt_tokens": 2754,
+      "total_tokens": 3253,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 467
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q155\",\"label\":1},{\"id\":\"q164\",\"label\":1},{\"id\":\"q198\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_03164359e44c7b645aec28538794471089a196b5df25e577778204160cc468ed",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      0
+    ],
+    "response_id": "09649206880a4c638a8cffd74670dcbd",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636398,
+    "request_id": null,
+    "elapsed_s": 19.562906,
+    "usage": {
+      "completion_tokens": 1088,
+      "prompt_tokens": 3218,
+      "total_tokens": 4306,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 1054
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q217\",\"label\":0},{\"id\":\"q227\",\"label\":0},{\"id\":\"q231\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_97273f4d148838a2952a2e51b0799d937c30f0f3b9a777ad7f7ace87991a22de",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      1
+    ],
+    "response_id": "ff548240f7cb45aaad69a800e5cad16d",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636426,
+    "request_id": null,
+    "elapsed_s": 9.536904,
+    "usage": {
+      "completion_tokens": 485,
+      "prompt_tokens": 3122,
+      "total_tokens": 3607,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 450
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q234\",\"label\":0},{\"id\":\"q241\",\"label\":0},{\"id\":\"q242\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_b2359feed99bd10f61858f399b82b50a715413c56b794be9136d69d271a391e0",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1
+    ],
+    "response_id": "24b1afdee286455ba1093691c4aa3855",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636444,
+    "request_id": null,
+    "elapsed_s": 12.327758,
+    "usage": {
+      "completion_tokens": 658,
+      "prompt_tokens": 3148,
+      "total_tokens": 3806,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 623
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q246\",\"label\":0},{\"id\":\"q248\",\"label\":1},{\"id\":\"q258\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_337badcc07223ef591952b105bb904695fdff3cae9c1dfd006815f37b848fc65",
+    "status": "ok",
+    "labels": [
+      1,
+      0,
+      0
+    ],
+    "response_id": "14c02ac2364040218aea0b208701bcb6",
+    "actual_model": "zai-org/GLM-5.3",
+    "created": 1795636464,
+    "request_id": null,
+    "elapsed_s": 22.389133,
+    "usage": {
+      "completion_tokens": 1251,
+      "prompt_tokens": 3127,
+      "total_tokens": 4378,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 2240
+      },
+      "reasoning_tokens": 1216
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q268\",\"label\":1},{\"id\":\"q271\",\"label\":0},{\"id\":\"q277\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_f3ee5d034c7ab0a99b1dc04491e1e641a18d5e5e2ee8bd9b0145ab8e3c593a75",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "response_id": "chatcmpl-e4aa1623-6003-4e7c-82fc-ded502214dd2",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "created": 1795636494,
+    "request_id": null,
+    "elapsed_s": 8.031173,
+    "usage": {
+      "completion_tokens": 499,
+      "prompt_tokens": 3416,
+      "total_tokens": 3915,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 392,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 2048
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q003\",\"label\":0},{\"id\":\"q022\",\"label\":1},{\"id\":\"q024\",\"label\":1},{\"id\":\"q029\",\"label\":0},{\"id\":\"q050\",\"label\":0},{\"id\":\"q054\",\"label\":1},{\"id\":\"q063\",\"label\":1},{\"id\":\"q074\",\"label\":0},{\"id\":\"q076\",\"label\":0},{\"id\":\"q092\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_df08302b0b146d648b85510f19a5de67316c6b78d63b42ed911c85fe875a2633",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-ed28a9e9-c2f5-4433-99a4-67809c7d3d10",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "created": 1795636510,
+    "request_id": null,
+    "elapsed_s": 6.956026,
+    "usage": {
+      "completion_tokens": 440,
+      "prompt_tokens": 3120,
+      "total_tokens": 3560,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 333,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 2048
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q099\",\"label\":1},{\"id\":\"q119\",\"label\":1},{\"id\":\"q121\",\"label\":0},{\"id\":\"q128\",\"label\":1},{\"id\":\"q134\",\"label\":1},{\"id\":\"q155\",\"label\":1},{\"id\":\"q164\",\"label\":1},{\"id\":\"q198\",\"label\":0},{\"id\":\"q217\",\"label\":0},{\"id\":\"q227\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_4e282e8dc06ee5119343e5c6e386f36386ee1df6027ba2d60dc2ddd3f975354e",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-154bf6a7-79f9-4216-b22e-6ea654270d66",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "created": 1795636525,
+    "request_id": null,
+    "elapsed_s": 8.785654,
+    "usage": {
+      "completion_tokens": 571,
+      "prompt_tokens": 3455,
+      "total_tokens": 4026,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 464,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 2048
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q231\",\"label\":0},{\"id\":\"q234\",\"label\":0},{\"id\":\"q241\",\"label\":0},{\"id\":\"q242\",\"label\":1},{\"id\":\"q246\",\"label\":0},{\"id\":\"q248\",\"label\":1},{\"id\":\"q258\",\"label\":1},{\"id\":\"q268\",\"label\":1},{\"id\":\"q271\",\"label\":0},{\"id\":\"q277\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_0cb20d92edfb7ffd2fcd5d43dabc37f2c918fd5e58f43501e7a56c7047359c91",
+    "status": "ok",
+    "labels": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "response_id": "chatcmpl-32989dcc-f06f-4017-aff9-03afb1f9a496",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "created": 1795636542,
+    "request_id": null,
+    "elapsed_s": 6.836795,
+    "usage": {
+      "completion_tokens": 393,
+      "prompt_tokens": 5381,
+      "total_tokens": 5774,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 286,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 4096
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q003\",\"label\":0},{\"id\":\"q022\",\"label\":1},{\"id\":\"q024\",\"label\":1},{\"id\":\"q029\",\"label\":0},{\"id\":\"q050\",\"label\":0},{\"id\":\"q054\",\"label\":1},{\"id\":\"q063\",\"label\":1},{\"id\":\"q074\",\"label\":0},{\"id\":\"q076\",\"label\":0},{\"id\":\"q092\",\"label\":1}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_40e6ffe49279a4f303059c5e68ba9ec166edafdd5a47941b96f8f60e7e884adc",
+    "status": "ok",
+    "labels": [
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-7a397868-7cdf-46cf-9413-dd9f0aad039e",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "created": 1795636557,
+    "request_id": null,
+    "elapsed_s": 6.979801,
+    "usage": {
+      "completion_tokens": 399,
+      "prompt_tokens": 5085,
+      "total_tokens": 5484,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 292,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 4096
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q099\",\"label\":1},{\"id\":\"q119\",\"label\":1},{\"id\":\"q121\",\"label\":0},{\"id\":\"q128\",\"label\":1},{\"id\":\"q134\",\"label\":1},{\"id\":\"q155\",\"label\":1},{\"id\":\"q164\",\"label\":1},{\"id\":\"q198\",\"label\":0},{\"id\":\"q217\",\"label\":0},{\"id\":\"q227\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  },
+  {
+    "request_key": "llm_6715677899638334709f109f007ef9cf1edf98da02d11d280c56300e90cbc851",
+    "status": "ok",
+    "labels": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "response_id": "chatcmpl-37484e2a-cc44-4056-a593-fc24ba194fa3",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "created": 1795636572,
+    "request_id": null,
+    "elapsed_s": 8.87788,
+    "usage": {
+      "completion_tokens": 568,
+      "prompt_tokens": 5420,
+      "total_tokens": 5988,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 461,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 4096
+      }
+    },
+    "finish_reason": "stop",
+    "final_content": "{\"predictions\":[{\"id\":\"q231\",\"label\":0},{\"id\":\"q234\",\"label\":0},{\"id\":\"q241\",\"label\":0},{\"id\":\"q242\",\"label\":1},{\"id\":\"q246\",\"label\":0},{\"id\":\"q248\",\"label\":1},{\"id\":\"q258\",\"label\":1},{\"id\":\"q268\",\"label\":1},{\"id\":\"q271\",\"label\":0},{\"id\":\"q277\",\"label\":0}]}",
+    "stop_model": false,
+    "stop_provider": false,
+    "new_api_attempt": true
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "model_artifact": "381fc39c748e9abca667d6c7c0c1d6ef9b4e92c129019516da11602cde06ee59",
+  "queries": [
+    "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+    "SELECT id, display_name FROM info.users WHERE record_id = 42"
+  ],
+  "native_predictions": [
+    4,
+    0
+  ],
+  "compared_classes": [
+    4,
+    0
+  ],
+  "score_difference_actual": [
+    0.4960735819479648,
+    -0.9302540399007433
+  ],
+  "score_difference_reconstructed": [
+    0.49607358194796514,
+    -0.9302540399007434
+  ],
+  "max_absolute_reconstruction_error": 3.3306690738754696e-16,
+  "top_changed_feature_contributions": [
+    {
+      "feature": "ser",
+      "contribution": 0.2548716633181404
+    },
+    {
+      "feature": "user",
+      "contribution": 0.253328142584782
+    },
+    {
+      "feature": " use",
+      "contribution": 0.17937050147200959
+    },
+    {
+      "feature": "use",
+      "contribution": 0.16162762747821902
+    },
+    {
+      "feature": " us",
+      "contribution": 0.148069855279409
+    },
+    {
+      "feature": " u",
+      "contribution": 0.12409310721640687
+    },
+    {
+      "feature": "name",
+      "contribution": 0.08947794619724281
+    },
+    {
+      "feature": "nam",
+      "contribution": 0.0806018483577394
+    },
+    {
+      "feature": " id",
+      "contribution": 0.07253873701586959
+    },
+    {
+      "feature": "ame",
+      "contribution": 0.06747282910852913
+    },
+    {
+      "feature": "rn",
+      "contribution": -0.060508718961898696
+    },
+    {
+      "feature": "ic",
+      "contribution": -0.05466559773602902
+    },
+    {
+      "feature": "id",
+      "contribution": 0.054126377866893685
+    },
+    {
+      "feature": "y_",
+      "contribution": 0.04779605606571977
+    },
+    {
+      "feature": "rnam",
+      "contribution": -0.04683608604921691
+    }
+  ],
+  "interpretation": "exact linear score reconstruction; feature contribution is not proof of malicious intent"
+}

@@ -1,0 +1,3403 @@
+[
+  {
+    "run_id": "run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.5853658536585366,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.5853658536585366,
+        "attack_recall": 0.8,
+        "false_positive_rate": 0.9333333333333333,
+        "attack_precision": 0.46153846153846156,
+        "confusion_matrix": [
+          [
+            1,
+            14
+          ],
+          [
+            3,
+            12
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 12,
+          "fp": 14,
+          "fn": 3,
+          "tn": 1
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 4,
+            "precision": 0.25,
+            "recall": 0.06666666666666667,
+            "f1": 0.10526315789473684
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 26,
+            "precision": 0.46153846153846156,
+            "recall": 0.8,
+            "f1": 0.5853658536585366
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "fit_metadata.json": "66f53a0051b6c76064b30d6dbe8cbea6781047ac30fc6cfcab70c15cd279d292"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_only",
+      "model_identity": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.020256600007996894,
+    "observations": 30,
+    "model_bytes": 33493,
+    "transform": null
+  },
+  {
+    "run_id": "run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.7368421052631579,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.7368421052631579,
+        "attack_recall": 0.9333333333333333,
+        "false_positive_rate": 0.6,
+        "attack_precision": 0.6086956521739131,
+        "confusion_matrix": [
+          [
+            6,
+            9
+          ],
+          [
+            1,
+            14
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 14,
+          "fp": 9,
+          "fn": 1,
+          "tn": 6
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 7,
+            "precision": 0.8571428571428571,
+            "recall": 0.4,
+            "f1": 0.5454545454545454
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 23,
+            "precision": 0.6086956521739131,
+            "recall": 0.9333333333333333,
+            "f1": 0.7368421052631579
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "fit_metadata.json": "987f306d86dd10d90e2621a9b0e972f4a2c91c17939c7f6dcabd961c85824117"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_context",
+      "model_identity": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.07220389999565668,
+    "observations": 30,
+    "model_bytes": 46146,
+    "transform": null
+  },
+  {
+    "run_id": "run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.6153846153846154,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6153846153846154,
+        "attack_recall": 0.8,
+        "false_positive_rate": 0.8,
+        "attack_precision": 0.5,
+        "confusion_matrix": [
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            12
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 12,
+          "fp": 12,
+          "fn": 3,
+          "tn": 3
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 6,
+            "precision": 0.5,
+            "recall": 0.2,
+            "f1": 0.2857142857142857
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 24,
+            "precision": 0.5,
+            "recall": 0.8,
+            "f1": 0.6153846153846154
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "fit_metadata.json": "34d19ed35a39b12645cdc73498e65d1b8dd6c14cd6bb8442465d7fcae76fab51"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_only",
+      "model_identity": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.04071460000704974,
+    "observations": 30,
+    "model_bytes": 33414,
+    "transform": null
+  },
+  {
+    "run_id": "run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.7878787878787878,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.7878787878787878,
+        "attack_recall": 0.8666666666666667,
+        "false_positive_rate": 0.3333333333333333,
+        "attack_precision": 0.7222222222222222,
+        "confusion_matrix": [
+          [
+            10,
+            5
+          ],
+          [
+            2,
+            13
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 13,
+          "fp": 5,
+          "fn": 2,
+          "tn": 10
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 12,
+            "precision": 0.8333333333333334,
+            "recall": 0.6666666666666666,
+            "f1": 0.7407407407407407
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 18,
+            "precision": 0.7222222222222222,
+            "recall": 0.8666666666666667,
+            "f1": 0.7878787878787878
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "fit_metadata.json": "d3ca0f8a66f3ffeb657d7117e724691086e56cb5a920cd1a80b52650eb184754"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_context",
+      "model_identity": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.13148009999713395,
+    "observations": 30,
+    "model_bytes": 46094,
+    "transform": null
+  },
+  {
+    "run_id": "run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.6666666666666666,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6666666666666666,
+        "attack_recall": 0.9333333333333333,
+        "false_positive_rate": 0.8666666666666667,
+        "attack_precision": 0.5185185185185185,
+        "confusion_matrix": [
+          [
+            2,
+            13
+          ],
+          [
+            1,
+            14
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 14,
+          "fp": 13,
+          "fn": 1,
+          "tn": 2
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 3,
+            "precision": 0.6666666666666666,
+            "recall": 0.13333333333333333,
+            "f1": 0.2222222222222222
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 27,
+            "precision": 0.5185185185185185,
+            "recall": 0.9333333333333333,
+            "f1": 0.6666666666666666
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "fit_metadata.json": "87e81614b0a22e5180e1365d0f20fac582c8bfa14ac27a950eabe601777c4768"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_only",
+      "model_identity": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.05432150000706315,
+    "observations": 30,
+    "model_bytes": 287789,
+    "transform": null
+  },
+  {
+    "run_id": "run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.75,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.75,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.6666666666666666,
+        "attack_precision": 0.6,
+        "confusion_matrix": [
+          [
+            5,
+            10
+          ],
+          [
+            0,
+            15
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 15,
+          "fp": 10,
+          "fn": 0,
+          "tn": 5
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 5,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 25,
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1": 0.75
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "fit_metadata.json": "8d561ad9f15567a9b93db72d86587c856f0be0fea8d2f95cc0ff27ce590581ec"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_context",
+      "model_identity": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.0685154000093462,
+    "observations": 30,
+    "model_bytes": 188706,
+    "transform": null
+  },
+  {
+    "run_id": "run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433",
+    "method": "regex_v1",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.5517241379310345,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.5517241379310345,
+        "attack_recall": 0.5333333333333333,
+        "false_positive_rate": 0.4,
+        "attack_precision": 0.5714285714285714,
+        "confusion_matrix": [
+          [
+            9,
+            6
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 8,
+          "fp": 6,
+          "fn": 7,
+          "tn": 9
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 16,
+            "precision": 0.5625,
+            "recall": 0.6,
+            "f1": 0.5806451612903226
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 14,
+            "precision": 0.5714285714285714,
+            "recall": 0.5333333333333333,
+            "f1": 0.5517241379310345
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_only",
+      "model_identity": "regex_v1",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.010072299992316402,
+    "observations": 30,
+    "model_bytes": null,
+    "transform": null
+  },
+  {
+    "run_id": "run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95",
+    "method": "regex_v2",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.42105263157894735,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.42105263157894735,
+        "attack_recall": 0.26666666666666666,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            15,
+            0
+          ],
+          [
+            11,
+            4
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 11,
+          "tn": 15
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 26,
+            "precision": 0.5769230769230769,
+            "recall": 1.0,
+            "f1": 0.7317073170731707
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 4,
+            "precision": 1.0,
+            "recall": 0.26666666666666666,
+            "f1": 0.42105263157894735
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_only",
+      "model_identity": "regex_v2",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.01238980000198353,
+    "observations": 30,
+    "model_bytes": null,
+    "transform": null
+  },
+  {
+    "run_id": "run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e",
+    "method": "policy_only",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "not_run": 28,
+        "ok": 2
+      },
+      "decision_coverage": 0.06666666666666667,
+      "successful_decisions": 2,
+      "primary_f1": null,
+      "eligible_for_primary_ranking": false,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": null,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "per_class": {
+          "0": {
+            "support": 0,
+            "predicted_support": 0,
+            "precision": null,
+            "recall": null,
+            "f1": null
+          },
+          "1": {
+            "support": 2,
+            "predicted_support": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_context",
+      "model_identity": "policy_only",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": true
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.01755869999760762,
+    "observations": 30,
+    "model_bytes": null,
+    "transform": null
+  },
+  {
+    "run_id": "run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92",
+    "method": "regex_policy",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 30,
+      "status_counts": {
+        "ok": 30
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 30,
+      "primary_f1": 0.5714285714285714,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.5714285714285714,
+        "attack_recall": 0.4,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            15,
+            0
+          ],
+          [
+            9,
+            6
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 9,
+          "tn": 15
+        },
+        "per_class": {
+          "0": {
+            "support": 15,
+            "predicted_support": 24,
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693
+          },
+          "1": {
+            "support": 15,
+            "predicted_support": 6,
+            "precision": 1.0,
+            "recall": 0.4,
+            "f1": 0.5714285714285714
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "common_30",
+      "input_mode": "sql_context",
+      "model_identity": "regex_policy",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": null,
+      "transform": null,
+      "sample_ids_sha256": "d4ee9b022de7d0229f9e8f06f8b192c92184f902f23345e42cf00fa7d5b53116",
+      "known_policy_control_conformance_exposure": true
+    },
+    "scope": "pooled-preview",
+    "phase": "common_30",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.03604079999786336,
+    "observations": 30,
+    "model_bytes": null,
+    "transform": null
+  },
+  {
+    "run_id": "run_fd3cf4bbc360d0260117148e7075446a3df72b2ef4b89a27684768ab238aa614",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.612565445026178,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.612565445026178,
+        "attack_recall": 0.78,
+        "false_positive_rate": 0.7666666666666667,
+        "attack_precision": 0.5043103448275862,
+        "confusion_matrix": [
+          [
+            35,
+            115
+          ],
+          [
+            33,
+            117
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 117,
+          "fp": 115,
+          "fn": 33,
+          "tn": 35
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 68,
+            "precision": 0.5147058823529411,
+            "recall": 0.23333333333333334,
+            "f1": 0.3211009174311927
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 232,
+            "precision": 0.5043103448275862,
+            "recall": 0.78,
+            "f1": 0.612565445026178
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "fit_metadata.json": "66f53a0051b6c76064b30d6dbe8cbea6781047ac30fc6cfcab70c15cd279d292"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "ML_holdout_300",
+      "input_mode": "sql_only",
+      "model_identity": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "341621450ca8dd2e848116dc0b1f7eb6a56debe8a1cb3292293fc87e97ae8c20",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "ML_holdout_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.15032570000039414,
+    "observations": 300,
+    "model_bytes": 33493,
+    "transform": null
+  },
+  {
+    "run_id": "run_89d6ae4ace38bbb65dda95f6d14bf2fea520a5338227e4150677636a6add6759",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.7652173913043478,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.7652173913043478,
+        "attack_recall": 0.88,
+        "false_positive_rate": 0.42,
+        "attack_precision": 0.676923076923077,
+        "confusion_matrix": [
+          [
+            87,
+            63
+          ],
+          [
+            18,
+            132
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 132,
+          "fp": 63,
+          "fn": 18,
+          "tn": 87
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 105,
+            "precision": 0.8285714285714286,
+            "recall": 0.58,
+            "f1": 0.6823529411764706
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 195,
+            "precision": 0.676923076923077,
+            "recall": 0.88,
+            "f1": 0.7652173913043478
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "fit_metadata.json": "987f306d86dd10d90e2621a9b0e972f4a2c91c17939c7f6dcabd961c85824117"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "ML_holdout_300",
+      "input_mode": "sql_context",
+      "model_identity": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "341621450ca8dd2e848116dc0b1f7eb6a56debe8a1cb3292293fc87e97ae8c20",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "ML_holdout_300",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.32170520001091063,
+    "observations": 300,
+    "model_bytes": 46146,
+    "transform": null
+  },
+  {
+    "run_id": "run_c05f238e52eb6ab7212cd221fbb524e84a2d405bbedb9b6e0b8d5699541755e0",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6201550387596899,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6201550387596899,
+        "attack_recall": 0.8,
+        "false_positive_rate": 0.78,
+        "attack_precision": 0.5063291139240507,
+        "confusion_matrix": [
+          [
+            33,
+            117
+          ],
+          [
+            30,
+            120
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 120,
+          "fp": 117,
+          "fn": 30,
+          "tn": 33
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 63,
+            "precision": 0.5238095238095238,
+            "recall": 0.22,
+            "f1": 0.30985915492957744
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 237,
+            "precision": 0.5063291139240507,
+            "recall": 0.8,
+            "f1": 0.6201550387596899
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "fit_metadata.json": "34d19ed35a39b12645cdc73498e65d1b8dd6c14cd6bb8442465d7fcae76fab51"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "ML_holdout_300",
+      "input_mode": "sql_only",
+      "model_identity": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "341621450ca8dd2e848116dc0b1f7eb6a56debe8a1cb3292293fc87e97ae8c20",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "ML_holdout_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.1482516999967629,
+    "observations": 300,
+    "model_bytes": 33414,
+    "transform": null
+  },
+  {
+    "run_id": "run_24b863be0c0dcd07c4537ae8fabb87412c33614c234c0b353b37e3843b2ae52f",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.7570977917981072,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.7570977917981072,
+        "attack_recall": 0.8,
+        "false_positive_rate": 0.31333333333333335,
+        "attack_precision": 0.718562874251497,
+        "confusion_matrix": [
+          [
+            103,
+            47
+          ],
+          [
+            30,
+            120
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 120,
+          "fp": 47,
+          "fn": 30,
+          "tn": 103
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 133,
+            "precision": 0.7744360902255639,
+            "recall": 0.6866666666666666,
+            "f1": 0.7279151943462897
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 167,
+            "precision": 0.718562874251497,
+            "recall": 0.8,
+            "f1": 0.7570977917981072
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "fit_metadata.json": "d3ca0f8a66f3ffeb657d7117e724691086e56cb5a920cd1a80b52650eb184754"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "ML_holdout_300",
+      "input_mode": "sql_context",
+      "model_identity": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": null,
+      "sample_ids_sha256": "341621450ca8dd2e848116dc0b1f7eb6a56debe8a1cb3292293fc87e97ae8c20",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "ML_holdout_300",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.4027578999957768,
+    "observations": 300,
+    "model_bytes": 46094,
+    "transform": null
+  },
+  {
+    "run_id": "run_bdc88481ddf34da575d7fc069c08ee20f9375b7a36e34041791acc5d8ddc0961",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6620689655172414,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6620689655172414,
+        "attack_recall": 0.96,
+        "false_positive_rate": 0.94,
+        "attack_precision": 0.5052631578947369,
+        "confusion_matrix": [
+          [
+            9,
+            141
+          ],
+          [
+            6,
+            144
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 144,
+          "fp": 141,
+          "fn": 6,
+          "tn": 9
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 15,
+            "precision": 0.6,
+            "recall": 0.06,
+            "f1": 0.10909090909090909
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 285,
+            "precision": 0.5052631578947369,
+            "recall": 0.96,
+            "f1": 0.6620689655172414
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "fit_metadata.json": "87e81614b0a22e5180e1365d0f20fac582c8bfa14ac27a950eabe601777c4768"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "ML_holdout_300",
+      "input_mode": "sql_only",
+      "model_identity": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": null,
+      "sample_ids_sha256": "341621450ca8dd2e848116dc0b1f7eb6a56debe8a1cb3292293fc87e97ae8c20",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "ML_holdout_300",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.23588790000940207,
+    "observations": 300,
+    "model_bytes": 287789,
+    "transform": null
+  },
+  {
+    "run_id": "run_cdf62c0b9f0b046db7891c15d0d7b92bf0c77e4e836e7ae86aecc094793d9b1a",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 300,
+      "status_counts": {
+        "ok": 300
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 300,
+      "primary_f1": 0.6982543640897756,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6982543640897756,
+        "attack_recall": 0.9333333333333333,
+        "false_positive_rate": 0.74,
+        "attack_precision": 0.5577689243027888,
+        "confusion_matrix": [
+          [
+            39,
+            111
+          ],
+          [
+            10,
+            140
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 140,
+          "fp": 111,
+          "fn": 10,
+          "tn": 39
+        },
+        "per_class": {
+          "0": {
+            "support": 150,
+            "predicted_support": 49,
+            "precision": 0.7959183673469388,
+            "recall": 0.26,
+            "f1": 0.39195979899497485
+          },
+          "1": {
+            "support": 150,
+            "predicted_support": 251,
+            "precision": 0.5577689243027888,
+            "recall": 0.9333333333333333,
+            "f1": 0.6982543640897756
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "fit_metadata.json": "8d561ad9f15567a9b93db72d86587c856f0be0fea8d2f95cc0ff27ce590581ec"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "ML_holdout_300",
+      "input_mode": "sql_context",
+      "model_identity": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": null,
+      "sample_ids_sha256": "341621450ca8dd2e848116dc0b1f7eb6a56debe8a1cb3292293fc87e97ae8c20",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "ML_holdout_300",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.4693773000035435,
+    "observations": 300,
+    "model_bytes": 188706,
+    "transform": null
+  },
+  {
+    "run_id": "run_4029b8cb71751f32581e88581ff498405f9e4e2c164acf67c721e328b9c19a9d",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.6211180124223602,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6211180124223602,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.8714285714285714,
+        "attack_precision": 0.45045045045045046,
+        "confusion_matrix": [
+          [
+            9,
+            61
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 61,
+          "fn": 0,
+          "tn": 9
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 9,
+            "precision": 1.0,
+            "recall": 0.12857142857142856,
+            "f1": 0.22784810126582278
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 111,
+            "precision": 0.45045045045045046,
+            "recall": 1.0,
+            "f1": 0.6211180124223602
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "fit_metadata.json": "66f53a0051b6c76064b30d6dbe8cbea6781047ac30fc6cfcab70c15cd279d292"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_only",
+      "model_identity": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "formatting",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.03905220000888221,
+    "observations": 120,
+    "model_bytes": 33493,
+    "transform": "formatting"
+  },
+  {
+    "run_id": "run_d3536c2873808b8c2ad0c33e03010a7304b980aa10315e0db3c1c5013ba099ae",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.9174311926605505,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9174311926605505,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.12857142857142856,
+        "attack_precision": 0.847457627118644,
+        "confusion_matrix": [
+          [
+            61,
+            9
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 9,
+          "fn": 0,
+          "tn": 61
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 61,
+            "precision": 1.0,
+            "recall": 0.8714285714285714,
+            "f1": 0.9312977099236641
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 59,
+            "precision": 0.847457627118644,
+            "recall": 1.0,
+            "f1": 0.9174311926605505
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "fit_metadata.json": "987f306d86dd10d90e2621a9b0e972f4a2c91c17939c7f6dcabd961c85824117"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_context",
+      "model_identity": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "formatting",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.11166019999654964,
+    "observations": 120,
+    "model_bytes": 46146,
+    "transform": "formatting"
+  },
+  {
+    "run_id": "run_d9505c0270f7fe584ae7a3e7de35b97437f147910fd440cc45a10b8801d8c0da",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.6329113924050633,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6329113924050633,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.8285714285714286,
+        "attack_precision": 0.46296296296296297,
+        "confusion_matrix": [
+          [
+            12,
+            58
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 58,
+          "fn": 0,
+          "tn": 12
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 12,
+            "precision": 1.0,
+            "recall": 0.17142857142857143,
+            "f1": 0.2926829268292683
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 108,
+            "precision": 0.46296296296296297,
+            "recall": 1.0,
+            "f1": 0.6329113924050633
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "fit_metadata.json": "34d19ed35a39b12645cdc73498e65d1b8dd6c14cd6bb8442465d7fcae76fab51"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_only",
+      "model_identity": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "formatting",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.039172799995867535,
+    "observations": 120,
+    "model_bytes": 33414,
+    "transform": "formatting"
+  },
+  {
+    "run_id": "run_5ea2db470ffc96609bc9cbf8d86073af50a1251f763b8438896e702d823f1010",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 1.0,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            70,
+            0
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 70
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 70,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 50,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "fit_metadata.json": "d3ca0f8a66f3ffeb657d7117e724691086e56cb5a920cd1a80b52650eb184754"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_context",
+      "model_identity": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "formatting",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.11101049999706447,
+    "observations": 120,
+    "model_bytes": 46094,
+    "transform": "formatting"
+  },
+  {
+    "run_id": "run_27c001fe99c978feab477e563f6b53e791fb78806aac2bab4518ba5936838d0e",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.5925925925925926,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.5925925925925926,
+        "attack_recall": 0.96,
+        "false_positive_rate": 0.9142857142857143,
+        "attack_precision": 0.42857142857142855,
+        "confusion_matrix": [
+          [
+            6,
+            64
+          ],
+          [
+            2,
+            48
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 48,
+          "fp": 64,
+          "fn": 2,
+          "tn": 6
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 8,
+            "precision": 0.75,
+            "recall": 0.08571428571428572,
+            "f1": 0.15384615384615385
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 112,
+            "precision": 0.42857142857142855,
+            "recall": 0.96,
+            "f1": 0.5925925925925926
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "fit_metadata.json": "87e81614b0a22e5180e1365d0f20fac582c8bfa14ac27a950eabe601777c4768"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_only",
+      "model_identity": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": "formatting",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.04444539999531116,
+    "observations": 120,
+    "model_bytes": 287789,
+    "transform": "formatting"
+  },
+  {
+    "run_id": "run_1ee89d55cc45da0ae7e508b3a3d635afd471bbf7be4a9a2db6b215cb5ce8b023",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.6756756756756757,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6756756756756757,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.6857142857142857,
+        "attack_precision": 0.5102040816326531,
+        "confusion_matrix": [
+          [
+            22,
+            48
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 48,
+          "fn": 0,
+          "tn": 22
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 22,
+            "precision": 1.0,
+            "recall": 0.3142857142857143,
+            "f1": 0.4782608695652174
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 98,
+            "precision": 0.5102040816326531,
+            "recall": 1.0,
+            "f1": 0.6756756756756757
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "fit_metadata.json": "8d561ad9f15567a9b93db72d86587c856f0be0fea8d2f95cc0ff27ce590581ec"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_context",
+      "model_identity": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": "formatting",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.2206542000058107,
+    "observations": 120,
+    "model_bytes": 188706,
+    "transform": "formatting"
+  },
+  {
+    "run_id": "run_fb7a56f2b3af9f4d5726519abf1d3f5dac9b1a015f1440dffffae06b34b7e6ed",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.6211180124223602,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6211180124223602,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.8714285714285714,
+        "attack_precision": 0.45045045045045046,
+        "confusion_matrix": [
+          [
+            9,
+            61
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 61,
+          "fn": 0,
+          "tn": 9
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 9,
+            "precision": 1.0,
+            "recall": 0.12857142857142856,
+            "f1": 0.22784810126582278
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 111,
+            "precision": 0.45045045045045046,
+            "recall": 1.0,
+            "f1": 0.6211180124223602
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "fit_metadata.json": "66f53a0051b6c76064b30d6dbe8cbea6781047ac30fc6cfcab70c15cd279d292"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_only",
+      "model_identity": "f6d52317339f884dcb7420b89f674c959d100241381adad80220fa3a93994d1c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "consistent_renaming",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.03945480000402313,
+    "observations": 120,
+    "model_bytes": 33493,
+    "transform": "consistent_renaming"
+  },
+  {
+    "run_id": "run_f5f00bf782d2a1dcf8ea5f9e337984d2b30808c15e6365b51a2ac680126ca5c2",
+    "method": "LogisticRegression",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.9174311926605505,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9174311926605505,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.12857142857142856,
+        "attack_precision": 0.847457627118644,
+        "confusion_matrix": [
+          [
+            61,
+            9
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 9,
+          "fn": 0,
+          "tn": 61
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 61,
+            "precision": 1.0,
+            "recall": 0.8714285714285714,
+            "f1": 0.9312977099236641
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 59,
+            "precision": 0.847457627118644,
+            "recall": 1.0,
+            "f1": 0.9174311926605505
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "fit_metadata.json": "987f306d86dd10d90e2621a9b0e972f4a2c91c17939c7f6dcabd961c85824117"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_context",
+      "model_identity": "4ba99518f24d54dbaa06bbcbe747dd9ac5dffc98cc9d991405eebcf651214ded",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LogisticRegression",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "consistent_renaming",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.12171760000637732,
+    "observations": 120,
+    "model_bytes": 46146,
+    "transform": "consistent_renaming"
+  },
+  {
+    "run_id": "run_da95f54ed0b8d2282480c4ca5be1c32aabb73ee01266992f2782680c7b4757b0",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.6329113924050633,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6329113924050633,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.8285714285714286,
+        "attack_precision": 0.46296296296296297,
+        "confusion_matrix": [
+          [
+            12,
+            58
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 58,
+          "fn": 0,
+          "tn": 12
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 12,
+            "precision": 1.0,
+            "recall": 0.17142857142857143,
+            "f1": 0.2926829268292683
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 108,
+            "precision": 0.46296296296296297,
+            "recall": 1.0,
+            "f1": 0.6329113924050633
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "fit_metadata.json": "34d19ed35a39b12645cdc73498e65d1b8dd6c14cd6bb8442465d7fcae76fab51"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_only",
+      "model_identity": "163dfe7d0701c60483966df91d96e3e240df2e1379e01da9ab5d5c5db5c76586",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "consistent_renaming",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.03965530000277795,
+    "observations": 120,
+    "model_bytes": 33414,
+    "transform": "consistent_renaming"
+  },
+  {
+    "run_id": "run_a0aa949ee3513c7d2497d51287539de80e70ae800f888e0800f3852cab289498",
+    "method": "LinearSVC",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 1.0,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            70,
+            0
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 70
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 70,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 50,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "fit_metadata.json": "d3ca0f8a66f3ffeb657d7117e724691086e56cb5a920cd1a80b52650eb184754"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_context",
+      "model_identity": "94c864827576c4b15182b2af15aeacb0d9467749871d0fd1dec7018a49025d96",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "LinearSVC",
+          "parameters": {
+            "C": 1.0,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.0
+      },
+      "transform": "consistent_renaming",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.11169010000594426,
+    "observations": 120,
+    "model_bytes": 46094,
+    "transform": "consistent_renaming"
+  },
+  {
+    "run_id": "run_93b18ea0e195e84a7708a443df6350fe0eb62b6758cdc8a61e40a557eaf6f829",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.5925925925925926,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.5925925925925926,
+        "attack_recall": 0.96,
+        "false_positive_rate": 0.9142857142857143,
+        "attack_precision": 0.42857142857142855,
+        "confusion_matrix": [
+          [
+            6,
+            64
+          ],
+          [
+            2,
+            48
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 48,
+          "fp": 64,
+          "fn": 2,
+          "tn": 6
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 8,
+            "precision": 0.75,
+            "recall": 0.08571428571428572,
+            "f1": 0.15384615384615385
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 112,
+            "precision": 0.42857142857142855,
+            "recall": 0.96,
+            "f1": 0.5925925925925926
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "fit_metadata.json": "87e81614b0a22e5180e1365d0f20fac582c8bfa14ac27a950eabe601777c4768"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_only",
+      "model_identity": "2e2b5ddde3ac26067e8a2dbbf3c7ac5db9141f952ac0b8c96365a7ac5299f452",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_sql",
+            "input_mode": "sql_only",
+            "relations": false,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": false,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": "consistent_renaming",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_only",
+    "prediction_seconds": 0.04697919999307487,
+    "observations": 120,
+    "model_bytes": 287789,
+    "transform": "consistent_renaming"
+  },
+  {
+    "run_id": "run_42d4e81507665ed64f35ee831818b60191f725703ef265ba487cb8cafff29e0e",
+    "method": "RandomForest",
+    "metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 120,
+      "status_counts": {
+        "ok": 120
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 120,
+      "primary_f1": 0.6711409395973155,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.6711409395973155,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.7,
+        "attack_precision": 0.5050505050505051,
+        "confusion_matrix": [
+          [
+            21,
+            49
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 50,
+          "fp": 49,
+          "fn": 0,
+          "tn": 21
+        },
+        "per_class": {
+          "0": {
+            "support": 70,
+            "predicted_support": 21,
+            "precision": 1.0,
+            "recall": 0.3,
+            "f1": 0.46153846153846156
+          },
+          "1": {
+            "support": 50,
+            "predicted_support": 99,
+            "precision": 0.5050505050505051,
+            "recall": 1.0,
+            "f1": 0.6711409395973155
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "code/stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+      "code/stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+      "code/ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+      "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+      "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+      "code/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+      "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+      "code/rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+      "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+      "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+      "code/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+      "evaluation_plan.json": "0e040c159b7ed36fc43f98626817e2b2d68c203361d4c78f5d1ddd9a55cc10b7",
+      "model.joblib": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "fit_metadata.json": "8d561ad9f15567a9b93db72d86587c856f0be0fea8d2f95cc0ff27ce590581ec"
+    },
+    "configuration": {
+      "stage": 10,
+      "role": "final_test",
+      "scope": "pooled-preview",
+      "phase": "robustness",
+      "input_mode": "sql_context",
+      "model_identity": "8cebf28c02c4d6afb80c7b030508b112f07df3cf2af53007a7a07bfe0c4b332c",
+      "code_sha256_lf": {
+        "stage10_evaluate.py": "6fe0f88e7d7a7e231c9392872cd7a80dc870d0525beeba3c80def17b5fd27997",
+        "stage10_store.py": "8d2912e4ace1445389021c68e73cb3c914cdcefcf16cbdf0fd226d0465bb860c",
+        "ml_models.py": "3086899f4d1a1102dc3cda2b5f46530a65ea4ee4d6dcfccd2e53b95502f93bf6",
+        "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+        "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "rule_detectors.py": "11c0508ad8c3821c03f166e98820cfe630fc55d5b9a3c2a0c04cf7af664c4a24",
+        "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+        "preview_ml.py": "c619cdb3912ebd665405031b29282ff41f521572509364d57004b279a4409b15"
+      },
+      "selection": {
+        "candidate": {
+          "method": "RandomForest",
+          "parameters": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 3,
+            "class_weight": "balanced"
+          },
+          "feature": {
+            "name": "masked_context",
+            "input_mode": "sql_context",
+            "relations": true,
+            "parameters": {
+              "text_mode": "masked",
+              "structure": true,
+              "context": true,
+              "select_k": 1000
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      "transform": "consistent_renaming",
+      "sample_ids_sha256": "9ac372c597ab301651fa87845b7e7a837f43704de0ca71acacf36641505d33f2",
+      "known_policy_control_conformance_exposure": false
+    },
+    "scope": "pooled-preview",
+    "phase": "robustness",
+    "input_mode": "sql_context",
+    "prediction_seconds": 0.14292030000069644,
+    "observations": 120,
+    "model_bytes": 188706,
+    "transform": "consistent_renaming"
+  }
+]

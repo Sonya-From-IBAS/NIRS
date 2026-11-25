@@ -1,0 +1,728 @@
+{
+  "train_validation_gaps": [
+    {
+      "method": "LogisticRegression",
+      "train_F1": 0.9975747776879548,
+      "validation_F1": 0.900990099009901,
+      "gap": 0.09658467867805376
+    },
+    {
+      "method": "LinearSVC",
+      "train_F1": 0.99959661153691,
+      "validation_F1": 0.896551724137931,
+      "gap": 0.10304488739897899
+    },
+    {
+      "method": "RandomForest",
+      "train_F1": 1.0,
+      "validation_F1": 0.90625,
+      "gap": 0.09375
+    }
+  ],
+  "neutral_name_sensitivity": [
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "probes": 5,
+      "alarm_flips": 2,
+      "native_class_flips": 2
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "probes": 5,
+      "alarm_flips": 3,
+      "native_class_flips": 3
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "probes": 5,
+      "alarm_flips": 0,
+      "native_class_flips": 0
+    },
+    {
+      "method": "LinearSVC",
+      "probes": 5,
+      "alarm_flips": 0,
+      "native_class_flips": 0
+    },
+    {
+      "method": "LogisticRegression",
+      "probes": 5,
+      "alarm_flips": 0,
+      "native_class_flips": 0
+    },
+    {
+      "method": "RandomForest",
+      "probes": 5,
+      "alarm_flips": 0,
+      "native_class_flips": 0
+    }
+  ],
+  "transfer": [
+    {
+      "method": "LogisticRegression",
+      "direction": "transfer-web_app-to-wordpress",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.6818181818181818,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.6818181818181818,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.9333333333333333,
+          "attack_precision": 0.5172413793103449,
+          "confusion_matrix": [
+            [
+              10,
+              140
+            ],
+            [
+              0,
+              150
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 150,
+            "fp": 140,
+            "fn": 0,
+            "tn": 10
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 0.06666666666666667,
+              "f1": 0.125
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 290,
+              "precision": 0.5172413793103449,
+              "recall": 1.0,
+              "f1": 0.6818181818181818
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "LinearSVC",
+      "direction": "transfer-web_app-to-wordpress",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.6802721088435374,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.6802721088435374,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.94,
+          "attack_precision": 0.5154639175257731,
+          "confusion_matrix": [
+            [
+              9,
+              141
+            ],
+            [
+              0,
+              150
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 150,
+            "fp": 141,
+            "fn": 0,
+            "tn": 9
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 9,
+              "precision": 1.0,
+              "recall": 0.06,
+              "f1": 0.11320754716981132
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 291,
+              "precision": 0.5154639175257731,
+              "recall": 1.0,
+              "f1": 0.6802721088435374
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "RandomForest",
+      "direction": "transfer-web_app-to-wordpress",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.672645739910314,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.672645739910314,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.9733333333333334,
+          "attack_precision": 0.5067567567567568,
+          "confusion_matrix": [
+            [
+              4,
+              146
+            ],
+            [
+              0,
+              150
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 150,
+            "fp": 146,
+            "fn": 0,
+            "tn": 4
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 4,
+              "precision": 1.0,
+              "recall": 0.02666666666666667,
+              "f1": 0.05194805194805195
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 296,
+              "precision": 0.5067567567567568,
+              "recall": 1.0,
+              "f1": 0.672645739910314
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "direction": "transfer-web_app-to-wordpress",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.7213114754098361,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.7213114754098361,
+          "attack_recall": 0.5866666666666667,
+          "false_positive_rate": 0.04,
+          "attack_precision": 0.9361702127659575,
+          "confusion_matrix": [
+            [
+              144,
+              6
+            ],
+            [
+              62,
+              88
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 88,
+            "fp": 6,
+            "fn": 62,
+            "tn": 144
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 206,
+              "precision": 0.6990291262135923,
+              "recall": 0.96,
+              "f1": 0.8089887640449438
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 94,
+              "precision": 0.9361702127659575,
+              "recall": 0.5866666666666667,
+              "f1": 0.7213114754098361
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "direction": "transfer-web_app-to-wordpress",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.6695278969957081,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.6695278969957081,
+          "attack_recall": 0.52,
+          "false_positive_rate": 0.03333333333333333,
+          "attack_precision": 0.9397590361445783,
+          "confusion_matrix": [
+            [
+              145,
+              5
+            ],
+            [
+              72,
+              78
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 78,
+            "fp": 5,
+            "fn": 72,
+            "tn": 145
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 217,
+              "precision": 0.6682027649769585,
+              "recall": 0.9666666666666667,
+              "f1": 0.7901907356948229
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 83,
+              "precision": 0.9397590361445783,
+              "recall": 0.52,
+              "f1": 0.6695278969957081
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "direction": "transfer-web_app-to-wordpress",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.4536082474226804,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.4536082474226804,
+          "attack_recall": 0.29333333333333333,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              150,
+              0
+            ],
+            [
+              106,
+              44
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 44,
+            "fp": 0,
+            "fn": 106,
+            "tn": 150
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 256,
+              "precision": 0.5859375,
+              "recall": 1.0,
+              "f1": 0.7389162561576355
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 44,
+              "precision": 1.0,
+              "recall": 0.29333333333333333,
+              "f1": 0.4536082474226804
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "LogisticRegression",
+      "direction": "transfer-wordpress-to-web_app",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.920863309352518,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.920863309352518,
+          "attack_recall": 0.8533333333333334,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              150,
+              0
+            ],
+            [
+              22,
+              128
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 128,
+            "fp": 0,
+            "fn": 22,
+            "tn": 150
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 172,
+              "precision": 0.872093023255814,
+              "recall": 1.0,
+              "f1": 0.9316770186335404
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 128,
+              "precision": 1.0,
+              "recall": 0.8533333333333334,
+              "f1": 0.920863309352518
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "LinearSVC",
+      "direction": "transfer-wordpress-to-web_app",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.9473684210526315,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.9473684210526315,
+          "attack_recall": 0.9,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              150,
+              0
+            ],
+            [
+              15,
+              135
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 135,
+            "fp": 0,
+            "fn": 15,
+            "tn": 150
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 165,
+              "precision": 0.9090909090909091,
+              "recall": 1.0,
+              "f1": 0.9523809523809523
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 135,
+              "precision": 1.0,
+              "recall": 0.9,
+              "f1": 0.9473684210526315
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "RandomForest",
+      "direction": "transfer-wordpress-to-web_app",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.9761092150170648,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.9761092150170648,
+          "attack_recall": 0.9533333333333334,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              150,
+              0
+            ],
+            [
+              7,
+              143
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 143,
+            "fp": 0,
+            "fn": 7,
+            "tn": 150
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 157,
+              "precision": 0.9554140127388535,
+              "recall": 1.0,
+              "f1": 0.9771986970684039
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 143,
+              "precision": 1.0,
+              "recall": 0.9533333333333334,
+              "f1": 0.9761092150170648
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "direction": "transfer-wordpress-to-web_app",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.6189376443418014,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.6189376443418014,
+          "attack_recall": 0.8933333333333333,
+          "false_positive_rate": 0.9933333333333333,
+          "attack_precision": 0.4734982332155477,
+          "confusion_matrix": [
+            [
+              1,
+              149
+            ],
+            [
+              16,
+              134
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 134,
+            "fp": 149,
+            "fn": 16,
+            "tn": 1
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 17,
+              "precision": 0.058823529411764705,
+              "recall": 0.006666666666666667,
+              "f1": 0.011976047904191617
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 283,
+              "precision": 0.4734982332155477,
+              "recall": 0.8933333333333333,
+              "f1": 0.6189376443418014
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "direction": "transfer-wordpress-to-web_app",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.66,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.66,
+          "attack_recall": 0.88,
+          "false_positive_rate": 0.7866666666666666,
+          "attack_precision": 0.528,
+          "confusion_matrix": [
+            [
+              32,
+              118
+            ],
+            [
+              18,
+              132
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 132,
+            "fp": 118,
+            "fn": 18,
+            "tn": 32
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 50,
+              "precision": 0.64,
+              "recall": 0.21333333333333335,
+              "f1": 0.32
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 250,
+              "precision": 0.528,
+              "recall": 0.88,
+              "f1": 0.66
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "direction": "transfer-wordpress-to-web_app",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 300,
+        "status_counts": {
+          "ok": 300
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 300,
+        "primary_f1": 0.49,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.49,
+          "attack_recall": 0.32666666666666666,
+          "false_positive_rate": 0.006666666666666667,
+          "attack_precision": 0.98,
+          "confusion_matrix": [
+            [
+              149,
+              1
+            ],
+            [
+              101,
+              49
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 49,
+            "fp": 1,
+            "fn": 101,
+            "tn": 149
+          },
+          "per_class": {
+            "0": {
+              "support": 150,
+              "predicted_support": 250,
+              "precision": 0.596,
+              "recall": 0.9933333333333333,
+              "f1": 0.745
+            },
+            "1": {
+              "support": 150,
+              "predicted_support": 50,
+              "precision": 0.98,
+              "recall": 0.32666666666666666,
+              "f1": 0.49
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    }
+  ],
+  "conclusions": [
+    "original model name sensitivity and external false alarms are directly measured",
+    "name masking is not a guarantee of cross-application transfer",
+    "reduced data, fixed thresholds and domain shift can also explain bad transfer",
+    "preview does not establish that overfitting is eliminated"
+  ]
+}

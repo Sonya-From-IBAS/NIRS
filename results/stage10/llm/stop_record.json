@@ -1,0 +1,7 @@
+{
+  "reason": "user_changed_scope_to_40_minute_preview",
+  "no_API_call_interrupted": true,
+  "next_reservation_cancelled_before_commit": true,
+  "resume_full_experiment": "stage13",
+  "automatic_retries": 0
+}

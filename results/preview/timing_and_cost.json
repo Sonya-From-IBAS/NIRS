@@ -1,0 +1,128 @@
+{
+  "methods": [
+    {
+      "method": "LogisticRegression / sql_only",
+      "seconds_per_observation_amortized": 0.0006752200002665632,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": 33493
+    },
+    {
+      "method": "LogisticRegression / sql_context",
+      "seconds_per_observation_amortized": 0.0024067966665218894,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": 46146
+    },
+    {
+      "method": "LinearSVC / sql_only",
+      "seconds_per_observation_amortized": 0.0013571533335683247,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": 33414
+    },
+    {
+      "method": "LinearSVC / sql_context",
+      "seconds_per_observation_amortized": 0.004382669999904465,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": 46094
+    },
+    {
+      "method": "RandomForest / sql_only",
+      "seconds_per_observation_amortized": 0.001810716666902105,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": 287789
+    },
+    {
+      "method": "RandomForest / sql_context",
+      "seconds_per_observation_amortized": 0.0022838466669782066,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": 188706
+    },
+    {
+      "method": "regex_v1 / sql_only",
+      "seconds_per_observation_amortized": 0.00033574333307721343,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": null
+    },
+    {
+      "method": "regex_v2 / sql_only",
+      "seconds_per_observation_amortized": 0.000412993333399451,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": null
+    },
+    {
+      "method": "policy_only / sql_context",
+      "seconds_per_observation_amortized": 0.0005852899999202539,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": null
+    },
+    {
+      "method": "regex_policy / sql_context",
+      "seconds_per_observation_amortized": 0.0012013599999287786,
+      "batch_latency_p50_s": null,
+      "batch_latency_p95_s": null,
+      "model_bytes": null
+    },
+    {
+      "method": "LLM gptoss120 zero_shot",
+      "seconds_per_observation_amortized": 1.325214888888889,
+      "batch_latency_p50_s": 3.9550954999999997,
+      "batch_latency_p95_s": 4.9964359499999995,
+      "unique_API_batches_referenced": 28
+    },
+    {
+      "method": "LLM gptoss120 few_shot",
+      "seconds_per_observation_amortized": 1.3076817444444444,
+      "batch_latency_p50_s": 3.6972325,
+      "batch_latency_p95_s": 4.790513249999999,
+      "unique_API_batches_referenced": 14
+    },
+    {
+      "method": "LLM glm53 zero_shot",
+      "seconds_per_observation_amortized": 5.479156099999999,
+      "batch_latency_p50_s": 15.995051,
+      "batch_latency_p95_s": 26.238235549999995,
+      "unique_API_batches_referenced": 10
+    },
+    {
+      "method": "LLM glm53 few_shot",
+      "seconds_per_observation_amortized": 5.085886599999999,
+      "batch_latency_p50_s": 14.824984,
+      "batch_latency_p95_s": 22.975021599999998,
+      "unique_API_batches_referenced": 10
+    },
+    {
+      "method": "LLM kimi31pro zero_shot",
+      "seconds_per_observation_amortized": 0.7924284333333333,
+      "batch_latency_p50_s": 8.031173,
+      "batch_latency_p95_s": 8.7102059,
+      "unique_API_batches_referenced": 3
+    },
+    {
+      "method": "LLM kimi31pro few_shot",
+      "seconds_per_observation_amortized": 0.7564825333333333,
+      "batch_latency_p50_s": 6.979801,
+      "batch_latency_p95_s": 8.6880721,
+      "unique_API_batches_referenced": 3
+    }
+  ],
+  "new_preview_API_attempts": 34,
+  "preview_new_API_wall_seconds": 661.011775,
+  "preview_observed_tokens": {
+    "prompt_tokens": 94514,
+    "completion_tokens": 21149,
+    "total_tokens": 115663
+  },
+  "previous_interrupted_full_API_attempts": 124,
+  "reused_decisions": 37,
+  "money_cost": null,
+  "money_cost_reason": "applicable account tariff unknown",
+  "comparison_note": "API batch latency, amortized per-case time and full wall time are different quantities; cached decisions retain original batch timing"
+}

@@ -157,5 +157,13 @@ def call_once(client,specification):
 
 
 if __name__ == '__main__':
-    from llm_pilot import main
+    import sys
+    if '--preview' in sys.argv:
+        sys.argv.remove('--preview')
+        from preview_llm import main
+    elif '--main-experiment' in sys.argv:
+        sys.argv.remove('--main-experiment')
+        from main_llm import main
+    else:
+        from llm_pilot import main
     main()

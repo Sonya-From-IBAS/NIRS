@@ -1,0 +1,545 @@
+{
+  "purpose": "neutral_projection_sensitivity_not_reference_attack_labels",
+  "probes": [
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "table": "info.users",
+      "queries": [
+        "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+        "SELECT id, display_name FROM info.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        1,
+        0
+      ],
+      "native_predictions": [
+        4,
+        0
+      ],
+      "alarm_changed": true,
+      "class_changed": true
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "table": "app.users",
+      "queries": [
+        "SELECT username, user_nickname FROM app.users WHERE record_id = 42",
+        "SELECT id, display_name FROM app.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        1,
+        0
+      ],
+      "native_predictions": [
+        4,
+        0
+      ],
+      "alarm_changed": true,
+      "class_changed": true
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "table": "employees",
+      "queries": [
+        "SELECT username, user_nickname FROM employees WHERE record_id = 42",
+        "SELECT id, display_name FROM employees WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "table": "orders",
+      "queries": [
+        "SELECT username, user_nickname FROM orders WHERE record_id = 42",
+        "SELECT id, display_name FROM orders WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        1,
+        0
+      ],
+      "native_predictions": [
+        4,
+        0
+      ],
+      "alarm_changed": true,
+      "class_changed": true
+    },
+    {
+      "method": "Historical TF-IDF + LogReg",
+      "table": "auth.credentials",
+      "queries": [
+        "SELECT username, user_nickname FROM auth.credentials WHERE record_id = 42",
+        "SELECT id, display_name FROM auth.credentials WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "table": "info.users",
+      "queries": [
+        "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+        "SELECT id, display_name FROM info.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        1,
+        0
+      ],
+      "native_predictions": [
+        4,
+        0
+      ],
+      "alarm_changed": true,
+      "class_changed": true
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "table": "app.users",
+      "queries": [
+        "SELECT username, user_nickname FROM app.users WHERE record_id = 42",
+        "SELECT id, display_name FROM app.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        1,
+        0
+      ],
+      "native_predictions": [
+        4,
+        0
+      ],
+      "alarm_changed": true,
+      "class_changed": true
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "table": "employees",
+      "queries": [
+        "SELECT username, user_nickname FROM employees WHERE record_id = 42",
+        "SELECT id, display_name FROM employees WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "table": "orders",
+      "queries": [
+        "SELECT username, user_nickname FROM orders WHERE record_id = 42",
+        "SELECT id, display_name FROM orders WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + LinearSVC",
+      "table": "auth.credentials",
+      "queries": [
+        "SELECT username, user_nickname FROM auth.credentials WHERE record_id = 42",
+        "SELECT id, display_name FROM auth.credentials WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "table": "info.users",
+      "queries": [
+        "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+        "SELECT id, display_name FROM info.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "table": "app.users",
+      "queries": [
+        "SELECT username, user_nickname FROM app.users WHERE record_id = 42",
+        "SELECT id, display_name FROM app.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "table": "employees",
+      "queries": [
+        "SELECT username, user_nickname FROM employees WHERE record_id = 42",
+        "SELECT id, display_name FROM employees WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "table": "orders",
+      "queries": [
+        "SELECT username, user_nickname FROM orders WHERE record_id = 42",
+        "SELECT id, display_name FROM orders WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "Historical TF-IDF + RandomForest",
+      "table": "auth.credentials",
+      "queries": [
+        "SELECT username, user_nickname FROM auth.credentials WHERE record_id = 42",
+        "SELECT id, display_name FROM auth.credentials WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LogisticRegression",
+      "table": "info.users",
+      "queries": [
+        "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+        "SELECT id, display_name FROM info.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LogisticRegression",
+      "table": "app.users",
+      "queries": [
+        "SELECT username, user_nickname FROM app.users WHERE record_id = 42",
+        "SELECT id, display_name FROM app.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LogisticRegression",
+      "table": "employees",
+      "queries": [
+        "SELECT username, user_nickname FROM employees WHERE record_id = 42",
+        "SELECT id, display_name FROM employees WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LogisticRegression",
+      "table": "orders",
+      "queries": [
+        "SELECT username, user_nickname FROM orders WHERE record_id = 42",
+        "SELECT id, display_name FROM orders WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LogisticRegression",
+      "table": "auth.credentials",
+      "queries": [
+        "SELECT username, user_nickname FROM auth.credentials WHERE record_id = 42",
+        "SELECT id, display_name FROM auth.credentials WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LinearSVC",
+      "table": "info.users",
+      "queries": [
+        "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+        "SELECT id, display_name FROM info.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LinearSVC",
+      "table": "app.users",
+      "queries": [
+        "SELECT username, user_nickname FROM app.users WHERE record_id = 42",
+        "SELECT id, display_name FROM app.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LinearSVC",
+      "table": "employees",
+      "queries": [
+        "SELECT username, user_nickname FROM employees WHERE record_id = 42",
+        "SELECT id, display_name FROM employees WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LinearSVC",
+      "table": "orders",
+      "queries": [
+        "SELECT username, user_nickname FROM orders WHERE record_id = 42",
+        "SELECT id, display_name FROM orders WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "LinearSVC",
+      "table": "auth.credentials",
+      "queries": [
+        "SELECT username, user_nickname FROM auth.credentials WHERE record_id = 42",
+        "SELECT id, display_name FROM auth.credentials WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "RandomForest",
+      "table": "info.users",
+      "queries": [
+        "SELECT username, user_nickname FROM info.users WHERE record_id = 42",
+        "SELECT id, display_name FROM info.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "RandomForest",
+      "table": "app.users",
+      "queries": [
+        "SELECT username, user_nickname FROM app.users WHERE record_id = 42",
+        "SELECT id, display_name FROM app.users WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "RandomForest",
+      "table": "employees",
+      "queries": [
+        "SELECT username, user_nickname FROM employees WHERE record_id = 42",
+        "SELECT id, display_name FROM employees WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "RandomForest",
+      "table": "orders",
+      "queries": [
+        "SELECT username, user_nickname FROM orders WHERE record_id = 42",
+        "SELECT id, display_name FROM orders WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    },
+    {
+      "method": "RandomForest",
+      "table": "auth.credentials",
+      "queries": [
+        "SELECT username, user_nickname FROM auth.credentials WHERE record_id = 42",
+        "SELECT id, display_name FROM auth.credentials WHERE record_id = 42"
+      ],
+      "alarm_predictions": [
+        0,
+        0
+      ],
+      "native_predictions": [
+        0,
+        0
+      ],
+      "alarm_changed": false,
+      "class_changed": false
+    }
+  ]
+}

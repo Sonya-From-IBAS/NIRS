@@ -1,0 +1,1727 @@
+[
+  {
+    "run_id": "run_eeebcc58396002c5481c5a8a58d96fb82e9e9d38e57e22256b940416eb23a530",
+    "method": "LogisticRegression",
+    "kind": "learning",
+    "level": "0.25",
+    "fit_rows": 620,
+    "columns": 1000,
+    "model_bytes": 35997,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 620,
+      "status_counts": {
+        "ok": 620
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 620,
+      "primary_f1": 0.9953488372093023,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9953488372093023,
+        "attack_recall": 0.9907407407407407,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            188,
+            0
+          ],
+          [
+            4,
+            428
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 428,
+          "fp": 0,
+          "fn": 4,
+          "tn": 188
+        },
+        "per_class": {
+          "0": {
+            "support": 188,
+            "predicted_support": 192,
+            "precision": 0.9791666666666666,
+            "recall": 1.0,
+            "f1": 0.9894736842105263
+          },
+          "1": {
+            "support": 432,
+            "predicted_support": 428,
+            "precision": 1.0,
+            "recall": 0.9907407407407407,
+            "f1": 0.9953488372093023
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8927335640138409,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8927335640138409,
+        "attack_recall": 0.80625,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            320,
+            0
+          ],
+          [
+            62,
+            258
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 258,
+          "fp": 0,
+          "fn": 62,
+          "tn": 320
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 382,
+            "precision": 0.837696335078534,
+            "recall": 1.0,
+            "f1": 0.9116809116809117
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 258,
+            "precision": 1.0,
+            "recall": 0.80625,
+            "f1": 0.8927335640138409
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "48321e86499a3c82e615d9532ef337054e07b562064baa50fe495e239c6221d0",
+      "fit_metadata.json": "3fc409accdb92b5a0ad14736f9f7b9c62a2e512494bab8b37ed1d4dd628bc4ab"
+    }
+  },
+  {
+    "run_id": "run_bc83cd59847fa6504a108bc969a1d6193dbf7ba38c7ff81c104f67d63e34c874",
+    "method": "LogisticRegression",
+    "kind": "learning",
+    "level": "0.5",
+    "fit_rows": 1285,
+    "columns": 1000,
+    "model_bytes": 46426,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 1285,
+      "status_counts": {
+        "ok": 1285
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 1285,
+      "primary_f1": 0.9972020145495244,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9972020145495244,
+        "attack_recall": 0.9944196428571429,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            389,
+            0
+          ],
+          [
+            5,
+            891
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 891,
+          "fp": 0,
+          "fn": 5,
+          "tn": 389
+        },
+        "per_class": {
+          "0": {
+            "support": 389,
+            "predicted_support": 394,
+            "precision": 0.9873096446700508,
+            "recall": 1.0,
+            "f1": 0.9936143039591315
+          },
+          "1": {
+            "support": 896,
+            "predicted_support": 891,
+            "precision": 1.0,
+            "recall": 0.9944196428571429,
+            "f1": 0.9972020145495244
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8946459412780656,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8946459412780656,
+        "attack_recall": 0.809375,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            320,
+            0
+          ],
+          [
+            61,
+            259
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 259,
+          "fp": 0,
+          "fn": 61,
+          "tn": 320
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 381,
+            "precision": 0.8398950131233596,
+            "recall": 1.0,
+            "f1": 0.912981455064194
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 259,
+            "precision": 1.0,
+            "recall": 0.809375,
+            "f1": 0.8946459412780656
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "520274b984fadbcd245e90c22e16653124dcef8b3487f616963b672d4cdcfdd6",
+      "fit_metadata.json": "1ef5ce4bd91364c45975376c926c92a88135f69ee721bcfe2652fd7a68deaf5a"
+    }
+  },
+  {
+    "run_id": "run_a6d032c82ec0221c0ef84898191308372507d9b7b026e937ef9275bfdb2566da",
+    "method": "LogisticRegression",
+    "kind": "learning",
+    "level": "1.0",
+    "fit_rows": 2480,
+    "columns": 1000,
+    "model_bytes": 44870,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.9975747776879548,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9975747776879548,
+        "attack_recall": 0.9951612903225806,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            1240,
+            0
+          ],
+          [
+            6,
+            1234
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1234,
+          "fp": 0,
+          "fn": 6,
+          "tn": 1240
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1246,
+            "precision": 0.9951845906902087,
+            "recall": 1.0,
+            "f1": 0.997586484312148
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1234,
+            "precision": 1.0,
+            "recall": 0.9951612903225806,
+            "f1": 0.9975747776879548
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.900990099009901,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.900990099009901,
+        "attack_recall": 0.853125,
+        "false_positive_rate": 0.040625,
+        "attack_precision": 0.9545454545454546,
+        "confusion_matrix": [
+          [
+            307,
+            13
+          ],
+          [
+            47,
+            273
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 273,
+          "fp": 13,
+          "fn": 47,
+          "tn": 307
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 354,
+            "precision": 0.867231638418079,
+            "recall": 0.959375,
+            "f1": 0.9109792284866469
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 286,
+            "precision": 0.9545454545454546,
+            "recall": 0.853125,
+            "f1": 0.900990099009901
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "8ccf8525b748069fd95d6d568a4b12e5e1a22d0e957c6ce8819467d5ccdb437d",
+      "fit_metadata.json": "4e3fe437fd5366ab72e670f00ea2364d4a2c89f6befbd8c93c81cd7507f6e63a"
+    }
+  },
+  {
+    "run_id": "run_83e34f6bfd1bf651eb032c1ce9e601e511900bcb49257f9debee7e120d8bfacb",
+    "method": "LogisticRegression",
+    "kind": "complexity",
+    "level": "strong",
+    "fit_rows": 2480,
+    "columns": 1000,
+    "model_bytes": 44893,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.8847888478884789,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8847888478884789,
+        "attack_recall": 0.8701612903225806,
+        "false_positive_rate": 0.0967741935483871,
+        "attack_precision": 0.8999165971643036,
+        "confusion_matrix": [
+          [
+            1120,
+            120
+          ],
+          [
+            161,
+            1079
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1079,
+          "fp": 120,
+          "fn": 161,
+          "tn": 1120
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1281,
+            "precision": 0.8743169398907104,
+            "recall": 0.9032258064516129,
+            "f1": 0.8885362951209838
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1199,
+            "precision": 0.8999165971643036,
+            "recall": 0.8701612903225806,
+            "f1": 0.8847888478884789
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.826151560178306,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.826151560178306,
+        "attack_recall": 0.86875,
+        "false_positive_rate": 0.234375,
+        "attack_precision": 0.7875354107648725,
+        "confusion_matrix": [
+          [
+            245,
+            75
+          ],
+          [
+            42,
+            278
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 278,
+          "fp": 75,
+          "fn": 42,
+          "tn": 245
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 287,
+            "precision": 0.8536585365853658,
+            "recall": 0.765625,
+            "f1": 0.8072487644151565
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 353,
+            "precision": 0.7875354107648725,
+            "recall": 0.86875,
+            "f1": 0.826151560178306
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "4e60b903a2b279eccfdb2987f395c9ca1a31b059be47c3b537d2dea77ba3b70e",
+      "fit_metadata.json": "19f6717212b2997e9f3fcbbf0df7a2e04fc0095c0675198a51c601ddf62ae6cf"
+    }
+  },
+  {
+    "run_id": "run_ca92df1267b11540b0828b88d110cff339870c00c547e8f793c5088606a6d236",
+    "method": "LogisticRegression",
+    "kind": "compactness",
+    "level": "100",
+    "fit_rows": 2480,
+    "columns": 100,
+    "model_bytes": 35492,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.8840864440078585,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8840864440078585,
+        "attack_recall": 0.907258064516129,
+        "false_positive_rate": 0.14516129032258066,
+        "attack_precision": 0.8620689655172413,
+        "confusion_matrix": [
+          [
+            1060,
+            180
+          ],
+          [
+            115,
+            1125
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1125,
+          "fp": 180,
+          "fn": 115,
+          "tn": 1060
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1175,
+            "precision": 0.902127659574468,
+            "recall": 0.8548387096774194,
+            "f1": 0.8778467908902692
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1305,
+            "precision": 0.8620689655172413,
+            "recall": 0.907258064516129,
+            "f1": 0.8840864440078585
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8068181818181818,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8068181818181818,
+        "attack_recall": 0.8875,
+        "false_positive_rate": 0.3125,
+        "attack_precision": 0.7395833333333334,
+        "confusion_matrix": [
+          [
+            220,
+            100
+          ],
+          [
+            36,
+            284
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 284,
+          "fp": 100,
+          "fn": 36,
+          "tn": 220
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 256,
+            "precision": 0.859375,
+            "recall": 0.6875,
+            "f1": 0.7638888888888888
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 384,
+            "precision": 0.7395833333333334,
+            "recall": 0.8875,
+            "f1": 0.8068181818181818
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "2cfb0b5fce0e6aeb730909605fc046abe95bae8d20fb9a840ed509356e06890b",
+      "fit_metadata.json": "0a00689c136ef3a3fd76071b1323b7ff12ec4372c0ba019a755ef22b19ea028d"
+    }
+  },
+  {
+    "run_id": "run_6bd099d3370ccb850ed03c6d188567054394453312acf885263de8e6daf70fe2",
+    "method": "LinearSVC",
+    "kind": "learning",
+    "level": "0.25",
+    "fit_rows": 620,
+    "columns": 1000,
+    "model_bytes": 35706,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 620,
+      "status_counts": {
+        "ok": 620
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 620,
+      "primary_f1": 1.0,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            188,
+            0
+          ],
+          [
+            0,
+            432
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 432,
+          "fp": 0,
+          "fn": 0,
+          "tn": 188
+        },
+        "per_class": {
+          "0": {
+            "support": 188,
+            "predicted_support": 188,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 432,
+            "predicted_support": 432,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.896551724137931,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.896551724137931,
+        "attack_recall": 0.8125,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            320,
+            0
+          ],
+          [
+            60,
+            260
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 260,
+          "fp": 0,
+          "fn": 60,
+          "tn": 320
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 380,
+            "precision": 0.8421052631578947,
+            "recall": 1.0,
+            "f1": 0.9142857142857143
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 260,
+            "precision": 1.0,
+            "recall": 0.8125,
+            "f1": 0.896551724137931
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "949ac2cf36da67e87694ffdf85e92879f7ebe54c78aafe6af41572a77ec396a6",
+      "fit_metadata.json": "f1688386a707f5b2a7b38352536eaf0fc880aa20dbc727d56a9473f51b566daf"
+    }
+  },
+  {
+    "run_id": "run_4caf56c4981c9bed9d3d12cfb8db09a920849ed846b37bc52ec4aa52788b7421",
+    "method": "LinearSVC",
+    "kind": "learning",
+    "level": "0.5",
+    "fit_rows": 1285,
+    "columns": 1000,
+    "model_bytes": 46382,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 1285,
+      "status_counts": {
+        "ok": 1285
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 1285,
+      "primary_f1": 1.0,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            389,
+            0
+          ],
+          [
+            0,
+            896
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 896,
+          "fp": 0,
+          "fn": 0,
+          "tn": 389
+        },
+        "per_class": {
+          "0": {
+            "support": 389,
+            "predicted_support": 389,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 896,
+            "predicted_support": 896,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8637873754152824,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8637873754152824,
+        "attack_recall": 0.8125,
+        "false_positive_rate": 0.06875,
+        "attack_precision": 0.9219858156028369,
+        "confusion_matrix": [
+          [
+            298,
+            22
+          ],
+          [
+            60,
+            260
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 260,
+          "fp": 22,
+          "fn": 60,
+          "tn": 298
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 358,
+            "precision": 0.8324022346368715,
+            "recall": 0.93125,
+            "f1": 0.8790560471976401
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 282,
+            "precision": 0.9219858156028369,
+            "recall": 0.8125,
+            "f1": 0.8637873754152824
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "a07d046dc26248b513e81bfd87f35198ff8826a59b3076286293dae078a8677e",
+      "fit_metadata.json": "6b687f921984472a2cd9293280b0d29a9dfa5698d3300cf79000cb153706568d"
+    }
+  },
+  {
+    "run_id": "run_68b60062216e06758264799c2a57a0e9d11376d450d34e415bc02fdbc655311f",
+    "method": "LinearSVC",
+    "kind": "learning",
+    "level": "1.0",
+    "fit_rows": 2480,
+    "columns": 1000,
+    "model_bytes": 44814,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.99959661153691,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.99959661153691,
+        "attack_recall": 0.9991935483870967,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            1240,
+            0
+          ],
+          [
+            1,
+            1239
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1239,
+          "fp": 0,
+          "fn": 1,
+          "tn": 1240
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1241,
+            "precision": 0.9991941982272361,
+            "recall": 1.0,
+            "f1": 0.9995969367190649
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1239,
+            "precision": 1.0,
+            "recall": 0.9991935483870967,
+            "f1": 0.99959661153691
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.896551724137931,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.896551724137931,
+        "attack_recall": 0.8125,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            320,
+            0
+          ],
+          [
+            60,
+            260
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 260,
+          "fp": 0,
+          "fn": 60,
+          "tn": 320
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 380,
+            "precision": 0.8421052631578947,
+            "recall": 1.0,
+            "f1": 0.9142857142857143
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 260,
+            "precision": 1.0,
+            "recall": 0.8125,
+            "f1": 0.896551724137931
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "aecc021fb7e0d43afa97b83bd70aae0bd3a13b78833b38bab33c712bb5ca390c",
+      "fit_metadata.json": "69a5aefdab2f8f852492d637f66557c37d24026f7bb88bda0c9bae21b9361893"
+    }
+  },
+  {
+    "run_id": "run_e99f2ac16b417368a77f93914cf24d0e0cf1baaf015cf4b4c2504facd84c49ff",
+    "method": "LinearSVC",
+    "kind": "complexity",
+    "level": "strong",
+    "fit_rows": 2480,
+    "columns": 1000,
+    "model_bytes": 44822,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.9975747776879548,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9975747776879548,
+        "attack_recall": 0.9951612903225806,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            1240,
+            0
+          ],
+          [
+            6,
+            1234
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1234,
+          "fp": 0,
+          "fn": 6,
+          "tn": 1240
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1246,
+            "precision": 0.9951845906902087,
+            "recall": 1.0,
+            "f1": 0.997586484312148
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1234,
+            "precision": 1.0,
+            "recall": 0.9951612903225806,
+            "f1": 0.9975747776879548
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.9044585987261147,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9044585987261147,
+        "attack_recall": 0.8875,
+        "false_positive_rate": 0.075,
+        "attack_precision": 0.922077922077922,
+        "confusion_matrix": [
+          [
+            296,
+            24
+          ],
+          [
+            36,
+            284
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 284,
+          "fp": 24,
+          "fn": 36,
+          "tn": 296
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 332,
+            "precision": 0.891566265060241,
+            "recall": 0.925,
+            "f1": 0.9079754601226994
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 308,
+            "precision": 0.922077922077922,
+            "recall": 0.8875,
+            "f1": 0.9044585987261147
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "ee3794eee06da731dd463b0e5bfe5c56aeed54f234c704f4a2566977333db85b",
+      "fit_metadata.json": "8f6dc65eeaebe96637e5ab86151db2aa4ea6460f6a12dca665cf805c8434ddb7"
+    }
+  },
+  {
+    "run_id": "run_16fbc26a3fae09662c8451a7090d30f2add362ab6f6374e32eb677455c7efc16",
+    "method": "LinearSVC",
+    "kind": "compactness",
+    "level": "100",
+    "fit_rows": 2480,
+    "columns": 100,
+    "model_bytes": 35423,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.898505114083399,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.898505114083399,
+        "attack_recall": 0.9209677419354839,
+        "false_positive_rate": 0.12903225806451613,
+        "attack_precision": 0.8771121351766513,
+        "confusion_matrix": [
+          [
+            1080,
+            160
+          ],
+          [
+            98,
+            1142
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1142,
+          "fp": 160,
+          "fn": 98,
+          "tn": 1080
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1178,
+            "precision": 0.9168081494057725,
+            "recall": 0.8709677419354839,
+            "f1": 0.8933002481389578
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1302,
+            "precision": 0.8771121351766513,
+            "recall": 0.9209677419354839,
+            "f1": 0.898505114083399
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.827027027027027,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.827027027027027,
+        "attack_recall": 0.95625,
+        "false_positive_rate": 0.35625,
+        "attack_precision": 0.7285714285714285,
+        "confusion_matrix": [
+          [
+            206,
+            114
+          ],
+          [
+            14,
+            306
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 306,
+          "fp": 114,
+          "fn": 14,
+          "tn": 206
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 220,
+            "precision": 0.9363636363636364,
+            "recall": 0.64375,
+            "f1": 0.762962962962963
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 420,
+            "precision": 0.7285714285714285,
+            "recall": 0.95625,
+            "f1": 0.827027027027027
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "6efd7deefff9056d0226421e0074957cdf9d8fba62e74ed5e6c2a81f2c0cf9e7",
+      "fit_metadata.json": "252648b620c1ee770dcbe30ad6f534f88ff4f70a9aff2c188d51382277cb0b45"
+    }
+  },
+  {
+    "run_id": "run_45176fa4a06a815169e8c029c6d5efb43a74b96251f430150b2e9b1b64ce2b38",
+    "method": "RandomForest",
+    "kind": "learning",
+    "level": "0.25",
+    "fit_rows": 620,
+    "columns": 1000,
+    "model_bytes": 133914,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 620,
+      "status_counts": {
+        "ok": 620
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 620,
+      "primary_f1": 1.0,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            188,
+            0
+          ],
+          [
+            0,
+            432
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 432,
+          "fp": 0,
+          "fn": 0,
+          "tn": 188
+        },
+        "per_class": {
+          "0": {
+            "support": 188,
+            "predicted_support": 188,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 432,
+            "predicted_support": 432,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8646864686468647,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8646864686468647,
+        "attack_recall": 0.81875,
+        "false_positive_rate": 0.075,
+        "attack_precision": 0.916083916083916,
+        "confusion_matrix": [
+          [
+            296,
+            24
+          ],
+          [
+            58,
+            262
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 262,
+          "fp": 24,
+          "fn": 58,
+          "tn": 296
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 354,
+            "precision": 0.8361581920903954,
+            "recall": 0.925,
+            "f1": 0.8783382789317508
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 286,
+            "precision": 0.916083916083916,
+            "recall": 0.81875,
+            "f1": 0.8646864686468647
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "b48bcde845a21c332d716ba3bf26b63e9bfc563cef3464f7c3644889d97473c9",
+      "fit_metadata.json": "c4f21c930f2cd5768859cb08810265d36cf766f52a73cbaa20e5ff0845985084"
+    }
+  },
+  {
+    "run_id": "run_7c2794eae34d52fb7a0cb5b38731e95780065e371bc7601c21e1b29d40fe0101",
+    "method": "RandomForest",
+    "kind": "learning",
+    "level": "0.5",
+    "fit_rows": 1285,
+    "columns": 1000,
+    "model_bytes": 181862,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 1285,
+      "status_counts": {
+        "ok": 1285
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 1285,
+      "primary_f1": 0.9771689497716894,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9771689497716894,
+        "attack_recall": 0.9553571428571429,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            389,
+            0
+          ],
+          [
+            40,
+            856
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 856,
+          "fp": 0,
+          "fn": 40,
+          "tn": 389
+        },
+        "per_class": {
+          "0": {
+            "support": 389,
+            "predicted_support": 429,
+            "precision": 0.9067599067599068,
+            "recall": 1.0,
+            "f1": 0.9511002444987775
+          },
+          "1": {
+            "support": 896,
+            "predicted_support": 856,
+            "precision": 1.0,
+            "recall": 0.9553571428571429,
+            "f1": 0.9771689497716894
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8580968280467446,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8580968280467446,
+        "attack_recall": 0.803125,
+        "false_positive_rate": 0.06875,
+        "attack_precision": 0.921146953405018,
+        "confusion_matrix": [
+          [
+            298,
+            22
+          ],
+          [
+            63,
+            257
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 257,
+          "fp": 22,
+          "fn": 63,
+          "tn": 298
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 361,
+            "precision": 0.8254847645429363,
+            "recall": 0.93125,
+            "f1": 0.8751835535976505
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 279,
+            "precision": 0.921146953405018,
+            "recall": 0.803125,
+            "f1": 0.8580968280467446
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "6847234922694d1ed01430af6ea7ce5583407aa15fbe775d708281be708fd473",
+      "fit_metadata.json": "8913605f17efff3a90b301051501d393872f41940ca5ac28249bbc78384e194b"
+    }
+  },
+  {
+    "run_id": "run_16b75d55a3eb897c0480d34b1f835475be62c66360a86863af54fafda4bb0257",
+    "method": "RandomForest",
+    "kind": "learning",
+    "level": "1.0",
+    "fit_rows": 2480,
+    "columns": 1000,
+    "model_bytes": 165090,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 1.0,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 1.0,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.0,
+        "attack_precision": 1.0,
+        "confusion_matrix": [
+          [
+            1240,
+            0
+          ],
+          [
+            0,
+            1240
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1240,
+          "fp": 0,
+          "fn": 0,
+          "tn": 1240
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1240,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1240,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.90625,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.90625,
+        "attack_recall": 0.90625,
+        "false_positive_rate": 0.09375,
+        "attack_precision": 0.90625,
+        "confusion_matrix": [
+          [
+            290,
+            30
+          ],
+          [
+            30,
+            290
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 290,
+          "fp": 30,
+          "fn": 30,
+          "tn": 290
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 320,
+            "precision": 0.90625,
+            "recall": 0.90625,
+            "f1": 0.90625
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 320,
+            "precision": 0.90625,
+            "recall": 0.90625,
+            "f1": 0.90625
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "a5ba697675fb9480290150eac31d5c0650fcd72d3a0ec537209fdc261401afea",
+      "fit_metadata.json": "0309e4aeddb4766e18161baaf247a7a9b77c00e1e776807545ddb3908ecf248f"
+    }
+  },
+  {
+    "run_id": "run_7049869ed0c5c5287b56fd54d272b323c727c05c15c75d9977fc4b2ccf07dac8",
+    "method": "RandomForest",
+    "kind": "complexity",
+    "level": "strong",
+    "fit_rows": 2480,
+    "columns": 1000,
+    "model_bytes": 89775,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.9927942353883107,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9927942353883107,
+        "attack_recall": 1.0,
+        "false_positive_rate": 0.014516129032258065,
+        "attack_precision": 0.985691573926868,
+        "confusion_matrix": [
+          [
+            1222,
+            18
+          ],
+          [
+            0,
+            1240
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1240,
+          "fp": 18,
+          "fn": 0,
+          "tn": 1222
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1222,
+            "precision": 1.0,
+            "recall": 0.9854838709677419,
+            "f1": 0.9926888708367181
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1258,
+            "precision": 0.985691573926868,
+            "recall": 1.0,
+            "f1": 0.9927942353883107
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8927444794952681,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8927444794952681,
+        "attack_recall": 0.884375,
+        "false_positive_rate": 0.096875,
+        "attack_precision": 0.9012738853503185,
+        "confusion_matrix": [
+          [
+            289,
+            31
+          ],
+          [
+            37,
+            283
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 283,
+          "fp": 31,
+          "fn": 37,
+          "tn": 289
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 326,
+            "precision": 0.8865030674846626,
+            "recall": 0.903125,
+            "f1": 0.8947368421052632
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 314,
+            "precision": 0.9012738853503185,
+            "recall": 0.884375,
+            "f1": 0.8927444794952681
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "20331610a7795210198b46b83f652b9366c1253d5abe1ca789a63cf71c35cd98",
+      "fit_metadata.json": "aaba3ceddb92aed80fb18f3f75a8e8fdd2445eed1f08cf1a41515dfc387d4064"
+    }
+  },
+  {
+    "run_id": "run_3067629506ca2915b3939c931d5fa5a30af3dba11daab6adfb4e747075d0ac81",
+    "method": "RandomForest",
+    "kind": "compactness",
+    "level": "100",
+    "fit_rows": 2480,
+    "columns": 100,
+    "model_bytes": 204639,
+    "train_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 2480,
+      "status_counts": {
+        "ok": 2480
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 2480,
+      "primary_f1": 0.9110236220472441,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.9110236220472441,
+        "attack_recall": 0.9330645161290323,
+        "false_positive_rate": 0.1153225806451613,
+        "attack_precision": 0.89,
+        "confusion_matrix": [
+          [
+            1097,
+            143
+          ],
+          [
+            83,
+            1157
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 1157,
+          "fp": 143,
+          "fn": 83,
+          "tn": 1097
+        },
+        "per_class": {
+          "0": {
+            "support": 1240,
+            "predicted_support": 1180,
+            "precision": 0.9296610169491526,
+            "recall": 0.8846774193548387,
+            "f1": 0.9066115702479339
+          },
+          "1": {
+            "support": 1240,
+            "predicted_support": 1300,
+            "precision": 0.89,
+            "recall": 0.9330645161290323,
+            "f1": 0.9110236220472441
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "validation_metrics": {
+      "metric_contract": "evaluation-metrics-v1",
+      "label_space": "binary",
+      "observations": 640,
+      "status_counts": {
+        "ok": 640
+      },
+      "decision_coverage": 1.0,
+      "successful_decisions": 640,
+      "primary_f1": 0.8136645962732919,
+      "eligible_for_primary_ranking": true,
+      "successful_decision_metrics": {
+        "f1": 0.8136645962732919,
+        "attack_recall": 0.81875,
+        "false_positive_rate": 0.19375,
+        "attack_precision": 0.808641975308642,
+        "confusion_matrix": [
+          [
+            258,
+            62
+          ],
+          [
+            58,
+            262
+          ]
+        ],
+        "collapsed_binary_counts": {
+          "tp": 262,
+          "fp": 62,
+          "fn": 58,
+          "tn": 258
+        },
+        "per_class": {
+          "0": {
+            "support": 320,
+            "predicted_support": 316,
+            "precision": 0.8164556962025317,
+            "recall": 0.80625,
+            "f1": 0.8113207547169812
+          },
+          "1": {
+            "support": 320,
+            "predicted_support": 324,
+            "precision": 0.808641975308642,
+            "recall": 0.81875,
+            "f1": 0.8136645962732919
+          }
+        }
+      },
+      "sample_weighted": false
+    },
+    "artifacts": {
+      "model.joblib": "5f268e2456d5fbcfbc451a1154dc16511bbe3d01da925c3e318fda154e0c04e0",
+      "fit_metadata.json": "a11adba10abda7b652d896eb282b19ebf05c5cb18ac2bb3601a3dfcb03ebe69f"
+    }
+  }
+]

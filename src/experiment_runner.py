@@ -141,9 +141,9 @@ def refit_selected(store, entry, selected, parent_ids, inputs, labels, signature
     return {'model.joblib': model_file, 'refit_metadata.json': metadata_file}, rid
 
 
-def run_scope(store, name, signature, code_files):
+def run_scope(store, name, signature, code_files, *, entry=None, features=None):
     registry = json.loads((ROOT/'results/stage6/split_registry.json').read_text(encoding='utf-8'))['protocols']
-    entry = registry[name]
+    entry = registry[name] if entry is None else entry
     label_space = 'legacy_five_class' if entry['cohort'] == 'legacy' else 'binary'
     parent_ids, inputs, labels = load_inputs(store, entry)
     assignments = {}
@@ -154,7 +154,7 @@ def run_scope(store, name, signature, code_files):
             raise ValueError('Inner scope differs from its frozen parent training set')
         assignments[fold] = train_ids, validation_ids
     candidates = {}
-    for feature in feature_candidates(entry['cohort']):
+    for feature in (feature_candidates(entry['cohort']) if features is None else features):
         for fold, (train_ids, validation_ids) in assignments.items():
             rid, encoder, train, validation, _ = cache_matrix(store, entry['dataset_version_id'], entry['split_id'], fold,
                         feature, train_ids, validation_ids, inputs, labels, signature)

@@ -8,6 +8,11 @@ results/stage6/** -text
 results/stage7/** -text
 results/stage8/** -text
 results/stage9/** -text
+results/stage10/** -text
+results/preview/** -text
+# Generated CSV embeds original SQL whitespace; SVG paths retain renderer spacing.
+results/preview/*.csv whitespace=-blank-at-eol,-blank-at-eof
+results/preview/plots/*.svg whitespace=-blank-at-eol,-blank-at-eof
 data/scenarios/** -text
 schemas/** -text
 migrations/** -text

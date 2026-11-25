@@ -1,0 +1,646 @@
+method,run_id,observation_id,task,dialect,tags,true_label,predicted_label,status,SQL_excerpt,category
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_2739dc5d44cdeed7cad5bcc094932c14,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;",missed_attack
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_2ed005ac597c3a7a8bbc8c934d12245a,privilege,mysql,[],0,1.0,ok,CALL lab_research.assign_delivery(1407);,false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_3f16195da834e1151f0663a0a642313d,privilege,mssql,[],0,1.0,ok,EXEC lab_finance.assign_delivery 1405;,false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4,privilege,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));,false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_87c70c7bf167c16b969ce02f20e96660,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.metric_a FROM lab_operations.events t WHERE t.tenant_key = 52 ORDER BY t.entry_id;",missed_attack
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_9afde387eb4e31b1c00f2b729716b339,privilege,mssql,"['comments', 'string_concatenation']",0,1.0,ok,"EXEC(N'eX' + N'eC/* q */
+lab_finance.assign_review/* q */
+1404');",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_a071f14cd713f75a3cf8eb44bc2eed81,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/**/t.entry_id,/**/t.priority/**/fRoM/**/lab_support.tickets/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHr(50)/**/||/**/cHr(50)/**/aS/**/iNtEgEr)/**/oRdEr/**/bY/**/t.entry_id;",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d,exfiltration,postgresql,[],1,0.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, reading_a FROM lab_research.samples WHERE tenant_key = 42) SELECT entry_id, reading_a FROM scope_rows ORDER BY entry_id;",missed_attack
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_ba139eaadd9da1349ef772b126b87b16,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cHr(51)/* q */
+||/* q */
+cHr(49)/* q */
+aS/* q */
+iNtEgEr))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_f50104f7816bbd6efb8af80c710df977,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/* q */
+s.entry_id,/* q */
+s.priority/* q */
+fRoM/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+priority/* q */
+fRoM/* q */
+lab_support.tickets/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+tO_NuMbEr(cHr(50)/* q */
+||/* q */
+cHr(49)))/* q */
+s/* q */
+oRdEr/* q */
+bY/* q */
+s.entry_id;",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_s5_fde1f27eddb2570afef00a660a2c582a,privilege,mysql,[],0,1.0,ok,CALL lab_commerce.assign_delivery(1401);,false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,1.0,ok,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,1.0,ok,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,1.0,ok,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+LogisticRegression / sql_only,run_b38c76735924fe164e233be9bb8e00446b147e21beb5fc675fc8020721d5db7d,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,1.0,ok,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_s5_2739dc5d44cdeed7cad5bcc094932c14,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;",missed_attack
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_s5_a071f14cd713f75a3cf8eb44bc2eed81,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/**/t.entry_id,/**/t.priority/**/fRoM/**/lab_support.tickets/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHr(50)/**/||/**/cHr(50)/**/aS/**/iNtEgEr)/**/oRdEr/**/bY/**/t.entry_id;",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_s5_ba139eaadd9da1349ef772b126b87b16,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cHr(51)/* q */
+||/* q */
+cHr(49)/* q */
+aS/* q */
+iNtEgEr))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_s5_f50104f7816bbd6efb8af80c710df977,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/* q */
+s.entry_id,/* q */
+s.priority/* q */
+fRoM/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+priority/* q */
+fRoM/* q */
+lab_support.tickets/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+tO_NuMbEr(cHr(50)/* q */
+||/* q */
+cHr(49)))/* q */
+s/* q */
+oRdEr/* q */
+bY/* q */
+s.entry_id;",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,1.0,ok,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,1.0,ok,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,1.0,ok,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+LogisticRegression / sql_context,run_2d3e1e51a9670fb74cc49f202b60b3e376eb4c9af293b0ef7c2aef36f94667e9,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,1.0,ok,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_14993f9b8ee330df933dc5c57da46cab,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"wItH/**/scope_rows/**/aS/**/(sElEcT/**/entry_id,/**/tenant_key,/**/amount/**/fRoM/**/lab_commerce.orders/**/wHeRe/**/tenant_key/**/=/**/tO_NuMbEr(cHr(49)/**/||/**/cHr(50)))/**/sElEcT/**/entry_id,/**/amount/**/fRoM/**/scope_rows/**/oRdEr/**/bY/**/entry_id;",missed_attack
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_2739dc5d44cdeed7cad5bcc094932c14,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;",missed_attack
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_2ed005ac597c3a7a8bbc8c934d12245a,privilege,mysql,[],0,1.0,ok,CALL lab_research.assign_delivery(1407);,false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_3f16195da834e1151f0663a0a642313d,privilege,mssql,[],0,1.0,ok,EXEC lab_finance.assign_delivery 1405;,false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4,privilege,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));,false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_87c70c7bf167c16b969ce02f20e96660,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.metric_a FROM lab_operations.events t WHERE t.tenant_key = 52 ORDER BY t.entry_id;",missed_attack
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_95effa15e90b342fbe85536699791d15,exfiltration,mssql,[],0,1.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, amount FROM lab_finance.ledger_entries WHERE tenant_key = 31) SELECT entry_id, amount FROM scope_rows ORDER BY entry_id;",false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_9afde387eb4e31b1c00f2b729716b339,privilege,mssql,"['comments', 'string_concatenation']",0,1.0,ok,"EXEC(N'eX' + N'eC/* q */
+lab_finance.assign_review/* q */
+1404');",false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_s5_fde1f27eddb2570afef00a660a2c582a,privilege,mysql,[],0,1.0,ok,CALL lab_commerce.assign_delivery(1401);,false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,1.0,ok,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,1.0,ok,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,1.0,ok,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+LinearSVC / sql_only,run_5a2a8a31d136a895baf55f82a929d2265daec2e1fef963e101736705d4eecdf2,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,1.0,ok,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",false_alarm
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_s5_14993f9b8ee330df933dc5c57da46cab,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"wItH/**/scope_rows/**/aS/**/(sElEcT/**/entry_id,/**/tenant_key,/**/amount/**/fRoM/**/lab_commerce.orders/**/wHeRe/**/tenant_key/**/=/**/tO_NuMbEr(cHr(49)/**/||/**/cHr(50)))/**/sElEcT/**/entry_id,/**/amount/**/fRoM/**/scope_rows/**/oRdEr/**/bY/**/entry_id;",missed_attack
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_s5_2739dc5d44cdeed7cad5bcc094932c14,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;",missed_attack
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,1.0,ok,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",false_alarm
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,1.0,ok,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',false_alarm
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,1.0,ok,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,false_alarm
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+LinearSVC / sql_context,run_ba81823df63bece47b46a5d7394d4fcb47d169f3eadbab441db531d9fa37b483,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,1.0,ok,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_2ed005ac597c3a7a8bbc8c934d12245a,privilege,mysql,[],0,1.0,ok,CALL lab_research.assign_delivery(1407);,false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_3f16195da834e1151f0663a0a642313d,privilege,mssql,[],0,1.0,ok,EXEC lab_finance.assign_delivery 1405;,false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_473f3c50fc1ec597cfa3b837b0ed614b,exfiltration,mssql,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"sElEcT/* q */
+t.entry_id,/* q */
+t.discount/* q */
+fRoM/* q */
+lab_commerce.orders/* q */
+t/* q */
+wHeRe/* q */
+t.tenant_key/* q */
+=/* q */
+cAsT(cHaR(49)/* q */
++/* q */
+cHaR(49)/* q */
+aS/* q */
+iNt)/* q */
+oRdEr/* q */
+bY/* q */
+t.entry_id;",missed_attack
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4,privilege,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));,false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_95effa15e90b342fbe85536699791d15,exfiltration,mssql,[],0,1.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, amount FROM lab_finance.ledger_entries WHERE tenant_key = 31) SELECT entry_id, amount FROM scope_rows ORDER BY entry_id;",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_ba139eaadd9da1349ef772b126b87b16,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cHr(51)/* q */
+||/* q */
+cHr(49)/* q */
+aS/* q */
+iNtEgEr))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_f50104f7816bbd6efb8af80c710df977,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/* q */
+s.entry_id,/* q */
+s.priority/* q */
+fRoM/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+priority/* q */
+fRoM/* q */
+lab_support.tickets/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+tO_NuMbEr(cHr(50)/* q */
+||/* q */
+cHr(49)))/* q */
+s/* q */
+oRdEr/* q */
+bY/* q */
+s.entry_id;",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_s5_fde1f27eddb2570afef00a660a2c582a,privilege,mysql,[],0,1.0,ok,CALL lab_commerce.assign_delivery(1401);,false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,1.0,ok,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,1.0,ok,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,1.0,ok,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+RandomForest / sql_only,run_83a894370ea7556852a9daf9aa1a05b148d215890ffb6effe90404e4d0c05f1b,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,1.0,ok,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_s5_3f16195da834e1151f0663a0a642313d,privilege,mssql,[],0,1.0,ok,EXEC lab_finance.assign_delivery 1405;,false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4,privilege,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));,false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_s5_95effa15e90b342fbe85536699791d15,exfiltration,mssql,[],0,1.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, amount FROM lab_finance.ledger_entries WHERE tenant_key = 31) SELECT entry_id, amount FROM scope_rows ORDER BY entry_id;",false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_s5_ba139eaadd9da1349ef772b126b87b16,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cHr(51)/* q */
+||/* q */
+cHr(49)/* q */
+aS/* q */
+iNtEgEr))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,1.0,ok,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,1.0,ok,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,1.0,ok,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+RandomForest / sql_context,run_ed436a3d119c9b66c020832c620f33eb482ae2ec64650d0a9eca8e835b9b9610,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,1.0,ok,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_19fe6cb10096f03771ff4d31b3ee521f,privilege,mssql,[],1,0.0,ok,EXEC lab_finance.assign_delivery 1404;,missed_attack
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_2739dc5d44cdeed7cad5bcc094932c14,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;",missed_attack
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4,privilege,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));,false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_642b8318fbe9bce74b512cd352287477,privilege,oracle,[],1,0.0,ok,CALL lab_finance.assign_review(1405);,missed_attack
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_87c70c7bf167c16b969ce02f20e96660,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.metric_a FROM lab_operations.events t WHERE t.tenant_key = 52 ORDER BY t.entry_id;",missed_attack
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_9afde387eb4e31b1c00f2b729716b339,privilege,mssql,"['comments', 'string_concatenation']",0,1.0,ok,"EXEC(N'eX' + N'eC/* q */
+lab_finance.assign_review/* q */
+1404');",false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_9b707111361dc4b5d07591a542ed0cd5,privilege,mssql,[],1,0.0,ok,EXEC lab_support.assign_review 1403;,missed_attack
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_a071f14cd713f75a3cf8eb44bc2eed81,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/**/t.entry_id,/**/t.priority/**/fRoM/**/lab_support.tickets/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHr(50)/**/||/**/cHr(50)/**/aS/**/iNtEgEr)/**/oRdEr/**/bY/**/t.entry_id;",false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d,exfiltration,postgresql,[],1,0.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, reading_a FROM lab_research.samples WHERE tenant_key = 42) SELECT entry_id, reading_a FROM scope_rows ORDER BY entry_id;",missed_attack
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_ba139eaadd9da1349ef772b126b87b16,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cHr(51)/* q */
+||/* q */
+cHr(49)/* q */
+aS/* q */
+iNtEgEr))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_s5_f50104f7816bbd6efb8af80c710df977,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/* q */
+s.entry_id,/* q */
+s.priority/* q */
+fRoM/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+priority/* q */
+fRoM/* q */
+lab_support.tickets/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+tO_NuMbEr(cHr(50)/* q */
+||/* q */
+cHr(49)))/* q */
+s/* q */
+oRdEr/* q */
+bY/* q */
+s.entry_id;",false_alarm
+regex_v1 / sql_only,run_743999a310d4e0a1b45c0f21931625f1a98ed0c9af7ab4befa985f8caa0e6433,obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5,sqli,unknown,[],1,0.0,ok,"SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_14993f9b8ee330df933dc5c57da46cab,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"wItH/**/scope_rows/**/aS/**/(sElEcT/**/entry_id,/**/tenant_key,/**/amount/**/fRoM/**/lab_commerce.orders/**/wHeRe/**/tenant_key/**/=/**/tO_NuMbEr(cHr(49)/**/||/**/cHr(50)))/**/sElEcT/**/entry_id,/**/amount/**/fRoM/**/scope_rows/**/oRdEr/**/bY/**/entry_id;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_19fe6cb10096f03771ff4d31b3ee521f,privilege,mssql,[],1,0.0,ok,EXEC lab_finance.assign_delivery 1404;,missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_231ea539629bdc323362e1ce6a45b8f3,privilege,oracle,"['comments', 'string_concatenation']",1,0.0,ok,"BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */
+lab_support.assign_delivery(1402)'; END;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_2739dc5d44cdeed7cad5bcc094932c14,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.amount FROM lab_commerce.orders t WHERE t.tenant_key = 12 ORDER BY t.entry_id;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_473f3c50fc1ec597cfa3b837b0ed614b,exfiltration,mssql,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"sElEcT/* q */
+t.entry_id,/* q */
+t.discount/* q */
+fRoM/* q */
+lab_commerce.orders/* q */
+t/* q */
+wHeRe/* q */
+t.tenant_key/* q */
+=/* q */
+cAsT(cHaR(49)/* q */
++/* q */
+cHaR(49)/* q */
+aS/* q */
+iNt)/* q */
+oRdEr/* q */
+bY/* q */
+t.entry_id;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_642b8318fbe9bce74b512cd352287477,privilege,oracle,[],1,0.0,ok,CALL lab_finance.assign_review(1405);,missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_87c70c7bf167c16b969ce02f20e96660,exfiltration,mysql,[],1,0.0,ok,"SELECT t.entry_id, t.metric_a FROM lab_operations.events t WHERE t.tenant_key = 52 ORDER BY t.entry_id;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_9b707111361dc4b5d07591a542ed0cd5,privilege,mssql,[],1,0.0,ok,EXEC lab_support.assign_review 1403;,missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d,exfiltration,postgresql,[],1,0.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, reading_a FROM lab_research.samples WHERE tenant_key = 42) SELECT entry_id, reading_a FROM scope_rows ORDER BY entry_id;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_s5_fc3d40968998a993768a1d143c1a59f0,privilege,oracle,"['comments', 'string_concatenation']",1,0.0,ok,"BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */
+lab_finance.assign_delivery(1404)'; END;",missed_attack
+regex_v2 / sql_only,run_77d97a958b300eb566a9d244834e1d4635ad0fbd66a1c9211bc967273dc46d95,obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5,sqli,unknown,[],1,0.0,ok,"SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status",missed_attack
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_14993f9b8ee330df933dc5c57da46cab,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",1,,not_run,"wItH/**/scope_rows/**/aS/**/(sElEcT/**/entry_id,/**/tenant_key,/**/amount/**/fRoM/**/lab_commerce.orders/**/wHeRe/**/tenant_key/**/=/**/tO_NuMbEr(cHr(49)/**/||/**/cHr(50)))/**/sElEcT/**/entry_id,/**/amount/**/fRoM/**/scope_rows/**/oRdEr/**/bY/**/entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_19fe6cb10096f03771ff4d31b3ee521f,privilege,mssql,[],1,,not_run,EXEC lab_finance.assign_delivery 1404;,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_231ea539629bdc323362e1ce6a45b8f3,privilege,oracle,"['comments', 'string_concatenation']",1,,not_run,"BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */
+lab_support.assign_delivery(1402)'; END;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_2ed005ac597c3a7a8bbc8c934d12245a,privilege,mysql,[],0,,not_run,CALL lab_research.assign_delivery(1407);,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_3f16195da834e1151f0663a0a642313d,privilege,mssql,[],0,,not_run,EXEC lab_finance.assign_delivery 1405;,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_473f3c50fc1ec597cfa3b837b0ed614b,exfiltration,mssql,"['char_function', 'comments', 'string_concatenation']",1,,not_run,"sElEcT/* q */
+t.entry_id,/* q */
+t.discount/* q */
+fRoM/* q */
+lab_commerce.orders/* q */
+t/* q */
+wHeRe/* q */
+t.tenant_key/* q */
+=/* q */
+cAsT(cHaR(49)/* q */
++/* q */
+cHaR(49)/* q */
+aS/* q */
+iNt)/* q */
+oRdEr/* q */
+bY/* q */
+t.entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_4b4dc69d9b2b9d66655df6c6c88bc2c4,privilege,oracle,"['char_function', 'comments', 'string_concatenation']",0,,not_run,cAlL/**/lab_commerce.assign_delivery(tO_NuMbEr(cHr(49)/**/||/**/cHr(52)/**/||/**/cHr(48)/**/||/**/cHr(49)));,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_642b8318fbe9bce74b512cd352287477,privilege,oracle,[],1,,not_run,CALL lab_finance.assign_review(1405);,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_95effa15e90b342fbe85536699791d15,exfiltration,mssql,[],0,,not_run,"WITH scope_rows AS (SELECT entry_id, tenant_key, amount FROM lab_finance.ledger_entries WHERE tenant_key = 31) SELECT entry_id, amount FROM scope_rows ORDER BY entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_9afde387eb4e31b1c00f2b729716b339,privilege,mssql,"['comments', 'string_concatenation']",0,,not_run,"EXEC(N'eX' + N'eC/* q */
+lab_finance.assign_review/* q */
+1404');",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_9b707111361dc4b5d07591a542ed0cd5,privilege,mssql,[],1,,not_run,EXEC lab_support.assign_review 1403;,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_a071f14cd713f75a3cf8eb44bc2eed81,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,,not_run,"sElEcT/**/t.entry_id,/**/t.priority/**/fRoM/**/lab_support.tickets/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHr(50)/**/||/**/cHr(50)/**/aS/**/iNtEgEr)/**/oRdEr/**/bY/**/t.entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d,exfiltration,postgresql,[],1,,not_run,"WITH scope_rows AS (SELECT entry_id, tenant_key, reading_a FROM lab_research.samples WHERE tenant_key = 42) SELECT entry_id, reading_a FROM scope_rows ORDER BY entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_ba139eaadd9da1349ef772b126b87b16,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,,not_run,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cHr(51)/* q */
+||/* q */
+cHr(49)/* q */
+aS/* q */
+iNtEgEr))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,,not_run,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_f50104f7816bbd6efb8af80c710df977,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",0,,not_run,"sElEcT/* q */
+s.entry_id,/* q */
+s.priority/* q */
+fRoM/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+priority/* q */
+fRoM/* q */
+lab_support.tickets/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+tO_NuMbEr(cHr(50)/* q */
+||/* q */
+cHr(49)))/* q */
+s/* q */
+oRdEr/* q */
+bY/* q */
+s.entry_id;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_fc3d40968998a993768a1d143c1a59f0,privilege,oracle,"['comments', 'string_concatenation']",1,,not_run,"BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */
+lab_finance.assign_delivery(1404)'; END;",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_s5_fde1f27eddb2570afef00a660a2c582a,privilege,mysql,[],0,,not_run,CALL lab_commerce.assign_delivery(1401);,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_01c71e3610bb3541de78fd90eb04b77c32229a40620c69f705525bc2a5a4fff4,sqli,unknown,[],0,,not_run,"SELECT wp_comments.comment_ID FROM wp_comments WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 23 AND comment_parent IN ( 4 ) ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC ",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_0643ea52e5a41a79f67b0711bd26797011310aa60a08915a3834238266dc5352,sqli,unknown,[],0,,not_run,UPDATE `wp_usermeta` SET `meta_value` = '1639483245' WHERE `user_id` = 1 AND `meta_key` = 'wp_user-settings-time',no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5,sqli,unknown,[],1,,not_run,"SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_72db019fb6ddf64f4d184b8c9f602d3c41faf175ecb704d0f43ced26796cb82c,sqli,unknown,[],0,,not_run,SELECT COUNT(*) FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ,no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,,not_run,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_7c9d96c339419d5fcc1a72921f80de8223a6fb854ee8f629d83d14a6adf4b3c0,sqli,unknown,[],1,,not_run,"SELECT COUNT(*) FROM wp_comments WHERE comment_author_email = 'wapuu@wordpress.example' AND comment_author = 'A WordPress Commenter' AND comment_author_url = 'https://wordpress.org/' AND comment_approved = 1 union all select concat_ws(0x3a,user(),version(),database()) -- ",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_994698a0c81a139b1556fcce498c526721cd8102736bf152f22b8e445ca146dd,sqli,unknown,[],1,,not_run,"SELECT wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_type = 'post' AND ((wp_posts.post_author = 3 AND (wp_posts.post_status = 'future'))) union all select null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null and ((('ujdw' like 'ujdw'))) ORDER BY wp_posts.post_date ASC LIMIT 0, 5",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_e5acd259e1b0fda4968dbf485eef752f468bf9c0442bbc839bc59238ae41ad08,sqli,unknown,[],1,,not_run,"SELECT umeta_id FROM wp_usermeta WHERE meta_key = 'rich_editing'+(select 'mgcb' FROM DUAL WHERE 1364=1364) union all select null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null#' AND user_id = 1",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_eac5377cc48141589493e23e59e78021a29d351539a45852d856216bfe056d89,sqli,unknown,[],1,,not_run,"SELECT term_taxonomy_id FROM wp_term_relationships WHERE object_id = 35 AND term_taxonomy_id = 2 union select 1,concat_ws(0x3a,database(),user(),version())#",no_decision
+policy_only / sql_context,run_2d877081d2ef45066ac97d2105f0ed8ef096140c129d5e29214edfbcf3ff274e,obs_sg_eb692b28ddb9a40f46e2dc2ff2d1529267e69e9bc04cbbee54ee71707f2ebf60,sqli,unknown,[],0,,not_run,"SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('post_tag') AND ((t.name LIKE '%Hello-%') OR (t.slug LIKE '%Hello-%')) ORDER BY tt.count DESC LIMIT 20",no_decision
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_14993f9b8ee330df933dc5c57da46cab,exfiltration,oracle,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"wItH/**/scope_rows/**/aS/**/(sElEcT/**/entry_id,/**/tenant_key,/**/amount/**/fRoM/**/lab_commerce.orders/**/wHeRe/**/tenant_key/**/=/**/tO_NuMbEr(cHr(49)/**/||/**/cHr(50)))/**/sElEcT/**/entry_id,/**/amount/**/fRoM/**/scope_rows/**/oRdEr/**/bY/**/entry_id;",missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_19fe6cb10096f03771ff4d31b3ee521f,privilege,mssql,[],1,0.0,ok,EXEC lab_finance.assign_delivery 1404;,missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_231ea539629bdc323362e1ce6a45b8f3,privilege,oracle,"['comments', 'string_concatenation']",1,0.0,ok,"BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */
+lab_support.assign_delivery(1402)'; END;",missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_473f3c50fc1ec597cfa3b837b0ed614b,exfiltration,mssql,"['char_function', 'comments', 'string_concatenation']",1,0.0,ok,"sElEcT/* q */
+t.entry_id,/* q */
+t.discount/* q */
+fRoM/* q */
+lab_commerce.orders/* q */
+t/* q */
+wHeRe/* q */
+t.tenant_key/* q */
+=/* q */
+cAsT(cHaR(49)/* q */
++/* q */
+cHaR(49)/* q */
+aS/* q */
+iNt)/* q */
+oRdEr/* q */
+bY/* q */
+t.entry_id;",missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_642b8318fbe9bce74b512cd352287477,privilege,oracle,[],1,0.0,ok,CALL lab_finance.assign_review(1405);,missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_9b707111361dc4b5d07591a542ed0cd5,privilege,mssql,[],1,0.0,ok,EXEC lab_support.assign_review 1403;,missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_aa6166babb07ed4a0c4cee22ea6b9e4d,exfiltration,postgresql,[],1,0.0,ok,"WITH scope_rows AS (SELECT entry_id, tenant_key, reading_a FROM lab_research.samples WHERE tenant_key = 42) SELECT entry_id, reading_a FROM scope_rows ORDER BY entry_id;",missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_s5_fc3d40968998a993768a1d143c1a59f0,privilege,oracle,"['comments', 'string_concatenation']",1,0.0,ok,"BEGIN EXECUTE IMMEDIATE 'cA' || 'lL/* q */
+lab_finance.assign_delivery(1404)'; END;",missed_attack
+regex_policy / sql_context,run_89056bfaf2e2509e5a6b4f1cc80e076cf1127bcfc89866b8d7235396509deb92,obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5,sqli,unknown,[],1,0.0,ok,"SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status",missed_attack
+LLM gptoss120 zero_shot,run_10ba5678d0eba82424dd061b4641d231f6be9d6508bdf8c828117042075de560,obs_s5_a071f14cd713f75a3cf8eb44bc2eed81,exfiltration,postgresql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"sElEcT/**/t.entry_id,/**/t.priority/**/fRoM/**/lab_support.tickets/**/t/**/wHeRe/**/t.tenant_key/**/=/**/cAsT(cHr(50)/**/||/**/cHr(50)/**/aS/**/iNtEgEr)/**/oRdEr/**/bY/**/t.entry_id;",false_alarm
+LLM gptoss120 zero_shot,run_10ba5678d0eba82424dd061b4641d231f6be9d6508bdf8c828117042075de560,obs_s5_dc382b62d26a2ff4333323bede85b656,exfiltration,mysql,"['char_function', 'comments', 'string_concatenation']",0,1.0,ok,"wItH/* q */
+scope_rows/* q */
+aS/* q */
+(sElEcT/* q */
+entry_id,/* q */
+tenant_key,/* q */
+amount/* q */
+fRoM/* q */
+lab_finance.ledger_entries/* q */
+wHeRe/* q */
+tenant_key/* q */
+=/* q */
+cAsT(cOnCaT(cHaR(51),/* q */
+cHaR(49))/* q */
+aS/* q */
+uNsIgNeD))/* q */
+sElEcT/* q */
+entry_id,/* q */
+amount/* q */
+fRoM/* q */
+scope_rows/* q */
+oRdEr/* q */
+bY/* q */
+entry_id;",false_alarm
+LLM gptoss120 zero_shot,run_10ba5678d0eba82424dd061b4641d231f6be9d6508bdf8c828117042075de560,obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5,sqli,unknown,[],1,0.0,ok,"SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status",missed_attack
+LLM gptoss120 zero_shot,run_10ba5678d0eba82424dd061b4641d231f6be9d6508bdf8c828117042075de560,obs_sg_994698a0c81a139b1556fcce498c526721cd8102736bf152f22b8e445ca146dd,sqli,unknown,[],1,0.0,ok,"SELECT wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_type = 'post' AND ((wp_posts.post_author = 3 AND (wp_posts.post_status = 'future'))) union all select null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null and ((('ujdw' like 'ujdw'))) ORDER BY wp_posts.post_date ASC LIMIT 0, 5",missed_attack
+LLM gptoss120 zero_shot,run_10ba5678d0eba82424dd061b4641d231f6be9d6508bdf8c828117042075de560,obs_sg_e5acd259e1b0fda4968dbf485eef752f468bf9c0442bbc839bc59238ae41ad08,sqli,unknown,[],1,0.0,ok,"SELECT umeta_id FROM wp_usermeta WHERE meta_key = 'rich_editing'+(select 'mgcb' FROM DUAL WHERE 1364=1364) union all select null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null#' AND user_id = 1",missed_attack
+LLM gptoss120 few_shot,run_ad7dc676c516728180eca65bb7d8cb9e8f85304ee06a09cb69c6e79961a8f0e0,obs_sg_0da269fc02545745c667646766b8a1e36b7a929a43943e39b6a9ee745902dfc5,sqli,unknown,[],1,0.0,ok,"SELECT post_status, COUNT( * ) AS num_posts FROM wp_posts WHERE post_type = 'post' OR (5381=5742)-- ' GROUP BY post_status",missed_attack
+LLM gptoss120 few_shot,run_ad7dc676c516728180eca65bb7d8cb9e8f85304ee06a09cb69c6e79961a8f0e0,obs_sg_7ae369cdb252222fec20ad54dfa9fcfe96619e04c0929d3ff82a85ec631c1976,sqli,unknown,[],0,1.0,ok,"UPDATE `wp_options` SET `option_value` = 'a:4:{s:18:\""custom_css_post_id\"";i:-1;s:18:\""nav_menu_locations\"";a:0:{}s:13:\""primary_color\"";s:6:\""custom\"";s:17:\""primary_color_hue\"";i:206;}' WHERE `option_name` = 'theme_mods_twentynineteen'",false_alarm
+LLM gptoss120 few_shot,run_ad7dc676c516728180eca65bb7d8cb9e8f85304ee06a09cb69c6e79961a8f0e0,obs_sg_7c9d96c339419d5fcc1a72921f80de8223a6fb854ee8f629d83d14a6adf4b3c0,sqli,unknown,[],1,0.0,ok,"SELECT COUNT(*) FROM wp_comments WHERE comment_author_email = 'wapuu@wordpress.example' AND comment_author = 'A WordPress Commenter' AND comment_author_url = 'https://wordpress.org/' AND comment_approved = 1 union all select concat_ws(0x3a,user(),version(),database()) -- ",missed_attack
+LLM gptoss120 few_shot,run_ad7dc676c516728180eca65bb7d8cb9e8f85304ee06a09cb69c6e79961a8f0e0,obs_sg_994698a0c81a139b1556fcce498c526721cd8102736bf152f22b8e445ca146dd,sqli,unknown,[],1,0.0,ok,"SELECT wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_type = 'post' AND ((wp_posts.post_author = 3 AND (wp_posts.post_status = 'future'))) union all select null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null and ((('ujdw' like 'ujdw'))) ORDER BY wp_posts.post_date ASC LIMIT 0, 5",missed_attack
+LLM gptoss120 few_shot,run_ad7dc676c516728180eca65bb7d8cb9e8f85304ee06a09cb69c6e79961a8f0e0,obs_sg_e5acd259e1b0fda4968dbf485eef752f468bf9c0442bbc839bc59238ae41ad08,sqli,unknown,[],1,0.0,ok,"SELECT umeta_id FROM wp_usermeta WHERE meta_key = 'rich_editing'+(select 'mgcb' FROM DUAL WHERE 1364=1364) union all select null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null#' AND user_id = 1",missed_attack

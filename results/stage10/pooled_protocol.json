@@ -1,0 +1,25 @@
+{
+  "dataset_version_id": "ds_d4becfacb8348db05beafaa479f4497d40722e588599dac572e9a8087f92f370",
+  "split_id": "split_e84507fa23e9cd53c61ea24a3f1b903348a35c995f04e71b0f3198e975480807",
+  "cohort": "pooled",
+  "role": "inner_tuning",
+  "parent_scope": {
+    "split_id": "split_6482346e3e7a66c4c6614c50ae8a636e32a1ed651a30e00efb3dff4382e9582a",
+    "fold": 0,
+    "part": "train"
+  },
+  "folds": {
+    "0": {},
+    "1": {},
+    "2": {}
+  },
+  "rows": {
+    "train": 93352,
+    "test": 68870
+  },
+  "controlled_validation_rows": [
+    240,
+    240,
+    240
+  ]
+}
