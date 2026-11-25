@@ -1,0 +1,65 @@
+{
+  "status": "awaiting_user_choice_for_two_models",
+  "models": [
+    "hf:openai/gpt-oss-120b",
+    "hf:zai-org/GLM-5.3"
+  ],
+  "provider": "synthetic",
+  "recommended_observation_count": 300,
+  "batch_size": 3,
+  "automatic_retries": 0,
+  "options": [
+    {
+      "observations": 300,
+      "per_threat": 100,
+      "per_threat_and_target": 50,
+      "models": [
+        "hf:openai/gpt-oss-120b",
+        "hf:zai-org/GLM-5.3"
+      ],
+      "primary_API_calls_per_model": 200,
+      "SQL_only_ablation_API_calls_per_model": 134,
+      "api_ceiling_per_model": 334,
+      "combined_api_ceiling": 668,
+      "classifications_per_model": 1000,
+      "combined_classifications": 2000,
+      "completion_token_cap_per_call": 4096,
+      "combined_completion_token_upper_bound": 2736128,
+      "rough_tokens_by_model_from_pilot_mean": {
+        "gptoss120": 752669,
+        "glm53": null
+      },
+      "rough_total_tokens_from_pilot_mean": null,
+      "rough_sequential_seconds_with_8s_pacing": null,
+      "sample_file": "main_sample_300.json"
+    },
+    {
+      "observations": 120,
+      "per_threat": 40,
+      "per_threat_and_target": 20,
+      "models": [
+        "hf:openai/gpt-oss-120b",
+        "hf:zai-org/GLM-5.3"
+      ],
+      "primary_API_calls_per_model": 80,
+      "SQL_only_ablation_API_calls_per_model": 54,
+      "api_ceiling_per_model": 134,
+      "combined_api_ceiling": 268,
+      "classifications_per_model": 400,
+      "combined_classifications": 800,
+      "completion_token_cap_per_call": 4096,
+      "combined_completion_token_upper_bound": 1097728,
+      "rough_tokens_by_model_from_pilot_mean": {
+        "gptoss120": 301969,
+        "glm53": null
+      },
+      "rough_total_tokens_from_pilot_mean": null,
+      "rough_sequential_seconds_with_8s_pacing": null,
+      "sample_file": "main_sample_120.json"
+    }
+  ],
+  "monetary_tariff": null,
+  "main_API_calls_made": 0,
+  "selection_before_main_predictions": true,
+  "estimation_limits": "Token/time projections use each model pilot mean; main lengths, queueing and quota may differ; monetary cost is not inferred."
+}

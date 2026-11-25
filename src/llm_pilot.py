@@ -1,4 +1,4 @@
-"""Frozen 30-observation pilot: at most 46 calls, no retries or substitutions."""
+"""Frozen 30-observation pilots with explicit model rosters and durable budgets."""
 
 import argparse
 from collections import Counter,defaultdict
@@ -6,17 +6,18 @@ import gzip
 import json
 import time
 from importlib.metadata import version as package_version
+from pathlib import Path
 
 from psycopg.types.json import Jsonb
 
-from detector_llm import (MODELS,SYSTEM_PROMPT,VERSION,build_specification,call_once,create_client,
+from detector_llm import (ACTIVE_MODEL_NAMES,MODELS,SYSTEM_PROMPT,VERSION,build_specification,call_once,create_client,
                           prompt_observation,request_key)
 from evaluation_metrics import classification_report
 from experiment_store import save_json
 from llm_store import finish_request,prepare_pilot,reserve_request
 from storage import ROOT,Storage,canonical,digest,file_hash
 
-OUTPUT = ROOT/'results/stage9'
+OUTPUT = ROOT/'results/stage9/current'
 SOURCES = ('detector_llm.py','llm_store.py','llm_pilot.py','data_contract.py','sql_features.py',
            'sql_views.py','normalize.py','storage.py','evaluation_metrics.py','experiment_store.py')
 
@@ -64,11 +65,14 @@ def load_pilot(store):
     return cohorts
 
 
-def prepare(store):
+def prepare(store,models=None):
+    models=tuple(models) if models is not None else tuple(model for model in MODELS if model['name'] in ACTIVE_MODEL_NAMES)
+    if not models or len({model['name'] for model in models})!=len(models):
+        raise ValueError('An explicit unique model roster is required')
     cohorts = load_pilot(store)
     shots = [(row['input'],row['target']) for row in cohorts['few_shot_candidates']]
     requests = []
-    for model in MODELS:
+    for model in models:
         for mode in ('zero_shot','few_shot'):
             for index in range(0,30,model['batch_size']):
                 rows = cohorts['pilot'][index:index+model['batch_size']]
@@ -78,16 +82,16 @@ def prepare(store):
                 requests.append({'model_name':model['name'],'mode':mode,'batch':index//model['batch_size'],
                                  'observation_ids':[row['observation_id'] for row in rows],
                                  'request_key':request_key(spec),'specification':spec})
-    if len(requests) != 46:
-        raise ValueError('The agreed API budget differs')
-    plan = {'version':VERSION,'purpose':'development_only_not_final_test','models':list(MODELS),
-            'max_api_attempts':46,'automatic_retries':0,'unavailable_model_policy':'stop_that_model_continue_others_without_substitution',
+    ceiling=len(requests)
+    plan = {'version':VERSION,'purpose':'development_only_not_final_test','models':list(models),
+            'max_api_attempts':ceiling,'automatic_retries':0,'unavailable_model_policy':'stop_that_model_continue_others_without_substitution',
             'code_sha256_lf':signature(),'development_manifest_sha256':file_hash(ROOT/'results/stage6/llm_development.json'),
             'pilot_ids':[row['observation_id'] for row in cohorts['pilot']],
             'few_shot_ids':[row['observation_id'] for row in cohorts['few_shot_candidates']],
             'ordered_request_keys':[request['request_key'] for request in requests],
             'packages':{name:package_version(name) for name in ('openai','groq','psycopg','httpx')},
-            'money_limit_or_tariff':None,'completion_token_upper_bound':6*512+40*4096}
+            'money_limit_or_tariff':None,'completion_token_upper_bound':sum(
+                2*((30+model['batch_size']-1)//model['batch_size'])*(model['parameters'].get('max_completion_tokens') or model['parameters']['max_tokens']) for model in models)}
     plan['code_artifacts'] = {name:store.register_artifact(ROOT/'src'/name) for name in SOURCES}
     pilot_id = 'pilot_'+digest(canonical(plan).encode())
     plan['pilot_id'] = pilot_id
@@ -95,7 +99,7 @@ def prepare(store):
     save_json(OUTPUT/'pilot_inputs.json',cohorts)
     save_json(OUTPUT/'request_plan.json',requests)
     save_json(OUTPUT/'prompts.json',{'version':VERSION,'system':SYSTEM_PROMPT,'few_shot_count':6,'output':'exact ID set and integer labels 0/1'})
-    prepare_pilot(store,pilot_id,plan,46)
+    prepare_pilot(store,pilot_id,plan,ceiling)
     return plan,cohorts,requests
 
 
@@ -197,7 +201,7 @@ def persist_results(store,plan,cohorts,requests,outcomes):
             if isinstance(details.get(key),int):
                 usage[key] += details[key]
     summaries = []
-    for model in MODELS:
+    for model in plan['models']:
         model_calls = [row for row in calls if row['specification']['model']==model['model'] and row['specification']['provider']==model['provider']]
         summaries.append({'name':model['name'],'requested_model':model['model'],'provider':model['provider'],
             'api_attempts':sum(row['api_attempts'] for row in model_calls),
@@ -206,12 +210,12 @@ def persist_results(store,plan,cohorts,requests,outcomes):
             'observed_tokens':{key:sum(((row['result'] or {}).get('usage') or {}).get(key) or 0 for row in model_calls) for key in ('prompt_tokens','completion_tokens','total_tokens')},
             'elapsed_api_s':sum((row['result'] or {}).get('elapsed_s') or 0 for row in model_calls)})
     result = {'version':VERSION,'pilot_id':plan['pilot_id'],'role':'development_only_not_final_test',
-              'planned_api_ceiling':46,'actual_api_attempts':sum(row['api_attempts'] for row in calls),
+              'planned_api_ceiling':plan['max_api_attempts'],'actual_api_attempts':sum(row['api_attempts'] for row in calls),
               'new_api_attempts_this_invocation':sum(bool(row['new_api_attempt']) for row in outcomes),
               'observed_tokens':dict(usage),'usage_reported_calls':sum(bool((row['result'] or {}).get('usage')) for row in calls),
               'money_cost':None,'money_cost_reason':'account-specific tariff not established; observed tokens and calls reported',
               'models':summaries,'comparisons':comparisons,'runs':runs,'main_experiment_budget':'pending_user_agreement_after_pilot'}
-    if result['actual_api_attempts']>46:
+    if result['actual_api_attempts']>plan['max_api_attempts']:
         raise ValueError('Pilot exceeded its agreed API ceiling')
     save_json(OUTPUT/'pilot_report.json',result)
     save_json(OUTPUT/'request_outcomes.json',outcomes)
@@ -219,14 +223,24 @@ def persist_results(store,plan,cohorts,requests,outcomes):
 
 
 def main():
+    global OUTPUT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--execute',action='store_true',help='Run/resume the agreed pilot; default prepares without network calls')
+    parser.add_argument('--model',action='append',choices=[model['name'] for model in MODELS],help='Only these model names; defaults to the active roster')
+    parser.add_argument('--output',type=Path,help='New iteration directory; original stage9 pilot is preserved')
     args = parser.parse_args()
+    names=args.model or list(ACTIVE_MODEL_NAMES)
+    if len(names)!=len(set(names)):
+        parser.error('Repeated model names')
+    models=tuple(next(model for model in MODELS if model['name']==name) for name in names)
+    OUTPUT=(args.output or ROOT/'results/stage9'/('_'.join(names))).resolve()
+    if not OUTPUT.is_relative_to((ROOT/'results').resolve()) or OUTPUT==(ROOT/'results/stage9').resolve():
+        parser.error('Choose a results subdirectory; the original stage9 directory is an archive')
     store = Storage()
     store.migrate()
-    plan,cohorts,requests = prepare(store)
+    plan,cohorts,requests = prepare(store,models)
     if not args.execute:
-        print(json.dumps({'pilot_id':plan['pilot_id'],'planned_requests':len(requests),'planned_classifications':180,'network_calls':0}))
+        print(json.dumps({'pilot_id':plan['pilot_id'],'planned_requests':len(requests),'planned_classifications':60*len(models),'network_calls':0}))
         return
     with store.connect(autocommit=True) as lease:
         locked = lease.execute('SELECT pg_try_advisory_lock(hashtextextended(%s,0)) AS locked',(plan['pilot_id'],)).fetchone()['locked']

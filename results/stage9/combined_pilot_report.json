@@ -1,0 +1,290 @@
+{
+  "status": "replacement_pilot_stopped_partial_continuation_pending",
+  "original_pilot_commit": "5624511",
+  "active_models": [
+    "hf:openai/gpt-oss-120b",
+    "hf:zai-org/GLM-5.3"
+  ],
+  "original_API_attempts": 22,
+  "new_GLM53_API_attempts": 9,
+  "combined_classification_API_attempts": 31,
+  "agreed_classification_ceiling": 46,
+  "separate_user_requested_models_GETs": 1,
+  "models": [
+    {
+      "name": "gptoss120",
+      "requested_model": "hf:openai/gpt-oss-120b",
+      "provider": "synthetic",
+      "api_attempts": 20,
+      "actual_model_ids": [
+        "openai/gpt-oss-120b"
+      ],
+      "call_status_counts": {
+        "ok": 20
+      },
+      "observed_tokens": {
+        "prompt_tokens": 42146,
+        "completion_tokens": 2924,
+        "total_tokens": 45070
+      },
+      "elapsed_api_s": 65.612917
+    },
+    {
+      "name": "glm53",
+      "requested_model": "hf:zai-org/GLM-5.3",
+      "provider": "synthetic",
+      "api_attempts": 9,
+      "actual_model_ids": [
+        "zai-org/GLM-5.3"
+      ],
+      "call_status_counts": {
+        "ok": 8,
+        "api_error": 1
+      },
+      "observed_tokens": {
+        "prompt_tokens": 8488,
+        "completion_tokens": 4026,
+        "total_tokens": 12514
+      },
+      "elapsed_api_s": 169.06096
+    }
+  ],
+  "comparisons": [
+    {
+      "model": "gptoss120",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.7878787878787878,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.7878787878787878,
+          "attack_recall": 0.8666666666666667,
+          "false_positive_rate": 0.3333333333333333,
+          "attack_precision": 0.7222222222222222,
+          "confusion_matrix": [
+            [
+              10,
+              5
+            ],
+            [
+              2,
+              13
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 13,
+            "fp": 5,
+            "fn": 2,
+            "tn": 10
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 12,
+              "precision": 0.8333333333333334,
+              "recall": 0.6666666666666666,
+              "f1": 0.7407407407407407
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 18,
+              "precision": 0.7222222222222222,
+              "recall": 0.8666666666666667,
+              "f1": 0.7878787878787878
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "model": "gptoss120",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.8,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.8,
+          "attack_recall": 0.8,
+          "false_positive_rate": 0.2,
+          "attack_precision": 0.8,
+          "confusion_matrix": [
+            [
+              12,
+              3
+            ],
+            [
+              3,
+              12
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 12,
+            "fp": 3,
+            "fn": 3,
+            "tn": 12
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "model": "glm53",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 24,
+          "api_error": 3,
+          "not_run": 3
+        },
+        "decision_coverage": 0.8,
+        "successful_decisions": 24,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": 0.8888888888888888,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.25,
+          "attack_precision": 0.8,
+          "confusion_matrix": [
+            [
+              9,
+              3
+            ],
+            [
+              0,
+              12
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 12,
+            "fp": 3,
+            "fn": 0,
+            "tn": 9
+          },
+          "per_class": {
+            "0": {
+              "support": 12,
+              "predicted_support": 9,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            },
+            "1": {
+              "support": 12,
+              "predicted_support": 15,
+              "precision": 0.8,
+              "recall": 1.0,
+              "f1": 0.8888888888888888
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "model": "glm53",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "not_run": 30
+        },
+        "decision_coverage": 0.0,
+        "successful_decisions": 0,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": null,
+          "attack_recall": null,
+          "false_positive_rate": null,
+          "attack_precision": null,
+          "confusion_matrix": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "per_class": {
+            "0": {
+              "support": 0,
+              "predicted_support": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "1": {
+              "support": 0,
+              "predicted_support": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    }
+  ],
+  "run_ids": [
+    "run_e3ec519aa8d07cbbb4e32bc1e2f38e865747019e5e27b3b8487184e03a20444d",
+    "run_1080c5ed432317e41f870de3f1c2647baf60e970b246af16dca00d1a63e0a2f1",
+    "run_7f061a108ad44d5b2c972794a5ca6152087722fedaabff3e7b894309656876ef",
+    "run_38d9fbdd639edd83bd031953a9d7d02a98da1a3bdd494522754d9691138d06b6",
+    "run_1c9b4560c26bce1e1ab64502e209c18e5e3d77f4b096c9660cad3ead98a887a6",
+    "run_a52781d5c7b36a41477f62537f8911e5fccff205e83a1de3bffd794c7e71c6be",
+    "run_4b608537e72473d302b5ba7b7ec77b7761f8ca22580e57faca58c152549aa2dc",
+    "run_bd745e0cdf0dc6b8483ff37a0d4ffd1b67b764aacd939e2063da7f89ca8b2298"
+  ],
+  "first_iteration_report": "results/stage9/pilot_report.json",
+  "replacement_report": "results/stage9/glm53/pilot_report.json",
+  "role": "development_only_not_final_test",
+  "main_test_API_calls": 0
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-25",
+  "user_decision": "replace_GLM_5_1_with_GLM_5_3_keep_existing_gpt_oss",
+  "models": [
+    {
+      "name": "gptoss120",
+      "provider": "synthetic",
+      "model": "hf:openai/gpt-oss-120b",
+      "pilot_directory": "results/stage9"
+    },
+    {
+      "name": "glm53",
+      "provider": "synthetic",
+      "model": "hf:zai-org/GLM-5.3",
+      "pilot_directory": "results/stage9/glm53"
+    }
+  ],
+  "retired_from_active_comparison": [
+    "hf:zai-org/GLM-5.1",
+    "llama-3.3-70b-versatile"
+  ],
+  "replacement_pilot": {
+    "observations": 30,
+    "modes": [
+      "zero_shot",
+      "few_shot"
+    ],
+    "batch_size": 3,
+    "new_API_ceiling": 20,
+    "automatic_retries": 0
+  },
+  "previous_classification_API_attempts": 22,
+  "maximum_combined_classification_API_attempts": 42,
+  "original_classification_ceiling": 46,
+  "separately_user_requested_catalog_GETs": 1,
+  "main_experiment_budget": "pending_recalculation_and_approval_for_two_models",
+  "replacement_pilot_status": "stopped_after_90_second_timeout_partial_coverage",
+  "actual_combined_classification_API_attempts": 31,
+  "actual_GLM53_models": [
+    "zai-org/GLM-5.3"
+  ]
+}

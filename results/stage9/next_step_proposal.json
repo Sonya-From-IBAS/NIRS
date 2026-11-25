@@ -1,8 +1,10 @@
 {
-  "status": "proposal_not_authorized_not_executed",
+  "status": "superseded_user_approved_GLM53_only_replacement",
+  "selected_models_for_main_budget": ["hf:openai/gpt-oss-120b", "hf:zai-org/GLM-5.3"],
+  "current_decision_file": "results/stage9/active_models.json",
   "reason": "Two original models were unavailable in the agreed pilot",
   "existing_completed_pilot_api_attempts": 22,
-  "recommended_option": {
+  "historical_unaccepted_recommendation": {
     "action": "pilot_two_explicit_replacements_before_setting_main_budget",
     "replacements": [
       {"replaces": "llama-3.3-70b-versatile", "provider": "synthetic", "model": "hf:Qwen/Qwen3.8-27B"},

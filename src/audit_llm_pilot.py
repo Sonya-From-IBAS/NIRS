@@ -1,31 +1,36 @@
 """Offline verification of pilot inputs, request accounting and saved decisions."""
 
 from collections import Counter
+import argparse
 import json
+from pathlib import Path
 
 from detector_llm import parse_batch_response,request_key
 from evaluation_metrics import classification_report
 from experiment_store import save_json
-from llm_pilot import signature
 from storage import ROOT,Storage,canonical,digest
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--directory',type=Path,default=ROOT/'results/stage9')
+    args=parser.parse_args()
     store=Storage()
-    folder=ROOT/'results/stage9'
+    folder=args.directory
     plan=json.loads((folder/'pilot_plan.json').read_text(encoding='utf-8'))
     requests=json.loads((folder/'request_plan.json').read_text(encoding='utf-8'))
     outcomes=json.loads((folder/'request_outcomes.json').read_text(encoding='utf-8'))
     report=json.loads((folder/'pilot_report.json').read_text(encoding='utf-8'))
     cohort=json.loads((folder/'pilot_inputs.json').read_text(encoding='utf-8'))
-    assert signature()==plan['code_sha256_lf']
-    assert len(requests)==len(outcomes)==46
+    # The archived sources, rather than today's model roster, define old runs.
+    ceiling=plan['max_api_attempts']
+    assert len(requests)==len(outcomes)==ceiling
     assert plan['ordered_request_keys']==[item['request_key'] for item in requests]
     with store.connect() as connection:
         job=connection.execute('SELECT * FROM nirs.llm_pilots WHERE pilot_id=%s',(plan['pilot_id'],)).fetchone()
         calls=connection.execute('SELECT * FROM nirs.llm_requests WHERE request_key=ANY(%s)',(plan['ordered_request_keys'],)).fetchall()
-    assert job['configuration']==plan and job['max_api_attempts']==46
-    assert sum(row['api_attempts'] for row in calls)==report['actual_api_attempts']<=46
+    assert job['configuration']==plan and job['max_api_attempts']==ceiling
+    assert sum(row['api_attempts'] for row in calls)==report['actual_api_attempts']<=ceiling
     cached={row['request_key']:row for row in calls}
     references={row['observation_id']:row for row in cohort['pilot']}
     aligned={}
@@ -49,7 +54,7 @@ def main():
         labels=outcome.get('labels') if outcome['status']=='ok' else [None]*len(request['observation_ids'])
         for oid,value in zip(request['observation_ids'],labels):
             aligned[(request['model_name'],request['mode'],oid)]=(value,outcome['status'],key)
-    assert len(aligned)==180
+    assert len(aligned)==len(plan['models'])*2*len(plan['pilot_ids'])
     checked=[]
     for run in report['runs']:
         with store.connect() as connection:
@@ -77,7 +82,7 @@ def main():
     integrity=store.verify_artifacts()
     assert not integrity['failures'] and not integrity['not_ready']
     result={'stage':9,'pilot_id':plan['pilot_id'],'checked_runs':checked,'planned_classifications':len(aligned),
-            'api_attempts':report['actual_api_attempts'],'ceiling':46,'artifact_integrity':integrity,
+            'api_attempts':report['actual_api_attempts'],'ceiling':ceiling,'artifact_integrity':integrity,
             'decision_status_counts':dict(Counter(value[1] for value in aligned.values())),
             'checks':['strict_final_JSON_reparse','ordered_batch_cache_keys','durable_API_budget','pinned_pilot_references',
                       'database_prediction_alignment','metrics_recomputed_from_rows','archived_source','artifact_checksums']}

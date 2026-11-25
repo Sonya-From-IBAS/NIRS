@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 from types import SimpleNamespace
 import unittest
+import tempfile
 from unittest.mock import Mock,patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
@@ -13,6 +14,25 @@ from detector_llm import MODELS,build_specification,call_once,create_client,pars
 
 
 class LLMTests(unittest.TestCase):
+    def test_GLM53_replacement_plan_is_isolated_and_does_not_schedule_GPT_again(self):
+        import llm_pilot
+        from detector_llm import ACTIVE_MODEL_NAMES
+        glm=next(model for model in MODELS if model['name']=='glm53')
+        self.assertEqual(glm['model'],'hf:zai-org/GLM-5.3')
+        self.assertEqual(set(ACTIVE_MODEL_NAMES),{'glm53','gptoss120'})
+        pilot=[{'input':prompt_observation(f'q{i:03d}','SELECT 1'),'target':i%2,'observation_id':f'obs{i}'} for i in range(30)]
+        shots=[{'input':{'sql':'SELECT 1','context':{}},'target':i%2,'observation_id':f'shot{i}'} for i in range(6)]
+        store=Mock();store.register_artifact.return_value='a'*64
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]/'.local') as folder, \
+             patch('llm_pilot.OUTPUT',Path(folder)),patch('llm_pilot.load_pilot',return_value={'pilot':pilot,'few_shot_candidates':shots}), \
+             patch('llm_pilot.prepare_pilot') as register:
+            plan,_,requests=llm_pilot.prepare(store,[glm])
+        self.assertEqual(len(requests),20)
+        self.assertEqual(plan['max_api_attempts'],20)
+        self.assertEqual(register.call_args.args[-1],20)
+        self.assertEqual({item['model_name'] for item in requests},{'glm53'})
+        self.assertEqual({item['mode'] for item in requests},{'zero_shot','few_shot'})
+
     def test_ID_based_mapping_accepts_reordering_without_shifting_labels(self):
         text='{"predictions":[{"id":"b","label":1},{"id":"a","label":0}]}'
         self.assertEqual(parse_batch_response(text,['a','b']),[0,1])

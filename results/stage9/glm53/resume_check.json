@@ -1,0 +1,9 @@
+{
+  "pilot_id": "pilot_b4f45be78fac4031ed647ff7e5009e7d10011c240237a1b443e9ca9b29e23bde",
+  "original_report_artifact": "18f370cc81b6d2db8aa1020825d38c1eaf7e70602253617a364c094b102a3a59",
+  "initial_new_api_attempts": 9,
+  "replay_new_api_attempts": 0,
+  "total_api_attempts_unchanged": 9,
+  "metrics_and_run_IDs_unchanged": true,
+  "network_caller_replaced_with_raising_stub": true
+}

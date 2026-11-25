@@ -1,0 +1,40 @@
+{
+  "stage": 9,
+  "iteration": "GLM-5.3 replacement",
+  "date": "2026-11-25",
+  "base_commit": "5624511",
+  "tests": {
+    "run": 120,
+    "passed": 120,
+    "skipped": 0
+  },
+  "test_log_sha256": "e45fd4021a004418fd3ce8667cec59477070d859e2cc4aefaf4cf61bff39c6f9",
+  "new_API_attempts": 9,
+  "combined_classification_API_attempts": 31,
+  "original_API_ceiling": 46,
+  "replay_new_API_attempts": 0,
+  "checked_predictions": 60,
+  "files_sha256": {
+    ".gitattributes": "04da656aa1fb94cf1cbe1299f0767ef40b3a00ad0597c202180bc766228e7ce6",
+    "src/detector_llm.py": "f3b5555f6e71c89c25cbb1c2ce925d06fa7bab96250b092b4823a939625f1fe2",
+    "src/llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+    "src/audit_llm_pilot.py": "31187642b3cfe6bd6877557c6b7c0dc200979451e5cb6e73261d3882349a0b5a",
+    "tests/test_llm.py": "3e5d7651dcf6b52defd1a041832775a09f964eeaaefd7fa56a197c8ad58a36eb",
+    "docs/llm_pilot.md": "e4c0fb7071856203cdc06c61dc96cb0980004d59fe0592f8f61b23e80f7f63ff",
+    "results/stage9/glm53/continuation_proposal.json": "c3ebb4aa2249e83fae7aaae82c1dd298f34efa032c2483c3b3b81cf6921b4924",
+    "results/stage9/glm53/pilot_audit.json": "0ae1e4419f5e63cb7a407526deb31c6e177796b2a03f358b8e3a476661efb6bc",
+    "results/stage9/glm53/pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+    "results/stage9/glm53/pilot_plan.json": "5e42587f52cf7b18fc0ee397bbf6d1c8a035c68f2b9896eb6ea0e491aeb2904b",
+    "results/stage9/glm53/pilot_report.json": "cb38b5b1616a7e824c27ff9ab157f996f25378f82f1dafe89b7755c9c46a0a8b",
+    "results/stage9/glm53/prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe",
+    "results/stage9/glm53/request_outcomes.json": "1cf492c025ddb642a89374b2cce0711c74b787330c3df72ee610659cec6fb52c",
+    "results/stage9/glm53/request_plan.json": "88a1f8956c28afd40d38fa3329eb59b882a3f8bc960aa4f7ab7ffabf9829e7df",
+    "results/stage9/glm53/resume_check.json": "9d6bd176cc003cd8c7798abd27f0c6a347a058486bcb77e78031779d107b4248",
+    "results/stage9/active_models.json": "e9be94afa4303dfca9b2c4609d0bfd42d9d84ffefe6003e4ebb713cdfb9cb80f",
+    "results/stage9/combined_pilot_report.json": "5fa1deeebb33736e75f0c00b38505054a49d99812bf5327ee3b138ca535031b5",
+    "results/stage9/next_step_proposal.json": "b1b3bec6a8fde400f843659953dc3d87b9926e35e79aedbf7d9be35bf2e92331",
+    "results/stage9/main_budget_proposal.json": "9173535b6e519e28c9995baa48b63d265dd474fe8d3ec25088cbc6f33e094594",
+    "results/stage9/main_sample_120.json": "ccd8a3140dac446a6aac05578f8e1dd4479fcc59b778f54cdbbb9a3375f982e5",
+    "results/stage9/main_sample_300.json": "690f51116a6bf88c3b11e127ec8d56e8eebdcebd1b6fecabfcd4fcf80c549836"
+  }
+}

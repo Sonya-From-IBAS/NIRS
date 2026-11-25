@@ -14,13 +14,14 @@ MODELS = (
     {'name':'llama33','provider':'groq','model':'llama-3.3-70b-versatile','batch_size':10,'sleep_s':15,
      'base_url':'https://api.groq.com/openai/v1',
      'parameters':{'temperature':0.,'max_completion_tokens':512,'response_format':{'type':'json_object'}}},
-    {'name':'glm51','provider':'synthetic','model':'hf:zai-org/GLM-5.1','batch_size':3,'sleep_s':8,
+    {'name':'glm53','provider':'synthetic','model':'hf:zai-org/GLM-5.3','batch_size':3,'sleep_s':8,
      'base_url':'https://api.synthetic.new/openai/v1',
      'parameters':{'max_tokens':4096,'response_format':{'type':'json_object'}}},
     {'name':'gptoss120','provider':'synthetic','model':'hf:openai/gpt-oss-120b','batch_size':3,'sleep_s':8,
      'base_url':'https://api.synthetic.new/openai/v1',
      'parameters':{'max_tokens':4096,'reasoning_effort':'low','response_format':{'type':'json_object'}}},
 )
+ACTIVE_MODEL_NAMES = ('glm53','gptoss120')
 SYSTEM_PROMPT = '''You classify SQL security observations. Output label 0 (legitimate) or 1 (malicious).
 Malicious means SQL injection, unauthorized privilege escalation, or unauthorized sensitive-data access/export/transfer.
 Confirmed unauthorized reading counts even without external transfer. Obfuscation is a representation property:

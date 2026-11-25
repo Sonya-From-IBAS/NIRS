@@ -1,0 +1,33 @@
+{
+  "stage": 9,
+  "pilot_id": "pilot_b4f45be78fac4031ed647ff7e5009e7d10011c240237a1b443e9ca9b29e23bde",
+  "checked_runs": [
+    "run_1c9b4560c26bce1e1ab64502e209c18e5e3d77f4b096c9660cad3ead98a887a6",
+    "run_a52781d5c7b36a41477f62537f8911e5fccff205e83a1de3bffd794c7e71c6be",
+    "run_4b608537e72473d302b5ba7b7ec77b7761f8ca22580e57faca58c152549aa2dc",
+    "run_bd745e0cdf0dc6b8483ff37a0d4ffd1b67b764aacd939e2063da7f89ca8b2298"
+  ],
+  "planned_classifications": 60,
+  "api_attempts": 9,
+  "ceiling": 20,
+  "artifact_integrity": {
+    "ready_verified": 1654,
+    "not_ready": 0,
+    "failures": []
+  },
+  "decision_status_counts": {
+    "ok": 24,
+    "api_error": 3,
+    "not_run": 33
+  },
+  "checks": [
+    "strict_final_JSON_reparse",
+    "ordered_batch_cache_keys",
+    "durable_API_budget",
+    "pinned_pilot_references",
+    "database_prediction_alignment",
+    "metrics_recomputed_from_rows",
+    "archived_source",
+    "artifact_checksums"
+  ]
+}
