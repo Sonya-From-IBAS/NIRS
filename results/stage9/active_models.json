@@ -1,23 +1,36 @@
 {
   "date": "2026-11-25",
-  "user_decision": "replace_GLM_5_1_with_GLM_5_3_keep_existing_gpt_oss",
+  "user_decision": "replace_Llama_with_Kimi_K3_1_Pro_via_SYNTHETIC_API_KEY",
   "models": [
     {
       "name": "gptoss120",
       "provider": "synthetic",
       "model": "hf:openai/gpt-oss-120b",
-      "pilot_directory": "results/stage9"
+      "pilot_directory": "results/stage9",
+      "batch_size": 3,
+      "pilot_status": "complete"
     },
     {
       "name": "glm53",
       "provider": "synthetic",
       "model": "hf:zai-org/GLM-5.3",
-      "pilot_directory": "results/stage9/glm53"
+      "pilot_directory": "results/stage9/glm53",
+      "batch_size": 3,
+      "pilot_status": "partial_stopped_after_timeout"
+    },
+    {
+      "name": "kimi31pro",
+      "provider": "synthetic",
+      "model": "hf:moonshotai/Kimi-K3.1-Pro",
+      "pilot_directory": "results/stage9/kimi31pro",
+      "batch_size": 10,
+      "pilot_status": "complete"
     }
   ],
   "retired_from_active_comparison": [
     "hf:zai-org/GLM-5.1",
-    "llama-3.3-70b-versatile"
+    "llama-3.3-70b-versatile",
+    "meta-llama/Llama-3.3-70B-Instruct-Turbo"
   ],
   "replacement_pilot": {
     "observations": 30,
@@ -25,18 +38,40 @@
       "zero_shot",
       "few_shot"
     ],
-    "batch_size": 3,
-    "new_API_ceiling": 20,
+    "batch_size": 10,
+    "new_API_ceiling": 6,
     "automatic_retries": 0
   },
-  "previous_classification_API_attempts": 22,
-  "maximum_combined_classification_API_attempts": 42,
+  "previous_classification_API_attempts": 32,
+  "maximum_combined_classification_API_attempts": 38,
+  "actual_combined_classification_API_attempts": 38,
   "original_classification_ceiling": 46,
-  "separately_user_requested_catalog_GETs": 1,
-  "main_experiment_budget": "pending_recalculation_and_approval_for_two_models",
-  "replacement_pilot_status": "stopped_after_90_second_timeout_partial_coverage",
-  "actual_combined_classification_API_attempts": 31,
-  "actual_GLM53_models": [
-    "zai-org/GLM-5.3"
-  ]
+  "attempt_history": [
+    {
+      "report": "results/stage9/pilot_report.json",
+      "API_attempts": 22
+    },
+    {
+      "report": "results/stage9/glm53/pilot_report.json",
+      "API_attempts": 9
+    },
+    {
+      "report": "results/stage9/llama33_aimlapi/pilot_report.json",
+      "API_attempts": 1
+    },
+    {
+      "report": "results/stage9/kimi31pro/pilot_report.json",
+      "API_attempts": 6
+    }
+  ],
+  "main_experiment_budget": "pending_approval_for_three_models",
+  "GLM53_continuation": {
+    "status": "not_approved_requires_updated_budget",
+    "historical_proposal": "results/stage9/glm53/continuation_proposal.json",
+    "current_attempts": 38,
+    "additional_attempts_in_historical_proposal": 12,
+    "hypothetical_total": 50,
+    "original_ceiling": 46,
+    "additional_approval_required": true
+  }
 }

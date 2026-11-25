@@ -1,0 +1,254 @@
+[
+  {
+    "request_key": "llm_9cbb2af356d39531da69873910c841a9bb1fc99331fdbd3d81e079ec9f6b588d",
+    "usage": {
+      "total_tokens": 3756,
+      "prompt_tokens": 2684,
+      "completion_tokens": 1072,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 965,
+        "accepted_prediction_tokens": null,
+        "rejected_prediction_tokens": null
+      }
+    },
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "status": "ok",
+    "created": 1795626123,
+    "elapsed_s": 16.536944,
+    "request_id": null,
+    "stop_model": false,
+    "response_id": "chatcmpl-69a3a5fe-21c9-44fd-bef8-d53e0892e86c",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "final_content": "{\"predictions\":[{\"id\":\"q001\",\"label\":0},{\"id\":\"q002\",\"label\":0},{\"id\":\"q003\",\"label\":1},{\"id\":\"q004\",\"label\":1},{\"id\":\"q005\",\"label\":1},{\"id\":\"q006\",\"label\":1},{\"id\":\"q007\",\"label\":0},{\"id\":\"q008\",\"label\":1},{\"id\":\"q009\",\"label\":1},{\"id\":\"q010\",\"label\":1}]}",
+    "finish_reason": "stop",
+    "stop_provider": false,
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_fe455fa1bbc4ffd1c42209c8098e678e0a60ccefe87d7aadf1e2fa55db9f510c",
+    "usage": {
+      "total_tokens": 3517,
+      "prompt_tokens": 3204,
+      "completion_tokens": 313,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 206,
+        "accepted_prediction_tokens": null,
+        "rejected_prediction_tokens": null
+      }
+    },
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "status": "ok",
+    "created": 1795626147,
+    "elapsed_s": 5.891985,
+    "request_id": null,
+    "stop_model": false,
+    "response_id": "chatcmpl-8c14b49f-b968-4ff4-bf03-9397c77d1dcf",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "final_content": "{\"predictions\":[{\"id\":\"q011\",\"label\":0},{\"id\":\"q012\",\"label\":0},{\"id\":\"q013\",\"label\":1},{\"id\":\"q014\",\"label\":1},{\"id\":\"q015\",\"label\":0},{\"id\":\"q016\",\"label\":0},{\"id\":\"q017\",\"label\":1},{\"id\":\"q018\",\"label\":1},{\"id\":\"q019\",\"label\":1},{\"id\":\"q020\",\"label\":1}]}",
+    "finish_reason": "stop",
+    "stop_provider": false,
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_a3e12a5cc8798c8f8978527d7a95269af96587e9cd7fd9a67080a5fbfd961f16",
+    "usage": {
+      "total_tokens": 3287,
+      "prompt_tokens": 2763,
+      "completion_tokens": 524,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 417,
+        "accepted_prediction_tokens": null,
+        "rejected_prediction_tokens": null
+      }
+    },
+    "labels": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "status": "ok",
+    "created": 1795626161,
+    "elapsed_s": 8.912801,
+    "request_id": null,
+    "stop_model": false,
+    "response_id": "chatcmpl-fd7e602f-2d5f-4ec6-92c5-458822ea5f9f",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "final_content": "{\"predictions\":[{\"id\":\"q021\",\"label\":0},{\"id\":\"q022\",\"label\":0},{\"id\":\"q023\",\"label\":0},{\"id\":\"q024\",\"label\":1},{\"id\":\"q025\",\"label\":1},{\"id\":\"q026\",\"label\":1},{\"id\":\"q027\",\"label\":1},{\"id\":\"q028\",\"label\":1},{\"id\":\"q029\",\"label\":0},{\"id\":\"q030\",\"label\":1}]}",
+    "finish_reason": "stop",
+    "stop_provider": false,
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_5a04659a70c10f644b14b09a9492a5a5f2d4c94cd443aa45dd8ed8ef7ad13178",
+    "usage": {
+      "total_tokens": 5325,
+      "prompt_tokens": 4649,
+      "completion_tokens": 676,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 4096
+      },
+      "completion_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 569,
+        "accepted_prediction_tokens": null,
+        "rejected_prediction_tokens": null
+      }
+    },
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "status": "ok",
+    "created": 1795626178,
+    "elapsed_s": 10.762867,
+    "request_id": null,
+    "stop_model": false,
+    "response_id": "chatcmpl-b3e317dc-482d-4312-bf19-0843919c703c",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "final_content": "{\"predictions\":[{\"id\":\"q001\",\"label\":0},{\"id\":\"q002\",\"label\":0},{\"id\":\"q003\",\"label\":1},{\"id\":\"q004\",\"label\":1},{\"id\":\"q005\",\"label\":0},{\"id\":\"q006\",\"label\":1},{\"id\":\"q007\",\"label\":0},{\"id\":\"q008\",\"label\":1},{\"id\":\"q009\",\"label\":1},{\"id\":\"q010\",\"label\":1}]}",
+    "finish_reason": "stop",
+    "stop_provider": false,
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_23bdf15ae943c1da3bdeef83fd6943c528c3bce0b094919bb8415ca3bf44c959",
+    "usage": {
+      "total_tokens": 5461,
+      "prompt_tokens": 5169,
+      "completion_tokens": 292,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 4096
+      },
+      "completion_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 185,
+        "accepted_prediction_tokens": null,
+        "rejected_prediction_tokens": null
+      }
+    },
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "status": "ok",
+    "created": 1795626197,
+    "elapsed_s": 5.872834,
+    "request_id": null,
+    "stop_model": false,
+    "response_id": "chatcmpl-51659f51-b0db-44a9-9613-255686aec91c",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "final_content": "{\"predictions\":[{\"id\":\"q011\",\"label\":0},{\"id\":\"q012\",\"label\":0},{\"id\":\"q013\",\"label\":1},{\"id\":\"q014\",\"label\":1},{\"id\":\"q015\",\"label\":0},{\"id\":\"q016\",\"label\":0},{\"id\":\"q017\",\"label\":1},{\"id\":\"q018\",\"label\":1},{\"id\":\"q019\",\"label\":1},{\"id\":\"q020\",\"label\":1}]}",
+    "finish_reason": "stop",
+    "stop_provider": false,
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_dd9bd66d75dad517ed33abe95d5a68e4c639fcacf6057143612d31f9cdbff62a",
+    "usage": {
+      "total_tokens": 5860,
+      "prompt_tokens": 4728,
+      "completion_tokens": 1132,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "created_cache_tokens": 4096
+      },
+      "completion_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 1025,
+        "accepted_prediction_tokens": null,
+        "rejected_prediction_tokens": null
+      }
+    },
+    "labels": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    "status": "ok",
+    "created": 1795626211,
+    "elapsed_s": 16.881256,
+    "request_id": null,
+    "stop_model": false,
+    "response_id": "chatcmpl-a611d354-7953-4d48-9337-d3298fe015e1",
+    "actual_model": "moonshotai/Kimi-K3.1-Pro",
+    "final_content": "{\"predictions\":[{\"id\":\"q021\",\"label\":0},{\"id\":\"q022\",\"label\":0},{\"id\":\"q023\",\"label\":0},{\"id\":\"q024\",\"label\":0},{\"id\":\"q025\",\"label\":0},{\"id\":\"q026\",\"label\":0},{\"id\":\"q027\",\"label\":1},{\"id\":\"q028\",\"label\":1},{\"id\":\"q029\",\"label\":0},{\"id\":\"q030\",\"label\":1}]}",
+    "finish_reason": "stop",
+    "stop_provider": false,
+    "new_api_attempt": false
+  }
+]

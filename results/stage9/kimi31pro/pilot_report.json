@@ -1,0 +1,443 @@
+{
+  "version": "binary-llm-v1",
+  "pilot_id": "pilot_9d4110d6f4e0e4e5e281f6be82c54a8968ae8f1df90cc028a56e53ee57f8ecf5",
+  "role": "development_only_not_final_test",
+  "planned_api_ceiling": 6,
+  "actual_api_attempts": 6,
+  "new_api_attempts_this_invocation": 0,
+  "observed_tokens": {
+    "prompt_tokens": 23197,
+    "completion_tokens": 4009,
+    "total_tokens": 27206
+  },
+  "usage_reported_calls": 6,
+  "money_cost": null,
+  "money_cost_reason": "account-specific tariff not established; observed tokens and calls reported",
+  "models": [
+    {
+      "name": "kimi31pro",
+      "requested_model": "hf:moonshotai/Kimi-K3.1-Pro",
+      "provider": "synthetic",
+      "api_attempts": 6,
+      "actual_model_ids": [
+        "moonshotai/Kimi-K3.1-Pro"
+      ],
+      "call_status_counts": {
+        "ok": 6
+      },
+      "observed_tokens": {
+        "prompt_tokens": 23197,
+        "completion_tokens": 4009,
+        "total_tokens": 27206
+      },
+      "elapsed_api_s": 64.858687
+    }
+  ],
+  "comparisons": [
+    {
+      "model": "kimi31pro",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.8823529411764706,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.8823529411764706,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.26666666666666666,
+          "attack_precision": 0.7894736842105263,
+          "confusion_matrix": [
+            [
+              11,
+              4
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 0,
+            "tn": 11
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 11,
+              "precision": 1.0,
+              "recall": 0.7333333333333333,
+              "f1": 0.8461538461538461
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 19,
+              "precision": 0.7894736842105263,
+              "recall": 1.0,
+              "f1": 0.8823529411764706
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "model": "kimi31pro",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "run_29b2978de63bca4839ba7e0efbc873e1b7eed59fb46530c65fd90bb3a467d953",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "model": "kimi31pro",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 10,
+        "status_counts": {
+          "ok": 10
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 10,
+        "primary_f1": 0.7142857142857143,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.7142857142857143,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.8,
+          "attack_precision": 0.5555555555555556,
+          "confusion_matrix": [
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 5,
+            "fp": 4,
+            "fn": 0,
+            "tn": 1
+          },
+          "per_class": {
+            "0": {
+              "support": 5,
+              "predicted_support": 1,
+              "precision": 1.0,
+              "recall": 0.2,
+              "f1": 0.3333333333333333
+            },
+            "1": {
+              "support": 5,
+              "predicted_support": 9,
+              "precision": 0.5555555555555556,
+              "recall": 1.0,
+              "f1": 0.7142857142857143
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "pilot_plan.json": "734bc5ab358a80987fb88403c98fda43431d59fe40c1736bb14853f69ddfffe7",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "1bb746746ad5569ed83b555753db6bb9b775dbd2c70f62fb81cb85e5df22812a",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    },
+    {
+      "run_id": "run_7e781c519675c65281f384f2de113eb0e5d5503328013ba160fca725a55e721d",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "model": "kimi31pro",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 20,
+        "status_counts": {
+          "ok": 20
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 20,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              10,
+              0
+            ],
+            [
+              0,
+              10
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10
+          },
+          "per_class": {
+            "0": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "pilot_plan.json": "734bc5ab358a80987fb88403c98fda43431d59fe40c1736bb14853f69ddfffe7",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "1bb746746ad5569ed83b555753db6bb9b775dbd2c70f62fb81cb85e5df22812a",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    },
+    {
+      "run_id": "run_43d340b5bca4a3f73b0615e87d8b87204af9a5c6b211f5f3c181fce1255b6b39",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "model": "kimi31pro",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 10,
+        "status_counts": {
+          "ok": 10
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 10,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 5
+          },
+          "per_class": {
+            "0": {
+              "support": 5,
+              "predicted_support": 5,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 5,
+              "predicted_support": 5,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "pilot_plan.json": "734bc5ab358a80987fb88403c98fda43431d59fe40c1736bb14853f69ddfffe7",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "1bb746746ad5569ed83b555753db6bb9b775dbd2c70f62fb81cb85e5df22812a",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    },
+    {
+      "run_id": "run_702f479dd5c1536c39471ecc7052a14ce33a5239986af7584a799ff1219b0cd2",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "model": "kimi31pro",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 20,
+        "status_counts": {
+          "ok": 20
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 20,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              10,
+              0
+            ],
+            [
+              0,
+              10
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10
+          },
+          "per_class": {
+            "0": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "pilot_plan.json": "734bc5ab358a80987fb88403c98fda43431d59fe40c1736bb14853f69ddfffe7",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "1bb746746ad5569ed83b555753db6bb9b775dbd2c70f62fb81cb85e5df22812a",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    }
+  ],
+  "main_experiment_budget": "pending_user_agreement_after_pilot"
+}

@@ -1,17 +1,32 @@
 {
-  "status": "superseded_user_approved_GLM53_only_replacement",
-  "selected_models_for_main_budget": ["hf:openai/gpt-oss-120b", "hf:zai-org/GLM-5.3"],
+  "status": "superseded_user_approved_Kimi_replacement",
+  "selected_models_for_main_budget": [
+    "hf:openai/gpt-oss-120b",
+    "hf:zai-org/GLM-5.3"
+  ],
   "current_decision_file": "results/stage9/active_models.json",
   "reason": "Two original models were unavailable in the agreed pilot",
   "existing_completed_pilot_api_attempts": 22,
   "historical_unaccepted_recommendation": {
     "action": "pilot_two_explicit_replacements_before_setting_main_budget",
     "replacements": [
-      {"replaces": "llama-3.3-70b-versatile", "provider": "synthetic", "model": "hf:Qwen/Qwen3.8-27B"},
-      {"replaces": "hf:zai-org/GLM-5.1", "provider": "synthetic", "model": "hf:zai-org/GLM-5.3", "catalog_status": "beta"}
+      {
+        "replaces": "llama-3.3-70b-versatile",
+        "provider": "synthetic",
+        "model": "hf:Qwen/Qwen3.8-27B"
+      },
+      {
+        "replaces": "hf:zai-org/GLM-5.1",
+        "provider": "synthetic",
+        "model": "hf:zai-org/GLM-5.3",
+        "catalog_status": "beta"
+      }
     ],
     "observations": 30,
-    "modes": ["zero_shot", "few_shot"],
+    "modes": [
+      "zero_shot",
+      "few_shot"
+    ],
     "batch_size": 3,
     "classifications": 120,
     "additional_api_ceiling": 40,
@@ -20,5 +35,6 @@
     "main_test_calls": 0
   },
   "alternative": "Keep only the available gpt-oss-120b and separately agree the main sample and API budget",
-  "catalog_source": "https://dev.synthetic.new/docs/api/models"
+  "catalog_source": "https://dev.synthetic.new/docs/api/models",
+  "current_decision": "results/stage9/active_models.json"
 }

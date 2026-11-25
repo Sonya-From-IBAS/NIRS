@@ -1,0 +1,10 @@
+{
+  "pilot_id": "pilot_af9911fa60cd54cd78e973a77cc57f70a9a8db5bd8bafa2747ddd81b4f727a6f",
+  "original_report_artifact": "445a1291a0b33fc3e4fd15c3ac8216ccbd75cfc7412bbed39182a36372a3e731",
+  "initial_new_api_attempts": 1,
+  "replay_new_api_attempts": 0,
+  "total_api_attempts_unchanged": 1,
+  "metrics_and_run_IDs_unchanged": true,
+  "network_caller_replaced_with_raising_stub": true,
+  "inputs_identical_to_original_pilot": true
+}

@@ -20,8 +20,14 @@ MODELS = (
     {'name':'gptoss120','provider':'synthetic','model':'hf:openai/gpt-oss-120b','batch_size':3,'sleep_s':8,
      'base_url':'https://api.synthetic.new/openai/v1',
      'parameters':{'max_tokens':4096,'reasoning_effort':'low','response_format':{'type':'json_object'}}},
+    {'name':'llama33_aimlapi','provider':'aimlapi','model':'meta-llama/Llama-3.3-70B-Instruct-Turbo','batch_size':10,'sleep_s':15,
+     'base_url':'https://api.aimlapi.com/v1',
+     'parameters':{'temperature':0.,'max_tokens':512}},
+    {'name':'kimi31pro','provider':'synthetic','model':'hf:moonshotai/Kimi-K3.1-Pro','batch_size':10,'sleep_s':8,
+     'base_url':'https://api.synthetic.new/openai/v1',
+     'parameters':{'max_tokens':4096,'response_format':{'type':'json_object'}}},
 )
-ACTIVE_MODEL_NAMES = ('glm53','gptoss120')
+ACTIVE_MODEL_NAMES = ('glm53','gptoss120','kimi31pro')
 SYSTEM_PROMPT = '''You classify SQL security observations. Output label 0 (legitimate) or 1 (malicious).
 Malicious means SQL injection, unauthorized privilege escalation, or unauthorized sensitive-data access/export/transfer.
 Confirmed unauthorized reading counts even without external transfer. Obfuscation is a representation property:
@@ -100,15 +106,18 @@ def parse_batch_response(content, aliases):
 
 
 def create_client(model):
+    credential_names = {'groq':'GROQ_API_KEY','synthetic':'SYNTHETIC_API_KEY','aimlapi':'AIMLAPI_API_KEY'}
+    if model['provider'] not in credential_names:
+        raise ValueError('Unknown provider')
     values = dotenv_values(ROOT/'.env')
-    key_name = 'GROQ_API_KEY' if model['provider'] == 'groq' else 'SYNTHETIC_API_KEY'
+    key_name = credential_names[model['provider']]
     key = os.environ.get(key_name) or values.get(key_name)
     if not key:
         raise ValueError('missing_credential:'+key_name)
     if model['provider'] == 'groq':
         from groq import Groq
         return Groq(api_key=key,base_url=model['base_url'],max_retries=0,timeout=90)
-    if model['provider'] == 'synthetic':
+    if model['provider'] in ('synthetic','aimlapi'):
         from openai import OpenAI
         return OpenAI(api_key=key,base_url=model['base_url'],max_retries=0,timeout=90)
     raise ValueError('Unknown provider')

@@ -1,15 +1,32 @@
 {
-  "status": "replacement_pilot_stopped_partial_continuation_pending",
+  "status": "Kimi_replacement_complete_GLM53_partial",
   "original_pilot_commit": "5624511",
+  "GLM53_iteration_commit": "bc89dba",
   "active_models": [
     "hf:openai/gpt-oss-120b",
-    "hf:zai-org/GLM-5.3"
+    "hf:zai-org/GLM-5.3",
+    "hf:moonshotai/Kimi-K3.1-Pro"
   ],
-  "original_API_attempts": 22,
-  "new_GLM53_API_attempts": 9,
-  "combined_classification_API_attempts": 31,
+  "combined_classification_API_attempts": 38,
   "agreed_classification_ceiling": 46,
-  "separate_user_requested_models_GETs": 1,
+  "attempt_history": [
+    {
+      "report": "results/stage9/pilot_report.json",
+      "API_attempts": 22
+    },
+    {
+      "report": "results/stage9/glm53/pilot_report.json",
+      "API_attempts": 9
+    },
+    {
+      "report": "results/stage9/llama33_aimlapi/pilot_report.json",
+      "API_attempts": 1
+    },
+    {
+      "report": "results/stage9/kimi31pro/pilot_report.json",
+      "API_attempts": 6
+    }
+  ],
   "models": [
     {
       "name": "gptoss120",
@@ -47,6 +64,24 @@
         "total_tokens": 12514
       },
       "elapsed_api_s": 169.06096
+    },
+    {
+      "name": "kimi31pro",
+      "requested_model": "hf:moonshotai/Kimi-K3.1-Pro",
+      "provider": "synthetic",
+      "api_attempts": 6,
+      "actual_model_ids": [
+        "moonshotai/Kimi-K3.1-Pro"
+      ],
+      "call_status_counts": {
+        "ok": 6
+      },
+      "observed_tokens": {
+        "prompt_tokens": 23197,
+        "completion_tokens": 4009,
+        "total_tokens": 27206
+      },
+      "elapsed_api_s": 64.858687
     }
   ],
   "comparisons": [
@@ -271,6 +306,116 @@
         },
         "sample_weighted": false
       }
+    },
+    {
+      "model": "kimi31pro",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.8823529411764706,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 0.8823529411764706,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.26666666666666666,
+          "attack_precision": 0.7894736842105263,
+          "confusion_matrix": [
+            [
+              11,
+              4
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 0,
+            "tn": 11
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 11,
+              "precision": 1.0,
+              "recall": 0.7333333333333333,
+              "f1": 0.8461538461538461
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 19,
+              "precision": 0.7894736842105263,
+              "recall": 1.0,
+              "f1": 0.8823529411764706
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "model": "kimi31pro",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 30
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "per_class": {
+            "0": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 15,
+              "predicted_support": 15,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      }
     }
   ],
   "run_ids": [
@@ -281,10 +426,26 @@
     "run_1c9b4560c26bce1e1ab64502e209c18e5e3d77f4b096c9660cad3ead98a887a6",
     "run_a52781d5c7b36a41477f62537f8911e5fccff205e83a1de3bffd794c7e71c6be",
     "run_4b608537e72473d302b5ba7b7ec77b7761f8ca22580e57faca58c152549aa2dc",
-    "run_bd745e0cdf0dc6b8483ff37a0d4ffd1b67b764aacd939e2063da7f89ca8b2298"
+    "run_bd745e0cdf0dc6b8483ff37a0d4ffd1b67b764aacd939e2063da7f89ca8b2298",
+    "run_29b2978de63bca4839ba7e0efbc873e1b7eed59fb46530c65fd90bb3a467d953",
+    "run_7e781c519675c65281f384f2de113eb0e5d5503328013ba160fca725a55e721d",
+    "run_43d340b5bca4a3f73b0615e87d8b87204af9a5c6b211f5f3c181fce1255b6b39",
+    "run_702f479dd5c1536c39471ecc7052a14ce33a5239986af7584a799ff1219b0cd2"
   ],
-  "first_iteration_report": "results/stage9/pilot_report.json",
-  "replacement_report": "results/stage9/glm53/pilot_report.json",
+  "excluded_AIMLAPI_probe": {
+    "report": "results/stage9/llama33_aimlapi/pilot_report.json",
+    "http_status": 403,
+    "exact_cause": "unknown"
+  },
   "role": "development_only_not_final_test",
-  "main_test_API_calls": 0
+  "main_test_API_calls": 0,
+  "GLM53_continuation": {
+    "status": "not_approved_requires_updated_budget",
+    "historical_proposal": "results/stage9/glm53/continuation_proposal.json",
+    "current_attempts": 38,
+    "additional_attempts_in_historical_proposal": 12,
+    "hypothetical_total": 50,
+    "original_ceiling": 46,
+    "additional_approval_required": true
+  }
 }

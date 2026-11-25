@@ -1,12 +1,12 @@
 {
-  "status": "awaiting_user_choice_for_two_models",
+  "status": "awaiting_user_choice_for_three_models",
   "models": [
     "hf:openai/gpt-oss-120b",
-    "hf:zai-org/GLM-5.3"
+    "hf:zai-org/GLM-5.3",
+    "hf:moonshotai/Kimi-K3.1-Pro"
   ],
   "provider": "synthetic",
   "recommended_observation_count": 300,
-  "batch_size": 3,
   "automatic_retries": 0,
   "options": [
     {
@@ -14,23 +14,41 @@
       "per_threat": 100,
       "per_threat_and_target": 50,
       "models": [
-        "hf:openai/gpt-oss-120b",
-        "hf:zai-org/GLM-5.3"
+        {
+          "name": "gptoss120",
+          "model": "hf:openai/gpt-oss-120b",
+          "batch_size": 3,
+          "primary_API_calls": 200,
+          "SQL_only_ablation_API_calls": 134,
+          "API_ceiling": 334,
+          "rough_total_tokens_from_pilot_mean": 752669
+        },
+        {
+          "name": "glm53",
+          "model": "hf:zai-org/GLM-5.3",
+          "batch_size": 3,
+          "primary_API_calls": 200,
+          "SQL_only_ablation_API_calls": 134,
+          "API_ceiling": 334,
+          "rough_total_tokens_from_pilot_mean": null
+        },
+        {
+          "name": "kimi31pro",
+          "model": "hf:moonshotai/Kimi-K3.1-Pro",
+          "batch_size": 10,
+          "primary_API_calls": 60,
+          "SQL_only_ablation_API_calls": 40,
+          "API_ceiling": 100,
+          "rough_total_tokens_from_pilot_mean": 453433
+        }
       ],
-      "primary_API_calls_per_model": 200,
-      "SQL_only_ablation_API_calls_per_model": 134,
-      "api_ceiling_per_model": 334,
-      "combined_api_ceiling": 668,
+      "combined_api_ceiling": 768,
       "classifications_per_model": 1000,
-      "combined_classifications": 2000,
+      "combined_classifications": 3000,
       "completion_token_cap_per_call": 4096,
-      "combined_completion_token_upper_bound": 2736128,
-      "rough_tokens_by_model_from_pilot_mean": {
-        "gptoss120": 752669,
-        "glm53": null
-      },
+      "combined_completion_token_upper_bound": 3145728,
       "rough_total_tokens_from_pilot_mean": null,
-      "rough_sequential_seconds_with_8s_pacing": null,
+      "rough_sequential_seconds_with_pacing": null,
       "sample_file": "main_sample_300.json"
     },
     {
@@ -38,28 +56,46 @@
       "per_threat": 40,
       "per_threat_and_target": 20,
       "models": [
-        "hf:openai/gpt-oss-120b",
-        "hf:zai-org/GLM-5.3"
+        {
+          "name": "gptoss120",
+          "model": "hf:openai/gpt-oss-120b",
+          "batch_size": 3,
+          "primary_API_calls": 80,
+          "SQL_only_ablation_API_calls": 54,
+          "API_ceiling": 134,
+          "rough_total_tokens_from_pilot_mean": 301969
+        },
+        {
+          "name": "glm53",
+          "model": "hf:zai-org/GLM-5.3",
+          "batch_size": 3,
+          "primary_API_calls": 80,
+          "SQL_only_ablation_API_calls": 54,
+          "API_ceiling": 134,
+          "rough_total_tokens_from_pilot_mean": null
+        },
+        {
+          "name": "kimi31pro",
+          "model": "hf:moonshotai/Kimi-K3.1-Pro",
+          "batch_size": 10,
+          "primary_API_calls": 24,
+          "SQL_only_ablation_API_calls": 16,
+          "API_ceiling": 40,
+          "rough_total_tokens_from_pilot_mean": 181373
+        }
       ],
-      "primary_API_calls_per_model": 80,
-      "SQL_only_ablation_API_calls_per_model": 54,
-      "api_ceiling_per_model": 134,
-      "combined_api_ceiling": 268,
+      "combined_api_ceiling": 308,
       "classifications_per_model": 400,
-      "combined_classifications": 800,
+      "combined_classifications": 1200,
       "completion_token_cap_per_call": 4096,
-      "combined_completion_token_upper_bound": 1097728,
-      "rough_tokens_by_model_from_pilot_mean": {
-        "gptoss120": 301969,
-        "glm53": null
-      },
+      "combined_completion_token_upper_bound": 1261568,
       "rough_total_tokens_from_pilot_mean": null,
-      "rough_sequential_seconds_with_8s_pacing": null,
+      "rough_sequential_seconds_with_pacing": null,
       "sample_file": "main_sample_120.json"
     }
   ],
-  "monetary_tariff": null,
-  "main_API_calls_made": 0,
-  "selection_before_main_predictions": true,
-  "estimation_limits": "Token/time projections use each model pilot mean; main lengths, queueing and quota may differ; monetary cost is not inferred."
+  "estimated_usage_limitations": "GLM53 few-shot pilot incomplete; batch sizes and context lengths differ; no combined token/time forecast",
+  "money_cost": null,
+  "money_cost_reason": "account-specific tariff not established",
+  "main_test_API_calls": 0
 }

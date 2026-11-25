@@ -1,0 +1,43 @@
+{
+  "stage": 9,
+  "iteration": "Llama to Kimi K3.1 Pro",
+  "date": "2026-11-25",
+  "base_commit": "bc89dba",
+  "tests": {
+    "run": 123,
+    "passed": 123,
+    "skipped": 0
+  },
+  "test_log_sha256": "ed188e693ded063f7f5294a1edc5a06f86bdee6d471a26e980d5598379bde8e5",
+  "Kimi_API_attempts": 6,
+  "AIMLAPI_API_attempts": 1,
+  "combined_classification_API_attempts": 38,
+  "original_API_ceiling": 46,
+  "replay_new_API_attempts": 0,
+  "checked_Kimi_predictions": 60,
+  "files_sha256": {
+    "src/detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+    "tests/test_llm.py": "59cd2e07f54c760c6a0d0f4a1ab5757065f65dd8b824064d9ac690f74622ef82",
+    "docs/llm_pilot.md": "0bc635d4fdfcf605925a18169f50bf7372c67e89377630d29ed1e3be797d356b",
+    "results/stage9/kimi31pro/pilot_audit.json": "1e43cd1c99192bef203e4f7a041e35816042e32eaf408c9a453d022a6349185d",
+    "results/stage9/kimi31pro/pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+    "results/stage9/kimi31pro/pilot_plan.json": "734bc5ab358a80987fb88403c98fda43431d59fe40c1736bb14853f69ddfffe7",
+    "results/stage9/kimi31pro/pilot_report.json": "9ff35a7c2a7f8f99f82526f4c28ce45ce72604bfa1392a9cf275ca2a0f7782e7",
+    "results/stage9/kimi31pro/prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe",
+    "results/stage9/kimi31pro/request_outcomes.json": "afd241e851a633545bb2da97169587ffc95db0825b60f0f411fbe28186b015bf",
+    "results/stage9/kimi31pro/request_plan.json": "1bb746746ad5569ed83b555753db6bb9b775dbd2c70f62fb81cb85e5df22812a",
+    "results/stage9/kimi31pro/resume_check.json": "b8c90832f1b5569242178ea693d4b29fe86108699e53f0d18f7e1faa96ce0d56",
+    "results/stage9/llama33_aimlapi/pilot_audit.json": "63aa8010972f6bcd8887af877f71de7c87c18efc7a4380169d7567d190b1dd88",
+    "results/stage9/llama33_aimlapi/pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+    "results/stage9/llama33_aimlapi/pilot_plan.json": "a40c5358e1e14b008cba7de014f28918c866d2ea21e6168c3a50289716dcc89a",
+    "results/stage9/llama33_aimlapi/pilot_report.json": "96c8b4df3b59dc42a5668d174af6358de2ebfeec955b4c95da201b0e740114db",
+    "results/stage9/llama33_aimlapi/prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe",
+    "results/stage9/llama33_aimlapi/request_outcomes.json": "242d782d33da31f540b619959e6f6231e56fceb372dc6f57581e701ea6995335",
+    "results/stage9/llama33_aimlapi/request_plan.json": "861c7caba225f0f5625a88f00419b0a966f2750ed3a3441b555f8d95574f8685",
+    "results/stage9/llama33_aimlapi/resume_check.json": "7209d3f79cf981366621b73f6346b79c6d26dc701f9778a377148d2a30a6e75d",
+    "results/stage9/active_models.json": "7313f62800720c4c5f44850a4b02cc964d22ba501ec5a0b7ec10addacdc0c8f6",
+    "results/stage9/combined_pilot_report.json": "d0a75d9ec424a2072bea79c80a6942a36e493e289462b31bda4e02012063bc18",
+    "results/stage9/main_budget_proposal.json": "2279f5b1adc47afd883df59869249bad38c654b5a58b733ea73f235b55293b87",
+    "results/stage9/next_step_proposal.json": "c83b64cb635a7ee91c9296e69618292881f543c872e7471c327aee79d01241a1"
+  }
+}

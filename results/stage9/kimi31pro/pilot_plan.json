@@ -1,0 +1,105 @@
+{
+  "version": "binary-llm-v1",
+  "purpose": "development_only_not_final_test",
+  "models": [
+    {
+      "name": "kimi31pro",
+      "provider": "synthetic",
+      "model": "hf:moonshotai/Kimi-K3.1-Pro",
+      "batch_size": 10,
+      "sleep_s": 8,
+      "base_url": "https://api.synthetic.new/openai/v1",
+      "parameters": {
+        "max_tokens": 4096,
+        "response_format": {
+          "type": "json_object"
+        }
+      }
+    }
+  ],
+  "max_api_attempts": 6,
+  "automatic_retries": 0,
+  "unavailable_model_policy": "stop_that_model_continue_others_without_substitution",
+  "code_sha256_lf": {
+    "detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+    "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+    "llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+    "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+    "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+    "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+    "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+    "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+    "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+    "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4"
+  },
+  "development_manifest_sha256": "b86a70a244ff90bbb7b19a869756d3431fd78721aa80ea0b12a62e22dd79ce76",
+  "pilot_ids": [
+    "obs_s5_c749cd372b423e1a36b29e3a79af3f85",
+    "obs_sg_294c03e35ad34389f8209e6a01e0c3bf52a05a41ab3af76e89444ab2e395feec",
+    "obs_s5_0e47c21c6c75942456a8b0a87a25b5c9",
+    "obs_sg_98bb50a2de586182777c63330dea782550d75426ce3033c588cb1dc4c96147f3",
+    "obs_sg_7f9580bc7da75c192d4608b98cdfef7edf78ed0f6e992e49848dd0cc19400419",
+    "obs_sg_d5049942000ce14eafa2d85a4a9dd581b30fc1675a91b1a6c1a4d775c96d55fd",
+    "obs_s5_7b6a6e7f6d186ff6dc924deb366e83b0",
+    "obs_s5_c8aad46ec8410418bcc3563177756bc0",
+    "obs_sg_a060b21f9da3c5239da2f53e11a37b77a07fe258e1f91ac8e75b65bef3f35236",
+    "obs_s5_cf59d1c62effc6bb5a25ebe002044104",
+    "obs_s5_2de0338148ccb07aa996bc4ef38f4cdb",
+    "obs_s5_e278a50ea2ee7cfd49a84bbc8874e645",
+    "obs_s5_6688dfa7d983d58407484114a7cfd914",
+    "obs_s5_b852e3b230f9300971c714e2eb545678",
+    "obs_s5_7d71c18f4e0c05fb26f7f9d991c11e69",
+    "obs_s5_81f27e99702032438936d3211f3e7130",
+    "obs_s5_3030347912bc68ffb6e7907b0935720c",
+    "obs_s5_229a8dacae1450355c2fa3646f1332b2",
+    "obs_sg_a540d3e2161fb82559e1de7f9929647ad39c04acd39c188616687b21ab06f138",
+    "obs_s5_c984b2641e69b89fbe36d7cc4d83b48f",
+    "obs_s5_4737869aba49227a63ae09894a5e7da2",
+    "obs_s5_e38ae6d62826c4d23304321a9f0324bc",
+    "obs_s5_52e42649f0ffc310aa5d31f4caf62e85",
+    "obs_sg_3dadb364b72a920f15f06efbb8b3fe409202df1d07444d27c27472f3b0c18989",
+    "obs_sg_deadf306f6ff1a98bb371c861aef13efbb21bd2e34e77b7352f9f88a4e3b3ba5",
+    "obs_sg_3cd3d421a0dd4f9e238fed3a25b453c72a26091ad85d21cdfdbe42764ed17063",
+    "obs_sg_f30c13bf964a0586474b2f71e94c44d9321e1e449676a604f5d45a4ae7cea1cc",
+    "obs_s5_03a0fa04bcd9beaf33c66f9bf289a566",
+    "obs_s5_e48c3cc0496a3398c71f3e6c01610872",
+    "obs_s5_9aa6a452cb87aee888af8617b376f645"
+  ],
+  "few_shot_ids": [
+    "obs_s5_3cdb389b84e6164d4e5f43afb142621f",
+    "obs_s5_7c7369cfdc492ab3ce3eaafe19c1dc18",
+    "obs_s5_c8c0f115b71ef8886baf41109b835848",
+    "obs_sg_3139d71704bce03f36e19ffdff3ad76c2c9aed46e7d1d0116c730d1e7cbcbf9d",
+    "obs_s5_b426166d1755bbaa274ba0fd1f2cab2e",
+    "obs_sg_63384488b9439ea139744a48f82c3d92f01b6dd27fd673f37adeaad5434a19f2"
+  ],
+  "ordered_request_keys": [
+    "llm_9cbb2af356d39531da69873910c841a9bb1fc99331fdbd3d81e079ec9f6b588d",
+    "llm_fe455fa1bbc4ffd1c42209c8098e678e0a60ccefe87d7aadf1e2fa55db9f510c",
+    "llm_a3e12a5cc8798c8f8978527d7a95269af96587e9cd7fd9a67080a5fbfd961f16",
+    "llm_5a04659a70c10f644b14b09a9492a5a5f2d4c94cd443aa45dd8ed8ef7ad13178",
+    "llm_23bdf15ae943c1da3bdeef83fd6943c528c3bce0b094919bb8415ca3bf44c959",
+    "llm_dd9bd66d75dad517ed33abe95d5a68e4c639fcacf6057143612d31f9cdbff62a"
+  ],
+  "packages": {
+    "openai": "2.38.0",
+    "groq": "1.4.0",
+    "psycopg": "3.3.9",
+    "httpx": "0.28.1"
+  },
+  "money_limit_or_tariff": null,
+  "completion_token_upper_bound": 24576,
+  "code_artifacts": {
+    "detector_llm.py": "152110e389c791ac516aa888b7029c60bb71d3352df20575f2bb48af1407227c",
+    "llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+    "llm_pilot.py": "822a7befaa1c38804026425a09436a790c3114b81504701ce60e496dde9c5425",
+    "data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+    "sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+    "sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+    "normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+    "storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+    "evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+    "experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4"
+  },
+  "pilot_id": "pilot_9d4110d6f4e0e4e5e281f6be82c54a8968ae8f1df90cc028a56e53ee57f8ecf5"
+}

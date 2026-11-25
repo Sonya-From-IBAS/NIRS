@@ -1,0 +1,50 @@
+[
+  {
+    "request_key": "llm_e2259b9164e0daf7b6fa26fcc44bb5351c3f9b9ac6fb8ff9dd690625937c62ce",
+    "usage": null,
+    "labels": null,
+    "status": "api_error",
+    "elapsed_s": 1.617259,
+    "error_code": null,
+    "error_type": "PermissionDeniedError",
+    "stop_model": true,
+    "http_status": 403,
+    "stop_provider": true,
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_5f016a13a7cf41bb030bb2d4de19b4da65c32625044f3f57e4302a15cb2c8f9a",
+    "status": "not_run",
+    "labels": null,
+    "reason": "model_stopped_after:403",
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_5a86e9d425d83a66f390a740a56d49e32d352d45fcad7d1e807213a00e456e70",
+    "status": "not_run",
+    "labels": null,
+    "reason": "model_stopped_after:403",
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_28d556886dd4c2a77a5118ba2f1e9d5038832f4760c3a42448001202a945591d",
+    "status": "not_run",
+    "labels": null,
+    "reason": "model_stopped_after:403",
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_3a1b76f323585263d5ccc12d3ab94c6ee7c7b511e7984b6d352704360f0edf3b",
+    "status": "not_run",
+    "labels": null,
+    "reason": "model_stopped_after:403",
+    "new_api_attempt": false
+  },
+  {
+    "request_key": "llm_d327975472f71af97267b6d8eb7b8e8976f6d0f27534c569dcdf12a7646f6439",
+    "status": "not_run",
+    "labels": null,
+    "reason": "model_stopped_after:403",
+    "new_api_attempt": false
+  }
+]

@@ -19,7 +19,7 @@ class LLMTests(unittest.TestCase):
         from detector_llm import ACTIVE_MODEL_NAMES
         glm=next(model for model in MODELS if model['name']=='glm53')
         self.assertEqual(glm['model'],'hf:zai-org/GLM-5.3')
-        self.assertEqual(set(ACTIVE_MODEL_NAMES),{'glm53','gptoss120'})
+        self.assertEqual(set(ACTIVE_MODEL_NAMES),{'glm53','gptoss120','kimi31pro'})
         pilot=[{'input':prompt_observation(f'q{i:03d}','SELECT 1'),'target':i%2,'observation_id':f'obs{i}'} for i in range(30)]
         shots=[{'input':{'sql':'SELECT 1','context':{}},'target':i%2,'observation_id':f'shot{i}'} for i in range(6)]
         store=Mock();store.register_artifact.return_value='a'*64
@@ -36,6 +36,57 @@ class LLMTests(unittest.TestCase):
     def test_ID_based_mapping_accepts_reordering_without_shifting_labels(self):
         text='{"predictions":[{"id":"b","label":1},{"id":"a","label":0}]}'
         self.assertEqual(parse_batch_response(text,['a','b']),[0,1])
+
+    def test_AIMLAPI_uses_only_its_own_credential_and_disables_retries(self):
+        import os
+        model=next(model for model in MODELS if model['name']=='llama33_aimlapi')
+        with patch.dict(os.environ,{},clear=True),patch('detector_llm.dotenv_values',return_value={
+                'AIMLAPI_API_KEY':'test-aiml','SYNTHETIC_API_KEY':'test-synthetic','GROQ_API_KEY':'test-groq'}), \
+             patch('openai.OpenAI') as factory:
+            create_client(model)
+            self.assertEqual(factory.call_args.kwargs,{'api_key':'test-aiml','base_url':'https://api.aimlapi.com/v1',
+                                                      'max_retries':0,'timeout':90})
+        with patch.dict(os.environ,{},clear=True),patch('detector_llm.dotenv_values',return_value={'SYNTHETIC_API_KEY':'wrong'}), \
+             self.assertRaisesRegex(ValueError,'missing_credential:AIMLAPI_API_KEY'):
+            create_client(model)
+        with patch('detector_llm.dotenv_values') as load,self.assertRaisesRegex(ValueError,'Unknown provider'):
+            create_client(dict(model,provider='unknown'))
+        load.assert_not_called()
+
+    def test_AIMLAPI_plan_has_only_six_Llama_batches_on_the_same_pilot(self):
+        import llm_pilot
+        model=next(model for model in MODELS if model['name']=='llama33_aimlapi')
+        pilot=[{'input':prompt_observation(f'q{i:03d}','SELECT 1'),'target':i%2,'observation_id':f'obs{i}'} for i in range(30)]
+        shots=[{'input':{'sql':'SELECT 1','context':{}},'target':i%2,'observation_id':f'shot{i}'} for i in range(6)]
+        store=Mock();store.register_artifact.return_value='a'*64
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]/'.local') as folder, \
+             patch('llm_pilot.OUTPUT',Path(folder)),patch('llm_pilot.load_pilot',return_value={'pilot':pilot,'few_shot_candidates':shots}), \
+             patch('llm_pilot.prepare_pilot'):
+            plan,_,requests=llm_pilot.prepare(store,[model])
+        self.assertEqual(plan['max_api_attempts'],6)
+        self.assertEqual({item['model_name'] for item in requests},{'llama33_aimlapi'})
+        self.assertEqual([len(item['observation_ids']) for item in requests],[10]*6)
+        for mode in ('zero_shot','few_shot'):
+            self.assertEqual([oid for request in requests if request['mode']==mode for oid in request['observation_ids']],
+                             [row['observation_id'] for row in pilot])
+
+    def test_Kimi_replaces_Llama_without_rescheduling_other_models(self):
+        import llm_pilot
+        from detector_llm import ACTIVE_MODEL_NAMES
+        model=next(model for model in MODELS if model['name']=='kimi31pro')
+        self.assertEqual(model['provider'],'synthetic')
+        self.assertEqual(model['model'],'hf:moonshotai/Kimi-K3.1-Pro')
+        self.assertFalse(any(name.startswith('llama') for name in ACTIVE_MODEL_NAMES))
+        pilot=[{'input':prompt_observation(f'q{i:03d}','SELECT 1'),'target':i%2,'observation_id':f'obs{i}'} for i in range(30)]
+        shots=[{'input':{'sql':'SELECT 1','context':{}},'target':i%2,'observation_id':f'shot{i}'} for i in range(6)]
+        store=Mock();store.register_artifact.return_value='a'*64
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]/'.local') as folder, \
+             patch('llm_pilot.OUTPUT',Path(folder)),patch('llm_pilot.load_pilot',return_value={'pilot':pilot,'few_shot_candidates':shots}), \
+             patch('llm_pilot.prepare_pilot'):
+            plan,_,requests=llm_pilot.prepare(store,[model])
+        self.assertEqual(plan['max_api_attempts'],6)
+        self.assertEqual({item['model_name'] for item in requests},{'kimi31pro'})
+        self.assertEqual([len(item['observation_ids']) for item in requests],[10]*6)
 
     def test_missing_extra_duplicate_IDs_and_invalid_labels_are_rejected(self):
         values=[[],[{'id':'a','label':0},{'id':'a','label':1}],
