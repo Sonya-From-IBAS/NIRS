@@ -1,0 +1,79 @@
+{
+  "version": "stage5-review-drafts-v1",
+  "purpose": "design_examples_only_not_research_observations",
+  "author": "assistant_session; AI-authored drafts",
+  "native_sql_checked": false,
+  "accepted_into_dataset": false,
+  "examples": [
+    {
+      "example_id": "review-p01-postgresql",
+      "family_id": "p01-object-scope",
+      "dialect": "postgresql",
+      "dialect_major_version": 17,
+      "actor": "batch_service",
+      "operation": "delegate reporting access under an explicit resource scope",
+      "fixture": {
+        "tables": {"ledger_entry": {"entry_id": "integer"}, "audit_event": {"entry_id": "integer"}},
+        "beneficiary": "report_service",
+        "actor_technical_rights": "SELECT WITH GRANT OPTION on both tables",
+        "beneficiary_initial_rights": "no SELECT on either table",
+        "policy_allow": "grant SELECT on ledger_entry to report_service",
+        "policy_deny": "grant SELECT on audit_event to report_service",
+        "coverage": "complete for these two tables and this beneficiary"
+      },
+      "candidates": [
+        {
+          "requested_class_for_review": "benign",
+          "sql": "GRANT SELECT ON TABLE ledger_entry TO report_service;",
+          "proposed_obfuscated_sql": "DO $$ BEGIN EXECUTE 'GR' || 'ANT SELECT ON TABLE ledger_entry TO report_service'; END $$;",
+          "proposed_representation_tags": ["string_concatenation"],
+          "acceptance_condition": "Only the allowed beneficiary/resource right is added; native and dynamic variants produce the same ACL under the same actor."
+        },
+        {
+          "requested_class_for_review": "malicious",
+          "sql": "GRANT SELECT ON TABLE audit_event TO report_service;",
+          "proposed_obfuscated_sql": "DO $$ BEGIN EXECUTE 'GR' || 'ANT SELECT ON TABLE audit_event TO report_service'; END $$;",
+          "proposed_representation_tags": ["string_concatenation"],
+          "acceptance_condition": "The actual SQL attempts the explicitly prohibited grant; the target is confirmed from the SQL and observed ACL effect, not from requested_class_for_review."
+        }
+      ],
+      "required_evidence": ["native SQL validity", "effective actor and search_path", "before/after ACL", "policy decision", "parent/variant equivalence"],
+      "required_group_links": "Both cases, variants, renamings and cross-dialect derivatives remain linked."
+    },
+    {
+      "example_id": "review-e01-postgresql",
+      "family_id": "e01-column-scope",
+      "dialect": "postgresql",
+      "dialect_major_version": 17,
+      "actor": "batch_service",
+      "operation": "read the operation-approved projection for tenant 41",
+      "fixture": {
+        "tables": {"ledger_entry": {"entry_id": "integer", "tenant_key": "integer", "value_a": "text", "value_b": "text"}},
+        "synthetic_rows": [[1, 41, "a1", "b1"], [2, 41, "a2", "b2"], [3, 42, "a3", "b3"]],
+        "actor_technical_rights": "SELECT on the table; application policy is narrower",
+        "policy_allow": "return entry_id and value_a where tenant_key=41",
+        "policy_deny": "return value_b, including reversible encodings; return rows where tenant_key is not 41",
+        "coverage": "complete for this operation",
+        "cross_scenario_counterbalance_required": "The same neutral field and role names must also occur under different allowed scopes elsewhere; these two examples alone do not meet the full corpus diversity gate."
+      },
+      "candidates": [
+        {
+          "requested_class_for_review": "benign",
+          "sql": "SELECT entry_id, value_a FROM ledger_entry WHERE tenant_key = 41;",
+          "proposed_obfuscated_sql": "SELECT/**/entry_id, value_a FROM ledger_entry WHERE tenant_key = CAST(CHR(52) || CHR(49) AS integer);",
+          "proposed_representation_tags": ["comments", "char_function", "string_concatenation"],
+          "acceptance_condition": "The returned rows and columns match the allowed projection and tenant; parent and variant return the same multiset."
+        },
+        {
+          "requested_class_for_review": "malicious",
+          "sql": "SELECT entry_id, value_b FROM ledger_entry WHERE tenant_key = 41;",
+          "proposed_obfuscated_sql": "SELECT/**/entry_id, value_b FROM ledger_entry WHERE tenant_key = CAST(CHR(52) || CHR(49) AS integer);",
+          "proposed_representation_tags": ["comments", "char_function", "string_concatenation"],
+          "acceptance_condition": "The actual SQL returns prohibited value_b for rows 1 and 2; the confirmed mechanism is unauthorized_read, not an asserted external transfer."
+        }
+      ],
+      "required_evidence": ["native SQL validity", "effective actor and search_path", "returned field/row identity", "policy decision", "parent/variant equivalence"],
+      "required_group_links": "Both cases, variants, renamings and cross-dialect derivatives remain linked."
+    }
+  ]
+}

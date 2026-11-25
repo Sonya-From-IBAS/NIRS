@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-25",
+  "status": "generation_design_prepared_native_validation_choice_pending",
+  "base_git_commit": "85fbf277e7a883ba002329c62833c0c26903c930",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256_bytes": "e811879c8880a8e703a4a834bb530ac9397d1c77a5488a592e170f23888fb0e0",
+      "sha256_lf": "e811879c8880a8e703a4a834bb530ac9397d1c77a5488a592e170f23888fb0e0",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "docs/scenario_generation.md",
+      "sha256_bytes": "1e9625f8e0f09a1762888fba8115b23353641d1fb430e8b1cc9dc2df1b536eed",
+      "sha256_lf": "1e9625f8e0f09a1762888fba8115b23353641d1fb430e8b1cc9dc2df1b536eed",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "data/scenarios/generation_plan_v1.json",
+      "sha256_bytes": "406b5c93554c9dc217b88ea86fc26d7e8d52fab663de47d128387623e9c71d8e",
+      "sha256_lf": "406b5c93554c9dc217b88ea86fc26d7e8d52fab663de47d128387623e9c71d8e",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "data/scenarios/review_examples_v1.json",
+      "sha256_bytes": "f77c2e3140d62843e79c229ea582d31dce6ffd1965de013879b3fa6ccd0dd8ff",
+      "sha256_lf": "f77c2e3140d62843e79c229ea582d31dce6ffd1965de013879b3fa6ccd0dd8ff",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/design_check.json",
+      "sha256_bytes": "33c4a8ac73321f955172a71e6e1fa83ba79557f2ac92476207bac65681dea113",
+      "sha256_lf": "33c4a8ac73321f955172a71e6e1fa83ba79557f2ac92476207bac65681dea113",
+      "git_verification": "exact_bytes"
+    }
+  ],
+  "manifest_excludes_own_hash": true,
+  "scope": "agreed quotas and proposed acceptance protocol, not completed stage 5",
+  "target_rows": 1200,
+  "accepted_research_records": 0,
+  "new_external_LLM_calls": 0,
+  "new_SQL_execution": false
+}

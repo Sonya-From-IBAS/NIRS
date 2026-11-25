@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "design_counts_only_not_SQL_or_policy_verification",
+  "target_rows": 1200,
+  "target_class_counts": {
+    "benign": 600,
+    "malicious": 600
+  },
+  "planned_base_rows": 800,
+  "planned_parent_linked_variants": 400,
+  "planned_rows_per_dialect": 300,
+  "research_records_generated": 0,
+  "new_llm_api_calls": 0,
+  "native_SQL_checks_run": false,
+  "verification_method": "awaiting_user_choice",
+  "design_plan_sha256": "406b5c93554c9dc217b88ea86fc26d7e8d52fab663de47d128387623e9c71d8e",
+  "review_examples_sha256": "f77c2e3140d62843e79c229ea582d31dce6ffd1965de013879b3fa6ccd0dd8ff",
+  "draft_review_pairs": 2,
+  "draft_SQL_texts_including_variants": 8,
+  "examples_counted_as_research_records": false
+}
