@@ -1,5 +1,5 @@
 {
-  "status": "GLM53_continuation_stopped_partial",
+  "status": "pilots_complete_main_budget_pending",
   "original_pilot_commit": "5624511",
   "GLM53_iteration_commit": "bc89dba",
   "active_models": [
@@ -7,8 +7,8 @@
     "hf:zai-org/GLM-5.3",
     "hf:moonshotai/Kimi-K3.1-Pro"
   ],
-  "combined_classification_API_attempts": 48,
-  "agreed_classification_ceiling": 50,
+  "combined_classification_API_attempts": 53,
+  "agreed_classification_ceiling": 53,
   "attempt_history": [
     {
       "report": "results/stage9/pilot_report.json",
@@ -30,6 +30,11 @@
       "report": "results/stage9/glm53_continued/pilot_report.json",
       "API_attempts": 10,
       "additional_selected_cached_attempts": 8
+    },
+    {
+      "report": "results/stage9/glm53_8192/pilot_report.json",
+      "API_attempts": 5,
+      "additional_selected_cached_attempts": 15
     }
   ],
   "models": [
@@ -55,24 +60,26 @@
       "name": "glm53",
       "requested_model": "hf:zai-org/GLM-5.3",
       "provider": "synthetic",
-      "api_attempts": 19,
+      "api_attempts": 24,
       "actual_model_ids": [
         "zai-org/GLM-5.3"
       ],
       "call_status_counts": {
-        "ok": 15,
+        "ok": 20,
         "parse_error": 3,
         "api_error": 1
       },
       "observed_tokens": {
-        "prompt_tokens": 34448,
-        "completion_tokens": 19893,
-        "total_tokens": 54341
+        "prompt_tokens": 46301,
+        "completion_tokens": 30316,
+        "total_tokens": 76617
       },
-      "elapsed_api_s": 465.068664,
-      "selected_response_API_attempts": 18,
+      "elapsed_api_s": 645.252358,
+      "selected_response_API_attempts": 20,
       "original_timeout_attempts": 1,
-      "usage_unreported_calls": 1
+      "historical_truncated_attempts": 3,
+      "usage_unreported_calls": 1,
+      "current_max_tokens": 8192
     },
     {
       "name": "kimi31pro",
@@ -322,48 +329,47 @@
         "label_space": "binary",
         "observations": 30,
         "status_counts": {
-          "ok": 27,
-          "parse_error": 3
+          "ok": 30
         },
-        "decision_coverage": 0.9,
-        "successful_decisions": 27,
-        "primary_f1": null,
-        "eligible_for_primary_ranking": false,
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.8823529411764706,
+        "eligible_for_primary_ranking": true,
         "successful_decision_metrics": {
-          "f1": 0.9032258064516129,
+          "f1": 0.8823529411764706,
           "attack_recall": 1.0,
-          "false_positive_rate": 0.23076923076923078,
-          "attack_precision": 0.8235294117647058,
+          "false_positive_rate": 0.26666666666666666,
+          "attack_precision": 0.7894736842105263,
           "confusion_matrix": [
             [
-              10,
-              3
+              11,
+              4
             ],
             [
               0,
-              14
+              15
             ]
           ],
           "collapsed_binary_counts": {
-            "tp": 14,
-            "fp": 3,
+            "tp": 15,
+            "fp": 4,
             "fn": 0,
-            "tn": 10
+            "tn": 11
           },
           "per_class": {
             "0": {
-              "support": 13,
-              "predicted_support": 10,
+              "support": 15,
+              "predicted_support": 11,
               "precision": 1.0,
-              "recall": 0.7692307692307693,
-              "f1": 0.8695652173913043
+              "recall": 0.7333333333333333,
+              "f1": 0.8461538461538461
             },
             "1": {
-              "support": 14,
-              "predicted_support": 17,
-              "precision": 0.8235294117647058,
+              "support": 15,
+              "predicted_support": 19,
+              "precision": 0.7894736842105263,
               "recall": 1.0,
-              "f1": 0.9032258064516129
+              "f1": 0.8823529411764706
             }
           }
         },
@@ -378,49 +384,47 @@
         "label_space": "binary",
         "observations": 30,
         "status_counts": {
-          "ok": 18,
-          "parse_error": 6,
-          "not_run": 6
+          "ok": 30
         },
-        "decision_coverage": 0.6,
-        "successful_decisions": 18,
-        "primary_f1": null,
-        "eligible_for_primary_ranking": false,
+        "decision_coverage": 1.0,
+        "successful_decisions": 30,
+        "primary_f1": 0.967741935483871,
+        "eligible_for_primary_ranking": true,
         "successful_decision_metrics": {
-          "f1": 1.0,
+          "f1": 0.967741935483871,
           "attack_recall": 1.0,
-          "false_positive_rate": 0.0,
-          "attack_precision": 1.0,
+          "false_positive_rate": 0.06666666666666667,
+          "attack_precision": 0.9375,
           "confusion_matrix": [
             [
-              8,
-              0
+              14,
+              1
             ],
             [
               0,
-              10
+              15
             ]
           ],
           "collapsed_binary_counts": {
-            "tp": 10,
-            "fp": 0,
+            "tp": 15,
+            "fp": 1,
             "fn": 0,
-            "tn": 8
+            "tn": 14
           },
           "per_class": {
             "0": {
-              "support": 8,
-              "predicted_support": 8,
+              "support": 15,
+              "predicted_support": 14,
               "precision": 1.0,
-              "recall": 1.0,
-              "f1": 1.0
+              "recall": 0.9333333333333333,
+              "f1": 0.9655172413793104
             },
             "1": {
-              "support": 10,
-              "predicted_support": 10,
-              "precision": 1.0,
+              "support": 15,
+              "predicted_support": 16,
+              "precision": 0.9375,
               "recall": 1.0,
-              "f1": 1.0
+              "f1": 0.967741935483871
             }
           }
         },
@@ -437,10 +441,10 @@
     "run_7e781c519675c65281f384f2de113eb0e5d5503328013ba160fca725a55e721d",
     "run_43d340b5bca4a3f73b0615e87d8b87204af9a5c6b211f5f3c181fce1255b6b39",
     "run_702f479dd5c1536c39471ecc7052a14ce33a5239986af7584a799ff1219b0cd2",
-    "run_dbb1c68fbc5059b47bb64a64d4405b80e31ced685ae689da8a70310c00c8dce2",
-    "run_463cbbc5e30c335d1755e6b02709d848b51052f58405bc7868df3686218a0be9",
-    "run_03f0a3bf89f694590f56be55fa8715ce24dec104c29379deeb8fde66a25ed099",
-    "run_efd950dc87de365db7d56605a23efa0ee0456311cecf5688e45b4d1131f250ab"
+    "run_cf02b498da6367c4101123047a5d865b62581d6e19f58bd78355a123512ea2bc",
+    "run_025c490013d128426e508c556c1570f3ebb584155ee88d2b85bb46dd32af7cfe",
+    "run_d3fe3c7e595055b051758283f20afb3c38639a14ab1c07a9288b1b4783a4ae3b",
+    "run_eec09eba27158762c3c82da4729062116384f8421768587f2896666cfd038e50"
   ],
   "excluded_AIMLAPI_probe": {
     "report": "results/stage9/llama33_aimlapi/pilot_report.json",
@@ -469,5 +473,18 @@
     },
     "repair_proposal": "results/stage9/glm53_continued/repair_proposal.json"
   },
-  "original_classification_ceiling": 46
+  "original_classification_ceiling": 46,
+  "GLM53_token_limit_repair": {
+    "status": "complete",
+    "authorization": "user_approved_8192_token_repair_2026_11_25",
+    "report": "results/stage9/glm53_8192/pilot_report.json",
+    "max_tokens": 8192,
+    "timeout_s": 180,
+    "new_API_ceiling": 5,
+    "new_API_attempts": 5,
+    "reused_successful_batches": 15,
+    "explicit_truncation_retries": 3,
+    "previously_unattempted_batches": 2,
+    "automatic_retries": 0
+  }
 }

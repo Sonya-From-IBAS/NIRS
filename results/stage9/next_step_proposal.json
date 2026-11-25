@@ -1,5 +1,5 @@
 {
-  "status": "GLM53_continuation_partial",
+  "status": "pilots_complete_awaiting_main_budget",
   "selected_models_for_main_budget": [
     "hf:openai/gpt-oss-120b",
     "hf:zai-org/GLM-5.3"

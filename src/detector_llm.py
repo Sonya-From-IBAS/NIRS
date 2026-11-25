@@ -16,7 +16,7 @@ MODELS = (
      'parameters':{'temperature':0.,'max_completion_tokens':512,'response_format':{'type':'json_object'}}},
     {'name':'glm53','provider':'synthetic','model':'hf:zai-org/GLM-5.3','batch_size':3,'sleep_s':8,
      'base_url':'https://api.synthetic.new/openai/v1',
-     'parameters':{'max_tokens':4096,'response_format':{'type':'json_object'}}},
+     'timeout_s':180,'parameters':{'max_tokens':8192,'response_format':{'type':'json_object'}}},
     {'name':'gptoss120','provider':'synthetic','model':'hf:openai/gpt-oss-120b','batch_size':3,'sleep_s':8,
      'base_url':'https://api.synthetic.new/openai/v1',
      'parameters':{'max_tokens':4096,'reasoning_effort':'low','response_format':{'type':'json_object'}}},

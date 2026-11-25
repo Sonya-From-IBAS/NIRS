@@ -14,6 +14,46 @@ from detector_llm import MODELS,build_specification,call_once,create_client,pars
 
 
 class LLMTests(unittest.TestCase):
+    def repair_fixture(self):
+        folder=Path(__file__).resolve().parents[1]/'results/stage9/glm53_continued'
+        return tuple(json.loads((folder/name).read_text(encoding='utf-8')) for name in ('request_plan.json','request_outcomes.json','repair_proposal.json'))
+
+    def test_token_repair_preserves_fifteen_successes_and_matches_the_approved_five_requests(self):
+        from llm_continuation import validate_repair_selection
+        previous,outcomes,proposal=self.repair_fixture()
+        requests,actions=validate_repair_selection(previous,outcomes,proposal)
+        changed=[]
+        for old,new,result,action in zip(previous,requests,outcomes,actions):
+            if result['status']=='ok':
+                self.assertEqual(old,new)
+            else:
+                changed.append(new)
+                self.assertEqual(new['specification']['messages'],old['specification']['messages'])
+                self.assertEqual(new['observation_ids'],old['observation_ids'])
+                self.assertEqual(new['specification']['parameters']['max_tokens'],8192)
+                self.assertEqual(new['specification']['timeout_s'],180)
+        self.assertEqual(len(changed),5)
+        self.assertEqual(sum(action['action']=='reuse_successful_response' for action in actions),15)
+        bad=deepcopy(proposal);bad['requests'][0]['specification']['parameters']['max_tokens']=16384
+        with self.assertRaises(ValueError):
+            validate_repair_selection(previous,outcomes,bad)
+
+    def test_token_repair_stops_new_calls_without_dropping_old_successful_batches(self):
+        import llm_continuation as continuation
+        previous,outcomes,proposal=self.repair_fixture()
+        requests,actions=continuation.validate_repair_selection(previous,outcomes,proposal)
+        cached=[dict(row,new_api_attempt=False) for row in outcomes]
+        pending=[row for row,action in zip(requests,actions) if action['action']!='reuse_successful_response']
+        executed=[{'request_key':row['request_key'],'status':'parse_error' if i==0 else 'not_run',
+                   'new_api_attempt':i==0} for i,row in enumerate(pending)]
+        with tempfile.TemporaryDirectory() as folder,patch('llm_continuation.OUTPUT',Path(folder)), \
+             patch('llm_pilot.request_results',return_value=executed) as runner, \
+             patch('llm_continuation.stopped_outcomes',return_value=cached):
+            result=continuation.execute_repair(Mock(),{'continuation':{'actions':actions}},requests)
+            self.assertTrue((Path(folder)/'stop_record.json').exists())
+        self.assertEqual(runner.call_args.args[-1],pending)
+        self.assertEqual(sum(row['status']=='ok' for row in result),15)
+
     def continuation_fixture(self):
         folder=Path(__file__).resolve().parents[1]/'results/stage9/glm53'
         return tuple(json.loads((folder/name).read_text(encoding='utf-8')) for name in ('request_plan.json','request_outcomes.json'))

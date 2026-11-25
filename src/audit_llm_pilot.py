@@ -36,11 +36,16 @@ def main():
     assert origin_attempts<=ceiling
     if 'continuation' in plan:
         assert report['origin_pilot_api_attempts']==origin_attempts
-        from llm_continuation import validate_selection
+        from llm_continuation import validate_selection,validate_repair_selection
         prior_folder=ROOT/plan['continuation']['source_directory']
         previous=json.loads((prior_folder/'request_plan.json').read_text(encoding='utf-8'))
         previous_outcomes=json.loads((prior_folder/'request_outcomes.json').read_text(encoding='utf-8'))
-        expected,actions=validate_selection(previous,previous_outcomes)
+        if plan['continuation'].get('selection_kind')=='token_limit_repair':
+            proposal=json.loads((prior_folder/'repair_proposal.json').read_text(encoding='utf-8'))
+            assert digest((prior_folder/'repair_proposal.json').read_bytes())==plan['continuation']['approved_proposal_sha256']
+            expected,actions=validate_repair_selection(previous,previous_outcomes,proposal)
+        else:
+            expected,actions=validate_selection(previous,previous_outcomes)
         assert requests==expected and plan['continuation']['actions']==actions
         assert plan['continuation']['stage_attempts_before']+origin_attempts<=plan['continuation']['stage_attempts_ceiling']
     cached={row['request_key']:row for row in calls}

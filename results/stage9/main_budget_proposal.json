@@ -22,7 +22,8 @@
           "SQL_only_ablation_API_calls": 134,
           "API_ceiling": 334,
           "rough_total_tokens_from_pilot_mean": 752669,
-          "timeout_s": 90
+          "timeout_s": 90,
+          "max_tokens": 4096
         },
         {
           "name": "glm53",
@@ -31,8 +32,9 @@
           "primary_API_calls": 200,
           "SQL_only_ablation_API_calls": 134,
           "API_ceiling": 334,
-          "rough_total_tokens_from_pilot_mean": null,
-          "timeout_s": 180
+          "rough_total_tokens_from_pilot_mean": 972341,
+          "timeout_s": 180,
+          "max_tokens": 8192
         },
         {
           "name": "kimi31pro",
@@ -42,17 +44,22 @@
           "SQL_only_ablation_API_calls": 40,
           "API_ceiling": 100,
           "rough_total_tokens_from_pilot_mean": 453433,
-          "timeout_s": 90
+          "timeout_s": 90,
+          "max_tokens": 4096
         }
       ],
       "combined_api_ceiling": 768,
       "classifications_per_model": 1000,
       "combined_classifications": 3000,
-      "completion_token_cap_per_call": 4096,
-      "combined_completion_token_upper_bound": 3145728,
-      "rough_total_tokens_from_pilot_mean": null,
-      "rough_sequential_seconds_with_pacing": null,
-      "sample_file": "main_sample_300.json"
+      "combined_completion_token_upper_bound": 4513792,
+      "rough_total_tokens_from_pilot_mean": 2178443,
+      "rough_sequential_seconds_with_pacing": 14037,
+      "sample_file": "main_sample_300.json",
+      "completion_token_caps_by_model": {
+        "gptoss120": 4096,
+        "glm53": 8192,
+        "kimi31pro": 4096
+      }
     },
     {
       "observations": 120,
@@ -67,7 +74,8 @@
           "SQL_only_ablation_API_calls": 54,
           "API_ceiling": 134,
           "rough_total_tokens_from_pilot_mean": 301969,
-          "timeout_s": 90
+          "timeout_s": 90,
+          "max_tokens": 4096
         },
         {
           "name": "glm53",
@@ -76,8 +84,9 @@
           "primary_API_calls": 80,
           "SQL_only_ablation_API_calls": 54,
           "API_ceiling": 134,
-          "rough_total_tokens_from_pilot_mean": null,
-          "timeout_s": 180
+          "rough_total_tokens_from_pilot_mean": 390101,
+          "timeout_s": 180,
+          "max_tokens": 8192
         },
         {
           "name": "kimi31pro",
@@ -87,22 +96,27 @@
           "SQL_only_ablation_API_calls": 16,
           "API_ceiling": 40,
           "rough_total_tokens_from_pilot_mean": 181373,
-          "timeout_s": 90
+          "timeout_s": 90,
+          "max_tokens": 4096
         }
       ],
       "combined_api_ceiling": 308,
       "classifications_per_model": 400,
       "combined_classifications": 1200,
-      "completion_token_cap_per_call": 4096,
-      "combined_completion_token_upper_bound": 1261568,
-      "rough_total_tokens_from_pilot_mean": null,
-      "rough_sequential_seconds_with_pacing": null,
-      "sample_file": "main_sample_120.json"
+      "combined_completion_token_upper_bound": 1810432,
+      "rough_total_tokens_from_pilot_mean": 873443,
+      "rough_sequential_seconds_with_pacing": 5615,
+      "sample_file": "main_sample_120.json",
+      "completion_token_caps_by_model": {
+        "gptoss120": 4096,
+        "glm53": 8192,
+        "kimi31pro": 4096
+      }
     }
   ],
-  "estimated_usage_limitations": "Approximation from thirty development observations; batch sizes and context lengths differ; original GLM timeout token usage unknown",
+  "estimated_usage_limitations": "Approximation from thirty observations; GLM selected responses mix fifteen 4096-token and five 8192-token caps; historical failed attempts excluded from steady-run forecasts; original timeout token usage unknown",
   "money_cost": null,
   "money_cost_reason": "account-specific tariff not established",
   "main_test_API_calls": 0,
-  "pilot_status": "GLM53_partial"
+  "pilot_status": "three_models_complete"
 }

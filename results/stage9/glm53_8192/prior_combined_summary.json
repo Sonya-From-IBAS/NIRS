@@ -1,0 +1,23 @@
+{
+  "name": "glm53",
+  "requested_model": "hf:zai-org/GLM-5.3",
+  "provider": "synthetic",
+  "api_attempts": 19,
+  "actual_model_ids": [
+    "zai-org/GLM-5.3"
+  ],
+  "call_status_counts": {
+    "ok": 15,
+    "parse_error": 3,
+    "api_error": 1
+  },
+  "observed_tokens": {
+    "prompt_tokens": 34448,
+    "completion_tokens": 19893,
+    "total_tokens": 54341
+  },
+  "elapsed_api_s": 465.068664,
+  "selected_response_API_attempts": 18,
+  "original_timeout_attempts": 1,
+  "usage_unreported_calls": 1
+}
