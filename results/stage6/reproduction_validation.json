@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "independent_reconstruction": "all 18 membership/group/development artifacts byte identical",
+  "verified_artifacts": 18,
+  "protocols": 15,
+  "unchanged_database_counts": {
+    "splits": 21,
+    "split_members": 1732728,
+    "seals": 21,
+    "groups": 148772,
+    "group_members": 360573,
+    "predictions": 312288
+  },
+  "same_split_and_membership_ids": true,
+  "artifact_checks": {
+    "ready_verified": 91,
+    "not_ready": 0,
+    "failures": []
+  }
+}

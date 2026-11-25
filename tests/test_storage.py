@@ -215,6 +215,32 @@ class StorageIntegrationTests(unittest.TestCase):
         self.assertTrue((reference['label_basis'] == 'original_source_reference').all())
         self.assertEqual(len(load_verified(version, self.store)), 0)
 
+    def test_frozen_split_is_idempotent_and_rejects_mutations(self):
+        ids = [row['observation_id'] for row in self.store.dataset_records(self.dataset)]
+        assignments = {0: {oid: 'test' if index < 2 else 'train' for index, oid in enumerate(ids)}}
+        spec = {'unit_test': 'frozen-split'}
+        saved = self.store.save_split(self.dataset, spec, assignments)
+        self.assertFalse(saved['reused'])
+        self.assertTrue(self.store.save_split(self.dataset, spec, assignments)['reused'])
+        self.assertEqual(self.store.split_ids(saved['split_id'], 0, 'test'), ids[:2])
+        for query, parameters in (
+            ("UPDATE nirs.splits SET specification='{}' WHERE split_id=%s", (saved['split_id'],)),
+            ("DELETE FROM nirs.split_members WHERE split_id=%s", (saved['split_id'],)),
+            ("INSERT INTO nirs.split_members VALUES (%s,%s,%s,99,'test')", (saved['split_id'], self.dataset, ids[0]))):
+            with self.subTest(query=query), self.assertRaises(psycopg.errors.RaiseException), self.store.write() as connection:
+                connection.execute(query, parameters)
+
+    def test_inner_split_scope_cannot_include_outer_test(self):
+        ids = [row['observation_id'] for row in self.store.dataset_records(self.dataset)]
+        outer = self.store.save_split(self.dataset, {'unit_test': 'parent-scope'},
+                                     {0: {oid: 'test' if index < 2 else 'train' for index, oid in enumerate(ids)}})
+        spec = {'parent_scope': {'split_id': outer['split_id'], 'fold': 0, 'part': 'train'}}
+        members = {oid: 'validation' if index < 2 else 'train' for index, oid in enumerate(ids[2:])}
+        inner = self.store.save_split(self.dataset, spec, {0: members})
+        self.assertEqual(set(self.store.split_ids(inner['split_id'], 0, 'validation')), set(ids[2:4]))
+        with self.assertRaises(ValueError):
+            self.store.save_split(self.dataset, spec, {0: {**members, ids[0]: 'validation'}})
+
 
 if __name__ == "__main__":
     unittest.main()

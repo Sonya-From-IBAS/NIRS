@@ -49,6 +49,7 @@ def import_stage1(store: Storage, archive: Path, dataset_id: str, group_name: st
                     rows = [(split_id, dataset_id, mapping[int(row["row_id"])], fold, row["part"])
                             for row in csv.DictReader(stream)]
                 store._copy(connection, "split_members", ["split_id", "dataset_version_id", "observation_id", "fold", "part"], rows)
+            connection.execute("SELECT nirs.seal_split(%s)", (split_id,))
 
     paths = [path for path in archive.iterdir() if path.is_file()]
     paths += list((archive / "models").glob("*.joblib"))

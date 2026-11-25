@@ -1,0 +1,18 @@
+{
+  "pool_rows": 68870,
+  "strata": {
+    "exfiltration:0": 180,
+    "exfiltration:1": 180,
+    "privilege:0": 60,
+    "privilege:1": 60,
+    "sqli:0": 3598,
+    "sqli:1": 64792
+  },
+  "pool_sha256": "3a5ef1f6c7fc2fc7e1c728ab277febdd1419165af7b0a93596bb3727b550da3f",
+  "pool_artifact": "results/stage6/common_test_pool.jsonl.gz",
+  "pilot_rows": 30,
+  "few_shot_candidate_rows": 6,
+  "main_LLM_sample_size": "set_after_the_cost_pilot_before_main_predictions",
+  "selection_rule": "fixed stratum ordering; agreed quotas select prefixes without prediction scores",
+  "paired_comparison": "all methods scored on the exact same selected observation IDs and order"
+}

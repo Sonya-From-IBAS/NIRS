@@ -1,0 +1,2672 @@
+{
+  "version": "stage6-evaluation-v1",
+  "datasets": {
+    "legacy": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "sqlstateguard": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+    "controlled": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60"
+  },
+  "protocols": {
+    "legacy-outer": {
+      "split_id": "split_874b3b478ab0ad41a5831774fd082e0ca4cca7bd0aae53b9dbae4286effb1e99",
+      "member_count": 162645,
+      "membership_sha256": "75bd1e07adce8784029f41f21776420f957ebc53ed7d01bd34b65ffd26081360",
+      "specification_sha256": "1d3aecdd45ac0c7cfb7f37b4a2f4987e1258179655bf99f0ee49f692574ecd62",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-outer",
+      "cohort": "legacy",
+      "role": "outer_evaluation",
+      "scope_rows": 32529,
+      "folds": {
+        "0": {
+          "parts": {
+            "test": {
+              "rows": 6579,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 171,
+                "4": 163
+              },
+              "groups": 5368,
+              "groups_per_label": {
+                "0": 3792,
+                "1": 1244,
+                "2": 332,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                335,
+                52,
+                52,
+                50,
+                44,
+                42,
+                42,
+                40
+              ]
+            },
+            "train": {
+              "rows": 25950,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 511,
+                "4": 459
+              },
+              "groups": 19979,
+              "groups_per_label": {
+                "0": 13703,
+                "1": 4969,
+                "2": 1278,
+                "3": 23,
+                "4": 13
+              },
+              "largest_group_rows": [
+                1645,
+                654,
+                252,
+                222,
+                126,
+                116,
+                63,
+                62
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "test": {
+              "rows": 6266,
+              "labels": {
+                "0": 3968,
+                "1": 1895,
+                "2": 382,
+                "3": 11,
+                "4": 10
+              },
+              "groups": 3922,
+              "groups_per_label": {
+                "0": 2327,
+                "1": 1243,
+                "2": 332,
+                "3": 11,
+                "4": 10
+              },
+              "largest_group_rows": [
+                1645,
+                52,
+                52,
+                42,
+                42,
+                27,
+                21,
+                13
+              ]
+            },
+            "train": {
+              "rows": 26263,
+              "labels": {
+                "0": 15868,
+                "1": 7584,
+                "2": 1528,
+                "3": 671,
+                "4": 612
+              },
+              "groups": 21425,
+              "groups_per_label": {
+                "0": 15168,
+                "1": 4970,
+                "2": 1278,
+                "3": 13,
+                "4": 4
+              },
+              "largest_group_rows": [
+                654,
+                335,
+                252,
+                222,
+                126,
+                116,
+                63,
+                62
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "test": {
+              "rows": 6899,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 321,
+                "4": 333
+              },
+              "groups": 5368,
+              "groups_per_label": {
+                "0": 3793,
+                "1": 1244,
+                "2": 332,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                654,
+                60,
+                53,
+                52,
+                44,
+                43,
+                43,
+                42
+              ]
+            },
+            "train": {
+              "rows": 25630,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 361,
+                "4": 289
+              },
+              "groups": 19979,
+              "groups_per_label": {
+                "0": 13702,
+                "1": 4969,
+                "2": 1278,
+                "3": 23,
+                "4": 13
+              },
+              "largest_group_rows": [
+                1645,
+                335,
+                252,
+                222,
+                126,
+                116,
+                63,
+                62
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "3": {
+          "parts": {
+            "test": {
+              "rows": 6318,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 11,
+                "4": 62
+              },
+              "groups": 5328,
+              "groups_per_label": {
+                "0": 3791,
+                "1": 1240,
+                "2": 287,
+                "3": 10,
+                "4": 1
+              },
+              "largest_group_rows": [
+                252,
+                116,
+                62,
+                42,
+                28,
+                23,
+                17,
+                15
+              ]
+            },
+            "train": {
+              "rows": 26211,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 671,
+                "4": 560
+              },
+              "groups": 20019,
+              "groups_per_label": {
+                "0": 13704,
+                "1": 4973,
+                "2": 1323,
+                "3": 14,
+                "4": 13
+              },
+              "largest_group_rows": [
+                1645,
+                654,
+                335,
+                222,
+                126,
+                63,
+                60,
+                53
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "4": {
+          "parts": {
+            "test": {
+              "rows": 6467,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 168,
+                "4": 54
+              },
+              "groups": 5361,
+              "groups_per_label": {
+                "0": 3792,
+                "1": 1242,
+                "2": 327,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                222,
+                126,
+                63,
+                52,
+                46,
+                42,
+                34,
+                26
+              ]
+            },
+            "train": {
+              "rows": 26062,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 514,
+                "4": 568
+              },
+              "groups": 19986,
+              "groups_per_label": {
+                "0": 13703,
+                "1": 4971,
+                "2": 1283,
+                "3": 23,
+                "4": 13
+              },
+              "largest_group_rows": [
+                1645,
+                654,
+                335,
+                252,
+                116,
+                62,
+                60,
+                53
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-outer.jsonl.gz",
+      "membership_artifact_sha256": "7f84a849c66c53983e757908e9b72ab8782c4f332b3afe5e8adeda6f603e98e3",
+      "parent_scope": null,
+      "eligible_for_primary_ranking": true
+    },
+    "legacy-inner-0": {
+      "split_id": "split_fbc9a36d4a475c18b57d31dccd0ade92110bc381329ad6161cfcf35d1dfa6e4f",
+      "member_count": 77850,
+      "membership_sha256": "fb8f4a05910f710cd8ef4dde3892f5439f0aee47d0b3f467595dc060c0db5ed3",
+      "specification_sha256": "948aaf4b305353ef7ccf4e313fa30a0ce2effdffddf93b5b4bb41cec04a5c238",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-inner-0",
+      "cohort": "legacy",
+      "role": "inner_tuning",
+      "scope_rows": 25950,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 17539,
+              "labels": {
+                "0": 10579,
+                "1": 5056,
+                "2": 1019,
+                "3": 489,
+                "4": 396
+              },
+              "groups": 14214,
+              "groups_per_label": {
+                "0": 10054,
+                "1": 3312,
+                "2": 840,
+                "3": 2,
+                "4": 11
+              },
+              "largest_group_rows": [
+                654,
+                252,
+                222,
+                126,
+                116,
+                63,
+                53,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8411,
+              "labels": {
+                "0": 5290,
+                "1": 2527,
+                "2": 509,
+                "3": 22,
+                "4": 63
+              },
+              "groups": 5765,
+              "groups_per_label": {
+                "0": 3649,
+                "1": 1657,
+                "2": 438,
+                "3": 21,
+                "4": 2
+              },
+              "largest_group_rows": [
+                1645,
+                62,
+                60,
+                52,
+                52,
+                42,
+                42,
+                30
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 17391,
+              "labels": {
+                "0": 10579,
+                "1": 5055,
+                "2": 1018,
+                "3": 343,
+                "4": 396
+              },
+              "groups": 12883,
+              "groups_per_label": {
+                "0": 8676,
+                "1": 3314,
+                "2": 872,
+                "3": 22,
+                "4": 3
+              },
+              "largest_group_rows": [
+                1645,
+                654,
+                116,
+                63,
+                62,
+                60,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8559,
+              "labels": {
+                "0": 5290,
+                "1": 2528,
+                "2": 510,
+                "3": 168,
+                "4": 63
+              },
+              "groups": 7096,
+              "groups_per_label": {
+                "0": 5027,
+                "1": 1655,
+                "2": 406,
+                "3": 1,
+                "4": 10
+              },
+              "largest_group_rows": [
+                252,
+                222,
+                126,
+                53,
+                43,
+                42,
+                34,
+                28
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 16970,
+              "labels": {
+                "0": 10580,
+                "1": 5055,
+                "2": 1019,
+                "3": 190,
+                "4": 126
+              },
+              "groups": 12861,
+              "groups_per_label": {
+                "0": 8676,
+                "1": 3312,
+                "2": 844,
+                "3": 22,
+                "4": 12
+              },
+              "largest_group_rows": [
+                1645,
+                252,
+                222,
+                126,
+                62,
+                60,
+                53,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8980,
+              "labels": {
+                "0": 5289,
+                "1": 2528,
+                "2": 509,
+                "3": 321,
+                "4": 333
+              },
+              "groups": 7118,
+              "groups_per_label": {
+                "0": 5027,
+                "1": 1657,
+                "2": 434,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                654,
+                116,
+                63,
+                52,
+                52,
+                46,
+                44,
+                43
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-inner-0.jsonl.gz",
+      "membership_artifact_sha256": "95018ab0953b3053ecde79f9c9c85909ea39ff745eccc183258631f047b17dc2",
+      "parent_scope": {
+        "split_id": "split_874b3b478ab0ad41a5831774fd082e0ca4cca7bd0aae53b9dbae4286effb1e99",
+        "fold": 0,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "legacy-inner-1": {
+      "split_id": "split_4f24c24568fb017a6dcfeacc1f14cec05ae1b6fee91b0310c708c9251078926a",
+      "member_count": 78789,
+      "membership_sha256": "c4d494e7c756200181e56f358687af1793712db8283b2f52e7d69f9f9b808f00",
+      "specification_sha256": "e4b85a04c0824901ba93a7106155e8d1ab5aedcac93248916cfa49efe875f345",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-inner-1",
+      "cohort": "legacy",
+      "role": "inner_tuning",
+      "scope_rows": 26263,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 17599,
+              "labels": {
+                "0": 10579,
+                "1": 5056,
+                "2": 1019,
+                "3": 496,
+                "4": 449
+              },
+              "groups": 14271,
+              "groups_per_label": {
+                "0": 10112,
+                "1": 3312,
+                "2": 841,
+                "3": 8,
+                "4": 3
+              },
+              "largest_group_rows": [
+                654,
+                252,
+                222,
+                116,
+                63,
+                62,
+                53,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8664,
+              "labels": {
+                "0": 5289,
+                "1": 2528,
+                "2": 509,
+                "3": 175,
+                "4": 163
+              },
+              "groups": 7154,
+              "groups_per_label": {
+                "0": 5056,
+                "1": 1658,
+                "2": 437,
+                "3": 5,
+                "4": 1
+              },
+              "largest_group_rows": [
+                335,
+                126,
+                60,
+                52,
+                52,
+                43,
+                42,
+                42
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 17644,
+              "labels": {
+                "0": 10578,
+                "1": 5056,
+                "2": 1018,
+                "3": 496,
+                "4": 496
+              },
+              "groups": 14303,
+              "groups_per_label": {
+                "0": 10113,
+                "1": 3316,
+                "2": 872,
+                "3": 6,
+                "4": 2
+              },
+              "largest_group_rows": [
+                654,
+                335,
+                126,
+                63,
+                60,
+                53,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8619,
+              "labels": {
+                "0": 5290,
+                "1": 2528,
+                "2": 510,
+                "3": 175,
+                "4": 116
+              },
+              "groups": 7122,
+              "groups_per_label": {
+                "0": 5055,
+                "1": 1654,
+                "2": 406,
+                "3": 7,
+                "4": 2
+              },
+              "largest_group_rows": [
+                252,
+                222,
+                116,
+                62,
+                44,
+                43,
+                42,
+                30
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 17283,
+              "labels": {
+                "0": 10579,
+                "1": 5056,
+                "2": 1019,
+                "3": 350,
+                "4": 279
+              },
+              "groups": 14276,
+              "groups_per_label": {
+                "0": 10111,
+                "1": 3312,
+                "2": 843,
+                "3": 12,
+                "4": 3
+              },
+              "largest_group_rows": [
+                335,
+                252,
+                222,
+                126,
+                116,
+                62,
+                60,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8980,
+              "labels": {
+                "0": 5289,
+                "1": 2528,
+                "2": 509,
+                "3": 321,
+                "4": 333
+              },
+              "groups": 7149,
+              "groups_per_label": {
+                "0": 5057,
+                "1": 1658,
+                "2": 435,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                654,
+                63,
+                53,
+                52,
+                52,
+                50,
+                46,
+                44
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-inner-1.jsonl.gz",
+      "membership_artifact_sha256": "44fa3065d328acd9ef95b28e7069e71f32c89037d1ef980f3a571c749524d2f5",
+      "parent_scope": {
+        "split_id": "split_874b3b478ab0ad41a5831774fd082e0ca4cca7bd0aae53b9dbae4286effb1e99",
+        "fold": 1,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "legacy-inner-2": {
+      "split_id": "split_581baf18d92dc69fa68f2a8eb25d2db9b857de04a34532d1f488db7d895c24b9",
+      "member_count": 76890,
+      "membership_sha256": "30c2e27c16be78b52abb86406ddbfe4e5f2e89c19da258d1113e0be3af481043",
+      "specification_sha256": "f7958069fb29fcf9078c6f1eab07427b24f6eb0fc2b79679d67ca6ee5c8e53ee",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-inner-2",
+      "cohort": "legacy",
+      "role": "inner_tuning",
+      "scope_rows": 25630,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 17219,
+              "labels": {
+                "0": 10579,
+                "1": 5056,
+                "2": 1019,
+                "3": 339,
+                "4": 226
+              },
+              "groups": 14213,
+              "groups_per_label": {
+                "0": 10053,
+                "1": 3312,
+                "2": 840,
+                "3": 2,
+                "4": 11
+              },
+              "largest_group_rows": [
+                335,
+                252,
+                222,
+                126,
+                116,
+                63,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8411,
+              "labels": {
+                "0": 5290,
+                "1": 2527,
+                "2": 509,
+                "3": 22,
+                "4": 63
+              },
+              "groups": 5766,
+              "groups_per_label": {
+                "0": 3649,
+                "1": 1657,
+                "2": 438,
+                "3": 21,
+                "4": 2
+              },
+              "largest_group_rows": [
+                1645,
+                62,
+                52,
+                52,
+                52,
+                42,
+                42,
+                30
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 17071,
+              "labels": {
+                "0": 10579,
+                "1": 5055,
+                "2": 1018,
+                "3": 193,
+                "4": 226
+              },
+              "groups": 12883,
+              "groups_per_label": {
+                "0": 8675,
+                "1": 3315,
+                "2": 872,
+                "3": 22,
+                "4": 3
+              },
+              "largest_group_rows": [
+                1645,
+                335,
+                126,
+                63,
+                62,
+                52,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8559,
+              "labels": {
+                "0": 5290,
+                "1": 2528,
+                "2": 510,
+                "3": 168,
+                "4": 63
+              },
+              "groups": 7096,
+              "groups_per_label": {
+                "0": 5027,
+                "1": 1654,
+                "2": 406,
+                "3": 1,
+                "4": 10
+              },
+              "largest_group_rows": [
+                252,
+                222,
+                116,
+                50,
+                42,
+                42,
+                40,
+                34
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 16970,
+              "labels": {
+                "0": 10580,
+                "1": 5055,
+                "2": 1019,
+                "3": 190,
+                "4": 126
+              },
+              "groups": 12862,
+              "groups_per_label": {
+                "0": 8676,
+                "1": 3311,
+                "2": 844,
+                "3": 22,
+                "4": 12
+              },
+              "largest_group_rows": [
+                1645,
+                252,
+                222,
+                116,
+                62,
+                52,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8660,
+              "labels": {
+                "0": 5289,
+                "1": 2528,
+                "2": 509,
+                "3": 171,
+                "4": 163
+              },
+              "groups": 7117,
+              "groups_per_label": {
+                "0": 5026,
+                "1": 1658,
+                "2": 434,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                335,
+                126,
+                63,
+                52,
+                52,
+                46,
+                44,
+                42
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-inner-2.jsonl.gz",
+      "membership_artifact_sha256": "d878ec054b8f1da3612b587497440d2ebe8ab46d055a2560f6b0efb9e34b6b5a",
+      "parent_scope": {
+        "split_id": "split_874b3b478ab0ad41a5831774fd082e0ca4cca7bd0aae53b9dbae4286effb1e99",
+        "fold": 2,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "legacy-inner-3": {
+      "split_id": "split_92a274e1ca12c20b7ad4164c59b5d1e2faab1a62a1d544c22c8e82e072cb88dc",
+      "member_count": 78633,
+      "membership_sha256": "5ea8815dffd173353e1940f54f68b4c93334645eb46e10002de827e8adb6802d",
+      "specification_sha256": "a942efa993057a261831b5256bd4155b2208311375e5fadfd4882a1677749fef",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-inner-3",
+      "cohort": "legacy",
+      "role": "inner_tuning",
+      "scope_rows": 26211,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 17545,
+              "labels": {
+                "0": 10579,
+                "1": 5055,
+                "2": 1018,
+                "3": 496,
+                "4": 397
+              },
+              "groups": 12889,
+              "groups_per_label": {
+                "0": 8678,
+                "1": 3315,
+                "2": 880,
+                "3": 9,
+                "4": 12
+              },
+              "largest_group_rows": [
+                1645,
+                654,
+                222,
+                63,
+                53,
+                52,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8666,
+              "labels": {
+                "0": 5290,
+                "1": 2528,
+                "2": 510,
+                "3": 175,
+                "4": 163
+              },
+              "groups": 7130,
+              "groups_per_label": {
+                "0": 5026,
+                "1": 1658,
+                "2": 443,
+                "3": 5,
+                "4": 1
+              },
+              "largest_group_rows": [
+                335,
+                126,
+                60,
+                52,
+                52,
+                44,
+                42,
+                42
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 17646,
+              "labels": {
+                "0": 10579,
+                "1": 5056,
+                "2": 1019,
+                "3": 496,
+                "4": 496
+              },
+              "groups": 14254,
+              "groups_per_label": {
+                "0": 10055,
+                "1": 3316,
+                "2": 881,
+                "3": 6,
+                "4": 2
+              },
+              "largest_group_rows": [
+                654,
+                335,
+                126,
+                63,
+                60,
+                53,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8565,
+              "labels": {
+                "0": 5290,
+                "1": 2527,
+                "2": 509,
+                "3": 175,
+                "4": 64
+              },
+              "groups": 5765,
+              "groups_per_label": {
+                "0": 3649,
+                "1": 1657,
+                "2": 442,
+                "3": 8,
+                "4": 11
+              },
+              "largest_group_rows": [
+                1645,
+                222,
+                52,
+                52,
+                46,
+                42,
+                42,
+                34
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 17231,
+              "labels": {
+                "0": 10580,
+                "1": 5055,
+                "2": 1019,
+                "3": 350,
+                "4": 227
+              },
+              "groups": 12895,
+              "groups_per_label": {
+                "0": 8675,
+                "1": 3315,
+                "2": 885,
+                "3": 13,
+                "4": 12
+              },
+              "largest_group_rows": [
+                1645,
+                335,
+                222,
+                126,
+                60,
+                52,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8980,
+              "labels": {
+                "0": 5289,
+                "1": 2528,
+                "2": 509,
+                "3": 321,
+                "4": 333
+              },
+              "groups": 7124,
+              "groups_per_label": {
+                "0": 5029,
+                "1": 1658,
+                "2": 438,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                654,
+                63,
+                53,
+                52,
+                52,
+                50,
+                44,
+                43
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-inner-3.jsonl.gz",
+      "membership_artifact_sha256": "9f90665979407f74013fe1c3135f6a65052be30802e24d773b2d90447a1e2881",
+      "parent_scope": {
+        "split_id": "split_874b3b478ab0ad41a5831774fd082e0ca4cca7bd0aae53b9dbae4286effb1e99",
+        "fold": 3,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "legacy-inner-4": {
+      "split_id": "split_f3f6ace5c1d2743173b29c145bc393b53f26df0f99cfec8e73f95e64374d2f22",
+      "member_count": 78186,
+      "membership_sha256": "964a73cb77dcac4115bb1bcc37d5a61bca52b0f0f0e23d2ed35187fc4f247b03",
+      "specification_sha256": "b5f8d6965cae8091d3b902d5ab085d1d08a8416ecd976713b48e0b99b3f72a23",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-inner-4",
+      "cohort": "legacy",
+      "role": "inner_tuning",
+      "scope_rows": 26062,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 17400,
+              "labels": {
+                "0": 10579,
+                "1": 5055,
+                "2": 1018,
+                "3": 343,
+                "4": 405
+              },
+              "groups": 12863,
+              "groups_per_label": {
+                "0": 8676,
+                "1": 3313,
+                "2": 844,
+                "3": 22,
+                "4": 12
+              },
+              "largest_group_rows": [
+                1645,
+                654,
+                252,
+                62,
+                53,
+                52,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8662,
+              "labels": {
+                "0": 5290,
+                "1": 2528,
+                "2": 510,
+                "3": 171,
+                "4": 163
+              },
+              "groups": 7123,
+              "groups_per_label": {
+                "0": 5027,
+                "1": 1658,
+                "2": 439,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                335,
+                116,
+                60,
+                52,
+                52,
+                44,
+                42,
+                42
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 17642,
+              "labels": {
+                "0": 10579,
+                "1": 5056,
+                "2": 1019,
+                "3": 492,
+                "4": 496
+              },
+              "groups": 14210,
+              "groups_per_label": {
+                "0": 10054,
+                "1": 3314,
+                "2": 844,
+                "3": 2,
+                "4": 2
+              },
+              "largest_group_rows": [
+                654,
+                335,
+                252,
+                116,
+                60,
+                53,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8420,
+              "labels": {
+                "0": 5290,
+                "1": 2527,
+                "2": 509,
+                "3": 22,
+                "4": 72
+              },
+              "groups": 5776,
+              "groups_per_label": {
+                "0": 3649,
+                "1": 1657,
+                "2": 439,
+                "3": 21,
+                "4": 11
+              },
+              "largest_group_rows": [
+                1645,
+                62,
+                52,
+                52,
+                52,
+                42,
+                42,
+                30
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 17082,
+              "labels": {
+                "0": 10580,
+                "1": 5055,
+                "2": 1019,
+                "3": 193,
+                "4": 235
+              },
+              "groups": 12899,
+              "groups_per_label": {
+                "0": 8676,
+                "1": 3315,
+                "2": 878,
+                "3": 22,
+                "4": 12
+              },
+              "largest_group_rows": [
+                1645,
+                335,
+                116,
+                62,
+                60,
+                52,
+                52,
+                52
+              ]
+            },
+            "validation": {
+              "rows": 8980,
+              "labels": {
+                "0": 5289,
+                "1": 2528,
+                "2": 509,
+                "3": 321,
+                "4": 333
+              },
+              "groups": 7087,
+              "groups_per_label": {
+                "0": 5027,
+                "1": 1656,
+                "2": 405,
+                "3": 1,
+                "4": 1
+              },
+              "largest_group_rows": [
+                654,
+                252,
+                53,
+                50,
+                44,
+                43,
+                43,
+                42
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-inner-4.jsonl.gz",
+      "membership_artifact_sha256": "5e522773d5eea103ea3329ce93c5d1c6a31edebc2266d88f2499c4e94ddb2c84",
+      "parent_scope": {
+        "split_id": "split_874b3b478ab0ad41a5831774fd082e0ca4cca7bd0aae53b9dbae4286effb1e99",
+        "fold": 4,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "controlled-outer": {
+      "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+      "member_count": 3600,
+      "membership_sha256": "5ddcad1e7e192caeab5fd99d6d72167820ced85844b865b32c86db03c6daae5d",
+      "specification_sha256": "62e6cedf666213f7855b965be077b5f29ebe6aa8137a9fc4b9a84f14c1d65fa5",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "name": "controlled-outer",
+      "cohort": "controlled",
+      "role": "outer_evaluation",
+      "scope_rows": 1200,
+      "folds": {
+        "0": {
+          "parts": {
+            "test": {
+              "rows": 480,
+              "labels": {
+                "0": 240,
+                "1": 240
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                360,
+                120
+              ]
+            },
+            "train": {
+              "rows": 720,
+              "labels": {
+                "0": 360,
+                "1": 360
+              },
+              "groups": 5,
+              "groups_per_label": {
+                "0": 5,
+                "1": 5
+              },
+              "largest_group_rows": [
+                240,
+                120,
+                120,
+                120,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "test": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                240,
+                120
+              ]
+            },
+            "train": {
+              "rows": 840,
+              "labels": {
+                "0": 420,
+                "1": 420
+              },
+              "groups": 5,
+              "groups_per_label": {
+                "0": 5,
+                "1": 5
+              },
+              "largest_group_rows": [
+                360,
+                120,
+                120,
+                120,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "test": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 3,
+              "groups_per_label": {
+                "0": 3,
+                "1": 3
+              },
+              "largest_group_rows": [
+                120,
+                120,
+                120
+              ]
+            },
+            "train": {
+              "rows": 840,
+              "labels": {
+                "0": 420,
+                "1": 420
+              },
+              "groups": 4,
+              "groups_per_label": {
+                "0": 4,
+                "1": 4
+              },
+              "largest_group_rows": [
+                360,
+                240,
+                120,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/controlled-outer.jsonl.gz",
+      "membership_artifact_sha256": "a07c6595e69db65bbcdef0605320d7102a86a4c3c1b2cd90505834dac7aaa43f",
+      "parent_scope": null,
+      "eligible_for_primary_ranking": true
+    },
+    "controlled-inner-0": {
+      "split_id": "split_3be167948549fd4a1a1bedcccc8b65751669fe0d64dfc2999bd7478eab10c66e",
+      "member_count": 1440,
+      "membership_sha256": "021bfd5520f8bec7a7b650ba7ac0ecb84bc4a56575fd93cc67e7a32b621162ca",
+      "specification_sha256": "1827e815d3507790231f710f40ee152561bdb21742a7828276901dfe7d395da6",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "name": "controlled-inner-0",
+      "cohort": "controlled",
+      "role": "inner_tuning",
+      "scope_rows": 720,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 3,
+              "groups_per_label": {
+                "0": 3,
+                "1": 3
+              },
+              "largest_group_rows": [
+                120,
+                120,
+                120
+              ]
+            },
+            "validation": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                240,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                240,
+                120
+              ]
+            },
+            "validation": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 3,
+              "groups_per_label": {
+                "0": 3,
+                "1": 3
+              },
+              "largest_group_rows": [
+                120,
+                120,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/controlled-inner-0.jsonl.gz",
+      "membership_artifact_sha256": "69ccba197be299824ef6dd171d7c62a3da30a7bbd85479b899ff1d028e9e0e52",
+      "parent_scope": {
+        "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+        "fold": 0,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "controlled-inner-1": {
+      "split_id": "split_405083a9fc1ab8931b84a8800cbe0d5cca7c697908f94649c03488a35c01f956",
+      "member_count": 1680,
+      "membership_sha256": "a7932e39b6d514e584b9a4d297e47bf41785eef9a8eda57965193635bcd53418",
+      "specification_sha256": "f94a62141c3e73c6cc2407e59dea72c96d7c7325b3eab1e310e5ea66bfa0e739",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "name": "controlled-inner-1",
+      "cohort": "controlled",
+      "role": "inner_tuning",
+      "scope_rows": 840,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 3,
+              "groups_per_label": {
+                "0": 3,
+                "1": 3
+              },
+              "largest_group_rows": [
+                120,
+                120,
+                120
+              ]
+            },
+            "validation": {
+              "rows": 480,
+              "labels": {
+                "0": 240,
+                "1": 240
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                360,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 480,
+              "labels": {
+                "0": 240,
+                "1": 240
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                360,
+                120
+              ]
+            },
+            "validation": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 3,
+              "groups_per_label": {
+                "0": 3,
+                "1": 3
+              },
+              "largest_group_rows": [
+                120,
+                120,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/controlled-inner-1.jsonl.gz",
+      "membership_artifact_sha256": "5533ec63e99b80ff2f53a63a5a44e5594e8502818ac21d3981a190282d925c4d",
+      "parent_scope": {
+        "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+        "fold": 1,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "controlled-inner-2": {
+      "split_id": "split_2c4f21e21eada2019ef314fd41ecddaa5174cb2d77fff6e73028bef31977323b",
+      "member_count": 1680,
+      "membership_sha256": "658aede5524cbf744baf1f30f0ac1b6c6e3ead76b8c061827e35f82e6627a8d6",
+      "specification_sha256": "dc81349627b1a11fa55929e99c0976cf1b79a9336660b55cfa2ba2d005d5dee8",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "name": "controlled-inner-2",
+      "cohort": "controlled",
+      "role": "inner_tuning",
+      "scope_rows": 840,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                240,
+                120
+              ]
+            },
+            "validation": {
+              "rows": 480,
+              "labels": {
+                "0": 240,
+                "1": 240
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                360,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 480,
+              "labels": {
+                "0": 240,
+                "1": 240
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                360,
+                120
+              ]
+            },
+            "validation": {
+              "rows": 360,
+              "labels": {
+                "0": 180,
+                "1": 180
+              },
+              "groups": 2,
+              "groups_per_label": {
+                "0": 2,
+                "1": 2
+              },
+              "largest_group_rows": [
+                240,
+                120
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/controlled-inner-2.jsonl.gz",
+      "membership_artifact_sha256": "b3037863f89668225f9a0eb6bac8fafa0d2d449d994886da945a7aa98c80c8f0",
+      "parent_scope": {
+        "split_id": "split_fb7c157bd80a6c710f8019daa917c5191ccdae819abb325baee8acfedee27a5f",
+        "fold": 2,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "legacy-row-control": {
+      "split_id": "split_1d4dbf2e081bed5907dd56755b10e04f8bd453baf25dea5c302c4bba16687a80",
+      "member_count": 162645,
+      "membership_sha256": "8a1e9e11ee9a32f488fbd8dc7fc8bb97a125aceed0d70a3bb609f4502ddbd352",
+      "specification_sha256": "e13eaa2acc932192b4e0dddc878ce3a6b6782eca9f327168108663bfe97da0c9",
+      "dataset_version_id": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+      "name": "legacy-row-control",
+      "cohort": "legacy",
+      "role": "diagnostic_random_control",
+      "scope_rows": 32529,
+      "folds": {
+        "0": {
+          "parts": {
+            "test": {
+              "rows": 6508,
+              "labels": {
+                "0": 3968,
+                "1": 1896,
+                "2": 382,
+                "3": 137,
+                "4": 125
+              },
+              "groups": 5406,
+              "groups_per_label": {
+                "0": 3513,
+                "1": 1539,
+                "2": 355,
+                "3": 3,
+                "4": 5
+              },
+              "largest_group_rows": [
+                331,
+                145,
+                64,
+                45,
+                44,
+                25,
+                24,
+                17
+              ]
+            },
+            "train": {
+              "rows": 26021,
+              "labels": {
+                "0": 15868,
+                "1": 7583,
+                "2": 1528,
+                "3": 545,
+                "4": 497
+              },
+              "groups": 20532,
+              "groups_per_label": {
+                "0": 14017,
+                "1": 5173,
+                "2": 1313,
+                "3": 24,
+                "4": 13
+              },
+              "largest_group_rows": [
+                1314,
+                509,
+                271,
+                207,
+                178,
+                102,
+                91,
+                53
+              ]
+            }
+          },
+          "cross_part_groups": 591,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 619
+        },
+        "1": {
+          "parts": {
+            "test": {
+              "rows": 6507,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 137,
+                "4": 125
+              },
+              "groups": 5447,
+              "groups_per_label": {
+                "0": 3563,
+                "1": 1519,
+                "2": 353,
+                "3": 10,
+                "4": 9
+              },
+              "largest_group_rows": [
+                300,
+                119,
+                65,
+                51,
+                50,
+                22,
+                20,
+                17
+              ]
+            },
+            "train": {
+              "rows": 26022,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 545,
+                "4": 497
+              },
+              "groups": 20507,
+              "groups_per_label": {
+                "0": 13974,
+                "1": 5204,
+                "2": 1312,
+                "3": 17,
+                "4": 9
+              },
+              "largest_group_rows": [
+                1345,
+                535,
+                270,
+                201,
+                172,
+                106,
+                94,
+                50
+              ]
+            }
+          },
+          "cross_part_groups": 607,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 632
+        },
+        "2": {
+          "parts": {
+            "test": {
+              "rows": 6505,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 136,
+                "4": 124
+              },
+              "groups": 5433,
+              "groups_per_label": {
+                "0": 3539,
+                "1": 1548,
+                "2": 343,
+                "3": 6,
+                "4": 4
+              },
+              "largest_group_rows": [
+                311,
+                131,
+                67,
+                58,
+                42,
+                28,
+                19,
+                17
+              ]
+            },
+            "train": {
+              "rows": 26024,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 546,
+                "4": 498
+              },
+              "groups": 20497,
+              "groups_per_label": {
+                "0": 13992,
+                "1": 5168,
+                "2": 1310,
+                "3": 22,
+                "4": 14
+              },
+              "largest_group_rows": [
+                1334,
+                523,
+                268,
+                194,
+                180,
+                98,
+                97,
+                49
+              ]
+            }
+          },
+          "cross_part_groups": 583,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 612
+        },
+        "3": {
+          "parts": {
+            "test": {
+              "rows": 6505,
+              "labels": {
+                "0": 3967,
+                "1": 1896,
+                "2": 382,
+                "3": 136,
+                "4": 124
+              },
+              "groups": 5417,
+              "groups_per_label": {
+                "0": 3509,
+                "1": 1544,
+                "2": 359,
+                "3": 8,
+                "4": 4
+              },
+              "largest_group_rows": [
+                342,
+                135,
+                72,
+                42,
+                40,
+                32,
+                19,
+                12
+              ]
+            },
+            "train": {
+              "rows": 26024,
+              "labels": {
+                "0": 15869,
+                "1": 7583,
+                "2": 1528,
+                "3": 546,
+                "4": 498
+              },
+              "groups": 20503,
+              "groups_per_label": {
+                "0": 14023,
+                "1": 5152,
+                "2": 1303,
+                "3": 20,
+                "4": 14
+              },
+              "largest_group_rows": [
+                1303,
+                519,
+                263,
+                210,
+                182,
+                97,
+                94,
+                54
+              ]
+            }
+          },
+          "cross_part_groups": 573,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 597
+        },
+        "4": {
+          "parts": {
+            "test": {
+              "rows": 6504,
+              "labels": {
+                "0": 3967,
+                "1": 1895,
+                "2": 382,
+                "3": 136,
+                "4": 124
+              },
+              "groups": 5378,
+              "groups_per_label": {
+                "0": 3488,
+                "1": 1535,
+                "2": 345,
+                "3": 10,
+                "4": 8
+              },
+              "largest_group_rows": [
+                361,
+                124,
+                67,
+                56,
+                46,
+                31,
+                22,
+                15
+              ]
+            },
+            "train": {
+              "rows": 26025,
+              "labels": {
+                "0": 15869,
+                "1": 7584,
+                "2": 1528,
+                "3": 546,
+                "4": 498
+              },
+              "groups": 20543,
+              "groups_per_label": {
+                "0": 14042,
+                "1": 5173,
+                "2": 1310,
+                "3": 17,
+                "4": 10
+              },
+              "largest_group_rows": [
+                1284,
+                530,
+                268,
+                196,
+                176,
+                104,
+                85,
+                50
+              ]
+            }
+          },
+          "cross_part_groups": 574,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 600
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/legacy-row-control.jsonl.gz",
+      "membership_artifact_sha256": "08efd178f701f2b7c402123520ce8dd0a60573743451b9cf628c8d663480232c",
+      "parent_scope": null,
+      "eligible_for_primary_ranking": false
+    },
+    "transfer-web_app-to-wordpress": {
+      "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+      "member_count": 161022,
+      "membership_sha256": "55e1377f572eca6956cc7bcecfe7b7273fa2eab76fc56b2a239250317b7d93c7",
+      "specification_sha256": "4ee56fd52e7e6d1f1db53ae5ad104b88a995624a34c04324290bd3d29ef8132c",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "name": "transfer-web_app-to-wordpress",
+      "cohort": "sqlstateguard",
+      "role": "source_transfer",
+      "scope_rows": 161022,
+      "folds": {
+        "0": {
+          "parts": {
+            "test": {
+              "rows": 68390,
+              "labels": {
+                "0": 3598,
+                "1": 64792
+              },
+              "groups": 31334,
+              "groups_per_label": {
+                "0": 354,
+                "1": 30981
+              },
+              "largest_group_rows": [
+                291,
+                172,
+                123,
+                121,
+                113,
+                101,
+                96,
+                91
+              ]
+            },
+            "train": {
+              "rows": 92632,
+              "labels": {
+                "0": 24773,
+                "1": 67859
+              },
+              "groups": 30174,
+              "groups_per_label": {
+                "0": 2594,
+                "1": 27580
+              },
+              "largest_group_rows": [
+                4724,
+                4710,
+                4665,
+                4659,
+                861,
+                859,
+                855,
+                854
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/transfer-web_app-to-wordpress.jsonl.gz",
+      "membership_artifact_sha256": "4a39046defee4a49c65763d7de2eb56269237777555b32341e881e2e401c3691",
+      "parent_scope": null,
+      "eligible_for_primary_ranking": true
+    },
+    "transfer-web_app-to-wordpress-inner": {
+      "split_id": "split_552e571c641d8227168c41cf7a397c97256e24dfffaa9ad2deb98f3a748013f2",
+      "member_count": 277896,
+      "membership_sha256": "afe8f81b23d8a6259add70ac978851e0cbf981d86cafd2b7a5225bc66083d5d8",
+      "specification_sha256": "6cdb3416fee7b2c9071fcdba6a5464c896a7e8b150d674d64ccb2f0402253033",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "name": "transfer-web_app-to-wordpress-inner",
+      "cohort": "sqlstateguard",
+      "role": "inner_tuning",
+      "scope_rows": 92632,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 62288,
+              "labels": {
+                "0": 17049,
+                "1": 45239
+              },
+              "groups": 19689,
+              "groups_per_label": {
+                "0": 1304,
+                "1": 18385
+              },
+              "largest_group_rows": [
+                4710,
+                4665,
+                4659,
+                861,
+                855,
+                537,
+                164,
+                162
+              ]
+            },
+            "validation": {
+              "rows": 30344,
+              "labels": {
+                "0": 7724,
+                "1": 22620
+              },
+              "groups": 10485,
+              "groups_per_label": {
+                "0": 1290,
+                "1": 9195
+              },
+              "largest_group_rows": [
+                4724,
+                859,
+                854,
+                176,
+                159,
+                100,
+                100,
+                99
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 60689,
+              "labels": {
+                "0": 15449,
+                "1": 45240
+              },
+              "groups": 20979,
+              "groups_per_label": {
+                "0": 2592,
+                "1": 18387
+              },
+              "largest_group_rows": [
+                4724,
+                4710,
+                861,
+                859,
+                855,
+                854,
+                537,
+                176
+              ]
+            },
+            "validation": {
+              "rows": 31943,
+              "labels": {
+                "0": 9324,
+                "1": 22619
+              },
+              "groups": 9195,
+              "groups_per_label": {
+                "0": 2,
+                "1": 9193
+              },
+              "largest_group_rows": [
+                4665,
+                4659,
+                164,
+                162,
+                157,
+                100,
+                96,
+                63
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 62287,
+              "labels": {
+                "0": 17048,
+                "1": 45239
+              },
+              "groups": 19680,
+              "groups_per_label": {
+                "0": 1292,
+                "1": 18388
+              },
+              "largest_group_rows": [
+                4724,
+                4665,
+                4659,
+                859,
+                854,
+                176,
+                164,
+                162
+              ]
+            },
+            "validation": {
+              "rows": 30345,
+              "labels": {
+                "0": 7725,
+                "1": 22620
+              },
+              "groups": 10494,
+              "groups_per_label": {
+                "0": 1302,
+                "1": 9192
+              },
+              "largest_group_rows": [
+                4710,
+                861,
+                855,
+                537,
+                98,
+                64,
+                63,
+                53
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/transfer-web_app-to-wordpress-inner.jsonl.gz",
+      "membership_artifact_sha256": "4b0d84b454d47fb07a83b24c7405b3b34236e11e5a502fc82043af21d94cb0d9",
+      "parent_scope": {
+        "split_id": "split_4e48fd3f22cdd99b5a5903954f750866a7971dbdab862d3c389015497055f197",
+        "fold": 0,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    },
+    "transfer-wordpress-to-web_app": {
+      "split_id": "split_51ebf495b282ce454f83b4e951731d795ae29f3de4126bba32d3042e74015eb7",
+      "member_count": 161022,
+      "membership_sha256": "6d915e849a5abf49b0d15bd409830c0a6d5dd3e8664b02de26656f3292a5e901",
+      "specification_sha256": "094fd544d1d450b157c28a81bf430cf70763dbba2335e00bef8d10d8b57b5fcc",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "name": "transfer-wordpress-to-web_app",
+      "cohort": "sqlstateguard",
+      "role": "source_transfer",
+      "scope_rows": 161022,
+      "folds": {
+        "0": {
+          "parts": {
+            "test": {
+              "rows": 92632,
+              "labels": {
+                "0": 24773,
+                "1": 67859
+              },
+              "groups": 30174,
+              "groups_per_label": {
+                "0": 2594,
+                "1": 27580
+              },
+              "largest_group_rows": [
+                4724,
+                4710,
+                4665,
+                4659,
+                861,
+                859,
+                855,
+                854
+              ]
+            },
+            "train": {
+              "rows": 68390,
+              "labels": {
+                "0": 3598,
+                "1": 64792
+              },
+              "groups": 31334,
+              "groups_per_label": {
+                "0": 354,
+                "1": 30981
+              },
+              "largest_group_rows": [
+                291,
+                172,
+                123,
+                121,
+                113,
+                101,
+                96,
+                91
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/transfer-wordpress-to-web_app.jsonl.gz",
+      "membership_artifact_sha256": "771b78af619993559fd9c5e9ddd8d65d27536564303f177f9fb5cedf70ec84b9",
+      "parent_scope": null,
+      "eligible_for_primary_ranking": true
+    },
+    "transfer-wordpress-to-web_app-inner": {
+      "split_id": "split_ee652de5896f783b4adbeec7b18dd772b78224a8b95472f65b778c8668ebf2e4",
+      "member_count": 205170,
+      "membership_sha256": "5074815b0e32ca51ad2bebc18d487b86ff175f0cd8e2ea4b78094f4853b7d5c9",
+      "specification_sha256": "5faafa57e74b2851497e33474751646ca289d24646ebda6a13ded7e5d9edae48",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "name": "transfer-wordpress-to-web_app-inner",
+      "cohort": "sqlstateguard",
+      "role": "inner_tuning",
+      "scope_rows": 68390,
+      "folds": {
+        "0": {
+          "parts": {
+            "train": {
+              "rows": 45594,
+              "labels": {
+                "0": 2399,
+                "1": 43195
+              },
+              "groups": 20890,
+              "groups_per_label": {
+                "0": 236,
+                "1": 20655
+              },
+              "largest_group_rows": [
+                291,
+                172,
+                121,
+                101,
+                91,
+                87,
+                76,
+                76
+              ]
+            },
+            "validation": {
+              "rows": 22796,
+              "labels": {
+                "0": 1199,
+                "1": 21597
+              },
+              "groups": 10444,
+              "groups_per_label": {
+                "0": 118,
+                "1": 10326
+              },
+              "largest_group_rows": [
+                123,
+                113,
+                96,
+                88,
+                79,
+                66,
+                60,
+                54
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "1": {
+          "parts": {
+            "train": {
+              "rows": 45593,
+              "labels": {
+                "0": 2398,
+                "1": 43195
+              },
+              "groups": 20889,
+              "groups_per_label": {
+                "0": 236,
+                "1": 20654
+              },
+              "largest_group_rows": [
+                172,
+                123,
+                121,
+                113,
+                101,
+                96,
+                91,
+                88
+              ]
+            },
+            "validation": {
+              "rows": 22797,
+              "labels": {
+                "0": 1200,
+                "1": 21597
+              },
+              "groups": 10445,
+              "groups_per_label": {
+                "0": 118,
+                "1": 10327
+              },
+              "largest_group_rows": [
+                291,
+                87,
+                76,
+                66,
+                60,
+                58,
+                57,
+                53
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        },
+        "2": {
+          "parts": {
+            "train": {
+              "rows": 45593,
+              "labels": {
+                "0": 2399,
+                "1": 43194
+              },
+              "groups": 20889,
+              "groups_per_label": {
+                "0": 236,
+                "1": 20653
+              },
+              "largest_group_rows": [
+                291,
+                123,
+                113,
+                96,
+                88,
+                87,
+                79,
+                76
+              ]
+            },
+            "validation": {
+              "rows": 22797,
+              "labels": {
+                "0": 1199,
+                "1": 21598
+              },
+              "groups": 10445,
+              "groups_per_label": {
+                "0": 118,
+                "1": 10328
+              },
+              "largest_group_rows": [
+                172,
+                121,
+                101,
+                91,
+                76,
+                63,
+                59,
+                54
+              ]
+            }
+          },
+          "cross_part_groups": 0,
+          "cross_part_exact_SQL": 0,
+          "cross_part_lexical_templates": 0
+        }
+      },
+      "membership_artifact": "results/stage6/memberships/transfer-wordpress-to-web_app-inner.jsonl.gz",
+      "membership_artifact_sha256": "7837bd3f785de56a64fc1edd36ede0a7ec2c17b3998fb22e1b021ac01d9fdb22",
+      "parent_scope": {
+        "split_id": "split_51ebf495b282ce454f83b4e951731d795ae29f3de4126bba32d3042e74015eb7",
+        "fold": 0,
+        "part": "train"
+      },
+      "eligible_for_primary_ranking": true
+    }
+  },
+  "common_comparison": {
+    "pool_rows": 68870,
+    "strata": {
+      "exfiltration:0": 180,
+      "exfiltration:1": 180,
+      "privilege:0": 60,
+      "privilege:1": 60,
+      "sqli:0": 3598,
+      "sqli:1": 64792
+    },
+    "pool_sha256": "3a5ef1f6c7fc2fc7e1c728ab277febdd1419165af7b0a93596bb3727b550da3f",
+    "pool_artifact": "results/stage6/common_test_pool.jsonl.gz",
+    "pilot_rows": 30,
+    "few_shot_candidate_rows": 6,
+    "main_LLM_sample_size": "set_after_the_cost_pilot_before_main_predictions",
+    "selection_rule": "fixed stratum ordering; agreed quotas select prefixes without prediction scores",
+    "paired_comparison": "all methods scored on the exact same selected observation IDs and order"
+  },
+  "models_fitted": 0,
+  "LLM_requests": 0
+}

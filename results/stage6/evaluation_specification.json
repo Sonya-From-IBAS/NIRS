@@ -1,0 +1,74 @@
+{
+  "version": "stage6-evaluation-v1",
+  "primary_metric": {
+    "binary": "F1 for positive class 1",
+    "legacy_five_class": "macro-F1 over fixed classes 0..4"
+  },
+  "secondary_metrics": [
+    "attack recall",
+    "false-positive rate",
+    "precision",
+    "confusion matrix",
+    "per-class support",
+    "decision coverage"
+  ],
+  "model_selection": {
+    "data": "inner group validation only",
+    "threshold": "maximize inner-validation F1",
+    "tie_breakers": [
+      "lower false-positive rate",
+      "higher attack recall",
+      "simpler fixed configuration"
+    ],
+    "hard_FPR_budget": null,
+    "hard_FPR_budget_policy": "FPR is reported; no production alert budget was imposed"
+  },
+  "aggregation": {
+    "grouped_CV": "pooled outer out-of-fold predictions plus every fold and support",
+    "transfer": "report each application direction separately",
+    "common_LLM_comparison": "exact same selected observation IDs/order for every method",
+    "cross_cohort_single_weighted_score": "not used for selecting the winner"
+  },
+  "class_reference": {
+    "legacy": "original five-class labels retained as historical reference",
+    "sqlstateguard": "pinned author-release binary labels",
+    "controlled": "pinned static scenario/policy binary labels"
+  },
+  "sample_weights": {
+    "primary": "one weight per unique stored observation",
+    "sqlstateguard_secondary": "preserved raw occurrence multiplicity"
+  },
+  "missing_decisions": {
+    "allowed_statuses": [
+      "ok",
+      "api_error",
+      "parse_error",
+      "not_run"
+    ],
+    "implicit_legit": false,
+    "primary_ranking": "requires complete decisions on the planned evaluation IDs",
+    "incomplete_runs": "show coverage/status counts and conditional successful-decision metrics; primary F1 remains null"
+  },
+  "input_modes": {
+    "SQL-only": "SQL text only",
+    "SQL+context": "same observation IDs and predecision whitelisted context; source/targets/groups/evidence/outcomes excluded"
+  },
+  "LLM": {
+    "development_pilot_rows": 30,
+    "few_shot_candidates": 6,
+    "main_budget": "agree after cost pilot",
+    "main_selection": "prefixes of frozen within-stratum ordering, independent of predictions",
+    "prompt_tuning": "development only; final common test fixed separately"
+  },
+  "final_new_source": {
+    "status": "not selected at stage 6",
+    "prerequisites": [
+      "freeze code/representations/models/thresholds/prompts",
+      "freeze acquisition/lineage/unit/license/context criteria before source search",
+      "pin source bytes and evaluation IDs before predictions"
+    ],
+    "known_sources": "SQLStateGuard and the current controlled corpus are known evaluation data"
+  },
+  "model_fits_at_stage6": 0,
+  "LLM_requests_at_stage6": 0
+}

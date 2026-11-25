@@ -1,0 +1,143 @@
+{
+  "version": "stage6-groups-v1",
+  "observations": 194751,
+  "groups": 86837,
+  "link_events": {
+    "template": 106243,
+    "strip": 603,
+    "legacy_prompt": 1555,
+    "declared": 202208,
+    "exact": 515,
+    "declared_extra": 1193,
+    "parent": 400
+  },
+  "largest_groups": [
+    4724,
+    4710,
+    4665,
+    4659,
+    1645,
+    861,
+    859,
+    855,
+    854,
+    654
+  ],
+  "cohorts": {
+    "legacy": {
+      "rows": 32529,
+      "labels": {
+        "0": 19836,
+        "1": 9479,
+        "2": 1910,
+        "3": 682,
+        "4": 622
+      },
+      "groups": 25347,
+      "groups_per_label": {
+        "0": 17495,
+        "1": 6213,
+        "2": 1610,
+        "3": 24,
+        "4": 14
+      },
+      "largest_group_rows": [
+        1645,
+        654,
+        335,
+        252,
+        222,
+        126,
+        116,
+        63
+      ]
+    },
+    "sqlstateguard": {
+      "rows": 161022,
+      "labels": {
+        "0": 28371,
+        "1": 132651
+      },
+      "groups": 61508,
+      "groups_per_label": {
+        "0": 2948,
+        "1": 58561
+      },
+      "largest_group_rows": [
+        4724,
+        4710,
+        4665,
+        4659,
+        861,
+        859,
+        855,
+        854
+      ]
+    },
+    "controlled": {
+      "rows": 1200,
+      "labels": {
+        "0": 600,
+        "1": 600
+      },
+      "groups": 7,
+      "groups_per_label": {
+        "0": 7,
+        "1": 7
+      },
+      "largest_group_rows": [
+        360,
+        240,
+        120,
+        120,
+        120,
+        120,
+        120
+      ]
+    }
+  },
+  "cross_cohort_overlaps": [
+    {
+      "first": "controlled",
+      "second": "legacy",
+      "exact_sha256": 0,
+      "template_sha256": 0,
+      "group": 0
+    },
+    {
+      "first": "controlled",
+      "second": "sqlstateguard:sqlstateguard:web_app",
+      "exact_sha256": 0,
+      "template_sha256": 0,
+      "group": 0
+    },
+    {
+      "first": "controlled",
+      "second": "sqlstateguard:sqlstateguard:wordpress",
+      "exact_sha256": 0,
+      "template_sha256": 0,
+      "group": 0
+    },
+    {
+      "first": "legacy",
+      "second": "sqlstateguard:sqlstateguard:web_app",
+      "exact_sha256": 0,
+      "template_sha256": 0,
+      "group": 0
+    },
+    {
+      "first": "legacy",
+      "second": "sqlstateguard:sqlstateguard:wordpress",
+      "exact_sha256": 1,
+      "template_sha256": 25,
+      "group": 25
+    },
+    {
+      "first": "sqlstateguard:sqlstateguard:web_app",
+      "second": "sqlstateguard:sqlstateguard:wordpress",
+      "exact_sha256": 0,
+      "template_sha256": 0,
+      "group": 0
+    }
+  ]
+}

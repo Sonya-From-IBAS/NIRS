@@ -363,6 +363,67 @@ class Storage:
             connection.execute("UPDATE nirs.observations SET current_annotation_id=%s WHERE observation_id=%s",
                                (annotation["annotation_id"], observation_id))
 
+    def save_split(self, dataset_id: str, specification: dict, folds: dict[int, dict[str, str]]) -> dict:
+        """Atomically save and seal a complete dataset or a pinned parent-train scope."""
+        hasher = hashlib.sha256()
+        first, count = True, 0
+        for fold, assignment in sorted(folds.items()):
+            if not isinstance(fold, int) or fold < 0 or not assignment:
+                raise ValueError("A split needs nonempty, nonnegative integer folds")
+            for oid, part in sorted(assignment.items(), key=lambda item: (item[1], item[0])):
+                if part not in {"train", "validation", "test", "excluded"} or "\n" in oid or "\r" in oid:
+                    raise ValueError("Invalid split role or observation identity")
+                if not first:
+                    hasher.update(b"\n")
+                first = False
+                hasher.update(f"{fold}:{part}:{oid}".encode())
+                count += 1
+        if not count:
+            raise ValueError("Cannot freeze an empty split")
+        membership_hash = hasher.hexdigest()
+        split_id = "split_" + digest(canonical({"dataset": dataset_id, "specification": specification,
+                                               "membership_sha256": membership_hash}).encode())
+        with self.write() as connection:
+            parent = specification.get("parent_scope")
+            if parent:
+                known = connection.execute("""SELECT s.dataset_version_id FROM nirs.splits s
+                    JOIN nirs.split_seals z USING(split_id) WHERE s.split_id=%s""", (parent["split_id"],)).fetchone()
+                if not known or known["dataset_version_id"] != dataset_id or parent["part"] != "train":
+                    raise ValueError("An inner split must reference a frozen train scope in the same dataset")
+                expected = {row["observation_id"] for row in connection.execute("""SELECT observation_id
+                    FROM nirs.split_members WHERE split_id=%s AND fold=%s AND part='train'""",
+                    (parent["split_id"], parent["fold"]))}
+            else:
+                expected = {row["observation_id"] for row in connection.execute(
+                    "SELECT observation_id FROM nirs.dataset_members WHERE dataset_version_id=%s", (dataset_id,))}
+            if not expected or any(set(assignment) != expected for assignment in folds.values()):
+                raise ValueError("Every fold must account for exactly its declared frozen scope")
+            existing = connection.execute("SELECT specification FROM nirs.splits WHERE split_id=%s", (split_id,)).fetchone()
+            if existing:
+                if existing["specification"] != specification:
+                    raise ValueError("Split configuration differs")
+            else:
+                connection.execute("INSERT INTO nirs.splits VALUES (%s,%s,%s)", (split_id, dataset_id, Jsonb(specification)))
+                for fold, assignment in sorted(folds.items()):
+                    self._copy(connection, "split_members", ["split_id", "dataset_version_id", "observation_id", "fold", "part"],
+                               [(split_id, dataset_id, oid, fold, part) for oid, part in assignment.items()])
+            connection.execute("SELECT nirs.seal_split(%s)", (split_id,))
+            sealed = connection.execute("SELECT * FROM nirs.split_seals WHERE split_id=%s", (split_id,)).fetchone()
+            if sealed["membership_sha256"] != membership_hash or sealed["member_count"] != count:
+                raise ValueError("Stored split does not reproduce the planned membership")
+        return {**sealed, "dataset_version_id": dataset_id, "reused": bool(existing)}
+
+    def split_ids(self, split_id: str, fold: int, part: str) -> list[str]:
+        if part not in {"train", "validation", "test", "excluded"}:
+            raise ValueError("Unknown split role")
+        with self.connect() as connection:
+            if not connection.execute("SELECT 1 FROM nirs.split_seals WHERE split_id=%s", (split_id,)).fetchone():
+                raise ValueError("A split must be frozen before use")
+            return [row["observation_id"] for row in connection.execute("""SELECT m.observation_id
+                FROM nirs.split_members m JOIN nirs.dataset_members d ON d.dataset_version_id=m.dataset_version_id
+                  AND d.observation_id=m.observation_id WHERE m.split_id=%s AND m.fold=%s AND m.part=%s
+                ORDER BY d.ordinal""", (split_id, fold, part))]
+
     def artifact_path(self, relative: str) -> Path:
         path = (self.artifact_root / relative).resolve()
         if not path.is_relative_to(self.artifact_root) or Path(relative).is_absolute():
