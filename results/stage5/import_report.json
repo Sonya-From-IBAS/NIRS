@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+  "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+  "block_dataset_versions": {
+    "privilege": "ds_77edbcba96aeeb5ade2618c5191f87b09a4fe7edb96609680129a078f8ddc21a",
+    "exfiltration": "ds_2c48d3e03c3834f19004ef2866931967e80335e3b1225d5d325b410dc408235b",
+    "obfuscated": "ds_8417a3edb99f16f29b3acb3964253ea7d1f08a66d5a1f4cbeae03e20a4875535"
+  },
+  "rows": 1200,
+  "counts_in_database": {
+    "occurrences": 1200,
+    "observations": 1200
+  },
+  "target_counts_in_database": [
+    {
+      "target_label": 0,
+      "rows": 600
+    },
+    {
+      "target_label": 1,
+      "rows": 600
+    }
+  ],
+  "full_contract_roundtrip": true,
+  "reused_source_version": true,
+  "source_artifacts": [
+    {
+      "path": "data/scenarios/catalog_v1.json",
+      "artifact_id": "81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774"
+    },
+    {
+      "path": "data/scenarios/corpus_v1.jsonl",
+      "artifact_id": "9ed1fef9562b25a911e20228db9e74aea7d0d4b42bf64ef46a3c5934650cba23"
+    },
+    {
+      "path": "data/scenarios/static_checks_v1.jsonl",
+      "artifact_id": "736b26941b5b09e7454b1db07c8438a8090f762e2aea8adf1ca641cb39780bdb"
+    },
+    {
+      "path": "data/scenarios/generation_plan_v2.json",
+      "artifact_id": "35f21bb560df55ee209ef4cbb4b3a02104e2f4343aaf87b43b061a1b617e49ed"
+    },
+    {
+      "path": "src/generate_scenarios.py",
+      "artifact_id": "e9ed6cc46aa891fa9ee666eada75acb3d09a07e3c6ffa91bc0830efac3467b2e"
+    },
+    {
+      "path": "src/scenario_sql.py",
+      "artifact_id": "257f8cc0bfb95260d342645511bd9d9cd221c86af779d2a87b6fe9bc389c5647"
+    },
+    {
+      "path": "src/import_scenarios.py",
+      "artifact_id": "0d389995c5ec7c39c4bf2d3252f98ab847b06da524ad477a73c64eaf8afab2ae"
+    },
+    {
+      "path": "results/stage5/group_links.json",
+      "artifact_id": "b1bd82d280b1b22cd045f5ff01c638b90b3f203b762275834316dd9810f5e8b7"
+    }
+  ],
+  "linked_components": 7,
+  "exact_SQL_matches_to_previous_sources": 0,
+  "historical_experiments": {
+    "experiment_runs": 8,
+    "predictions": 312288
+  }
+}

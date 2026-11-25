@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests_run": 60,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 12.392,
+  "database_tests_enabled": true
+}

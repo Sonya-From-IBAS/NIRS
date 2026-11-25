@@ -1,0 +1,136 @@
+{
+  "version": "stage5-static-v1",
+  "date": "2026-11-25",
+  "implementation_base_git_commit": "8ce0d9a82a3456ed084cebee99ca8958b523ca28",
+  "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+  "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+  "block_dataset_versions": {
+    "privilege": "ds_77edbcba96aeeb5ade2618c5191f87b09a4fe7edb96609680129a078f8ddc21a",
+    "exfiltration": "ds_2c48d3e03c3834f19004ef2866931967e80335e3b1225d5d325b410dc408235b",
+    "obfuscated": "ds_8417a3edb99f16f29b3acb3964253ea7d1f08a66d5a1f4cbeae03e20a4875535"
+  },
+  "files": [
+    {
+      "path": "docs/scenario_generation.md",
+      "bytes": 15590,
+      "sha256_bytes": "002695cfd17a59f28056c7e06916a2e60918b94953d526106fe5904ab1a69e67",
+      "sha256_lf": "002695cfd17a59f28056c7e06916a2e60918b94953d526106fe5904ab1a69e67",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "data/scenarios/catalog_v1.json",
+      "bytes": 1081065,
+      "sha256_bytes": "81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774",
+      "sha256_lf": "81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "data/scenarios/corpus_v1.jsonl",
+      "bytes": 5234448,
+      "sha256_bytes": "9ed1fef9562b25a911e20228db9e74aea7d0d4b42bf64ef46a3c5934650cba23",
+      "sha256_lf": "9ed1fef9562b25a911e20228db9e74aea7d0d4b42bf64ef46a3c5934650cba23",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "data/scenarios/generation_plan_v2.json",
+      "bytes": 4955,
+      "sha256_bytes": "35f21bb560df55ee209ef4cbb4b3a02104e2f4343aaf87b43b061a1b617e49ed",
+      "sha256_lf": "35f21bb560df55ee209ef4cbb4b3a02104e2f4343aaf87b43b061a1b617e49ed",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "data/scenarios/static_checks_v1.jsonl",
+      "bytes": 653600,
+      "sha256_bytes": "736b26941b5b09e7454b1db07c8438a8090f762e2aea8adf1ca641cb39780bdb",
+      "sha256_lf": "736b26941b5b09e7454b1db07c8438a8090f762e2aea8adf1ca641cb39780bdb",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "src/generate_scenarios.py",
+      "bytes": 26807,
+      "sha256_bytes": "e9ed6cc46aa891fa9ee666eada75acb3d09a07e3c6ffa91bc0830efac3467b2e",
+      "sha256_lf": "e9ed6cc46aa891fa9ee666eada75acb3d09a07e3c6ffa91bc0830efac3467b2e",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "src/import_scenarios.py",
+      "bytes": 6475,
+      "sha256_bytes": "0d389995c5ec7c39c4bf2d3252f98ab847b06da524ad477a73c64eaf8afab2ae",
+      "sha256_lf": "0d389995c5ec7c39c4bf2d3252f98ab847b06da524ad477a73c64eaf8afab2ae",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "src/scenario_sql.py",
+      "bytes": 13014,
+      "sha256_bytes": "257f8cc0bfb95260d342645511bd9d9cd221c86af779d2a87b6fe9bc389c5647",
+      "sha256_lf": "257f8cc0bfb95260d342645511bd9d9cd221c86af779d2a87b6fe9bc389c5647",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "tests/test_scenarios.py",
+      "bytes": 7466,
+      "sha256_bytes": "a1e33d3afc340de9b0434a756febd5a7be709774e348f2429499f056ec7dbca8",
+      "sha256_lf": "a1e33d3afc340de9b0434a756febd5a7be709774e348f2429499f056ec7dbca8",
+      "git_verification": "normalized_lf"
+    },
+    {
+      "path": "results/stage5/context_dependent_slice.json",
+      "bytes": 14027,
+      "sha256_bytes": "dadbdf09451987344d6a53fed699dc409864b4df2a15194b35af68d4307d7b48",
+      "sha256_lf": "dadbdf09451987344d6a53fed699dc409864b4df2a15194b35af68d4307d7b48",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/examples.json",
+      "bytes": 148001,
+      "sha256_bytes": "c7794fb5d4ee1bd016295269b3a5b25d16ab6e6c404c0d7278e84c470a8cacf7",
+      "sha256_lf": "c7794fb5d4ee1bd016295269b3a5b25d16ab6e6c404c0d7278e84c470a8cacf7",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/generation_audit.json",
+      "bytes": 2399,
+      "sha256_bytes": "39a93e7e02ace3a2250ca9792c1d1ee249d1df45a863a5d86bcd8f879feda819",
+      "sha256_lf": "39a93e7e02ace3a2250ca9792c1d1ee249d1df45a863a5d86bcd8f879feda819",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/group_links.json",
+      "bytes": 60730,
+      "sha256_bytes": "b1bd82d280b1b22cd045f5ff01c638b90b3f203b762275834316dd9810f5e8b7",
+      "sha256_lf": "b1bd82d280b1b22cd045f5ff01c638b90b3f203b762275834316dd9810f5e8b7",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/import_report.json",
+      "bytes": 2203,
+      "sha256_bytes": "2fd24550975738d49dc66a3e3f16f79f7c7cfa586eff101e5403680a5a832200",
+      "sha256_lf": "2fd24550975738d49dc66a3e3f16f79f7c7cfa586eff101e5403680a5a832200",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/storage_validation.json",
+      "bytes": 490,
+      "sha256_bytes": "f401c370e75b3488d2d041e16209715af14a846c24bd29a1eb4f94caa9df7555",
+      "sha256_lf": "f401c370e75b3488d2d041e16209715af14a846c24bd29a1eb4f94caa9df7555",
+      "git_verification": "exact_bytes"
+    },
+    {
+      "path": "results/stage5/test_report.json",
+      "bytes": 155,
+      "sha256_bytes": "9ace51c55d4464d291a9609f6340ec27f6bafe061d05cd3b80cbb3eb0d31bce7",
+      "sha256_lf": "9ace51c55d4464d291a9609f6340ec27f6bafe061d05cd3b80cbb3eb0d31bce7",
+      "git_verification": "exact_bytes"
+    }
+  ],
+  "manifest_excludes_own_hash": true,
+  "rows": 1200,
+  "target_counts": {
+    "benign": 600,
+    "malicious": 600
+  },
+  "verification_method": "static_scenario_and_policy",
+  "tests_passed": 60,
+  "corpus_reproduction": "byte_identical",
+  "full_contract_database_roundtrip": true
+}

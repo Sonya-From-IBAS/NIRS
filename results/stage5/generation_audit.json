@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "verification_method": "static_scenario_and_policy",
+  "records": 1200,
+  "scenario_pairs": 400,
+  "base_rows": 800,
+  "parent_linked_variants": 400,
+  "by_block_and_target": {
+    "privilege": {
+      "0": 200,
+      "1": 200
+    },
+    "obfuscated": {
+      "0": 200,
+      "1": 200
+    },
+    "exfiltration": {
+      "0": 200,
+      "1": 200
+    }
+  },
+  "by_block_dialect_and_target": {
+    "privilege:mysql": {
+      "0": 50,
+      "1": 50
+    },
+    "obfuscated:mysql": {
+      "0": 50,
+      "1": 50
+    },
+    "privilege:postgresql": {
+      "0": 50,
+      "1": 50
+    },
+    "obfuscated:postgresql": {
+      "0": 50,
+      "1": 50
+    },
+    "privilege:mssql": {
+      "0": 50,
+      "1": 50
+    },
+    "obfuscated:mssql": {
+      "0": 50,
+      "1": 50
+    },
+    "privilege:oracle": {
+      "0": 50,
+      "1": 50
+    },
+    "obfuscated:oracle": {
+      "0": 50,
+      "1": 50
+    },
+    "exfiltration:mysql": {
+      "0": 50,
+      "1": 50
+    },
+    "exfiltration:postgresql": {
+      "0": 50,
+      "1": 50
+    },
+    "exfiltration:mssql": {
+      "0": 50,
+      "1": 50
+    },
+    "exfiltration:oracle": {
+      "0": 50,
+      "1": 50
+    }
+  },
+  "representation_tag_counts": {
+    "comments": 400,
+    "string_concatenation": 312,
+    "char_function": 222
+  },
+  "transformation_method_counts": {
+    "inter_token_comments": 88,
+    "fixed_dynamic_string": 90,
+    "scalar_construction_and_comments": 222
+  },
+  "positive_exfiltration_channels": {
+    "unauthorized_read": 240,
+    "file_export": 60
+  },
+  "source_families": 10,
+  "family_group_ids": 10,
+  "conservative_split_groups": 7,
+  "exact_unique_SQL_texts": 686,
+  "exact_SQL_with_both_targets": 58,
+  "unique_SQL_plus_detector_context": 1200,
+  "SQL_plus_context_label_conflicts": 0,
+  "object_and_actor_class_counterbalance": "passed",
+  "context_dependent_rows": 296,
+  "minimum_SQL_only_errors_from_exact_conflicts": 116,
+  "context_dependent_family_counts": {
+    "p01-object-scope": 28,
+    "p02-principal-scope": 28,
+    "e01-column-scope": 60,
+    "e02-row-scope": 60,
+    "e05-export-destination": 120
+  },
+  "same_SQL_different_context_role": "context-dependent cases are evaluated as a separate slice; SQL-only cannot distinguish identical SQL texts",
+  "authoring": "AI-authored scenario/SQL templates; deterministic expansion and static rule checks",
+  "external_LLM_API_calls": 0
+}

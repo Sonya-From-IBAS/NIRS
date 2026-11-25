@@ -1,0 +1,150 @@
+{
+  "plan_version": "stage5-static-v1",
+  "date": "2026-11-25",
+  "status": "approved_static_scenario_generation",
+  "counts_agreed_with_user": true,
+  "new_sqli_scenarios": 0,
+  "existing_sqli_corpora_modified": false,
+  "target_rows": 1200,
+  "target_class_counts": {
+    "benign": 600,
+    "malicious": 600
+  },
+  "dialects": [
+    "mysql",
+    "postgresql",
+    "mssql",
+    "oracle"
+  ],
+  "blocks": [
+    {
+      "block": "privilege",
+      "rows": 400,
+      "benign": 200,
+      "malicious": 200,
+      "rows_per_dialect": 100
+    },
+    {
+      "block": "exfiltration",
+      "rows": 400,
+      "benign": 200,
+      "malicious": 200,
+      "rows_per_dialect": 100
+    },
+    {
+      "block": "obfuscated",
+      "rows": 400,
+      "benign": 200,
+      "malicious": 200,
+      "rows_per_dialect": 100,
+      "parent_blocks": {
+        "privilege": 200,
+        "exfiltration": 200
+      },
+      "requires_accepted_parent": true,
+      "counts_as_new_independent_scenario": false
+    }
+  ],
+  "base_design": {
+    "families_per_threat": 5,
+    "pairs_per_family_and_dialect": 10,
+    "rows_per_pair": 2,
+    "obfuscated_pairs_per_family_and_dialect": 5,
+    "meaning_of_pair": "one authorized and one policy-violating operation with matched domain, role and SQL style",
+    "quota_is_not_ground_truth": true,
+    "family_is_not_automatically_an_independent_split_group": true
+  },
+  "privilege_families": [
+    {
+      "family_id": "p01-object-scope",
+      "action": "grant",
+      "scope": "authorized object rights versus rights on a resource outside the grant operation scope"
+    },
+    {
+      "family_id": "p02-principal-scope",
+      "action": "grant",
+      "scope": "approved beneficiary versus an explicitly unapproved beneficiary for the same grant operation"
+    },
+    {
+      "family_id": "p03-role-membership",
+      "action": "grant",
+      "scope": "approved role membership versus assignment of a role outside the delegation policy"
+    },
+    {
+      "family_id": "p04-grant-option",
+      "action": "grant",
+      "scope": "authorized delegation versus forwarding grant/admin authority outside the delegation policy"
+    },
+    {
+      "family_id": "p05-privileged-routine",
+      "action": "execute",
+      "scope": "authorized versus prohibited invocation of a laboratory routine with a documented rights-changing effect"
+    }
+  ],
+  "exfiltration_families": [
+    {
+      "family_id": "e01-column-scope",
+      "channel": "unauthorized_read",
+      "scope": "approved field projection versus explicitly prohibited sensitive fields"
+    },
+    {
+      "family_id": "e02-row-scope",
+      "channel": "unauthorized_read",
+      "scope": "allowed tenant/business rows versus protected rows outside the operation scope"
+    },
+    {
+      "family_id": "e03-related-resources",
+      "channel": "unauthorized_read",
+      "scope": "authorized joined/subquery resources versus a prohibited related sensitive resource"
+    },
+    {
+      "family_id": "e04-disclosure-contract",
+      "channel": "unauthorized_read",
+      "scope": "authorized versus prohibited field disclosure through numeric aggregates; aggregate syntax is shared by both classes"
+    },
+    {
+      "family_id": "e05-export-destination",
+      "channel": "file_export",
+      "scope": "declared application CSV export workflow; the predecision destination is matched to explicit allow/deny rules"
+    }
+  ],
+  "obfuscation": {
+    "is_separate_generation_block": true,
+    "is_separate_binary_target_class": false,
+    "preserve_parent_context_and_target_only_after_equivalence_check": true,
+    "candidate_methods": [
+      "inter_token_comments",
+      "keyword_case_and_spacing_with_comments",
+      "string_construction_for_dynamic_sql",
+      "dialect_specific_character_or_hex_construction"
+    ],
+    "formatting_only_is_not_sufficient": true,
+    "no_universal_url_decode_or_keyword_splitting": true,
+    "no_unconditional_executable_comment_removal": true
+  },
+  "quality_gates": [
+    "versioned_scenario_and_complete_predecision_context",
+    "strict_response_and_contract_validation",
+    "reviewed_dialect_vocabulary_and_declared_fixture_consistency",
+    "policy_decision_from_actual_sql_action_not_requested_class",
+    "benign_allowed_and_attack_violation_explicit",
+    "parent_variant_static_operation_and_context_equivalence",
+    "source_name_domain_and_style_counterbalancing",
+    "exact_context_and_structural_overlap_audit",
+    "source_family_and_parent_group_links",
+    "AI_template_review_and_recorded_static_checks",
+    "frozen_snapshot_with_evidence_and_counts"
+  ],
+  "pending_decisions": [],
+  "supersedes": "stage5-design-v1",
+  "verification_method": "static_scenario_and_policy",
+  "authoring": {
+    "kind": "AI-authored controlled templates",
+    "expansion": "deterministic indexed scenarios",
+    "external_API_generation": false,
+    "code": [
+      "src/generate_scenarios.py",
+      "src/scenario_sql.py"
+    ]
+  }
+}

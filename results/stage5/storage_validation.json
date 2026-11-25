@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "repeat_import_reused": true,
+  "unchanged_database_counts": {
+    "observations": 227315,
+    "occurrences": 366921,
+    "datasets": 7,
+    "groups": 61935,
+    "group_members": 165822
+  },
+  "full_contract_roundtrip": true,
+  "rows_compared": 1200,
+  "artifact_verification": {
+    "ready_verified": 67,
+    "not_ready": 0,
+    "failures": []
+  },
+  "linked_components": 7,
+  "historical_experiments": {
+    "experiment_runs": 8,
+    "predictions": 312288
+  }
+}
