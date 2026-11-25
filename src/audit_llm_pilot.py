@@ -24,13 +24,25 @@ def main():
     cohort=json.loads((folder/'pilot_inputs.json').read_text(encoding='utf-8'))
     # The archived sources, rather than today's model roster, define old runs.
     ceiling=plan['max_api_attempts']
-    assert len(requests)==len(outcomes)==ceiling
+    request_count=plan.get('planned_request_count',ceiling)
+    assert len(requests)==len(outcomes)==request_count
     assert plan['ordered_request_keys']==[item['request_key'] for item in requests]
     with store.connect() as connection:
         job=connection.execute('SELECT * FROM nirs.llm_pilots WHERE pilot_id=%s',(plan['pilot_id'],)).fetchone()
         calls=connection.execute('SELECT * FROM nirs.llm_requests WHERE request_key=ANY(%s)',(plan['ordered_request_keys'],)).fetchall()
     assert job['configuration']==plan and job['max_api_attempts']==ceiling
-    assert sum(row['api_attempts'] for row in calls)==report['actual_api_attempts']<=ceiling
+    assert sum(row['api_attempts'] for row in calls)==report['actual_api_attempts']<=request_count
+    origin_attempts=sum(row['api_attempts'] for row in calls if row['origin_pilot_id']==plan['pilot_id'])
+    assert origin_attempts<=ceiling
+    if 'continuation' in plan:
+        assert report['origin_pilot_api_attempts']==origin_attempts
+        from llm_continuation import validate_selection
+        prior_folder=ROOT/plan['continuation']['source_directory']
+        previous=json.loads((prior_folder/'request_plan.json').read_text(encoding='utf-8'))
+        previous_outcomes=json.loads((prior_folder/'request_outcomes.json').read_text(encoding='utf-8'))
+        expected,actions=validate_selection(previous,previous_outcomes)
+        assert requests==expected and plan['continuation']['actions']==actions
+        assert plan['continuation']['stage_attempts_before']+origin_attempts<=plan['continuation']['stage_attempts_ceiling']
     cached={row['request_key']:row for row in calls}
     references={row['observation_id']:row for row in cohort['pilot']}
     aligned={}
@@ -82,7 +94,7 @@ def main():
     integrity=store.verify_artifacts()
     assert not integrity['failures'] and not integrity['not_ready']
     result={'stage':9,'pilot_id':plan['pilot_id'],'checked_runs':checked,'planned_classifications':len(aligned),
-            'api_attempts':report['actual_api_attempts'],'ceiling':ceiling,'artifact_integrity':integrity,
+            'api_attempts':report['actual_api_attempts'],'origin_pilot_api_attempts':origin_attempts,'ceiling':ceiling,'artifact_integrity':integrity,
             'decision_status_counts':dict(Counter(value[1] for value in aligned.values())),
             'checks':['strict_final_JSON_reparse','ordered_batch_cache_keys','durable_API_budget','pinned_pilot_references',
                       'database_prediction_alignment','metrics_recomputed_from_rows','archived_source','artifact_checksums']}

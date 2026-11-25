@@ -1,0 +1,40 @@
+{
+  "stage": 9,
+  "iteration": "Authorized GLM continuation",
+  "date": "2026-11-25",
+  "base_commit": "c2b1b27",
+  "tests": {
+    "run": 127,
+    "passed": 127,
+    "skipped": 0
+  },
+  "test_log_sha256": "3ea819d86b769ce87dca3d6e95d4e27c4b6b034b3be44bbbfa681a7124c7d9e7",
+  "new_API_attempts": 10,
+  "combined_classification_API_attempts": 48,
+  "authorized_new_API_ceiling": 12,
+  "authorized_stage_API_ceiling": 50,
+  "replay_new_API_attempts": 0,
+  "checked_predictions": 60,
+  "files_sha256": {
+    "src/detector_llm.py": "226679fdc8bdd99a247ab9db7eb8da93bca37209e612e77b4e014a18c58a833f",
+    "src/llm_pilot.py": "70a9126b2562c71af50bb41a3795cb0a66ad2b254261ab473cfab493884a1cda",
+    "src/audit_llm_pilot.py": "c60fd64399cfee0eae5ae1bae8df3a2adfae15373134fd07ed7629ecbce82fbd",
+    "src/llm_continuation.py": "a39a406d335edda991f57c2a3492b5ccd8030786e95418f43ba5daf43d9df98e",
+    "tests/test_llm.py": "a367fc8ed19c7ba4839ceaa6d4b0c5559fd15d06d8971666fb2788037db22c77",
+    "docs/llm_pilot.md": "b38ece3e36afe7fd277c62f22182a93e4b8bda96d887913f68a15fae79dcf002",
+    "results/stage9/glm53_continued/pilot_audit.json": "711ac2e5444557e849c27f6a9a4892e2e21a6fdac650be63ed80828f5f07f0aa",
+    "results/stage9/glm53_continued/pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+    "results/stage9/glm53_continued/pilot_plan.json": "72f24a7c1d77901005efe5bd3bbd36fdbb4bbfddd93864e6d4d6134cd0ae3d83",
+    "results/stage9/glm53_continued/pilot_report.json": "4c894a944e1990e4382d6d33edfe671f317e9a88aa40b7c70ff83ee6b9baadcc",
+    "results/stage9/glm53_continued/prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe",
+    "results/stage9/glm53_continued/repair_proposal.json": "444d4b19be06b47cc841a4f5d48d4842708d38a86b48c6c70d0251233c9c428e",
+    "results/stage9/glm53_continued/request_outcomes.json": "d45e605cf78f0ca258eae1379de9f5a5412fefad863bc34b483bfb335ef49704",
+    "results/stage9/glm53_continued/request_plan.json": "356bc1b5ed5207c2dc9ba3dcdfb4a3117b6f145cf70a64476b2f569c0d0b398d",
+    "results/stage9/glm53_continued/resume_check.json": "1bea885da0d46013520cb14c0eadb8dbefa5a8208058893f0c6fea3bc1b1de68",
+    "results/stage9/glm53_continued/stop_record.json": "4d5cf71bef8d549babbacdb8aa5a2b4ea385b622262dcd4710b540d7ce939814",
+    "results/stage9/active_models.json": "b39d70cdb173804e05819db0ac2bc75ef026a1700131551363927141d3e0ca54",
+    "results/stage9/combined_pilot_report.json": "acaaa7fc94b1cdb25e0a12fda5092c37a25d23b90f026b857e9f9d82b93da69b",
+    "results/stage9/main_budget_proposal.json": "77c9062a254278ee6872fb1259493b96ee8e1603d99c9a616682177aa93e023d",
+    "results/stage9/next_step_proposal.json": "299f179a099c5583318fcec281c7836eddefbe8c1b1199aa9af8f47298b8b03b"
+  }
+}

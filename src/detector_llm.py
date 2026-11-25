@@ -68,7 +68,7 @@ def build_specification(model, mode, observations, shots=()):
     messages.append({'role':'user','content':'Classify these observations. Return only JSON.\n'+canonical(observations)})
     return {'version':VERSION,'provider':model['provider'],'base_url':model['base_url'],'model':model['model'],
             'mode':mode,'parameters':model['parameters'],'messages':messages,
-            'batch_aliases':aliases,'timeout_s':90,'sdk_max_retries':0}
+            'batch_aliases':aliases,'timeout_s':model.get('timeout_s',90),'sdk_max_retries':0}
 
 
 def request_key(specification):
@@ -112,14 +112,15 @@ def create_client(model):
     values = dotenv_values(ROOT/'.env')
     key_name = credential_names[model['provider']]
     key = os.environ.get(key_name) or values.get(key_name)
+    timeout = model.get('timeout_s',90)
     if not key:
         raise ValueError('missing_credential:'+key_name)
     if model['provider'] == 'groq':
         from groq import Groq
-        return Groq(api_key=key,base_url=model['base_url'],max_retries=0,timeout=90)
+        return Groq(api_key=key,base_url=model['base_url'],max_retries=0,timeout=timeout)
     if model['provider'] in ('synthetic','aimlapi'):
         from openai import OpenAI
-        return OpenAI(api_key=key,base_url=model['base_url'],max_retries=0,timeout=90)
+        return OpenAI(api_key=key,base_url=model['base_url'],max_retries=0,timeout=timeout)
     raise ValueError('Unknown provider')
 
 
@@ -151,7 +152,7 @@ def call_once(client,specification):
             raise ValueError('finish_reason:'+str(choice.finish_reason))
         result['labels'] = parse_batch_response(choice.message.content,specification['batch_aliases'])
     except ValueError as error:
-        result.update(status='parse_error',labels=None,parse_error=str(error))
+        result.update(status='parse_error',labels=None,parse_error=str(error),stop_model=True)
     return result
 
 

@@ -7,13 +7,51 @@ import sys
 from types import SimpleNamespace
 import unittest
 import tempfile
-from unittest.mock import Mock,patch
+from unittest.mock import MagicMock,Mock,patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from detector_llm import MODELS,build_specification,call_once,create_client,parse_batch_response,prompt_observation,request_key
 
 
 class LLMTests(unittest.TestCase):
+    def continuation_fixture(self):
+        folder=Path(__file__).resolve().parents[1]/'results/stage9/glm53'
+        return tuple(json.loads((folder/name).read_text(encoding='utf-8')) for name in ('request_plan.json','request_outcomes.json'))
+
+    def test_GLM_continuation_reuses_eight_successes_and_changes_only_authorized_requests(self):
+        from llm_continuation import validate_selection
+        previous,outcomes=self.continuation_fixture()
+        selected,actions=validate_selection(previous,outcomes)
+        self.assertEqual(selected[:8],previous[:8])
+        self.assertEqual([row['action'] for row in actions],['reuse_successful_response']*8+['explicit_timeout_retry']+['first_attempt']*11)
+        for old,new in zip(previous[8:],selected[8:]):
+            expected=deepcopy(old['specification'])
+            expected['timeout_s']=180
+            expected['retry_of_request_key' if old['batch']==8 and old['mode']=='zero_shot' else 'continues_request_key']=old['request_key']
+            self.assertEqual(new['specification'],expected)
+            self.assertNotEqual(old['request_key'],new['request_key'])
+        self.assertEqual(len({row['request_key'] for row in selected}),20)
+
+    def test_GLM_continuation_rejects_unapproved_retry_or_changed_original_identity(self):
+        from llm_continuation import validate_selection
+        previous,outcomes=self.continuation_fixture()
+        for index,patch_value in ((0,{'status':'api_error'}),(8,{'error_type':'PermissionDeniedError'}),(9,{'status':'ok'})):
+            changed=deepcopy(outcomes);changed[index].update(patch_value)
+            with self.subTest(index=index),self.assertRaises(ValueError):
+                validate_selection(previous,changed)
+        changed=deepcopy(previous);changed[0]['specification']['messages'][0]['content']='changed'
+        with self.assertRaises(ValueError):
+            validate_selection(changed,outcomes)
+
+    def test_GLM_continuation_timeout_is_applied_to_transport_with_no_SDK_retries(self):
+        model=dict(next(row for row in MODELS if row['name']=='glm53'),timeout_s=180)
+        with patch('detector_llm.dotenv_values',return_value={'SYNTHETIC_API_KEY':'test'}),patch('openai.OpenAI') as factory:
+            create_client(model)
+            self.assertEqual(factory.call_args.kwargs['timeout'],180)
+            self.assertEqual(factory.call_args.kwargs['max_retries'],0)
+        spec=build_specification(model,'zero_shot',[prompt_observation('q001','SELECT 1')])
+        self.assertEqual(spec['timeout_s'],180)
+
     def test_GLM53_replacement_plan_is_isolated_and_does_not_schedule_GPT_again(self):
         import llm_pilot
         from detector_llm import ACTIVE_MODEL_NAMES
@@ -121,6 +159,25 @@ class LLMTests(unittest.TestCase):
         result=call_once(client,build_specification(MODELS[0],'zero_shot',[prompt_observation('q001','SELECT 1')]))
         self.assertEqual(result['status'],'parse_error')
         self.assertIsNone(result['labels'])
+        self.assertTrue(result['stop_model'])
+
+    def test_stopped_continuation_never_reserves_unsent_requests(self):
+        from llm_continuation import stopped_outcomes
+        requests=[{'request_key':'cached','specification':{'test':True}},
+                  {'request_key':'unsent','specification':{'test':False}}]
+        result={'status':'parse_error','labels':None}
+        store=MagicMock()
+        store.connect.return_value.__enter__.return_value.execute.return_value.fetchall.return_value=[{
+            'request_key':'cached','specification':{'test':True},'state':'complete','result':result,'response_artifact':'artifact'}]
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'response.json'
+            path.write_text(json.dumps({'request_key':'cached','result':result}),encoding='utf-8')
+            store.get_artifact.return_value=path
+            with patch('llm_continuation.reserve_request',side_effect=AssertionError('No reservations')), \
+                 patch('detector_llm.create_client',side_effect=AssertionError('No clients')):
+                outcomes=stopped_outcomes(store,{'ordered_request_keys':['cached','unsent']},requests)
+        self.assertEqual([row['status'] for row in outcomes],['parse_error','not_run'])
+        self.assertFalse(any(row['new_api_attempt'] for row in outcomes))
 
     def test_API_failure_is_one_attempt_no_fabricated_legit_or_secret_exception_text(self):
         client=Mock()

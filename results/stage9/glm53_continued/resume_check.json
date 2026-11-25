@@ -1,0 +1,12 @@
+{
+  "pilot_id": "pilot_3c0700180b39a61ee0ef409184d4e241809466d5032f4dfc69e185ea8f885d5f",
+  "original_report_artifact": "a2c0271ee2ff466632ca05bd5d00e7ecb4ccb056c25672b41b57b7d9f8add2bb",
+  "initial_new_api_attempts": 10,
+  "replay_new_API_attempts": 0,
+  "origin_attempts_unchanged": 10,
+  "metrics_and_run_IDs_unchanged": true,
+  "network_caller_replaced_with_raising_stub": true,
+  "eight_successful_batches_reused": true,
+  "original_timeout_response_preserved": true,
+  "inputs_identical_to_original_GLM_pilot": true
+}

@@ -19,7 +19,7 @@ from storage import ROOT,Storage,canonical,digest,file_hash
 
 OUTPUT = ROOT/'results/stage9/current'
 SOURCES = ('detector_llm.py','llm_store.py','llm_pilot.py','data_contract.py','sql_features.py',
-           'sql_views.py','normalize.py','storage.py','evaluation_metrics.py','experiment_store.py')
+           'sql_views.py','normalize.py','storage.py','evaluation_metrics.py','experiment_store.py','llm_continuation.py')
 
 
 def signature():
@@ -105,7 +105,7 @@ def prepare(store,models=None):
 
 def request_results(store,plan,requests,client_factory=create_client,caller=call_once,pacing=True):
     outcomes,clients,stopped_models,stopped_providers = [],{},{},{}
-    by_name = {model['name']:model for model in MODELS}
+    by_name = {model['name']:model for model in plan.get('models',MODELS)}
     last_call = {}
     for request in requests:
         model = by_name[request['model_name']]
@@ -153,7 +153,7 @@ def persist_results(store,plan,cohorts,requests,outcomes):
                 raise ValueError('Invalid cached binary label')
             groups[(request['model_name'],request['mode'])].append({'entry':by_id[oid],'prediction':label,
                 'status':result['status'],'request_key':request['request_key']})
-    code_artifacts = {'code/'+name:store.register_artifact(ROOT/'src'/name) for name in SOURCES}
+    code_artifacts = {'code/'+name:aid for name,aid in plan['code_artifacts'].items()}
     code_artifacts.update({'pilot_plan.json':store.register_artifact(OUTPUT/'pilot_plan.json'),
                           'pilot_inputs.json':store.register_artifact(OUTPUT/'pilot_inputs.json'),
                           'request_plan.json':store.register_artifact(OUTPUT/'request_plan.json'),
@@ -215,7 +215,12 @@ def persist_results(store,plan,cohorts,requests,outcomes):
               'observed_tokens':dict(usage),'usage_reported_calls':sum(bool((row['result'] or {}).get('usage')) for row in calls),
               'money_cost':None,'money_cost_reason':'account-specific tariff not established; observed tokens and calls reported',
               'models':summaries,'comparisons':comparisons,'runs':runs,'main_experiment_budget':'pending_user_agreement_after_pilot'}
-    if result['actual_api_attempts']>plan['max_api_attempts']:
+    if 'continuation' in plan:
+        result['continuation'] = plan['continuation']
+        result['origin_pilot_api_attempts'] = sum(row['api_attempts'] for row in calls if row['origin_pilot_id']==plan['pilot_id'])
+        if result['origin_pilot_api_attempts']>plan['max_api_attempts']:
+            raise ValueError('Continuation exceeded its new API ceiling')
+    if result['actual_api_attempts']>plan.get('planned_request_count',plan['max_api_attempts']):
         raise ValueError('Pilot exceeded its agreed API ceiling')
     save_json(OUTPUT/'pilot_report.json',result)
     save_json(OUTPUT/'request_outcomes.json',outcomes)

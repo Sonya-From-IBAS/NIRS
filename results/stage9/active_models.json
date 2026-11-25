@@ -14,9 +14,11 @@
       "name": "glm53",
       "provider": "synthetic",
       "model": "hf:zai-org/GLM-5.3",
-      "pilot_directory": "results/stage9/glm53",
+      "pilot_directory": "results/stage9/glm53_continued",
       "batch_size": 3,
-      "pilot_status": "partial_stopped_after_timeout"
+      "pilot_status": "partial_stopped_after_error",
+      "historical_partial_pilot_directory": "results/stage9/glm53",
+      "timeout_s": 180
     },
     {
       "name": "kimi31pro",
@@ -33,18 +35,21 @@
     "meta-llama/Llama-3.3-70B-Instruct-Turbo"
   ],
   "replacement_pilot": {
+    "model": "hf:zai-org/GLM-5.3",
     "observations": 30,
     "modes": [
       "zero_shot",
       "few_shot"
     ],
-    "batch_size": 10,
-    "new_API_ceiling": 6,
+    "batch_size": 3,
+    "reused_successful_batches": 8,
+    "new_API_ceiling": 12,
+    "explicit_timeout_retries": 1,
     "automatic_retries": 0
   },
-  "previous_classification_API_attempts": 32,
-  "maximum_combined_classification_API_attempts": 38,
-  "actual_combined_classification_API_attempts": 38,
+  "previous_classification_API_attempts": 38,
+  "maximum_combined_classification_API_attempts": 50,
+  "actual_combined_classification_API_attempts": 48,
   "original_classification_ceiling": 46,
   "attempt_history": [
     {
@@ -62,16 +67,33 @@
     {
       "report": "results/stage9/kimi31pro/pilot_report.json",
       "API_attempts": 6
+    },
+    {
+      "report": "results/stage9/glm53_continued/pilot_report.json",
+      "API_attempts": 10,
+      "additional_selected_cached_attempts": 8
     }
   ],
   "main_experiment_budget": "pending_approval_for_three_models",
   "GLM53_continuation": {
-    "status": "not_approved_requires_updated_budget",
-    "historical_proposal": "results/stage9/glm53/continuation_proposal.json",
-    "current_attempts": 38,
-    "additional_attempts_in_historical_proposal": 12,
-    "hypothetical_total": 50,
-    "original_ceiling": 46,
-    "additional_approval_required": true
-  }
+    "status": "stopped_partial",
+    "report": "results/stage9/glm53_continued/pilot_report.json",
+    "authorization": "user_approved_finish_GLM_2026_11_25",
+    "new_API_ceiling": 12,
+    "new_API_attempts": 10,
+    "eight_successful_batches_reused": true,
+    "explicit_timeout_retries": 1,
+    "timeout_s": 180,
+    "automatic_retries": 0,
+    "stop_reason": {
+      "reason": "truncated_response",
+      "new_API_attempts": 10,
+      "no_in_flight_calls": true,
+      "automatic_retries": 0,
+      "response_cache_preserved": true,
+      "handler_issue": "parse_errors_did_not_set_stop_model; additional_batches_completed_before_manual_stop"
+    },
+    "repair_proposal": "results/stage9/glm53_continued/repair_proposal.json"
+  },
+  "approved_classification_ceiling": 50
 }

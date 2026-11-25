@@ -1,0 +1,610 @@
+{
+  "version": "binary-llm-v1",
+  "pilot_id": "pilot_3c0700180b39a61ee0ef409184d4e241809466d5032f4dfc69e185ea8f885d5f",
+  "role": "development_only_not_final_test",
+  "planned_api_ceiling": 12,
+  "actual_api_attempts": 18,
+  "new_api_attempts_this_invocation": 0,
+  "observed_tokens": {
+    "prompt_tokens": 34448,
+    "completion_tokens": 19893,
+    "total_tokens": 54341
+  },
+  "usage_reported_calls": 18,
+  "money_cost": null,
+  "money_cost_reason": "account-specific tariff not established; observed tokens and calls reported",
+  "models": [
+    {
+      "name": "glm53",
+      "requested_model": "hf:zai-org/GLM-5.3",
+      "provider": "synthetic",
+      "api_attempts": 18,
+      "actual_model_ids": [
+        "zai-org/GLM-5.3"
+      ],
+      "call_status_counts": {
+        "ok": 15,
+        "parse_error": 3
+      },
+      "observed_tokens": {
+        "prompt_tokens": 34448,
+        "completion_tokens": 19893,
+        "total_tokens": 54341
+      },
+      "elapsed_api_s": 374.599961
+    }
+  ],
+  "comparisons": [
+    {
+      "model": "glm53",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 27,
+          "parse_error": 3
+        },
+        "decision_coverage": 0.9,
+        "successful_decisions": 27,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": 0.9032258064516129,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.23076923076923078,
+          "attack_precision": 0.8235294117647058,
+          "confusion_matrix": [
+            [
+              10,
+              3
+            ],
+            [
+              0,
+              14
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 14,
+            "fp": 3,
+            "fn": 0,
+            "tn": 10
+          },
+          "per_class": {
+            "0": {
+              "support": 13,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 0.7692307692307693,
+              "f1": 0.8695652173913043
+            },
+            "1": {
+              "support": 14,
+              "predicted_support": 17,
+              "precision": 0.8235294117647058,
+              "recall": 1.0,
+              "f1": 0.9032258064516129
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    },
+    {
+      "model": "glm53",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 30,
+        "status_counts": {
+          "ok": 18,
+          "parse_error": 6,
+          "not_run": 6
+        },
+        "decision_coverage": 0.6,
+        "successful_decisions": 18,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              8,
+              0
+            ],
+            [
+              0,
+              10
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 8
+          },
+          "per_class": {
+            "0": {
+              "support": 8,
+              "predicted_support": 8,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      }
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "run_dbb1c68fbc5059b47bb64a64d4405b80e31ced685ae689da8a70310c00c8dce2",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "model": "glm53",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 10,
+        "status_counts": {
+          "ok": 7,
+          "parse_error": 3
+        },
+        "decision_coverage": 0.7,
+        "successful_decisions": 7,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": 0.7272727272727273,
+          "attack_recall": 1.0,
+          "false_positive_rate": 1.0,
+          "attack_precision": 0.5714285714285714,
+          "confusion_matrix": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 4,
+            "fp": 3,
+            "fn": 0,
+            "tn": 0
+          },
+          "per_class": {
+            "0": {
+              "support": 3,
+              "predicted_support": 0,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "1": {
+              "support": 4,
+              "predicted_support": 7,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "994774714bfcaf737848d874bec1109b5718301dc7e2aad6199e0cf7c681cfca",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "a06df829b807d90d953c739ef11f43ebd58717fb37fcdc353608ecd1d1ff9053",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/llm_continuation.py": "7ddde8645487d677b67651d7aa9baa0087dfa53218d557c35cdb725844be6da3",
+        "pilot_plan.json": "72f24a7c1d77901005efe5bd3bbd36fdbb4bbfddd93864e6d4d6134cd0ae3d83",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "356bc1b5ed5207c2dc9ba3dcdfb4a3117b6f145cf70a64476b2f569c0d0b398d",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    },
+    {
+      "run_id": "run_463cbbc5e30c335d1755e6b02709d848b51052f58405bc7868df3686218a0be9",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "model": "glm53",
+      "mode": "zero_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 20,
+        "status_counts": {
+          "ok": 20
+        },
+        "decision_coverage": 1.0,
+        "successful_decisions": 20,
+        "primary_f1": 1.0,
+        "eligible_for_primary_ranking": true,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              10,
+              0
+            ],
+            [
+              0,
+              10
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10
+          },
+          "per_class": {
+            "0": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 10,
+              "predicted_support": 10,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "994774714bfcaf737848d874bec1109b5718301dc7e2aad6199e0cf7c681cfca",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "a06df829b807d90d953c739ef11f43ebd58717fb37fcdc353608ecd1d1ff9053",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/llm_continuation.py": "7ddde8645487d677b67651d7aa9baa0087dfa53218d557c35cdb725844be6da3",
+        "pilot_plan.json": "72f24a7c1d77901005efe5bd3bbd36fdbb4bbfddd93864e6d4d6134cd0ae3d83",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "356bc1b5ed5207c2dc9ba3dcdfb4a3117b6f145cf70a64476b2f569c0d0b398d",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    },
+    {
+      "run_id": "run_03f0a3bf89f694590f56be55fa8715ce24dec104c29379deeb8fde66a25ed099",
+      "dataset_version_id": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+      "model": "glm53",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 10,
+        "status_counts": {
+          "ok": 3,
+          "parse_error": 4,
+          "not_run": 3
+        },
+        "decision_coverage": 0.3,
+        "successful_decisions": 3,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 1
+          },
+          "per_class": {
+            "0": {
+              "support": 1,
+              "predicted_support": 1,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 2,
+              "predicted_support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "994774714bfcaf737848d874bec1109b5718301dc7e2aad6199e0cf7c681cfca",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "a06df829b807d90d953c739ef11f43ebd58717fb37fcdc353608ecd1d1ff9053",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/llm_continuation.py": "7ddde8645487d677b67651d7aa9baa0087dfa53218d557c35cdb725844be6da3",
+        "pilot_plan.json": "72f24a7c1d77901005efe5bd3bbd36fdbb4bbfddd93864e6d4d6134cd0ae3d83",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "356bc1b5ed5207c2dc9ba3dcdfb4a3117b6f145cf70a64476b2f569c0d0b398d",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    },
+    {
+      "run_id": "run_efd950dc87de365db7d56605a23efa0ee0456311cecf5688e45b4d1131f250ab",
+      "dataset_version_id": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+      "model": "glm53",
+      "mode": "few_shot",
+      "metrics": {
+        "metric_contract": "evaluation-metrics-v1",
+        "label_space": "binary",
+        "observations": 20,
+        "status_counts": {
+          "ok": 15,
+          "parse_error": 2,
+          "not_run": 3
+        },
+        "decision_coverage": 0.75,
+        "successful_decisions": 15,
+        "primary_f1": null,
+        "eligible_for_primary_ranking": false,
+        "successful_decision_metrics": {
+          "f1": 1.0,
+          "attack_recall": 1.0,
+          "false_positive_rate": 0.0,
+          "attack_precision": 1.0,
+          "confusion_matrix": [
+            [
+              7,
+              0
+            ],
+            [
+              0,
+              8
+            ]
+          ],
+          "collapsed_binary_counts": {
+            "tp": 8,
+            "fp": 0,
+            "fn": 0,
+            "tn": 7
+          },
+          "per_class": {
+            "0": {
+              "support": 7,
+              "predicted_support": 7,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "1": {
+              "support": 8,
+              "predicted_support": 8,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "sample_weighted": false
+      },
+      "artifacts": {
+        "code/detector_llm.py": "994774714bfcaf737848d874bec1109b5718301dc7e2aad6199e0cf7c681cfca",
+        "code/llm_store.py": "d7742a5f92e8ba8614175e563fa0681d66aa620477ef737b58d108c5abb059a7",
+        "code/llm_pilot.py": "a06df829b807d90d953c739ef11f43ebd58717fb37fcdc353608ecd1d1ff9053",
+        "code/data_contract.py": "e84494ca1a8b29c6b3fb45c31222c8583c676205bcc6da5083dcead8334ca030",
+        "code/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+        "code/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+        "code/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+        "code/storage.py": "3ff35c2b357f3696be3c5f624126a1046c11dd40a9bf985019d50b713cadb293",
+        "code/evaluation_metrics.py": "3dacaf3e56554a08914f1d45790a7b41218759258663be4a00c003ee732cf57e",
+        "code/experiment_store.py": "6cb30cd36a6a31b88eb5c1ba624b75195372cdeb2db9e0cb9548ea101a5268d4",
+        "code/llm_continuation.py": "7ddde8645487d677b67651d7aa9baa0087dfa53218d557c35cdb725844be6da3",
+        "pilot_plan.json": "72f24a7c1d77901005efe5bd3bbd36fdbb4bbfddd93864e6d4d6134cd0ae3d83",
+        "pilot_inputs.json": "c4814ea41e54ac5a5681593581d04d6d3ee29a95fc6c473585bb0d5c6fbb108c",
+        "request_plan.json": "356bc1b5ed5207c2dc9ba3dcdfb4a3117b6f145cf70a64476b2f569c0d0b398d",
+        "prompts.json": "95147c98a7df41b486d8ae7bac51c0db2add2bdae24b288de9bbd8601f4b6ffe"
+      }
+    }
+  ],
+  "main_experiment_budget": "pending_user_agreement_after_pilot",
+  "continuation": {
+    "authorization": "user_approved_finish_GLM_2026_11_25",
+    "source_directory": "results/stage9/glm53",
+    "source_pilot_id": "pilot_b4f45be78fac4031ed647ff7e5009e7d10011c240237a1b443e9ca9b29e23bde",
+    "source_request_plan_sha256": "88a1f8956c28afd40d38fa3329eb59b882a3f8bc960aa4f7ab7ffabf9829e7df",
+    "reused_successful_batches": 8,
+    "new_unattempted_batches": 11,
+    "explicit_timeout_retries": 1,
+    "stage_attempts_before": 38,
+    "stage_attempts_ceiling": 50,
+    "actions": [
+      {
+        "old_request_key": "llm_ffbd4e8088e283c668dea9ef948bf5c98b5668c7b9428063f986635c8ec2ec17",
+        "selected_request_key": "llm_ffbd4e8088e283c668dea9ef948bf5c98b5668c7b9428063f986635c8ec2ec17",
+        "mode": "zero_shot",
+        "batch": 0,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_3351d349e629755b0a58a019f10ba738bde480e97e91aa5dbcc0d7943306801d",
+        "selected_request_key": "llm_3351d349e629755b0a58a019f10ba738bde480e97e91aa5dbcc0d7943306801d",
+        "mode": "zero_shot",
+        "batch": 1,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_54eb7b9ef6a4c0d7f1b2e3462cc1cc7029af69c0b7fe340ef989f33ff4df5af8",
+        "selected_request_key": "llm_54eb7b9ef6a4c0d7f1b2e3462cc1cc7029af69c0b7fe340ef989f33ff4df5af8",
+        "mode": "zero_shot",
+        "batch": 2,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_3d5efbf5d3a9356340f0677ea9ff1a21f750db3a221bb627d037fdca554e303b",
+        "selected_request_key": "llm_3d5efbf5d3a9356340f0677ea9ff1a21f750db3a221bb627d037fdca554e303b",
+        "mode": "zero_shot",
+        "batch": 3,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_6b2a0d2b76edc68cc783a0749b135fb4a5f499fcee65b2d174739b1e8fce20a9",
+        "selected_request_key": "llm_6b2a0d2b76edc68cc783a0749b135fb4a5f499fcee65b2d174739b1e8fce20a9",
+        "mode": "zero_shot",
+        "batch": 4,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_5ce7e3ffe6af14b8742bfd2dd4319b09067fae6371383fd1db440a5e519815d0",
+        "selected_request_key": "llm_5ce7e3ffe6af14b8742bfd2dd4319b09067fae6371383fd1db440a5e519815d0",
+        "mode": "zero_shot",
+        "batch": 5,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_cb49e5dce2f919f8f4e24fdce2ffff76476f0a794f817b21f1ccb01ba2f8dfdb",
+        "selected_request_key": "llm_cb49e5dce2f919f8f4e24fdce2ffff76476f0a794f817b21f1ccb01ba2f8dfdb",
+        "mode": "zero_shot",
+        "batch": 6,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_a0210f642d5cbed16890d3403f6aee666a0b942706cf83d4a7952890bae6e808",
+        "selected_request_key": "llm_a0210f642d5cbed16890d3403f6aee666a0b942706cf83d4a7952890bae6e808",
+        "mode": "zero_shot",
+        "batch": 7,
+        "action": "reuse_successful_response"
+      },
+      {
+        "old_request_key": "llm_ff41a91b40b1e3c09689da3c032ad7bc287cf916a4dcac2ab03775ca230f5c26",
+        "selected_request_key": "llm_73bd97e29e48e4854fa4932b535a1b1d31e15b452c0a765c0ea33b334f9fe953",
+        "mode": "zero_shot",
+        "batch": 8,
+        "action": "explicit_timeout_retry"
+      },
+      {
+        "old_request_key": "llm_985870db499bc26a92bc9ff24e17663f299801b0207287c51cc5049ff1d593bd",
+        "selected_request_key": "llm_583f41e6315cf23fc9aeb644aed940a71f721188546bf61d7c6d3f31772bbf3a",
+        "mode": "zero_shot",
+        "batch": 9,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_443ec6e398cfdb88e863e9cacba655c9ea3070f5c98df0d6c4a873c9cc635a9d",
+        "selected_request_key": "llm_444997674c5ce82e59fcc475b366462d90802be0c80fbe00aa4470385b2f23e1",
+        "mode": "few_shot",
+        "batch": 0,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_e9facb6b1c15e48198f8b9647cb66f25f792fb5451b7501459cc9f157d549c9e",
+        "selected_request_key": "llm_006a3da986afe834c1e8b102b3a6aaf340a7baec6a2d9211fd32b654e3ff1c56",
+        "mode": "few_shot",
+        "batch": 1,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_235ac970a4a61ef9876cc6bc02996acd5b85cfc2c0e1daa77155cd9ff28f4691",
+        "selected_request_key": "llm_1d9756c961f7626b610b4f725d741a07bce92cb30cef3657c6f2864268fd1012",
+        "mode": "few_shot",
+        "batch": 2,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_721231930baaa9ac22aad360f4d6616804f5f2016157c12c398fb0c881361a2d",
+        "selected_request_key": "llm_97860b8662e1140bdfa8cb43db354aa074e53df757c54fafca356fc5c4f1095a",
+        "mode": "few_shot",
+        "batch": 3,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_4f062d377ad613965222eaa46229c7c25af5e2356753d45cac1b3442806bae6f",
+        "selected_request_key": "llm_788fdabb7744040f8a1283328cf62ec0ac9d630d2a67bd722611a8b4f00926d1",
+        "mode": "few_shot",
+        "batch": 4,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_f0d3d05630ac589c7ccf86eb59527f224d6afa71a0fbefd2a9942dcd83a1be16",
+        "selected_request_key": "llm_c4972f901a0f5a9fa9300d5485e281e4dd4f60aa790035c0862c901e8d2586f1",
+        "mode": "few_shot",
+        "batch": 5,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_64fb4c564a7afab06b5dd06e0bcb886656d0ef84f21a711abb905b8ccd0c49aa",
+        "selected_request_key": "llm_22b4e7438b005f1159029f6ed442ef64e76c665ed9a8cb762091d72caa718343",
+        "mode": "few_shot",
+        "batch": 6,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_58ca8fd6b533a4b9866af197c4834847fe047eb83e9d5aaf5f3d220ff4695c5a",
+        "selected_request_key": "llm_b3011c86f7b071a5b23d95b016e25fc90cc9c8ea7710818cc40b4352043e0979",
+        "mode": "few_shot",
+        "batch": 7,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_340575cf708fc2a32aad4881f141614c9bba66923271bd1e6e1340e1e174efd1",
+        "selected_request_key": "llm_d20ce3fc1a9b4188b0dd597836793618f150569a35f5bead6c6a73e8d20ab75f",
+        "mode": "few_shot",
+        "batch": 8,
+        "action": "first_attempt"
+      },
+      {
+        "old_request_key": "llm_e2f5160abcaab529758b9073ee090b4fd8311cdf799fdd87228b6740275e5014",
+        "selected_request_key": "llm_ce78605a2a80391e201288b19955cf1e82b81fd2940e9e7ffd9abb81ddbefba4",
+        "mode": "few_shot",
+        "batch": 9,
+        "action": "first_attempt"
+      }
+    ]
+  },
+  "origin_pilot_api_attempts": 10
+}

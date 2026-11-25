@@ -1,0 +1,8 @@
+{
+  "reason": "truncated_response",
+  "new_API_attempts": 10,
+  "no_in_flight_calls": true,
+  "automatic_retries": 0,
+  "response_cache_preserved": true,
+  "handler_issue": "parse_errors_did_not_set_stop_model; additional_batches_completed_before_manual_stop"
+}

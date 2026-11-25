@@ -21,7 +21,8 @@
           "primary_API_calls": 200,
           "SQL_only_ablation_API_calls": 134,
           "API_ceiling": 334,
-          "rough_total_tokens_from_pilot_mean": 752669
+          "rough_total_tokens_from_pilot_mean": 752669,
+          "timeout_s": 90
         },
         {
           "name": "glm53",
@@ -30,7 +31,8 @@
           "primary_API_calls": 200,
           "SQL_only_ablation_API_calls": 134,
           "API_ceiling": 334,
-          "rough_total_tokens_from_pilot_mean": null
+          "rough_total_tokens_from_pilot_mean": null,
+          "timeout_s": 180
         },
         {
           "name": "kimi31pro",
@@ -39,7 +41,8 @@
           "primary_API_calls": 60,
           "SQL_only_ablation_API_calls": 40,
           "API_ceiling": 100,
-          "rough_total_tokens_from_pilot_mean": 453433
+          "rough_total_tokens_from_pilot_mean": 453433,
+          "timeout_s": 90
         }
       ],
       "combined_api_ceiling": 768,
@@ -63,7 +66,8 @@
           "primary_API_calls": 80,
           "SQL_only_ablation_API_calls": 54,
           "API_ceiling": 134,
-          "rough_total_tokens_from_pilot_mean": 301969
+          "rough_total_tokens_from_pilot_mean": 301969,
+          "timeout_s": 90
         },
         {
           "name": "glm53",
@@ -72,7 +76,8 @@
           "primary_API_calls": 80,
           "SQL_only_ablation_API_calls": 54,
           "API_ceiling": 134,
-          "rough_total_tokens_from_pilot_mean": null
+          "rough_total_tokens_from_pilot_mean": null,
+          "timeout_s": 180
         },
         {
           "name": "kimi31pro",
@@ -81,7 +86,8 @@
           "primary_API_calls": 24,
           "SQL_only_ablation_API_calls": 16,
           "API_ceiling": 40,
-          "rough_total_tokens_from_pilot_mean": 181373
+          "rough_total_tokens_from_pilot_mean": 181373,
+          "timeout_s": 90
         }
       ],
       "combined_api_ceiling": 308,
@@ -94,8 +100,9 @@
       "sample_file": "main_sample_120.json"
     }
   ],
-  "estimated_usage_limitations": "GLM53 few-shot pilot incomplete; batch sizes and context lengths differ; no combined token/time forecast",
+  "estimated_usage_limitations": "Approximation from thirty development observations; batch sizes and context lengths differ; original GLM timeout token usage unknown",
   "money_cost": null,
   "money_cost_reason": "account-specific tariff not established",
-  "main_test_API_calls": 0
+  "main_test_API_calls": 0,
+  "pilot_status": "GLM53_partial"
 }
