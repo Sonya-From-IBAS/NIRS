@@ -1,0 +1,60 @@
+{
+  "version": "feature-cache-audit-v1",
+  "active_representations": [
+    "repr_9e17005dcb6ce7e3955311716a220cd94228d65801b4dbe6386f16577dc7dd81",
+    "repr_fccee42df9ba7b72e93bc36ad400988643d07856ce53a81080d0ac55509acf57",
+    "repr_8c0875ae75906716496ccefaf0fc0b5b38f32fc254e69685f1b92b6a0d42a9e7",
+    "repr_8667295ddc7c135966ca3638a573343b5e8c0ccb45e62c16b2bfe23230f868db",
+    "repr_a8d806021a897a6eab9821ce056a89bef825362be37e38ca2f7f78097218a4fd",
+    "repr_a240b600f4361086f0308aa6b7bac00985634eeb954336226f58c8f931caee8e",
+    "repr_c86eca4eabf4c2df68fa89ad0deb5a016f735da71092dbde7f25b09edadd29e0",
+    "repr_e85338733ce619fa88ae96542e864647a4934ba04c9f4a2f60424fed0d8c5574",
+    "repr_dbcfac159f53fdb4f64ac5482a4bfd1cfe1ecc675b119a3af111ad5aa832a202",
+    "repr_ba7837633e5daf147324722ca22eee3acaf9e09180793ba32f8c46ec4979935d",
+    "repr_3c01bee21984acc26f51bc312381de78ecffbbbff42c65824587225817c01880",
+    "repr_08b27a3d66f4d79f3a66ab344fe888f3df4d90b6049ac8b927040734f8897f5f",
+    "repr_879e036490706d532215bda6eef637bc5b71d45e60e347ad3259fdb6317aad0d",
+    "repr_d06375e1495768bdd2211b5fd1b1cb052ffc7f6dd0ec3103e5a1c0c2409f1bd4",
+    "repr_f85c77dffd79f586f2c14fe5515ad7577ff45f69c4e7d32c1f782f43670f8e0f",
+    "repr_8563a221eb4b384e29cb57067cdb340e361342b55bc9d4ce89a949041bc8a09e",
+    "repr_5e82b08dd6dd4a50a4a71603abbe73c2fd8869998a81d61c6f071833cfbde535",
+    "repr_8ced623affbeec40ab451c5235f1df6f56e80699017a7b769b418aa9b2dbe339",
+    "repr_a541802130b0704c0038e28b8970eab08aeda3579cca537c04e1add95f862e13",
+    "repr_4685622420e8623965c5437f38c24063f8844701343163c52c295b70457e5d62",
+    "repr_f9746d583da061fd3d45a39077564aed0abc71c74891f8d9f833598fbc74231a",
+    "repr_f665568f092b7cb8b1a95933b2872295777b2836930b86e2b583e8b7e0bcf8a7",
+    "repr_e7f798303cfddd31a1ccec1a52c9318b32ceca979fd921a7e07bd2bdf275cb9d",
+    "repr_d09acf71763bbad60e2e3e8747ab2429f9447f7acab91fc5474cd012f15e7c41",
+    "repr_b013ea2b1109b7588eec24bc58e2a9e0b7f4c794dbd318e00e6aa35f7dc21e0e",
+    "repr_2b12c3850536331ed008bbae53b47c2f77f64ea3bc5d558651e25ec6133d650b",
+    "repr_9f6beeb1f1cb81314da1b1117fab04b231090ab3e688023324973543baf847c7",
+    "repr_64eed706a70bc9e07f1b3ddb4e045c469fbc1604f69ca7683772da6b3ea36700",
+    "repr_d62138769eb81eb53f4effcd8c30f31bf8b599d91124185c19be4f518f9852ae",
+    "repr_f59867d141deb1bd2119c32afbd810e4ddfd8de06517640dd9f047f4e0516490",
+    "repr_48175f19af76c8700241778045f11eade41558d1c511bc9de60b06429d298c51",
+    "repr_576cd05dea43bb110b97a8b11afd8a14c05e41625a3c958d8687a042aba34db6",
+    "repr_c7a8219cca3fe5580284713afbf14d7cc4751ad35dc96aed319ebb2d2936bf91",
+    "repr_4b16e80ecf0aaee9e19b6522418bb7e5f797cf51fefa65732eff8ea2348254fe"
+  ],
+  "checks": [
+    "source_hashes",
+    "sealed_split_row_order",
+    "matrix_CSR_float32_shape_nnz",
+    "feature_column_order",
+    "encoder_training_rows",
+    "matrix_metadata_links",
+    "validation_prediction_row_order",
+    "artifact_checksums"
+  ],
+  "artifact_integrity": {
+    "ready_verified": 365,
+    "not_ready": 0,
+    "failures": []
+  },
+  "database_counts": {
+    "representations": 44,
+    "representation_artifacts": 588,
+    "experiment_runs": 8,
+    "predictions": 312288
+  }
+}

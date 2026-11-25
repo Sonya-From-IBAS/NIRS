@@ -241,6 +241,34 @@ class StorageIntegrationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.store.save_split(self.dataset, spec, {0: {**members, ids[0]: 'validation'}})
 
+    def test_sparse_representation_cache_reuses_fitted_pipeline_and_row_order(self):
+        import numpy as np
+        from sql_features import prepare_input
+        from study_features import cache_representation
+        ids = [row['observation_id'] for row in self.store.dataset_records(self.dataset)]
+        saved = self.store.save_split(self.dataset, {'unit_test': 'representation-cache'},
+            {0: {oid: 'train' if index < 6 else 'validation' if index < 8 else 'test' for index, oid in enumerate(ids)}})
+        entry = {'split_id': saved['split_id'], 'dataset_version_id': self.dataset}
+        by_id = {row['observation_id']: row for row in self.records}
+        train = [prepare_input(by_id[oid]) for oid in ids[:6]]
+        validation = [prepare_input(by_id[oid]) for oid in ids[6:8]]
+        y_train = np.array([by_id[oid]['annotations'][0]['target_label'] for oid in ids[:6]])
+        y_validation = np.array([by_id[oid]['annotations'][0]['target_label'] for oid in ids[6:8]])
+        with patch('study_features.LOCAL', self.folder / 'feature-cache'):
+            first = cache_representation(self.store, entry, 'unit-feature-cache',
+                {'text_mode': 'masked', 'structure': True, 'context': True, 'select_k': 50},
+                ids[:6], ids[6:8], train, validation, y_train, y_validation, 'controlled', {})
+            second = cache_representation(self.store, entry, 'unit-feature-cache',
+                {'text_mode': 'masked', 'structure': True, 'context': True, 'select_k': 50},
+                ids[:6], ids[6:8], train, validation, y_train, y_validation, 'controlled', {})
+        self.assertEqual(first['representation_id'], second['representation_id'])
+        self.assertEqual(first['artifacts'], second['artifacts'])
+        self.assertEqual(second['fit_rows_in_encoder'], 6)
+        with self.store.connect() as connection:
+            matrix = connection.execute("SELECT metadata FROM nirs.representation_artifacts WHERE representation_id=%s AND role='validation.npz'", (first['representation_id'],)).fetchone()['metadata']
+        self.assertEqual(matrix['shape'][0], 2)
+        self.assertEqual(matrix['encoder_artifact'], first['artifacts']['encoder.joblib'])
+
 
 if __name__ == "__main__":
     unittest.main()

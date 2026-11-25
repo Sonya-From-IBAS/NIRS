@@ -1,0 +1,32 @@
+{
+  "stage": 7,
+  "date": "2026-11-25",
+  "base_commit": "f23c2b0c38eed53a89cb4dca6f755b52632f2913",
+  "test_command": "NIRS_RUN_DB_TESTS=1 .venv/Scripts/python.exe -B -m unittest discover -s tests -v",
+  "tests": {
+    "run": 97,
+    "passed": 97,
+    "skipped": 0,
+    "return_code": 0
+  },
+  "test_log_sha256": "bbca679ad4e093da6fbab63042fa38aeb67b2144716f08004f21e38653d86f79",
+  "source_hash_convention": "LF-normalized bytes for source; exact bytes for results",
+  "files_sha256": {
+    ".gitattributes": "c35bbb02f749c4ab8a4ff884ff9bd9e3d85e2ce14cc2d067948752ee2424b82a",
+    "src/normalize.py": "26417ef6ea679d7c973dfbad5ee5ff40093afe4bdcacc7a4ba11d9bf49cadd6a",
+    "src/sql_views.py": "adc8bf166d22ffc699bc6b46f2c3a89704a2cace0b868b8e7b534cadacf2e7a3",
+    "src/sql_features.py": "ac65cb0eb8149d6b8fd30b8ab6679bb670fd57cf2a8c3f5098daf37d1385d5b0",
+    "src/relational_features.py": "f4ff63695db96f3ffffe51584882fb68135c12ad920e4c20dd4235e75e4007e2",
+    "src/study_features.py": "2b4fbc731e9268d7c542b1e8af384568a2f4632023975464b2afa259d7cba3eb",
+    "src/study_relations.py": "5fa013fbe3393ce4525bca043c08c6dfd813e247bb3554b463d18c93e65da67b",
+    "src/check_feature_stability.py": "53b5dc24ef84edd1a441a3bbaa28936b8cf00c5b8501aa0a5e276415ec5289bf",
+    "src/audit_feature_cache.py": "70ae7d7559e27043572fb357953a1d5e56957fa9c376226a1eb809594a053425",
+    "tests/test_features.py": "bb91ad275c5ab071fb5f727147eda194e1b86552f0401600e834b5b6c79ff77d",
+    "tests/test_relational_features.py": "4716f7f4f9bcb0e2e411a093509a12f9277d7f0cd9d00e7d9134e58539da38a5",
+    "tests/test_storage.py": "3103382cac1642ec433cce184f25abb3887feb47a3869bed050bf57be12733fe",
+    "docs/features.md": "e4b85d3c1b2ad99695788dc3797a19b7fb5a497b0de87f98520c8c91d170e2d6",
+    "results/stage7/representation_study.json": "1122df34a5cc655e1ee720a8a693b99bb092a3a543bc81880daede0ca4e2e555",
+    "results/stage7/stability_audit.json": "76928a5ae6639eea9c71e17d59ac8d429f603648d4637fd60d423e01bcadabcd",
+    "results/stage7/cache_audit.json": "8a89acada0ed01da655fe5d404674dfa7aa064fff83b4a53d2cb7aec4e9cb4a7"
+  }
+}

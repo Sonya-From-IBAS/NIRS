@@ -48,3 +48,9 @@ class SQLNormalizer(BaseEstimator, TransformerMixin):
 
     def transform(self, X):
         return [normalize_sql(q) for q in X]
+
+
+def sql_views(query: str) -> dict:
+    """New lossless branches; historical normalize_sql/SQLNormalizer stay stable."""
+    from sql_views import views
+    return views(query)
