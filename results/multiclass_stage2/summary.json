@@ -1,0 +1,482 @@
+{
+  "version": "multiclass-stage2-v1",
+  "versions": {
+    "nirs": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "sqlstateguard": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+    "scenarios": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+    "mysql": "mysql_90b8f1726c0ed14d01cc199c43e41a80fd3c35670c7a073936d5399bfc4b1280"
+  },
+  "rows": 248075,
+  "unique_sql": 247448,
+  "linked_components": 87082,
+  "coverage_by_corpus": {
+    "nirs": {
+      "rows": 32529,
+      "unique_sql": 32529,
+      "components": 25347,
+      "labels": {
+        "sqli": 9479,
+        "obfuscated": 1910,
+        "legit": 19836,
+        "privilege": 682,
+        "exfiltration": 622
+      },
+      "history": {
+        "fit_scope": 32529,
+        "opened_or_development": 32529,
+        "exact_fit_overlap": 32529,
+        "component_fit_overlap": 32529,
+        "component_opened_overlap": 32529,
+        "coarse_shape_fit_overlap": 32529
+      }
+    },
+    "sqlstateguard": {
+      "rows": 161022,
+      "unique_sql": 161022,
+      "components": 61508,
+      "labels": {
+        "sqli": 132651,
+        "legit": 28371
+      },
+      "history": {
+        "fit_scope": 94632,
+        "opened_or_development": 93028,
+        "exact_fit_overlap": 94632,
+        "component_fit_overlap": 102156,
+        "component_opened_overlap": 96719,
+        "coarse_shape_fit_overlap": 102602
+      }
+    },
+    "scenarios": {
+      "rows": 1200,
+      "unique_sql": 686,
+      "components": 4,
+      "labels": {
+        "legit": 600,
+        "privilege": 200,
+        "obfuscated": 200,
+        "exfiltration": 200
+      },
+      "history": {
+        "fit_scope": 720,
+        "opened_or_development": 920,
+        "exact_fit_overlap": 720,
+        "component_fit_overlap": 840,
+        "component_opened_overlap": 1200,
+        "coarse_shape_fit_overlap": 738
+      }
+    },
+    "controlled_sqli": {
+      "rows": 2080,
+      "unique_sql": 1968,
+      "components": 60,
+      "labels": {
+        "legit": 1040,
+        "sqli": 1040
+      },
+      "history": {
+        "fit_scope": 320,
+        "opened_or_development": 1760,
+        "exact_fit_overlap": 395,
+        "component_fit_overlap": 800,
+        "component_opened_overlap": 2080,
+        "coarse_shape_fit_overlap": 835
+      }
+    },
+    "superviz26": {
+      "rows": 51244,
+      "unique_sql": 51244,
+      "components": 188,
+      "labels": {
+        "sqli": 43320,
+        "legit": 7924
+      },
+      "history": {
+        "fit_scope": 15787,
+        "opened_or_development": 29670,
+        "exact_fit_overlap": 15787,
+        "component_fit_overlap": 37690,
+        "component_opened_overlap": 51244,
+        "coarse_shape_fit_overlap": 34942
+      }
+    }
+  },
+  "metadata_shortcuts": {
+    "majority": {
+      "descriptive_accuracy": 0.7517484631663811,
+      "recall_by_class": {
+        "sqli": 1.0,
+        "obfuscated": 0.0,
+        "legit": 0.0,
+        "privilege": 0.0,
+        "exfiltration": 0.0
+      },
+      "cells": {
+        "all": {
+          "sqli": 186490,
+          "obfuscated": 2110,
+          "legit": 57771,
+          "privilege": 882,
+          "exfiltration": 822
+        }
+      }
+    },
+    "source": {
+      "descriptive_accuracy": 0.7975007558198125,
+      "recall_by_class": {
+        "sqli": 0.943594830822028,
+        "obfuscated": 0.0,
+        "legit": 0.3663949040175867,
+        "privilege": 0.5975056689342404,
+        "exfiltration": 0.21289537712895376
+      },
+      "cells": {
+        "AdventureWorks": {
+          "sqli": 14306,
+          "legit": 2460
+        },
+        "OHR": {
+          "sqli": 7575,
+          "legit": 1170
+        },
+        "OurAirports": {
+          "sqli": 11279,
+          "legit": 2430
+        },
+        "controlled-stage5": {
+          "legit": 600,
+          "privilege": 200,
+          "obfuscated": 200,
+          "exfiltration": 200
+        },
+        "development_text": {
+          "legit": 240,
+          "sqli": 240
+        },
+        "fresh_text": {
+          "legit": 200,
+          "sqli": 200
+        },
+        "generated_groq_mssql_advanced": {
+          "privilege": 80,
+          "exfiltration": 80,
+          "legit": 40
+        },
+        "generated_groq_mssql_simple": {
+          "privilege": 90,
+          "exfiltration": 83,
+          "legit": 26
+        },
+        "generated_groq_mysql_advanced": {
+          "privilege": 88,
+          "exfiltration": 93,
+          "legit": 50
+        },
+        "generated_groq_mysql_simple": {
+          "privilege": 67,
+          "exfiltration": 82,
+          "legit": 44
+        },
+        "generated_groq_oracle_advanced": {
+          "privilege": 80,
+          "exfiltration": 62,
+          "legit": 44
+        },
+        "generated_groq_oracle_simple": {
+          "privilege": 88,
+          "exfiltration": 54,
+          "legit": 43
+        },
+        "generated_groq_postgresql_advanced": {
+          "privilege": 80,
+          "exfiltration": 79,
+          "legit": 47
+        },
+        "generated_groq_postgresql_simple": {
+          "privilege": 86,
+          "exfiltration": 78,
+          "legit": 15
+        },
+        "kaggle_sqli": {
+          "sqli": 9479,
+          "obfuscated": 1898,
+          "legit": 19527
+        },
+        "new_operations": {
+          "legit": 600,
+          "sqli": 600
+        },
+        "real_github": {
+          "privilege": 23,
+          "exfiltration": 11,
+          "obfuscated": 12
+        },
+        "sakila": {
+          "legit": 1864,
+          "sqli": 10160
+        },
+        "sqlstateguard:web_app": {
+          "sqli": 67859,
+          "legit": 24773
+        },
+        "sqlstateguard:wordpress": {
+          "sqli": 64792,
+          "legit": 3598
+        }
+      }
+    },
+    "trusted_template_present": {
+      "descriptive_accuracy": 0.7517484631663811,
+      "recall_by_class": {
+        "sqli": 1.0,
+        "obfuscated": 0.0,
+        "legit": 0.0,
+        "privilege": 0.0,
+        "exfiltration": 0.0
+      },
+      "cells": {
+        "False": {
+          "sqli": 142130,
+          "obfuscated": 2110,
+          "legit": 48807,
+          "privilege": 882,
+          "exfiltration": 822
+        },
+        "True": {
+          "legit": 8964,
+          "sqli": 44360
+        }
+      }
+    },
+    "context": {
+      "descriptive_accuracy": 0.7541670865665625,
+      "recall_by_class": {
+        "sqli": 0.9944232934741809,
+        "obfuscated": 0.0,
+        "legit": 0.0283879455089924,
+        "privilege": 0.0,
+        "exfiltration": 0.0
+      },
+      "cells": {
+        "active_role,application_operation,dialect,permissions,policy": {
+          "legit": 600,
+          "privilege": 200,
+          "obfuscated": 200,
+          "exfiltration": 200
+        },
+        "sql_only": {
+          "sqli": 142130,
+          "obfuscated": 1910,
+          "legit": 48207,
+          "privilege": 682,
+          "exfiltration": 622
+        },
+        "template/absent": {
+          "legit": 200,
+          "sqli": 2187
+        },
+        "template/provided": {
+          "legit": 1040,
+          "sqli": 1040
+        },
+        "template/recovered": {
+          "sqli": 41133,
+          "legit": 7724
+        }
+      }
+    },
+    "layout_only": {
+      "descriptive_accuracy": 0.7517484631663811,
+      "recall_by_class": {
+        "sqli": 1.0,
+        "obfuscated": 0.0,
+        "legit": 0.0,
+        "privilege": 0.0,
+        "exfiltration": 0.0
+      },
+      "cells": {
+        "multiline/no_terminal_delimiter/no_backtick": {
+          "privilege": 11,
+          "exfiltration": 1,
+          "sqli": 2128
+        },
+        "multiline/no_terminal_delimiter/with_backtick": {
+          "sqli": 93
+        },
+        "multiline/terminal_delimiter/no_backtick": {
+          "privilege": 26,
+          "legit": 120,
+          "obfuscated": 120,
+          "sqli": 446
+        },
+        "multiline/terminal_delimiter/with_backtick": {
+          "sqli": 30
+        },
+        "one_line/no_terminal_delimiter/no_backtick": {
+          "sqli": 169708,
+          "obfuscated": 1899,
+          "legit": 53416,
+          "privilege": 181,
+          "exfiltration": 357
+        },
+        "one_line/no_terminal_delimiter/with_backtick": {
+          "sqli": 7120,
+          "legit": 1478,
+          "privilege": 5,
+          "exfiltration": 1,
+          "obfuscated": 9
+        },
+        "one_line/terminal_delimiter/no_backtick": {
+          "sqli": 6731,
+          "obfuscated": 82,
+          "legit": 2757,
+          "privilege": 654,
+          "exfiltration": 462
+        },
+        "one_line/terminal_delimiter/with_backtick": {
+          "privilege": 5,
+          "exfiltration": 1,
+          "sqli": 234
+        }
+      }
+    },
+    "origin": {
+      "descriptive_accuracy": 0.7959165574926937,
+      "recall_by_class": {
+        "sqli": 0.943594830822028,
+        "obfuscated": 0.0,
+        "legit": 0.3717436083848298,
+        "privilege": 0.0,
+        "exfiltration": 0.0
+      },
+      "cells": {
+        "application_experiment": {
+          "sqli": 132651,
+          "legit": 28371
+        },
+        "local_authored": {
+          "privilege": 859,
+          "exfiltration": 811,
+          "legit": 1949,
+          "obfuscated": 200,
+          "sqli": 1040
+        },
+        "public_legacy": {
+          "sqli": 9479,
+          "obfuscated": 1910,
+          "legit": 19527,
+          "privilege": 23,
+          "exfiltration": 11
+        },
+        "public_synthetic": {
+          "sqli": 43320,
+          "legit": 7924
+        }
+      }
+    }
+  },
+  "mysql_scenario_component_crosswalk": {
+    "m2_2c144d5544bd71dfa019242ab66d8f02d9b9b6327974eed21833aaa6b00bfb3c": [
+      "g6_2c144d5544bd71dfa019242ab66d8f02d9b9b6327974eed21833aaa6b00bfb3c"
+    ],
+    "m2_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607": [
+      "g6_32edd22bd93207b2d5d222b2accfdc184a1356275c88efc9cb17c091636f1607"
+    ],
+    "m2_5d88cefde5521224994d030b4861d0fb4bbda9e4a8f3257c07b83ee359816ccb": [
+      "g6_5d88cefde5521224994d030b4861d0fb4bbda9e4a8f3257c07b83ee359816ccb"
+    ],
+    "m2_67d714c353bb25d727103e13ae6d6a01fad44956ba6a9722c55423dcebc34296": [
+      "g6_185c184007e1557f3053fa148519e5fba36dde5c50c56f2aae3094def0374222",
+      "g6_1a0cc9b8861d001add76dc85b4b493b5b96566182b313d410bb28347f6b29f15",
+      "g6_5355d527d397747d593f876daa9c0a73b639e32c3e896f1b35b6cd60691bd111",
+      "g6_ee5298ddfafb90c912f579415f58a36be3bf9a194aa15e3f502c6bd3d4a7cd72"
+    ]
+  },
+  "mysql_policy_scenarios": {
+    "rows": 300,
+    "unique_sql": 240,
+    "families": 10,
+    "components": 4,
+    "paired_cases": 150,
+    "parent_links": 100
+  },
+  "manual_review_quota": {
+    "legit": {
+      "superviz26": 30,
+      "sqlstateguard": 20,
+      "nirs": 20,
+      "scenarios": 30
+    },
+    "sqli": {
+      "superviz26": 40,
+      "sqlstateguard": 30,
+      "nirs": 30
+    },
+    "obfuscated": {
+      "nirs": 80,
+      "scenarios": 20
+    },
+    "privilege": {
+      "nirs": 80,
+      "scenarios": 20
+    },
+    "exfiltration": {
+      "nirs": 80,
+      "scenarios": 20
+    }
+  },
+  "manual_review_achieved": {
+    "legit": 100,
+    "sqli": 100,
+    "obfuscated": 100,
+    "privilege": 100,
+    "exfiltration": 100
+  },
+  "queue_sources": {
+    "legit": {
+      "nirs": 20,
+      "scenarios": 30,
+      "sqlstateguard": 20,
+      "superviz26": 30
+    },
+    "sqli": {
+      "nirs": 30,
+      "sqlstateguard": 30,
+      "superviz26": 40
+    },
+    "obfuscated": {
+      "nirs": 80,
+      "scenarios": 20
+    },
+    "privilege": {
+      "nirs": 80,
+      "scenarios": 20
+    },
+    "exfiltration": {
+      "nirs": 80,
+      "scenarios": 20
+    }
+  },
+  "queue_components_by_class": {
+    "legit": 47,
+    "sqli": 76,
+    "obfuscated": 84,
+    "privilege": 12,
+    "exfiltration": 11
+  },
+  "queue_fit_scope": 355,
+  "queue_group_fit_overlap": 365,
+  "strict_public_mysql_no_known_overlap_before_manual_review": 0,
+  "sqlstateguard_unknown_dialect_no_known_overlap": {
+    "legit": {
+      "rows": 143,
+      "components": 86
+    },
+    "sqli": {
+      "rows": 57330,
+      "components": 29764
+    }
+  },
+  "independently_certified_external_rows": 0,
+  "source_selection_used_model_outputs": false
+}

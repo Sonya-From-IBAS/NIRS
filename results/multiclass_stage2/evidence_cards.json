@@ -1,0 +1,1417 @@
+[
+  {
+    "id": "obs_53c187ea7b7debbce7a5707f54c3d2877be7cf634fe9968d86e984900349dd1c",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "legit",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_simple",
+    "record": "32197",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "0",
+        "label_name": "legit"
+      },
+      "annotation_id": "obs_53c187ea7b7debbce7a5707f54c3d2877be7cf634fe9968d86e984900349dd1c_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:32197",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_s5_2ed005ac597c3a7a8bbc8c934d12245a",
+    "version": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+    "class_for_quota": "legit",
+    "allowed_labels_on_current_evidence": [
+      "legit"
+    ],
+    "source": "controlled-stage5",
+    "record": "obs_s5_2ed005ac597c3a7a8bbc8c934d12245a",
+    "source_basis": "authored_policy",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+      "source_label": null,
+      "annotation_id": "obs_s5_2ed005ac597c3a7a8bbc8c934d12245a_a1",
+      "status": "verified",
+      "reason": "The parsed action matches an explicit allow rule in the declared operation policy.",
+      "evidence": [
+        {
+          "kind": "scenario_definition",
+          "reference": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d",
+          "statement": "Versioned controlled schema, role, rights and complete operation policy; AI-authored scenario with static review."
+        },
+        {
+          "kind": "policy_check",
+          "reference": "static-checks:stage5-static-v1#obs_s5_2ed005ac597c3a7a8bbc8c934d12245a",
+          "statement": "Closed-vocabulary SQL action extraction and exact scoped rule matching; reviewer=stage5-static-v1"
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/policy",
+        "value": "scenario-policy:sc5_8f6a817b98994b04b9a0ce3d"
+      },
+      "dialect": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/dialect",
+        "value": "mysql"
+      },
+      "active_role": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/active_role",
+        "value": "ops_service@localhost"
+      },
+      "permissions": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/permissions",
+        "value": "complete"
+      },
+      "application_operation": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_8f6a817b98994b04b9a0ce3d/context/application_operation",
+        "value": "research.delegate_access_v1"
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_sg_62e612b6bec282c8fff4a1628572f5eff7a6ad73c23465b4086075d284903ad0",
+    "version": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+    "class_for_quota": "legit",
+    "allowed_labels_on_current_evidence": [
+      "legit"
+    ],
+    "source": "sqlstateguard:wordpress",
+    "record": "normal_wp.txt:7599",
+    "source_basis": "author_file",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_a449dfcb7a6739e4664afeb0dab427cafa839d861e1498b8a233ef61c7138fb1",
+      "source_label": {
+        "label": 0,
+        "attack_family": "normal"
+      },
+      "annotation_id": "obs_sg_62e612b6bec282c8fff4a1628572f5eff7a6ad73c23465b4086075d284903ad0_a1",
+      "status": "verified",
+      "reason": "Reference follows the author's released normal/attack file category for captured application SQL; no claim of successful exploitation or independent human review.",
+      "evidence": [
+        {
+          "kind": "source_documentation",
+          "reference": "https://doi.org/10.1145/3698038.3698569#section-4.1",
+          "statement": "Author statement-level release; normal files map to 0, attack-family files to 1. Failed attempts remain attacks."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "sv26:AdventureWorks:13932247",
+    "version": "mysql_90b8f1726c0ed14d01cc199c43e41a80fd3c35670c7a073936d5399bfc4b1280",
+    "class_for_quota": "legit",
+    "allowed_labels_on_current_evidence": [
+      "legit"
+    ],
+    "source": "AdventureWorks",
+    "record": "sv26:AdventureWorks:13932247",
+    "source_basis": "author_campaign",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "operation_id": "AdventureWorks:AW-I3",
+      "supplied": false,
+      "parameter_origin": "recovered",
+      "campaign": "",
+      "provenance": {
+        "source_id": "superviz26:AdventureWorks:2bc1b7d0939e2e78e14cb665adff183e4a4b9f3e1939d273a903b395ee9c360f",
+        "trusted_configuration": true
+      },
+      "target_basis": "author_campaign",
+      "template_sha256": "7c0b668e9c5806596af3790be33b1b1c1050c5246a26330d976f7365eb0d2e6b",
+      "role_permissions_policy": "unknown"
+    },
+    "availability": "template from configuration; recovered values derived from incoming SQL; campaign is reference-only"
+  },
+  {
+    "id": "sv26:OHR:2790745",
+    "version": "mysql_90b8f1726c0ed14d01cc199c43e41a80fd3c35670c7a073936d5399bfc4b1280",
+    "class_for_quota": "legit",
+    "allowed_labels_on_current_evidence": [
+      "legit"
+    ],
+    "source": "OHR",
+    "record": "sv26:OHR:2790745",
+    "source_basis": "author_campaign",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "operation_id": "OHR:OHR-S6",
+      "supplied": false,
+      "parameter_origin": "recovered",
+      "campaign": "",
+      "provenance": {
+        "source_id": "superviz26:OHR:9d236373e7931ad85fc9fe5731affe83a84fcf90064a3e2367a63b04f2a1dc32",
+        "trusted_configuration": true
+      },
+      "target_basis": "author_campaign",
+      "template_sha256": "c6a1fb01fb867be82fff15e7822c01def9a291f38fafbd28552feb5128fd8f77",
+      "role_permissions_policy": "unknown"
+    },
+    "availability": "template from configuration; recovered values derived from incoming SQL; campaign is reference-only"
+  },
+  {
+    "id": "obs_803f4cb6924bcf19e092f1d45d7f77151017a07c299ea9925f50a02443b9e99f",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "sqli",
+    "allowed_labels_on_current_evidence": [],
+    "source": "kaggle_sqli",
+    "record": "182",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "1",
+        "label_name": "sqli"
+      },
+      "annotation_id": "obs_803f4cb6924bcf19e092f1d45d7f77151017a07c299ea9925f50a02443b9e99f_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:182",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_f48e9512d1c15dbbed5ca2d79f41d3e641c6cc66a3592c858ae6c96adc54013a",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "sqli",
+    "allowed_labels_on_current_evidence": [],
+    "source": "kaggle_sqli",
+    "record": "814",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "1",
+        "label_name": "sqli"
+      },
+      "annotation_id": "obs_f48e9512d1c15dbbed5ca2d79f41d3e641c6cc66a3592c858ae6c96adc54013a_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:814",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_sg_55c8400f4e633c904bdbe12c818553cb6fc6f6c3400c653cc7f72dd96fbf176d",
+    "version": "ds_c95b6bc4aa3903c58c32e8694491bb264ca0345bc18a6708de743fdb688215b6",
+    "class_for_quota": "sqli",
+    "allowed_labels_on_current_evidence": [
+      "sqli"
+    ],
+    "source": "sqlstateguard:wordpress",
+    "record": "union_wp.txt:11080",
+    "source_basis": "author_file",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_a449dfcb7a6739e4664afeb0dab427cafa839d861e1498b8a233ef61c7138fb1",
+      "source_label": {
+        "label": 1,
+        "attack_family": "union"
+      },
+      "annotation_id": "obs_sg_55c8400f4e633c904bdbe12c818553cb6fc6f6c3400c653cc7f72dd96fbf176d_a1",
+      "status": "verified",
+      "reason": "Reference follows the author's released normal/attack file category for captured application SQL; no claim of successful exploitation or independent human review.",
+      "evidence": [
+        {
+          "kind": "source_documentation",
+          "reference": "https://doi.org/10.1145/3698038.3698569#section-4.1",
+          "statement": "Author statement-level release; normal files map to 0, attack-family files to 1. Failed attempts remain attacks."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "sv26:AdventureWorks:902736",
+    "version": "mysql_90b8f1726c0ed14d01cc199c43e41a80fd3c35670c7a073936d5399bfc4b1280",
+    "class_for_quota": "sqli",
+    "allowed_labels_on_current_evidence": [
+      "sqli"
+    ],
+    "source": "AdventureWorks",
+    "record": "sv26:AdventureWorks:902736",
+    "source_basis": "author_campaign",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "operation_id": "AdventureWorks:AW-U15",
+      "supplied": false,
+      "parameter_origin": "recovered",
+      "campaign": "time-262",
+      "provenance": {
+        "source_id": "superviz26:AdventureWorks:2bc1b7d0939e2e78e14cb665adff183e4a4b9f3e1939d273a903b395ee9c360f",
+        "trusted_configuration": true
+      },
+      "target_basis": "author_campaign",
+      "template_sha256": "7d1d5085b2690847286b04b4722674b148e419a720c4a4e61ba7b00c7b3470cb",
+      "role_permissions_policy": "unknown"
+    },
+    "availability": "template from configuration; recovered values derived from incoming SQL; campaign is reference-only"
+  },
+  {
+    "id": "sv26:AdventureWorks:903882",
+    "version": "mysql_90b8f1726c0ed14d01cc199c43e41a80fd3c35670c7a073936d5399bfc4b1280",
+    "class_for_quota": "sqli",
+    "allowed_labels_on_current_evidence": [
+      "sqli"
+    ],
+    "source": "AdventureWorks",
+    "record": "sv26:AdventureWorks:903882",
+    "source_basis": "author_campaign",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "operation_id": "AdventureWorks:AW-U16",
+      "supplied": false,
+      "parameter_origin": "recovered",
+      "campaign": "error-265",
+      "provenance": {
+        "source_id": "superviz26:AdventureWorks:2bc1b7d0939e2e78e14cb665adff183e4a4b9f3e1939d273a903b395ee9c360f",
+        "trusted_configuration": true
+      },
+      "target_basis": "author_campaign",
+      "template_sha256": "01eddf1768210927ac82ec9eef9fb26ba347d63fdec0b7124f852082389deb66",
+      "role_permissions_policy": "unknown"
+    },
+    "availability": "template from configuration; recovered values derived from incoming SQL; campaign is reference-only"
+  },
+  {
+    "id": "obs_6ea0b339437b67df3a6e0079022e815ca946d06a2d93d69f1755f390fd93eafb",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "obfuscated",
+    "allowed_labels_on_current_evidence": [],
+    "source": "real_github",
+    "record": "32522",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "2",
+        "label_name": "obfuscated"
+      },
+      "annotation_id": "obs_6ea0b339437b67df3a6e0079022e815ca946d06a2d93d69f1755f390fd93eafb_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:32522",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_8f9d1f3f8f22abc8f1677bd45b8244b070d75ab1ecec0a0b7b23623d81e60b53",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "obfuscated",
+    "allowed_labels_on_current_evidence": [],
+    "source": "kaggle_sqli",
+    "record": "9882",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "2",
+        "label_name": "obfuscated"
+      },
+      "annotation_id": "obs_8f9d1f3f8f22abc8f1677bd45b8244b070d75ab1ecec0a0b7b23623d81e60b53_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:9882",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_ea370488f14ec9b21dbac99f9816479e31c400d1dd5a2e20dfaf8f63aed92614",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "obfuscated",
+    "allowed_labels_on_current_evidence": [],
+    "source": "kaggle_sqli",
+    "record": "8260",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "2",
+        "label_name": "obfuscated"
+      },
+      "annotation_id": "obs_ea370488f14ec9b21dbac99f9816479e31c400d1dd5a2e20dfaf8f63aed92614_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:8260",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_s5_4ebcf7d07ba70daa782808127fa5ae91",
+    "version": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+    "class_for_quota": "obfuscated",
+    "allowed_labels_on_current_evidence": [
+      "obfuscated",
+      "exfiltration"
+    ],
+    "source": "controlled-stage5",
+    "record": "obs_s5_4ebcf7d07ba70daa782808127fa5ae91",
+    "source_basis": "authored_policy",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+      "source_label": null,
+      "annotation_id": "obs_s5_4ebcf7d07ba70daa782808127fa5ae91_a1",
+      "status": "verified",
+      "reason": "The parsed action matches an explicit deny rule in the declared operation policy.",
+      "evidence": [
+        {
+          "kind": "scenario_definition",
+          "reference": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9da193bcc226d8402db8e3ca",
+          "statement": "Versioned controlled schema, role, rights and complete operation policy; AI-authored scenario with static review."
+        },
+        {
+          "kind": "policy_check",
+          "reference": "static-checks:stage5-static-v1#obs_s5_4ebcf7d07ba70daa782808127fa5ae91",
+          "statement": "Closed-vocabulary SQL action extraction and exact scoped rule matching; reviewer=stage5-static-v1"
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9da193bcc226d8402db8e3ca/context/policy",
+        "value": "scenario-policy:sc5_9da193bcc226d8402db8e3ca"
+      },
+      "dialect": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9da193bcc226d8402db8e3ca/context/dialect",
+        "value": "mysql"
+      },
+      "active_role": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9da193bcc226d8402db8e3ca/context/active_role",
+        "value": "ops_service@localhost"
+      },
+      "permissions": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9da193bcc226d8402db8e3ca/context/permissions",
+        "value": "complete"
+      },
+      "application_operation": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_9da193bcc226d8402db8e3ca/context/application_operation",
+        "value": "commerce.read_rows_v1"
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_s5_b25626a051af404f3804bba0fb591408",
+    "version": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+    "class_for_quota": "obfuscated",
+    "allowed_labels_on_current_evidence": [
+      "obfuscated",
+      "privilege"
+    ],
+    "source": "controlled-stage5",
+    "record": "obs_s5_b25626a051af404f3804bba0fb591408",
+    "source_basis": "authored_policy",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+      "source_label": null,
+      "annotation_id": "obs_s5_b25626a051af404f3804bba0fb591408_a1",
+      "status": "verified",
+      "reason": "The parsed action matches an explicit deny rule in the declared operation policy.",
+      "evidence": [
+        {
+          "kind": "scenario_definition",
+          "reference": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e28a8770be53e1d811a2083e",
+          "statement": "Versioned controlled schema, role, rights and complete operation policy; AI-authored scenario with static review."
+        },
+        {
+          "kind": "policy_check",
+          "reference": "static-checks:stage5-static-v1#obs_s5_b25626a051af404f3804bba0fb591408",
+          "statement": "Closed-vocabulary SQL action extraction and exact scoped rule matching; reviewer=stage5-static-v1"
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e28a8770be53e1d811a2083e/context/policy",
+        "value": "scenario-policy:sc5_e28a8770be53e1d811a2083e"
+      },
+      "dialect": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e28a8770be53e1d811a2083e/context/dialect",
+        "value": "mysql"
+      },
+      "active_role": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e28a8770be53e1d811a2083e/context/active_role",
+        "value": "ops_service@localhost"
+      },
+      "permissions": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e28a8770be53e1d811a2083e/context/permissions",
+        "value": "complete"
+      },
+      "application_operation": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e28a8770be53e1d811a2083e/context/application_operation",
+        "value": "commerce.delegate_access_v1"
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_64582fc46f1c0a1626e0d7434e8f8a2da3c6f3c07e68085a80a91b42d915f4e6",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "privilege",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_advanced",
+    "record": "31007",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "3",
+        "label_name": "privilege"
+      },
+      "annotation_id": "obs_64582fc46f1c0a1626e0d7434e8f8a2da3c6f3c07e68085a80a91b42d915f4e6_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:31007",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_c11b1b54aa1d2becaeae93f41c378602d6690b951da598441022c5fe2ef13ba2",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "privilege",
+    "allowed_labels_on_current_evidence": [],
+    "source": "real_github",
+    "record": "32499",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "3",
+        "label_name": "privilege"
+      },
+      "annotation_id": "obs_c11b1b54aa1d2becaeae93f41c378602d6690b951da598441022c5fe2ef13ba2_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:32499",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_dd74edcee3514d8696ed821a6a0f369eccc7d4bebd5f3cc4b151345b6a76a671",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "privilege",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_advanced",
+    "record": "31005",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "3",
+        "label_name": "privilege"
+      },
+      "annotation_id": "obs_dd74edcee3514d8696ed821a6a0f369eccc7d4bebd5f3cc4b151345b6a76a671_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:31005",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_fca98f84f2290dbcf78de91b1bdec358034e9ea7d40f89f1ce80c0ca6b775bdb",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "privilege",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_simple",
+    "record": "30956",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "3",
+        "label_name": "privilege"
+      },
+      "annotation_id": "obs_fca98f84f2290dbcf78de91b1bdec358034e9ea7d40f89f1ce80c0ca6b775bdb_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:30956",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_s5_1787446253b24009e92ae7aafd2117b1",
+    "version": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+    "class_for_quota": "privilege",
+    "allowed_labels_on_current_evidence": [
+      "privilege"
+    ],
+    "source": "controlled-stage5",
+    "record": "obs_s5_1787446253b24009e92ae7aafd2117b1",
+    "source_basis": "authored_policy",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+      "source_label": null,
+      "annotation_id": "obs_s5_1787446253b24009e92ae7aafd2117b1_a1",
+      "status": "verified",
+      "reason": "The parsed action matches an explicit deny rule in the declared operation policy.",
+      "evidence": [
+        {
+          "kind": "scenario_definition",
+          "reference": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_6abb45cbda6e6d9363d370a1",
+          "statement": "Versioned controlled schema, role, rights and complete operation policy; AI-authored scenario with static review."
+        },
+        {
+          "kind": "policy_check",
+          "reference": "static-checks:stage5-static-v1#obs_s5_1787446253b24009e92ae7aafd2117b1",
+          "statement": "Closed-vocabulary SQL action extraction and exact scoped rule matching; reviewer=stage5-static-v1"
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_6abb45cbda6e6d9363d370a1/context/policy",
+        "value": "scenario-policy:sc5_6abb45cbda6e6d9363d370a1"
+      },
+      "dialect": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_6abb45cbda6e6d9363d370a1/context/dialect",
+        "value": "mysql"
+      },
+      "active_role": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_6abb45cbda6e6d9363d370a1/context/active_role",
+        "value": "ops_service@localhost"
+      },
+      "permissions": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_6abb45cbda6e6d9363d370a1/context/permissions",
+        "value": "complete"
+      },
+      "application_operation": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_6abb45cbda6e6d9363d370a1/context/application_operation",
+        "value": "support.delegate_access_v1"
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_0ce577e7fbdff712d011fd943a8a60fa93d4460ffd5750f4e493b85b0c705cba",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "exfiltration",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_advanced",
+    "record": "31717",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "4",
+        "label_name": "exfiltration"
+      },
+      "annotation_id": "obs_0ce577e7fbdff712d011fd943a8a60fa93d4460ffd5750f4e493b85b0c705cba_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:31717",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_252e8687d65dea665314f8f1a0836dcfb855a45b9bc6101970820fb9f6894f16",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "exfiltration",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_advanced",
+    "record": "31687",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "4",
+        "label_name": "exfiltration"
+      },
+      "annotation_id": "obs_252e8687d65dea665314f8f1a0836dcfb855a45b9bc6101970820fb9f6894f16_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:31687",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_695321bae20cf0070b4d112b0ff05d681696ca35f79dc285c51307bc73fda3a4",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "exfiltration",
+    "allowed_labels_on_current_evidence": [],
+    "source": "real_github",
+    "record": "32507",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "4",
+        "label_name": "exfiltration"
+      },
+      "annotation_id": "obs_695321bae20cf0070b4d112b0ff05d681696ca35f79dc285c51307bc73fda3a4_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:32507",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_c508627d306aa155a65ff6220b0777070d0bf551e5a48b94d73f7343015c636f",
+    "version": "ds_6f5bea0f57efdd3d7cc78d8eb3a2aa9a41bab5ddcee47abacfc1fbe204f8a60b",
+    "class_for_quota": "exfiltration",
+    "allowed_labels_on_current_evidence": [],
+    "source": "generated_groq_mysql_simple",
+    "record": "31635",
+    "source_basis": "historical_label_only",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0",
+      "source_label": {
+        "label": "4",
+        "label_name": "exfiltration"
+      },
+      "annotation_id": "obs_c508627d306aa155a65ff6220b0777070d0bf551e5a48b94d73f7343015c636f_a1",
+      "status": "needs_review",
+      "reason": "Legacy source label retained separately; target and SQL unit require source audit.",
+      "evidence": [
+        {
+          "kind": "source_label",
+          "reference": "src_b4d6a21b6399ee32917331be607b1fa248f8fe3d165ed0be48035c584cf96dd0:31635",
+          "statement": "Imported original label without treating it as verified ground truth."
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "dialect": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "active_role": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "permissions": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      },
+      "application_operation": {
+        "origin": "unknown",
+        "available_before_decision": false,
+        "evidence_ref": null,
+        "value": null
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  },
+  {
+    "id": "obs_s5_81f4cdbb87a6f914ffb355b60fb20cd0",
+    "version": "ds_ec2aec00a31d7cf91b7df61a4076067c1472e7873f88ad98fc562ac26cfeab60",
+    "class_for_quota": "exfiltration",
+    "allowed_labels_on_current_evidence": [
+      "exfiltration"
+    ],
+    "source": "controlled-stage5",
+    "record": "obs_s5_81f4cdbb87a6f914ffb355b60fb20cd0",
+    "source_basis": "authored_policy",
+    "human_reviews": [],
+    "disagreement": null,
+    "source_fields": {
+      "source_version_id": "src_6b8ff6823111a8e6c4031155223f1f41d4862e424948586f8f9915b95f8cbb8b",
+      "source_label": null,
+      "annotation_id": "obs_s5_81f4cdbb87a6f914ffb355b60fb20cd0_a1",
+      "status": "verified",
+      "reason": "The parsed action matches an explicit deny rule in the declared operation policy.",
+      "evidence": [
+        {
+          "kind": "scenario_definition",
+          "reference": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e5e470760c0c5f9a31127bb5",
+          "statement": "Versioned controlled schema, role, rights and complete operation policy; AI-authored scenario with static review."
+        },
+        {
+          "kind": "policy_check",
+          "reference": "static-checks:stage5-static-v1#obs_s5_81f4cdbb87a6f914ffb355b60fb20cd0",
+          "statement": "Closed-vocabulary SQL action extraction and exact scoped rule matching; reviewer=stage5-static-v1"
+        }
+      ]
+    },
+    "context": {
+      "policy": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e5e470760c0c5f9a31127bb5/context/policy",
+        "value": "scenario-policy:sc5_e5e470760c0c5f9a31127bb5"
+      },
+      "dialect": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e5e470760c0c5f9a31127bb5/context/dialect",
+        "value": "mysql"
+      },
+      "active_role": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e5e470760c0c5f9a31127bb5/context/active_role",
+        "value": "ops_service@localhost"
+      },
+      "permissions": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e5e470760c0c5f9a31127bb5/context/permissions",
+        "value": "complete"
+      },
+      "application_operation": {
+        "origin": "scenario_author",
+        "available_before_decision": true,
+        "evidence_ref": "scenario-catalog:81c54fcfb252c0e273c1febc9b0f279eb1f76b1bad705000a3fbdad21b20b774#sc5_e5e470760c0c5f9a31127bb5/context/application_operation",
+        "value": "research.read_rows_v1"
+      }
+    },
+    "template_and_separate_parameters": "unknown"
+  }
+]
